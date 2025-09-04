@@ -71,7 +71,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-04T16:12:29.06722+02:00"
+									"dateAndTimeString" : "2025-09-04T16:12:19.909023+02:00"
 								}
 							},
 							"uid" : {
@@ -81,7 +81,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Fix dependencies so this is added to GToolkit as a late dependency."
+							"string" : "Fix dependencies so this is a"
 						}
 					]
 				},
