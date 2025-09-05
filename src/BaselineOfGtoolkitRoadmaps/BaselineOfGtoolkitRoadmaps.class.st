@@ -23,6 +23,6 @@ BaselineOfGtoolkitRoadmaps class >> loadLepiter [
 BaselineOfGtoolkitRoadmaps >> baseline: spec [
 	<baseline>
 		^ spec for: #common do: [
-			spec package: 'GtoolkitRoadmaps'
+			spec package: 'Gtoolkit-Roadmaps'
 		]
 ]
