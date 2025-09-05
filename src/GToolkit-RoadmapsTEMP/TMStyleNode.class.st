@@ -5,7 +5,7 @@ Class {
 		'style',
 		'context'
 	],
-	#category : #'Gtoolkit-Roadmaps-Model'
+	#category : #'GToolkit-RoadmapsTEMP-Model'
 }
 
 { #category : #'instance creation' }

@@ -109,7 +109,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T12:26:34.230781+02:00"
+									"dateAndTimeString" : "2025-09-05T12:27:08.535523+02:00"
 								}
 							},
 							"uid" : {
@@ -119,7 +119,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Added GT-Roadmaps to GToolkit as a late dependency. "
+							"string" : "Added GT-Roadmaps to GToolkit as a late dependency: {{gtMethod:name=BaselineOfGToolkit>>#baseline:}}"
 						},
 						{
 							"__type" : "textSnippet",
@@ -262,6 +262,114 @@
 					"__type" : "textStyle"
 				},
 				"string" : "# Done"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-05T13:03:38.484955+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-05T13:03:38.484955+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "kM6vhm36DQCqSoqlBGq2Eg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-05T13:03:38.90903+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-05T13:03:47.76909+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "4xPnhm36DQCqaxLtBGq2Eg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Fix typo in package name."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-05T13:03:49.024527+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-05T13:05:24.192207+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "y2uBh236DQCq7QAqBGq2Eg=="
+				},
+				"code" : "(#'Gtoolkit-Roadmaps' asPackage classes select: [ :c | c name beginsWith: 'T' ])\r\tcollect: [ :each | \r\t\tSmalltalk compiler\r\t\t\tevaluate: (each definitionString\r\t\t\t\t\tcopyReplaceAll: 'package: ''Gtoolkit-Roadmaps'\r\t\t\t\t\twith: 'package: ''Gtoolkit-RoadmapsTEMP') ]"
 			}
 		]
 	},

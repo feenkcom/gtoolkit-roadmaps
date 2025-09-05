@@ -17,7 +17,7 @@ Class {
 		'fields2Topics',
 		'topic2Field'
 	],
-	#category : #'Gtoolkit-Roadmaps-Model'
+	#category : #'GToolkit-RoadmapsTEMP-Model'
 }
 
 { #category : #icons }

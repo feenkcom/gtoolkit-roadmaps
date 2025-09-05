@@ -1,6 +1,6 @@
 Extension { #name : #LeDatabase }
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-RoadmapsTEMP' }
 LeDatabase >> gtTopicMapMenuFor: anAction [
 	<gtAction>
 	^ anAction dropdown
@@ -17,12 +17,12 @@ LeDatabase >> gtTopicMapMenuFor: anAction [
 				yourself ]
 ]
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-RoadmapsTEMP' }
 LeDatabase >> hasTopicMap [
 	^ TMRegistry uniqueInstance hasTopicMapFor: self databaseName
 ]
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-RoadmapsTEMP' }
 LeDatabase >> topicMap [
 	self
 		assert: self hasTopicMap

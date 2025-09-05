@@ -1,11 +1,11 @@
 Extension { #name : #LePage }
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-RoadmapsTEMP' }
 LePage >> asPageNode [
 	^ TMPageNode for: self
 ]
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-RoadmapsTEMP' }
 LePage >> gtTopicMapActionFor: anAction [
 	"To do: 
 		- fix this to show the topic map for just this page
@@ -22,7 +22,7 @@ LePage >> gtTopicMapActionFor: anAction [
 			mouseCursor: BlCopyCursor new
 ]
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-RoadmapsTEMP' }
 LePage >> gtTopicMapMenuFor: anAction [
 	<gtAction>
 	^ anAction dropdown
@@ -38,19 +38,19 @@ LePage >> gtTopicMapMenuFor: anAction [
 				yourself ]
 ]
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-RoadmapsTEMP' }
 LePage >> hasTopicMap [
 	^ self database hasTopicMap
 ]
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-RoadmapsTEMP' }
 LePage >> pageString [
 	^ GtLlmLepiterContentExporter new
 		page: self;
 		export
 ]
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-RoadmapsTEMP' }
 LePage >> topicMap [
 	^ self database topicMap
 ]

@@ -1,7 +1,7 @@
 Class {
 	#name : #TMPageForTopicGroup,
 	#superclass : #TMPageGroup,
-	#category : #'Gtoolkit-Roadmaps-Model'
+	#category : #'GToolkit-RoadmapsTEMP-Model'
 }
 
 { #category : #initialization }
