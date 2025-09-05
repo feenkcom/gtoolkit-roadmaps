@@ -136,6 +136,16 @@ TopicMap >> gtPageGroupActionFor: anAction [
 ]
 
 { #category : #views }
+TopicMap >> gtRoadmapFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Roadmap';
+		priority: 35;
+		object: [ self databaseNode ];
+		view: #gtRoadmapFor:
+]
+
+{ #category : #views }
 TopicMap >> gtSummaryFor: aView [
 	<gtView>
 	^ aView forward

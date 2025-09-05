@@ -151,6 +151,40 @@
 					"__type" : "textStyle"
 				},
 				"string" : "The roadmaps are niot yet ready to use. To enable roadmap actions, evaluate this toggle:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-05T13:53:22.058413+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-05T13:53:22.517733+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "fVK2OG76DQCsiZhFA350UA=="
+				},
+				"code" : "TMRegistry uniqueInstance enableExtensions"
 			}
 		]
 	},
