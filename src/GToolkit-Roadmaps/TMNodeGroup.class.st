@@ -10,7 +10,7 @@ Class {
 	#instVars : [
 		'nodes'
 	],
-	#category : #'GToolkit-RoadmapsTEMP-Model'
+	#category : #'GToolkit-Roadmaps-Model'
 }
 
 { #category : #'instance creation' }

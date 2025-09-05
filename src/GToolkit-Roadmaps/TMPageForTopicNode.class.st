@@ -6,7 +6,7 @@ My = method is implemented so that Mondrian can correctly connect edges between 
 Class {
 	#name : #TMPageForTopicNode,
 	#superclass : #TMPageNode,
-	#category : #'GToolkit-RoadmapsTEMP-Model'
+	#category : #'GToolkit-Roadmaps-Model'
 }
 
 { #category : #comparing }

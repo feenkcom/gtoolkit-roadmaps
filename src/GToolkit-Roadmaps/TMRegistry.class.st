@@ -23,7 +23,7 @@ Class {
 	#classInstVars : [
 		'uniqueInstance'
 	],
-	#category : #'GToolkit-RoadmapsTEMP-Model'
+	#category : #'GToolkit-Roadmaps-Model'
 }
 
 { #category : #accessing }

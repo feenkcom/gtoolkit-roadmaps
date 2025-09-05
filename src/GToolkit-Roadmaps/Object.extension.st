@@ -1,16 +1,16 @@
 Extension { #name : #Object }
 
-{ #category : #'*GToolkit-RoadmapsTEMP' }
+{ #category : #'*GToolkit-Roadmaps' }
 Object >> isTMNodeGroup [
 	^ false
 ]
 
-{ #category : #'*GToolkit-RoadmapsTEMP' }
+{ #category : #'*GToolkit-Roadmaps' }
 Object >> isTMPageGroup [
 	^ false
 ]
 
-{ #category : #'*GToolkit-RoadmapsTEMP' }
+{ #category : #'*GToolkit-Roadmaps' }
 Object >> isTMTreeNode [
 	^ false
 ]

@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'topic'
 	],
-	#category : #'GToolkit-RoadmapsTEMP-Model'
+	#category : #'GToolkit-Roadmaps-Model'
 }
 
 { #category : #'instance creation' }

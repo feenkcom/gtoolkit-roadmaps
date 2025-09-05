@@ -1,7 +1,7 @@
 Class {
 	#name : #TMPageGroupExamples,
 	#superclass : #Object,
-	#category : #'GToolkit-RoadmapsTEMP-Examples'
+	#category : #'GToolkit-Roadmaps-Examples'
 }
 
 { #category : #examples }

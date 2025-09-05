@@ -7,7 +7,7 @@ The other examples test that the various derived maps and queries work as expect
 Class {
 	#name : #TopicMapExamples,
 	#superclass : #Object,
-	#category : #'GToolkit-RoadmapsTEMP-Examples'
+	#category : #'GToolkit-Roadmaps-Examples'
 }
 
 { #category : #example }

@@ -4,7 +4,7 @@ I am a common superclass for TopicMaps and TopicMap nodes to enable sharing of c
 Class {
 	#name : #TMAbstractEntity,
 	#superclass : #Object,
-	#category : #'GToolkit-RoadmapsTEMP-Model'
+	#category : #'GToolkit-Roadmaps-Model'
 }
 
 { #category : #searching }
