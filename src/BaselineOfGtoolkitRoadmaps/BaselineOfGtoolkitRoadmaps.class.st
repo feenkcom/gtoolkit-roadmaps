@@ -4,6 +4,12 @@ Class {
 	#category : #BaselineOfGtoolkitRoadmaps
 }
 
+{ #category : #baseline }
+BaselineOfGtoolkitRoadmaps class >> gtDependencyAnalysisPreloadedBaselines [
+	^ super gtDependencyAnalysisPreloadedBaselines
+		copyWith: BaselineOfGToolkit
+]
+
 { #category : #loading }
 BaselineOfGtoolkitRoadmaps class >> loadLepiter [
 	IceRepository registry  
