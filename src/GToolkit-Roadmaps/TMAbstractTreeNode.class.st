@@ -105,7 +105,8 @@ TMAbstractTreeNode >> gtRoadmapFor: aView [
 		title: 'Roadmap';
 		priority: 35;
 		object: [ self roadmap ];
-		view: #gtLiveFor:
+		view: #gtLiveFor:;
+		actionUpdateButton
 ]
 
 { #category : #actions }

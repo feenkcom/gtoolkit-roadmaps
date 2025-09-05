@@ -65,6 +65,11 @@ TMAbstractEntity >> pages [
 ]
 
 { #category : #querying }
+TMAbstractEntity >> stylesStandardOrder [
+	^ self topicMap stylesStandardOrder
+]
+
+{ #category : #querying }
 TMAbstractEntity >> topicMap [
 	self subclassResponsibility
 ]

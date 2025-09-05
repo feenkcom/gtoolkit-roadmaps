@@ -52,25 +52,34 @@ TMTopicNode >> relatedInfo [
 
 { #category : #mondrian }
 TMTopicNode >> roadmapChildren [
-	"For mondrian my children are pages, not styles."
+	"For mondrian my children are pages, not styles.
+	Sort them by the standard style order."
 
-	^ self pageGroup
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
+	^ self stylesStandardOrder
+		flatCollect: [ :aStyle | 
+			(self pageGroup select: [ :p | p style = aStyle ])
+				collect: [ :n | 
+					n
+						treeMapParent: self;
+						yourself ] ]
 ]
 
 { #category : #mondrian }
 TMTopicNode >> roadmapNodes [
 	"Want parents, parent peers, and own peers."
 
-	| root parent |
+	| parent |
+	parent := self fieldNodes first	.
+	
+	self treeMapParent: parent.
+	^ parent roadmapNodes , self roadmapChildren
+	
+	"| root parent |
 	root := self databaseNode.
 	parent := self databaseNode roadmapNodes
 			detect: [ :n | n isTMFieldNode and: [ n field = self field ] ].
 	self treeMapParent: parent.
-	^ root roadmapNodes , {self} , self roadmapChildren
+	^ root roadmapNodes , {self} , self roadmapChildren"
 ]
 
 { #category : #mondrian }
