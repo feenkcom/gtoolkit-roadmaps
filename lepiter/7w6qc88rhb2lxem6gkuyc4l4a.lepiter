@@ -60,6 +60,155 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-05T17:51:17.927499+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-05T17:51:33.71617+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "18yei3H6DQCw6IUbAwXBUg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Fix the page style colors"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-05T17:51:34.105683+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-05T17:51:49.372993+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "sKiVjHH6DQCxew72AwXBUg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Fix the tooltips — missing style for pages ;  missing path for other nodes"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-05T17:52:40.023037+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-05T17:52:53.981778+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "oHmDkHH6DQCy9OHVAwXBUg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Implement roadmapNodes for pages and queries"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-05T14:04:24.958949+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-05T17:51:21.261276+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "FWI5YG76DQC1xupnAQcMLQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# To do:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
 									"dateAndTimeString" : "2025-09-04T10:29:45.282244+02:00"
 								}
 							},
@@ -145,7 +294,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T13:57:31.715215+02:00"
+									"dateAndTimeString" : "2025-09-05T16:33:03.169943+02:00"
 								}
 							},
 							"uid" : {
@@ -155,7 +304,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "From the prototype we extract a method: {{gtMethod:name=TMAbstractTreeNode>>#mondrianRoadmapFor:}} "
+							"string" : "From the prototype we extract a method: {{gtMethod:name=TMAbstractTreeNode>>#roadmapFor:}} "
 						},
 						{
 							"__type" : "textSnippet",
@@ -483,43 +632,6 @@
 								"__type" : "textStyle"
 							},
 							"string" : ""
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T14:04:24.958949+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T14:04:24.958949+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "FWI5YG76DQC1xupnAQcMLQ=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : ""
 						}
 					]
 				},
@@ -584,14 +696,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-04T13:03:04.330008+02:00"
+									"dateAndTimeString" : "2025-09-05T16:41:36.439032+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "CrpSUlf6DQCKuHtdDi5XhQ=="
 							},
-							"code" : "root := LeDatabase gtBook topicMap databaseNode children first children first.\rtmNodes := root withAllMondrianTreeChildren.\rmondrian := GtMondrian new.\r\rmondrian nodes\r\tshape: [ :aTmNode | aTmNode topicNodeElement ];\r\twith: tmNodes.\rmondrian edges connectFrom: #treeMapParent.\r\rmondrian layout\r\tcustom: (GtGradHorizontalTreeLayout new\r\t\t\tlevelDistance: 50;\r\t\t\tnodeDistance: 20).\r\rmondrian"
+							"code" : "root := LeDatabase gtBook topicMap databaseNode children first children first.\rtmNodes := root withAllRoadmapTreeChildren.\rmondrian := GtMondrian new.\r\rmondrian nodes\r\tshape: [ :aTmNode | aTmNode roadmapNodeElement ];\r\twith: tmNodes.\rmondrian edges connectFrom: #treeMapParent.\r\rmondrian layout\r\tcustom: (GtGradHorizontalTreeLayout new\r\t\t\tlevelDistance: 50;\r\t\t\tnodeDistance: 20).\r\rmondrian"
 						}
 					]
 				},

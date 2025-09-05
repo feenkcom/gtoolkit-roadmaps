@@ -73,41 +73,6 @@ TMPageNode >> gtTreeMapFor: aView [
 	^ aView empty
 ]
 
-{ #category : #mondrian }
-TMPageNode >> mondrianChildren [
-	"Stop the recursion here."
-	^ OrderedCollection new
-]
-
-{ #category : #mondrian }
-TMPageNode >> mondrianNodeElement [
-	^ super mondrianNodeElement
-		geometry: BlCircleGeometry new;
-		yourself
-]
-
-{ #category : #mondrian }
-TMPageNode >> mondrianRoadMapNodes [
-	^ self subclassResponsibility
-]
-
-{ #category : #mondrian }
-TMPageNode >> mondrianTooltip [
-	^ [ BrEditor new
-		aptitude: BrGlamorousRegularEditorAptitude new;
-		padding: (BlInsets all: 2);
-		text: self mondrianTooltipLabel;
-		yourself ] asStencil
-]
-
-{ #category : #mondrian }
-TMPageNode >> mondrianTooltipLabel [
-	"NB: This will show only *one* of the paths!
-	If there are multiple topics, only the last one will be shown."
-
-	^ self treeMapPath
-]
-
 { #category : #accessing }
 TMPageNode >> name [
 	^ 'Page: ', self page title
@@ -136,6 +101,32 @@ TMPageNode >> relatedInfo [
 { #category : #accessing }
 TMPageNode >> relatedTitle [
 	^ 'Style'
+]
+
+{ #category : #mondrian }
+TMPageNode >> roadmapChildren [
+	"Stop the recursion here."
+	^ OrderedCollection new
+]
+
+{ #category : #mondrian }
+TMPageNode >> roadmapNodes [
+	^ self subclassResponsibility
+]
+
+{ #category : #mondrian }
+TMPageNode >> roadmapSimpleNodeElement [
+	^ super roadmapSimpleNodeElement
+		geometry: BlCircleGeometry new;
+		yourself
+]
+
+{ #category : #mondrian }
+TMPageNode >> roadmapTooltipLabel [
+	"NB: This will show only *one* of the paths!
+	If there are multiple topics, only the last one will be shown."
+
+	^ self treeMapPath
 ]
 
 { #category : #accessing }

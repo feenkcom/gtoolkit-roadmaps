@@ -55,11 +55,6 @@ TMNodeGroup >> items [
 	^ nodes
 ]
 
-{ #category : #mondrian }
-TMNodeGroup >> mondrianRoadMapNodes [
-	self subclassResponsibility
-]
-
 { #category : #accessing }
 TMNodeGroup >> name [
 	^ 'Node collection'
@@ -88,6 +83,11 @@ super printOn: aStream.
 		print: self pages size;
 		nextPutAll: ' nodes';
 		nextPut: $)
+]
+
+{ #category : #mondrian }
+TMNodeGroup >> roadmapNodes [
+	self subclassResponsibility
 ]
 
 { #category : #navigation }

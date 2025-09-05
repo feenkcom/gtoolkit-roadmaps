@@ -51,11 +51,6 @@ TMStyleNode >> fields [
 	^ (self topicNodes nodes flatCollect: #fields) copyWithoutDuplicates
 ]
 
-{ #category : #mondrian }
-TMStyleNode >> mondrianRoadMapNodes [
-	^ self subclassResponsibility
-]
-
 { #category : #accessing }
 TMStyleNode >> name [
 	^ 'Style: ' , self style
@@ -67,6 +62,11 @@ TMStyleNode >> pages [
 
 	^ self context pages
 		select: [ :aPage | (self topicMap style4Page: aPage) = self style ]
+]
+
+{ #category : #mondrian }
+TMStyleNode >> roadmapNodes [
+	^ self subclassResponsibility
 ]
 
 { #category : #accessing }

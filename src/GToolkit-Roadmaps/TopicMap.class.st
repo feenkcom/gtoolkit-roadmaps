@@ -136,6 +136,16 @@ TopicMap >> gtPageGroupActionFor: anAction [
 ]
 
 { #category : #views }
+TopicMap >> gtRoadmapFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Roadmap';
+		priority: 35;
+		object: [ self databaseNode ];
+		view: #gtRoadmapFor:
+]
+
+{ #category : #views }
 TopicMap >> gtSummaryFor: aView [
 	<gtView>
 	^ aView forward
@@ -268,7 +278,7 @@ TopicMap >> style4Page: aPage [
 
 { #category : #accessing }
 TopicMap >> styles [
-	^ self json at: 'styles'
+	^ self stylesStandardOrder
 ]
 
 { #category : #querying }
@@ -279,6 +289,14 @@ TopicMap >> styles4Topic: aTopic [
 		select: [ :aStyle | 
 			((self topic2Pages at: aTopic) collect: [ :aPage | self style4Page: aPage ])
 				includes: aStyle ]
+]
+
+{ #category : #accessing }
+TopicMap >> stylesStandardOrder [
+	"Can be used by nodes to sort styles and pages into a standard order.
+	Access: self topicMap stylesStandardOrder"
+
+	^ self json at: 'styles'
 ]
 
 { #category : #mapping }

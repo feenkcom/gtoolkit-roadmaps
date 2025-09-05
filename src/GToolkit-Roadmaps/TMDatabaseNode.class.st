@@ -51,16 +51,6 @@ TMDatabaseNode >> gtDatabaseActionFor: anAction [
 		action: [ :aButton | aButton phlow spawnObject: self database ]
 ]
 
-{ #category : #mondrian }
-TMDatabaseNode >> mondrianNodeSize [
-	^ 20 @ 20
-]
-
-{ #category : #mondrian }
-TMDatabaseNode >> mondrianRoadMapNodes [
-	^ {self}, self mondrianChildren
-]
-
 { #category : #accessing }
 TMDatabaseNode >> name [
 	^ self database databaseName
@@ -69,6 +59,16 @@ TMDatabaseNode >> name [
 { #category : #navigation }
 TMDatabaseNode >> pages [
 	^ self database pages
+]
+
+{ #category : #mondrian }
+TMDatabaseNode >> roadmapNodeSize [
+	^ 20 @ 20
+]
+
+{ #category : #mondrian }
+TMDatabaseNode >> roadmapNodes [
+	^ {self}, self roadmapChildren
 ]
 
 { #category : #navigation }
