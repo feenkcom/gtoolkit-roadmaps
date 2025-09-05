@@ -35,40 +35,6 @@ TMTopicNode >> fields [
 	^ {self field}
 ]
 
-{ #category : #mondrian }
-TMTopicNode >> mondrianChildren [
-	"For mondrian my children are pages, not styles."
-
-	^ self pageGroup
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
-]
-
-{ #category : #mondrian }
-TMTopicNode >> mondrianRoadMapNodes [
-	"Want parents, parent peers, and own peers."
-
-	| root parent |
-	root := self databaseNode.
-	parent := self databaseNode mondrianRoadMapNodes
-			detect: [ :n | n isTMFieldNode and: [ n field = self field ] ].
-	self treeMapParent: parent.
-	^ root mondrianRoadMapNodes , {self} , self mondrianChildren
-]
-
-{ #category : #mondrian }
-TMTopicNode >> mondrianTreeChildren [
-	"For mondrian my children are pages, not styles."
-
-	^ (TMPageForTopicGroup for: self pages in: self topicMap)
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
-]
-
 { #category : #accessing }
 TMTopicNode >> name [
 	^ 'Topic: ' , self topic
@@ -82,6 +48,40 @@ TMTopicNode >> pages [
 { #category : #accessing }
 TMTopicNode >> relatedInfo [
 	^ 'Field: ' , self field
+]
+
+{ #category : #mondrian }
+TMTopicNode >> roadmapChildren [
+	"For mondrian my children are pages, not styles."
+
+	^ self pageGroup
+		collect: [ :n | 
+			n
+				treeMapParent: self;
+				yourself ]
+]
+
+{ #category : #mondrian }
+TMTopicNode >> roadmapNodes [
+	"Want parents, parent peers, and own peers."
+
+	| root parent |
+	root := self databaseNode.
+	parent := self databaseNode roadmapNodes
+			detect: [ :n | n isTMFieldNode and: [ n field = self field ] ].
+	self treeMapParent: parent.
+	^ root roadmapNodes , {self} , self roadmapChildren
+]
+
+{ #category : #mondrian }
+TMTopicNode >> roadmapTreeChildren [
+	"For mondrian my children are pages, not styles."
+
+	^ (TMPageForTopicGroup for: self pages in: self topicMap)
+		collect: [ :n | 
+			n
+				treeMapParent: self;
+				yourself ]
 ]
 
 { #category : #navigation }

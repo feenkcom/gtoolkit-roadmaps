@@ -145,7 +145,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T13:57:31.715215+02:00"
+									"dateAndTimeString" : "2025-09-05T16:33:03.169943+02:00"
 								}
 							},
 							"uid" : {
@@ -155,7 +155,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "From the prototype we extract a method: {{gtMethod:name=TMAbstractTreeNode>>#mondrianRoadmapFor:}} "
+							"string" : "From the prototype we extract a method: {{gtMethod:name=TMAbstractTreeNode>>#roadmapFor:}} "
 						},
 						{
 							"__type" : "textSnippet",
@@ -187,14 +187,14 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-05T13:59:42.930825+02:00"
+												"dateAndTimeString" : "2025-09-05T14:19:38.599758+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
 											"uidString" : "5tRQTm76DQC0zXnfAQcMLQ=="
 										},
-										"code" : "root := LeDatabase gtBook topicMap databaseNode.\rroot mondrianRoadMap"
+										"code" : "LeDatabase gtBook topicMap databaseNode"
 									}
 								]
 							},
@@ -296,14 +296,14 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-05T14:01:54.367867+02:00"
+												"dateAndTimeString" : "2025-09-05T14:19:44.305874+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
 											"uidString" : "CCLLVm76DQC1aD7wAQcMLQ=="
 										},
-										"code" : "root := LeDatabase gtBook topicMap databaseNode children first.\rroot mondrianRoadMap"
+										"code" : "LeDatabase gtBook topicMap databaseNode children first"
 									}
 								]
 							},
@@ -405,14 +405,14 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-05T14:04:42.766725+02:00"
+												"dateAndTimeString" : "2025-09-05T14:19:50.852009+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
 											"uidString" : "6MK/YG76DQC16D54AQcMLQ=="
 										},
-										"code" : "root := LeDatabase gtBook topicMap databaseNode children first children first.\rroot mondrianRoadMap"
+										"code" : "LeDatabase gtBook topicMap databaseNode children first children first"
 									}
 								]
 							},
@@ -584,14 +584,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-04T13:03:04.330008+02:00"
+									"dateAndTimeString" : "2025-09-05T16:36:20.411437+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "CrpSUlf6DQCKuHtdDi5XhQ=="
 							},
-							"code" : "root := LeDatabase gtBook topicMap databaseNode children first children first.\rtmNodes := root withAllMondrianTreeChildren.\rmondrian := GtMondrian new.\r\rmondrian nodes\r\tshape: [ :aTmNode | aTmNode topicNodeElement ];\r\twith: tmNodes.\rmondrian edges connectFrom: #treeMapParent.\r\rmondrian layout\r\tcustom: (GtGradHorizontalTreeLayout new\r\t\t\tlevelDistance: 50;\r\t\t\tnodeDistance: 20).\r\rmondrian"
+							"code" : "root := LeDatabase gtBook topicMap databaseNode children first children first.\rtmNodes := root withAllRoadmapTreeChildren.\rmondrian := GtMondrian new.\r\rmondrian nodes\r\tshape: [ :aTmNode | aTmNode topicNodeElement ];\r\twith: tmNodes.\rmondrian edges connectFrom: #treeMapParent.\r\rmondrian layout\r\tcustom: (GtGradHorizontalTreeLayout new\r\t\t\tlevelDistance: 50;\r\t\t\tnodeDistance: 20).\r\rmondrian"
 						}
 					]
 				},

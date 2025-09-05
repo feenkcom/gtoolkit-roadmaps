@@ -27,28 +27,28 @@ TMAbstractTreeNode >> = other [
 	^ self name = other name
 ]
 
-{ #category : #mondrian }
-TMAbstractTreeNode >> allMondrianGraphChildren [
+{ #category : #roadmap }
+TMAbstractTreeNode >> allRoadmapGraphChildren [
 	"In this version we filter out duplicate copies of pages, so we get a graph instead of a tree.
 	NB: each page will only show a single parent in its tooltip, namely the last topic visited."
 
 	| allChildren |
-	allChildren := OrderedCollection withAll: self mondrianChildren.
-	self mondrianChildren
-		do: [ :each | allChildren addAll: each allMondrianGraphChildren ].
+	allChildren := OrderedCollection withAll: self roadmapChildren.
+	self roadmapChildren
+		do: [ :each | allChildren addAll: each allRoadmapGraphChildren ].
 	^ allChildren copyWithoutDuplicates
 ]
 
-{ #category : #mondrian }
-TMAbstractTreeNode >> allMondrianTreeChildren [
+{ #category : #roadmap }
+TMAbstractTreeNode >> allRoadmapTreeChildren [
 	"Here we keep multiple copies of pages that have multiple topics, so the result is a tree,
 	however we must use TMPageForTopicNode instead of TMPageNode for pages so Mondrian is not confused
 	by multiple nodes for the same pages."
 
 	| allChildren |
-	allChildren := OrderedCollection withAll: self mondrianTreeChildren.
-	self mondrianTreeChildren
-		do: [ :each | allChildren addAll: each allMondrianTreeChildren ].
+	allChildren := OrderedCollection withAll: self roadmapTreeChildren.
+	self roadmapTreeChildren
+		do: [ :each | allChildren addAll: each allRoadmapTreeChildren ].
 	^ allChildren
 ]
 
@@ -104,7 +104,7 @@ TMAbstractTreeNode >> gtRoadmapFor: aView [
 	^ aView forward
 		title: 'Roadmap';
 		priority: 35;
-		object: [ self mondrianRoadMap ];
+		object: [ self roadmap ];
 		view: #gtLiveFor:
 ]
 
@@ -195,113 +195,45 @@ TMAbstractTreeNode >> isTMTreeNode [
 	^ true
 ]
 
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianChildren [
-	"For Mondrian, we take the following path:
-		database -> field -> topic -> page (colored by style)
-	By default, each page may appear multiple times, once for each topic.
-	Multiples copies are filtered by allMondrianGraphChildren."
+{ #category : #roadmap }
+TMAbstractTreeNode >> mondrianGraph [
+	"Experimental -- show a graph view starting from this node.
+	NB: slow from the database node."
 
-	^ self children
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
-]
+	| nodes mondrian |
+	nodes := self withAllRoadmapGraphChildren.
 
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianNodeBorderColor [
-	^ Color black
-]
-
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianNodeColor [
-	"Can override the default in subclasses if needed."
-
-	^ self defaultNodeColor
-]
-
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianNodeElement [
-	^ BlElement new
-		size: self mondrianNodeSize;
-		border: self mondrianNodeBorderColor;
-		background: self mondrianNodeColor;
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self mondrianTooltip)
-]
-
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianNodeSize [
-	^ 10 @ 10
-]
-
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianRoadMap [
-	^ self mondrianRoadMapFor: self mondrianRoadMapNodes
-]
-
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianRoadMapFor: aTMNodeCollection [
-	"NB: The input nodes must have treeMapParent set."
-
-	| mondrian |
-	mondrian := GtMondrian new.
-	mondrian nodes
-		shape: [ :aTmNode | aTmNode topicNodeElement ];
-		with: aTMNodeCollection.
-	mondrian edges connectFrom: #treeMapParent.
-	mondrian layout
-		custom: (GtGradHorizontalTreeLayout new
-				levelDistance: 50;
-				nodeDistance: 20).
-	^ mondrian
-]
-
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianRoadMapNodes [
-	^ self subclassResponsibility
-]
-
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianRoadmapFor: aTMNode [
-	|  tmNodes mondrian |
-	tmNodes := aTMNode roadmapNodes.
 	mondrian := GtMondrian new.
 
 	mondrian nodes
-		shape: [ :aTmNode | aTmNode topicNodeElement ];
-		with: tmNodes.
-	mondrian edges connectFrom: #treeMapParent.
-
+		shape: [ :node | node roadmapSimpleNodeElement ];
+		with: nodes.
+	mondrian edges connectToAll: #roadmapChildren.
 	mondrian layout
-		custom: (GtGradHorizontalTreeLayout new
-				levelDistance: 50;
-				nodeDistance: 20).
+		custom: (GtGraphForceBasedLayout new
+				charge: -200;
+				length: 30).
 	^ mondrian
 ]
 
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianTooltip [
-	^ [ BrLabel new
-		aptitude: BrGlamorousLabelAptitude new glamorousRegularFontAndSize;
-		padding: (BlInsets all: 2);
-		text: self mondrianTooltipLabel;
-		alignCenter ] asStencil
-]
+{ #category : #roadmap }
+TMAbstractTreeNode >> mondrianTree [
+	"Experimental -- show a tree view starting from this node.
+	NB: slow from the database node."
 
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianTooltipLabel [
-	^ self name
-]
+	| nodes mondrian |
+	nodes := self withAllRoadmapTreeChildren.
+	mondrian := GtMondrian new.
 
-{ #category : #mondrian }
-TMAbstractTreeNode >> mondrianTreeChildren [
-	"For Mondrian, we take the following path:
-		database -> field -> topic -> page (colored by style)
-	By default, each page may appear multiple times, once for each topic.
-	NB: Multiples copies are filtered by allMondrianGraphChildren."
-
-	^ self mondrianChildren
+	mondrian nodes
+		shape: [ :node | node roadmapSimpleNodeElement ];
+		with: nodes.
+	mondrian edges connectTo: #treeMapParent.
+	mondrian layout
+		custom: (GtGraphForceBasedLayout new
+				charge: -100;
+				length: 20).
+	^ mondrian
 ]
 
 { #category : #accessing }
@@ -328,6 +260,112 @@ TMAbstractTreeNode >> relatedInfo [
 	"Related information to display."
 
 	^ '-'
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmap [
+	^ self roadmapFor: self roadmapNodes
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapChildren [
+	"For roadmaps, we take the following path:
+		database -> field -> topic -> page (colored by style)
+	By default, each page may appear multiple times, once for each topic.
+	Multiples copies are filtered by allMondrianGraphChildren."
+
+	^ self children
+		collect: [ :n | 
+			n
+				treeMapParent: self;
+				yourself ]
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapFor: aTMNodeCollection [
+	"NB: The input nodes must have treeMapParent set."
+
+	| mondrian |
+	mondrian := GtMondrian new.
+	mondrian nodes
+		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
+		with: aTMNodeCollection.
+	mondrian edges connectFrom: #treeMapParent.
+	mondrian layout
+		custom: (GtGradHorizontalTreeLayout new
+				levelDistance: 50;
+				nodeDistance: 20).
+	^ mondrian
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapNodeBorderColor [
+	^ Color black
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapNodeColor [
+	"Can override the default in subclasses if needed."
+
+	^ self defaultNodeColor
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapNodeElement [
+	"A mindmap-like element containing the node's name."
+
+	^ BlTextElement new
+		text: self name asRopedText;
+		border: self roadmapNodeBorderColor;
+		background: self roadmapNodeColor;
+		padding: (BlInsets all: 5);
+		geometry: (BlRoundedRectangleGeometry cornerRadius: 8);
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapNodeSize [
+	^ 10 @ 10
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapNodes [
+	^ self subclassResponsibility
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapSimpleNodeElement [
+	"Only a small circle for a simple graph view."
+
+	^ BlElement new
+		size: self roadmapNodeSize;
+		border: self roadmapNodeBorderColor;
+		background: self roadmapNodeColor;
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapTooltip [
+	^ [ BrEditor new
+		aptitude: BrGlamorousRegularEditorAptitude new;
+		padding: (BlInsets all: 2);
+		text: self roadmapTooltipLabel;
+		yourself ] asStencil
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapTooltipLabel [
+	^ self name
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapTreeChildren [
+	"For Mondrian, we take the following path:
+		database -> field -> topic -> page (colored by style)
+	By default, each page may appear multiple times, once for each topic.
+	NB: Multiples copies are filtered by allMondrianGraphChildren."
+
+	^ self roadmapChildren
 ]
 
 { #category : #utility }
@@ -395,17 +433,6 @@ TMAbstractTreeNode >> topicMap [
 { #category : #navigation }
 TMAbstractTreeNode >> topicMap: anObject [
 	topicMap := anObject
-]
-
-{ #category : #mondrian }
-TMAbstractTreeNode >> topicNodeElement [
-	^ BlTextElement new
-		text: self name asRopedText;
-		border: self mondrianNodeBorderColor;
-		background: self mondrianNodeColor;
-		padding: (BlInsets all: 5);
-		geometry: (BlRoundedRectangleGeometry cornerRadius: 8);
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self mondrianTooltip)
 ]
 
 { #category : #navigation }
@@ -508,12 +535,12 @@ TMAbstractTreeNode >> treeMapRoots [
 	^ {self}
 ]
 
-{ #category : #mondrian }
-TMAbstractTreeNode >> withAllMondrianGraphChildren [
-	^ {self} , self allMondrianGraphChildren
+{ #category : #roadmap }
+TMAbstractTreeNode >> withAllRoadmapGraphChildren [
+	^ {self} , self allRoadmapGraphChildren
 ]
 
-{ #category : #mondrian }
-TMAbstractTreeNode >> withAllMondrianTreeChildren [
-	^ {self} , self allMondrianTreeChildren
+{ #category : #roadmap }
+TMAbstractTreeNode >> withAllRoadmapTreeChildren [
+	^ {self} , self allRoadmapTreeChildren
 ]

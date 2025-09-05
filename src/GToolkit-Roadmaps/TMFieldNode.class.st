@@ -51,14 +51,6 @@ TMFieldNode >> isTMTreeNode [
 	^ true
 ]
 
-{ #category : #mondrian }
-TMFieldNode >> mondrianRoadMapNodes [
-	| root |
-	root := self databaseNode.
-	self treeMapParent: root.
-	^ root mondrianRoadMapNodes , self mondrianChildren
-]
-
 { #category : #accessing }
 TMFieldNode >> name [
 	^ 'Field: ' , self field
@@ -67,6 +59,14 @@ TMFieldNode >> name [
 { #category : #navigation }
 TMFieldNode >> pages [
 	^ (self children flatCollect: #pages) copyWithoutDuplicates
+]
+
+{ #category : #mondrian }
+TMFieldNode >> roadmapNodes [
+	| root |
+	root := self databaseNode.
+	self treeMapParent: root.
+	^ root roadmapNodes , self roadmapChildren
 ]
 
 { #category : #navigation }
