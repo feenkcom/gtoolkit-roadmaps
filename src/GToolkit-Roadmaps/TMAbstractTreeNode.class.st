@@ -98,6 +98,16 @@ TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 			mouseCursor: BlCopyCursor new
 ]
 
+{ #category : #views }
+TMAbstractTreeNode >> gtRoadmapFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Roadmap';
+		priority: 35;
+		object: [ self mondrianRoadMap ];
+		view: #gtLiveFor:
+]
+
 { #category : #actions }
 TMAbstractTreeNode >> gtSpawnTopicMapActionFor: anAction [
 	<gtAction>
@@ -250,6 +260,24 @@ TMAbstractTreeNode >> mondrianRoadMapFor: aTMNodeCollection [
 { #category : #mondrian }
 TMAbstractTreeNode >> mondrianRoadMapNodes [
 	^ self subclassResponsibility
+]
+
+{ #category : #mondrian }
+TMAbstractTreeNode >> mondrianRoadmapFor: aTMNode [
+	|  tmNodes mondrian |
+	tmNodes := aTMNode roadmapNodes.
+	mondrian := GtMondrian new.
+
+	mondrian nodes
+		shape: [ :aTmNode | aTmNode topicNodeElement ];
+		with: tmNodes.
+	mondrian edges connectFrom: #treeMapParent.
+
+	mondrian layout
+		custom: (GtGradHorizontalTreeLayout new
+				levelDistance: 50;
+				nodeDistance: 20).
+	^ mondrian
 ]
 
 { #category : #mondrian }

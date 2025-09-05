@@ -41,9 +41,22 @@ TMFieldNode >> fields [
 	^ {field}
 ]
 
+{ #category : #testing }
+TMFieldNode >> isTMFieldNode [
+	^ true
+]
+
+{ #category : #testing }
+TMFieldNode >> isTMTreeNode [
+	^ true
+]
+
 { #category : #mondrian }
 TMFieldNode >> mondrianRoadMapNodes [
-	^ self subclassResponsibility
+	| root |
+	root := self databaseNode.
+	self treeMapParent: root.
+	^ root mondrianRoadMapNodes , self mondrianChildren
 ]
 
 { #category : #accessing }

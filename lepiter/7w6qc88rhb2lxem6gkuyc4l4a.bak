@@ -187,14 +187,14 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-05T14:19:38.599758+02:00"
+												"dateAndTimeString" : "2025-09-05T13:59:42.930825+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
 											"uidString" : "5tRQTm76DQC0zXnfAQcMLQ=="
 										},
-										"code" : "LeDatabase gtBook topicMap databaseNode"
+										"code" : "root := LeDatabase gtBook topicMap databaseNode.\rroot mondrianRoadMap"
 									}
 								]
 							},
@@ -296,14 +296,14 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-05T14:19:44.305874+02:00"
+												"dateAndTimeString" : "2025-09-05T14:01:54.367867+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
 											"uidString" : "CCLLVm76DQC1aD7wAQcMLQ=="
 										},
-										"code" : "LeDatabase gtBook topicMap databaseNode children first"
+										"code" : "root := LeDatabase gtBook topicMap databaseNode children first.\rroot mondrianRoadMap"
 									}
 								]
 							},
@@ -405,14 +405,14 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-05T14:19:50.852009+02:00"
+												"dateAndTimeString" : "2025-09-05T14:04:42.766725+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
 											"uidString" : "6MK/YG76DQC16D54AQcMLQ=="
 										},
-										"code" : "LeDatabase gtBook topicMap databaseNode children first children first"
+										"code" : "root := LeDatabase gtBook topicMap databaseNode children first children first.\rroot mondrianRoadMap"
 									}
 								]
 							},

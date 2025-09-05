@@ -48,7 +48,14 @@ TMTopicNode >> mondrianChildren [
 
 { #category : #mondrian }
 TMTopicNode >> mondrianRoadMapNodes [
-	^ self subclassResponsibility
+	"Want parents, parent peers, and own peers."
+
+	| root parent |
+	root := self databaseNode.
+	parent := self databaseNode mondrianRoadMapNodes
+			detect: [ :n | n isTMFieldNode and: [ n field = self field ] ].
+	self treeMapParent: parent.
+	^ root mondrianRoadMapNodes , {self} , self mondrianChildren
 ]
 
 { #category : #mondrian }

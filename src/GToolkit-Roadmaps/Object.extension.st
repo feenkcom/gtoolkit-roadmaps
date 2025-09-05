@@ -1,6 +1,11 @@
 Extension { #name : #Object }
 
 { #category : #'*GToolkit-Roadmaps' }
+Object >> isTMFieldNode [
+	^ false
+]
+
+{ #category : #'*GToolkit-Roadmaps' }
 Object >> isTMNodeGroup [
 	^ false
 ]

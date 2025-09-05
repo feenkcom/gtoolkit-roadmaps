@@ -58,7 +58,7 @@ TMDatabaseNode >> mondrianNodeSize [
 
 { #category : #mondrian }
 TMDatabaseNode >> mondrianRoadMapNodes [
-	^ self subclassResponsibility
+	^ {self}, self mondrianChildren
 ]
 
 { #category : #accessing }
