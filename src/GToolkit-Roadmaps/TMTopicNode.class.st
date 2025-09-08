@@ -56,46 +56,13 @@ TMTopicNode >> relatedInfo [
 ]
 
 { #category : #mondrian }
-TMTopicNode >> roadmapChildren [
-	"For mondrian my children are pages, not styles.
-	Sort them by the standard style order."
-
-	^ self stylesStandardOrder
-		flatCollect: [ :aStyle | 
-			(self pageGroup select: [ :p | p style = aStyle ])
-				collect: [ :n | 
-					n
-						treeMapParent: self;
-						yourself ] ]
-]
-
-{ #category : #mondrian }
 TMTopicNode >> roadmapNodes [
 	"Want parents, parent peers, and own peers."
 
 	| parent |
-	parent := self fieldNodes first	.
-	
-	self treeMapParent: parent.
-	^ parent roadmapNodes , self roadmapChildren
-	
-	"| root parent |
-	root := self databaseNode.
-	parent := self databaseNode roadmapNodes
-			detect: [ :n | n isTMFieldNode and: [ n field = self field ] ].
-	self treeMapParent: parent.
-	^ root roadmapNodes , {self} , self roadmapChildren"
-]
-
-{ #category : #mondrian }
-TMTopicNode >> roadmapTreeChildren [
-	"For mondrian my children are pages, not styles."
-
-	^ (TMPageForTopicGroup for: self pages in: self topicMap)
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
+	parent := self fieldNodes first.
+	^ parent roadmapNodes
+		, (self children sortedByStyles collect: [ :pn | pn viaTopic: self ])
 ]
 
 { #category : #navigation }
@@ -131,9 +98,7 @@ TMTopicNode >> treeChildren [
 
 { #category : #treemaps }
 TMTopicNode >> treeMapChildren [
+	"For a treeMap we group the pages by styles, so we need an intermediate node."
+
 	^ self styleNodes
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
 ]

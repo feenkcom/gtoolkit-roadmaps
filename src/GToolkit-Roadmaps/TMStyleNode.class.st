@@ -73,7 +73,7 @@ TMStyleNode >> parents [
 
 { #category : #mondrian }
 TMStyleNode >> roadmapNodes [
-	^ self subclassResponsibility
+	^ self shouldBeImplemented
 ]
 
 { #category : #accessing }
@@ -98,14 +98,12 @@ TMStyleNode >> topics [
 
 { #category : #treemaps }
 TMStyleNode >> treeMapChildren [
-	^ {}
+	"My children are leaves."
+
+	^ self emptyNodes
 ]
 
 { #category : #treemaps }
 TMStyleNode >> treeMapLeaves [
 	^ self pageGroup
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
 ]

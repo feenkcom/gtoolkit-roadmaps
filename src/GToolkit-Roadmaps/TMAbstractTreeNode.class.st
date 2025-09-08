@@ -7,8 +7,7 @@ Class {
 	#name : #TMAbstractTreeNode,
 	#superclass : #TMAbstractEntity,
 	#instVars : [
-		'topicMap',
-		'treeMapParent'
+		'topicMap'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -33,31 +32,6 @@ TMAbstractTreeNode >> allChildren [
 	allChildren := OrderedCollection withAll: self children.
 	self children do: [ :each | allChildren addAll: each allChildren ].
 	^ allChildren copyWithoutDuplicates
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> allRoadmapGraphChildren [
-	"In this version we filter out duplicate copies of pages, so we get a graph instead of a tree.
-	NB: each page will only show a single parent in its tooltip, namely the last topic visited."
-
-	| allChildren |
-	allChildren := OrderedCollection withAll: self roadmapChildren.
-	self roadmapChildren
-		do: [ :each | allChildren addAll: each allRoadmapGraphChildren ].
-	^ allChildren copyWithoutDuplicates
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> allRoadmapTreeChildren [
-	"Here we keep multiple copies of pages that have multiple topics, so the result is a tree,
-	however we must use TMPageForTopicNode instead of TMPageNode for pages so Mondrian is not confused
-	by multiple nodes for the same pages."
-
-	| allChildren |
-	allChildren := OrderedCollection withAll: self roadmapTreeChildren.
-	self roadmapTreeChildren
-		do: [ :each | allChildren addAll: each allRoadmapTreeChildren ].
-	^ allChildren
 ]
 
 { #category : #roadmap }
@@ -281,20 +255,6 @@ TMAbstractTreeNode >> roadmap [
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> roadmapChildren [
-	"For roadmaps, we take the following path:
-		database -> field -> topic -> page (colored by style)
-	By default, each page may appear multiple times, once for each topic.
-	Multiples copies are filtered by allMondrianGraphChildren."
-
-	^ self children
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
-]
-
-{ #category : #roadmap }
 TMAbstractTreeNode >> roadmapFor: aTMNodeCollection [
 	"NB: The input nodes must have treeMapParent set."
 
@@ -344,6 +304,8 @@ TMAbstractTreeNode >> roadmapNodeSize [
 
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmapNodes [
+	"Should return a kind of TMNodeGroup"
+
 	^ self subclassResponsibility
 ]
 
@@ -370,16 +332,6 @@ TMAbstractTreeNode >> roadmapTooltip [
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmapTooltipLabel [
 	^ self name
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> roadmapTreeChildren [
-	"For Mondrian, we take the following path:
-		database -> field -> topic -> page (colored by style)
-	By default, each page may appear multiple times, once for each topic.
-	NB: Multiples copies are filtered by allMondrianGraphChildren."
-
-	^ self roadmapChildren
 ]
 
 { #category : #utility }
@@ -497,11 +449,8 @@ TMAbstractTreeNode >> treeMap [
 
 { #category : #treemaps }
 TMAbstractTreeNode >> treeMapChildren [
+	"NB: The children hierarchy for treemaps distinguishes leaves from recursive nodes."
 	^ self children
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
 ]
 
 { #category : #treemaps }
@@ -521,18 +470,6 @@ TMAbstractTreeNode >> treeMapNodeLabel [
 	^ self name
 ]
 
-{ #category : #treemaps }
-TMAbstractTreeNode >> treeMapParent [
-	^ treeMapParent
-]
-
-{ #category : #treemaps }
-TMAbstractTreeNode >> treeMapParent: aTMTreeNode [
-	"NB: the parent of a TopicNode is normally a FieldNode, but it could be a PageNode."
-
-	treeMapParent := aTMTreeNode
-]
-
 { #category : #accessing }
 TMAbstractTreeNode >> treeMapPath [
 	^ (self parents
@@ -548,16 +485,6 @@ TMAbstractTreeNode >> treeMapRoots [
 { #category : #roadmap }
 TMAbstractTreeNode >> withAllChildren [
 	^ {self} , self allChildren
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> withAllRoadmapGraphChildren [
-	^ {self} , self allRoadmapGraphChildren
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> withAllRoadmapTreeChildren [
-	^ {self} , self allRoadmapTreeChildren
 ]
 
 { #category : #roadmap }

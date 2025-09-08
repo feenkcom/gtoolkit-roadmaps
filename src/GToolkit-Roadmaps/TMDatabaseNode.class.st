@@ -63,7 +63,7 @@ TMDatabaseNode >> pages [
 
 { #category : #navigation }
 TMDatabaseNode >> parents [
-	^ self nodesFor: {}
+	^ self emptyNodes
 ]
 
 { #category : #mondrian }
@@ -73,7 +73,7 @@ TMDatabaseNode >> roadmapNodeSize [
 
 { #category : #mondrian }
 TMDatabaseNode >> roadmapNodes [
-	^ {self}, self roadmapChildren
+	^ self nodesFor: {self} , self children
 ]
 
 { #category : #navigation }

@@ -21,6 +21,11 @@ TMNodeGroup class >> for: aNodeCollection in: aTopicMap [
 		yourself
 ]
 
+{ #category : #navigation }
+TMNodeGroup >> , otherCollection [
+	^ self nodesFor: self nodes , otherCollection
+]
+
 { #category : #comparing }
 TMNodeGroup >> = other [
 	self == other ifTrue: [ ^ true ].
@@ -94,7 +99,7 @@ super printOn: aStream.
 
 { #category : #mondrian }
 TMNodeGroup >> roadmapNodes [
-	self subclassResponsibility
+	self shouldBeImplemented
 ]
 
 { #category : #navigation }

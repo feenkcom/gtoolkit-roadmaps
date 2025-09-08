@@ -37,8 +37,7 @@ TMPageNode >> = other [
 
 { #category : #navigation }
 TMPageNode >> children [
-	^ self
-		nodesFor: {} "(self topics collect: [ :each | TMTopicNode for: each in: self topicMap ])"
+	^ self emptyNodes
 ]
 
 { #category : #mondrian }
@@ -122,19 +121,11 @@ TMPageNode >> relatedTitle [
 ]
 
 { #category : #mondrian }
-TMPageNode >> roadmapChildren [
-	"Stop the recursion here."
-	^ OrderedCollection new
-]
-
-{ #category : #mondrian }
 TMPageNode >> roadmapNodes [
-	"Same as parent?"
-
-	| parent |
-	parent := self parents first.
-
-	^ parent roadmapNodes
+	| pageNodeWithAllTopics |
+	pageNodeWithAllTopics := self withoutViaTopic.
+	^ self databaseNode roadmapNodes , pageNodeWithAllTopics parents
+		, {pageNodeWithAllTopics}
 ]
 
 { #category : #mondrian }
@@ -167,13 +158,6 @@ TMPageNode >> topics [
 	^ self topicMap topics4Page: self page
 ]
 
-{ #category : #'as yet unclassified' }
-TMPageNode >> treeMapChildren [
-	"For a treemap, a page has no further children."
-
-	^ {}
-]
-
 { #category : #treemaps }
 TMPageNode >> treeMapTooltip [
 	^ BrEditor new
@@ -193,4 +177,9 @@ TMPageNode >> viaTopic [
 { #category : #accessing }
 TMPageNode >> viaTopic: anObject [
 	viaTopic := anObject
+]
+
+{ #category : #accessing }
+TMPageNode >> withoutViaTopic [
+	^ self class for: self page in: self topicMap
 ]

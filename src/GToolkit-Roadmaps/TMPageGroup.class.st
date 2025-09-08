@@ -58,18 +58,21 @@ TMPageGroup >> queryString: aString [
 	queryString := ' query: ', aString
 ]
 
+{ #category : #utility }
+TMPageGroup >> sortedByStyles [
+	| sortedPages |
+	sortedPages := OrderedCollection new.
+	self stylesStandardOrder
+		do: [ :aStyle | sortedPages addAll: (self nodes select: [ :n | n style = aStyle ]) ].
+	^ sortedPages
+]
+
 { #category : #treemaps }
 TMPageGroup >> treeMapChildren [
-	"^ self styleNodes
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]"
+	"Needed for queries?"
+	self error: 'Do we need this? Where is it used?'.
+
 	^ self topicNodes
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
 ]
 
 { #category : #treemaps }

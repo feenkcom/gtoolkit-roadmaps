@@ -70,8 +70,7 @@ TMFieldNode >> parents [
 TMFieldNode >> roadmapNodes [
 	| root |
 	root := self databaseNode.
-	self treeMapParent: root.
-	^ root roadmapNodes , self roadmapChildren
+	^ root roadmapNodes , self children
 ]
 
 { #category : #navigation }

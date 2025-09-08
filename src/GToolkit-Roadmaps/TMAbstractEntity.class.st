@@ -17,6 +17,11 @@ TMAbstractEntity >> databaseNode [
 	self subclassResponsibility
 ]
 
+{ #category : #utility }
+TMAbstractEntity >> emptyNodes [
+	^ self nodesFor: {}
+]
+
 { #category : #abstract }
 TMAbstractEntity >> fields [
 	self subclassResponsibility
