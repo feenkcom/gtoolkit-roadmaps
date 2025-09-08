@@ -81,11 +81,6 @@ TMAbstractTreeNode >> fieldNodes [
 		in: self topicMap
 ]
 
-{ #category : #accessing }
-TMAbstractTreeNode >> fields [
-	self subclassResponsibility
-]
-
 { #category : #actions }
 TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 	<gtAction>
@@ -402,11 +397,6 @@ TMAbstractTreeNode >> stylePalette [
 		'Tag' -> Color veryLightGray} asDictionary
 ]
 
-{ #category : #navigation }
-TMAbstractTreeNode >> styles [
-	self subclassResponsibility
-]
-
 { #category : #views }
 TMAbstractTreeNode >> summary [
 	^ {{'Database'.
@@ -441,11 +431,6 @@ TMAbstractTreeNode >> topicNodes [
 	^ TMNodeGroup
 		for: (self topics collect: [ :aTopic | TMTopicNode for: aTopic in: self topicMap ])
 		in: self topicMap
-]
-
-{ #category : #navigation }
-TMAbstractTreeNode >> topics [
-	self subclassResponsibility
 ]
 
 { #category : #treemaps }

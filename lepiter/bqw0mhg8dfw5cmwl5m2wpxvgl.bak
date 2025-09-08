@@ -261,7 +261,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T09:00:54.035569+02:00"
+												"dateAndTimeString" : "2025-09-08T09:03:07.421287+02:00"
 											}
 										},
 										"uid" : {
@@ -271,7 +271,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Simplify TopicMap nodes design]] "
+										"string" : "[[Simplify design of TopicMap nodes]] "
 									}
 								]
 							},
