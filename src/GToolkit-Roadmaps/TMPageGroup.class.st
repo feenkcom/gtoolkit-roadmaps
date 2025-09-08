@@ -69,10 +69,10 @@ TMPageGroup >> sortedByStyles [
 
 { #category : #treemaps }
 TMPageGroup >> treeMapChildren [
-	"Needed for queries?"
-	self error: 'Do we need this? Where is it used?'.
+	"Want to organize by styles -- fro some reason doesn't display styles in groups as it should."
 
-	^ self topicNodes
+	<todo: 'Debug the display of treeMaps for queries.'>
+	^ self styleNodes
 ]
 
 { #category : #treemaps }

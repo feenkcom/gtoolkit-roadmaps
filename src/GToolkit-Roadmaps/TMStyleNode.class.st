@@ -71,9 +71,16 @@ TMStyleNode >> parents [
 	^ self nodesFor: (self context flatCollect: #parents) copyWithoutDuplicates
 ]
 
-{ #category : #mondrian }
+{ #category : #roadmap }
+TMStyleNode >> roadmapNodeColor [
+	^ self stylePalette at: self style ifAbsent: Color veryLightGray
+]
+
+{ #category : #roadmap }
 TMStyleNode >> roadmapNodes [
-	^ self shouldBeImplemented
+	"Show the roadmap for the context pages with this style."
+
+	^ self pageGroup roadmapNodes
 ]
 
 { #category : #accessing }

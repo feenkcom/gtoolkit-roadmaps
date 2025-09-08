@@ -97,9 +97,9 @@ super printOn: aStream.
 		nextPut: $)
 ]
 
-{ #category : #mondrian }
+{ #category : #accessing }
 TMNodeGroup >> roadmapNodes [
-	self shouldBeImplemented
+	^ self allParents , self nodes
 ]
 
 { #category : #navigation }

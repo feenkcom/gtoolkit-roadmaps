@@ -35,6 +35,14 @@ TMAbstractTreeNode >> allChildren [
 ]
 
 { #category : #roadmap }
+TMAbstractTreeNode >> allParents [
+	| allParents |
+	allParents := OrderedCollection withAll: self parents.
+	self parents do: [ :each | allParents addAll: each allParents ].
+	^ allParents copyWithoutDuplicates
+]
+
+{ #category : #roadmap }
 TMAbstractTreeNode >> allTreeChildren [
 	| allChildren |
 	allChildren := OrderedCollection withAll: self treeChildren.

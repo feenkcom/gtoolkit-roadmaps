@@ -217,6 +217,25 @@ TopicMapExamples >> pages [
 ]
 
 { #category : #example }
+TopicMapExamples >> smaccQuery [
+	"NB: fragile query. Results depend on the GT Book content."
+
+	<gtExample>
+	| query databaseNode smaccQuery |
+	query := 'SmaCC'.
+	databaseNode := self topicMap databaseNode.
+	smaccQuery := (self topicMap databaseNode
+			pageGroupFor: (databaseNode pages select: [ :p | p asMarkdownPage includesSubstring: query ]))
+			queryString: query;
+			yourself.
+	self assert: smaccQuery fields size equals: 5.
+	self assert: smaccQuery children isTMNodeGroup.
+	self assert: smaccQuery children isTMPageGroup not.
+	self assert: smaccQuery parents isNotEmpty.
+	^ smaccQuery
+]
+
+{ #category : #example }
 TopicMapExamples >> style2Pages [
 	<gtExample>
 	| category2Page topicMap |
