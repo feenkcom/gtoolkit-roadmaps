@@ -7,8 +7,7 @@ Class {
 	#name : #TMAbstractTreeNode,
 	#superclass : #TMAbstractEntity,
 	#instVars : [
-		'topicMap',
-		'treeMapParent'
+		'topicMap'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -28,28 +27,19 @@ TMAbstractTreeNode >> = other [
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> allRoadmapGraphChildren [
-	"In this version we filter out duplicate copies of pages, so we get a graph instead of a tree.
-	NB: each page will only show a single parent in its tooltip, namely the last topic visited."
-
+TMAbstractTreeNode >> allChildren [
 	| allChildren |
-	allChildren := OrderedCollection withAll: self roadmapChildren.
-	self roadmapChildren
-		do: [ :each | allChildren addAll: each allRoadmapGraphChildren ].
+	allChildren := OrderedCollection withAll: self children.
+	self children do: [ :each | allChildren addAll: each allChildren ].
 	^ allChildren copyWithoutDuplicates
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> allRoadmapTreeChildren [
-	"Here we keep multiple copies of pages that have multiple topics, so the result is a tree,
-	however we must use TMPageForTopicNode instead of TMPageNode for pages so Mondrian is not confused
-	by multiple nodes for the same pages."
-
+TMAbstractTreeNode >> allTreeChildren [
 	| allChildren |
-	allChildren := OrderedCollection withAll: self roadmapTreeChildren.
-	self roadmapTreeChildren
-		do: [ :each | allChildren addAll: each allRoadmapTreeChildren ].
-	^ allChildren
+	allChildren := OrderedCollection withAll: self treeChildren.
+	self children do: [ :each | allChildren addAll: each allTreeChildren ].
+	^ allChildren copyWithoutDuplicates
 ]
 
 { #category : #navigation }
@@ -76,14 +66,8 @@ TMAbstractTreeNode >> defaultNodeColor [
 
 { #category : #navigation }
 TMAbstractTreeNode >> fieldNodes [
-	^ TMNodeGroup
-		for: (self fields collect: [ :aField | TMFieldNode for: aField in: self topicMap ])
-		in: self topicMap
-]
-
-{ #category : #accessing }
-TMAbstractTreeNode >> fields [
-	self subclassResponsibility
+	^ self
+		nodesFor: (self fields collect: [ :aField | TMFieldNode for: aField in: self topicMap ])
 ]
 
 { #category : #actions }
@@ -202,14 +186,12 @@ TMAbstractTreeNode >> mondrianGraph [
 	NB: slow from the database node."
 
 	| nodes mondrian |
-	nodes := self withAllRoadmapGraphChildren.
-
+	nodes := self withAllChildren.
 	mondrian := GtMondrian new.
-
 	mondrian nodes
 		shape: [ :node | node roadmapSimpleNodeElement ];
 		with: nodes.
-	mondrian edges connectToAll: #roadmapChildren.
+	mondrian edges connectToAll: #parents.
 	mondrian layout
 		custom: (GtGraphForceBasedLayout new
 				charge: -200;
@@ -223,13 +205,12 @@ TMAbstractTreeNode >> mondrianTree [
 	NB: slow from the database node."
 
 	| nodes mondrian |
-	nodes := self withAllRoadmapTreeChildren.
+	nodes := self withAllTreeChildren.
 	mondrian := GtMondrian new.
-
 	mondrian nodes
 		shape: [ :node | node roadmapSimpleNodeElement ];
 		with: nodes.
-	mondrian edges connectTo: #treeMapParent.
+	mondrian edges connectToAll: #parents.
 	mondrian layout
 		custom: (GtGraphForceBasedLayout new
 				charge: -100;
@@ -244,6 +225,11 @@ TMAbstractTreeNode >> name [
 
 { #category : #navigation }
 TMAbstractTreeNode >> pages [
+	self subclassResponsibility
+]
+
+{ #category : #navigation }
+TMAbstractTreeNode >> parents [
 	self subclassResponsibility
 ]
 
@@ -269,20 +255,6 @@ TMAbstractTreeNode >> roadmap [
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> roadmapChildren [
-	"For roadmaps, we take the following path:
-		database -> field -> topic -> page (colored by style)
-	By default, each page may appear multiple times, once for each topic.
-	Multiples copies are filtered by allMondrianGraphChildren."
-
-	^ self children
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
-]
-
-{ #category : #roadmap }
 TMAbstractTreeNode >> roadmapFor: aTMNodeCollection [
 	"NB: The input nodes must have treeMapParent set."
 
@@ -291,7 +263,8 @@ TMAbstractTreeNode >> roadmapFor: aTMNodeCollection [
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
 		with: aTMNodeCollection.
-	mondrian edges connectFrom: #treeMapParent.
+	mondrian edges connectFromAll: #parents.
+	"mondrian edges connectFrom: #treeMapParent."
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new
 				levelDistance: 50;
@@ -331,6 +304,8 @@ TMAbstractTreeNode >> roadmapNodeSize [
 
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmapNodes [
+	"Should return a kind of TMNodeGroup"
+
 	^ self subclassResponsibility
 ]
 
@@ -359,16 +334,6 @@ TMAbstractTreeNode >> roadmapTooltipLabel [
 	^ self name
 ]
 
-{ #category : #roadmap }
-TMAbstractTreeNode >> roadmapTreeChildren [
-	"For Mondrian, we take the following path:
-		database -> field -> topic -> page (colored by style)
-	By default, each page may appear multiple times, once for each topic.
-	NB: Multiples copies are filtered by allMondrianGraphChildren."
-
-	^ self roadmapChildren
-]
-
 { #category : #utility }
 TMAbstractTreeNode >> sizeAndFirstIfAlone: aCollection [
 	^ aCollection size printString
@@ -377,34 +342,28 @@ TMAbstractTreeNode >> sizeAndFirstIfAlone: aCollection [
 
 { #category : #navigation }
 TMAbstractTreeNode >> styleNodes [
-	^ TMNodeGroup
-		for: (self styles
+	^ self
+		nodesFor: (self styles
 				collect: [ :aStyle | 
 					TMStyleNode
 						for: aStyle
 						in: self topicMap
 						within: self pageGroup ])
-		in: self topicMap
 ]
 
 { #category : #treemaps }
 TMAbstractTreeNode >> stylePalette [
-	^ {'Introduction' -> Color red lighter.
+	^ {'Introduction' -> Color red muchLighter.
 		'Media' -> Color green.
 		'Tutorial' -> Color blue muchLighter.
-		'Case study' -> Color purple.
+		'Case study' -> Color purple muchLighter.
 		'Pattern' -> Color orange.
 		'FAQ' -> Color paleYellow.
 		'Examples' -> Color lightRed.
 		'Documentation' -> Color paleBlue.
-		'Definition' -> Color black.
-		'Index' -> Color gray.
-		'Tag' -> Color veryLightGray} asDictionary
-]
-
-{ #category : #navigation }
-TMAbstractTreeNode >> styles [
-	self subclassResponsibility
+		'Definition' -> Color veryLightGray.
+		'Index' -> Color lightGray.
+		'Tag' -> Color gray} asDictionary
 ]
 
 { #category : #views }
@@ -438,14 +397,16 @@ TMAbstractTreeNode >> topicMap: anObject [
 
 { #category : #navigation }
 TMAbstractTreeNode >> topicNodes [
-	^ TMNodeGroup
-		for: (self topics collect: [ :aTopic | TMTopicNode for: aTopic in: self topicMap ])
-		in: self topicMap
+	^ self
+		nodesFor: (self topics collect: [ :aTopic | TMTopicNode for: aTopic in: self topicMap ])
 ]
 
 { #category : #navigation }
-TMAbstractTreeNode >> topics [
-	self subclassResponsibility
+TMAbstractTreeNode >> treeChildren [
+	"Like children, but when we get to pages, set the viaTopic field
+	so the same page can appear as a leaf for each topic."
+
+	^ self children
 ]
 
 { #category : #treemaps }
@@ -488,11 +449,8 @@ TMAbstractTreeNode >> treeMap [
 
 { #category : #treemaps }
 TMAbstractTreeNode >> treeMapChildren [
+	"NB: The children hierarchy for treemaps distinguishes leaves from recursive nodes."
 	^ self children
-		collect: [ :n | 
-			n
-				treeMapParent: self;
-				yourself ]
 ]
 
 { #category : #treemaps }
@@ -512,23 +470,11 @@ TMAbstractTreeNode >> treeMapNodeLabel [
 	^ self name
 ]
 
-{ #category : #treemaps }
-TMAbstractTreeNode >> treeMapParent [
-	^ treeMapParent
-]
-
-{ #category : #treemaps }
-TMAbstractTreeNode >> treeMapParent: aTMTreeNode [
-	"NB: the parent of a TopicNode is normally a FieldNode, but it could be a PageNode."
-
-	treeMapParent := aTMTreeNode
-]
-
 { #category : #accessing }
 TMAbstractTreeNode >> treeMapPath [
-	^ (self treeMapParent
-		ifNil: [ '' ]
-		ifNotNil: [ self treeMapParent treeMapPath , String cr ]) , self name
+	^ (self parents
+		ifEmpty: [ '' ]
+		ifNotEmpty: [ self parents first treeMapPath , String cr ]) , self name
 ]
 
 { #category : #treemaps }
@@ -537,11 +483,11 @@ TMAbstractTreeNode >> treeMapRoots [
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> withAllRoadmapGraphChildren [
-	^ {self} , self allRoadmapGraphChildren
+TMAbstractTreeNode >> withAllChildren [
+	^ {self} , self allChildren
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> withAllRoadmapTreeChildren [
-	^ {self} , self allRoadmapTreeChildren
+TMAbstractTreeNode >> withAllTreeChildren [
+	^ {self} , self allTreeChildren
 ]

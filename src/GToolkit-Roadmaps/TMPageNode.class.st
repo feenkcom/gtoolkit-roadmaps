@@ -2,7 +2,8 @@ Class {
 	#name : #TMPageNode,
 	#superclass : #TMAbstractTreeNode,
 	#instVars : [
-		'page'
+		'page',
+		'viaTopic'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -29,10 +30,14 @@ TMPageNode class >> for: aPage in: aTopicMap [
 		yourself
 ]
 
+{ #category : #comparing }
+TMPageNode >> = other [
+	^ super = other and: [ self viaTopic = other viaTopic ]
+]
+
 { #category : #navigation }
 TMPageNode >> children [
-	^ self
-		nodeGroupFor: (self topics collect: [ :each | TMTopicNode for: each in: self topicMap ])
+	^ self emptyNodes
 ]
 
 { #category : #mondrian }
@@ -73,6 +78,11 @@ TMPageNode >> gtTreeMapFor: aView [
 	^ aView empty
 ]
 
+{ #category : #comparing }
+TMPageNode >> hash [
+	^ super hash bitXor: self viaTopic hash
+]
+
 { #category : #accessing }
 TMPageNode >> name [
 	^ 'Page: ', self page title
@@ -93,6 +103,13 @@ TMPageNode >> pages [
 	^ {self page}
 ]
 
+{ #category : #navigation }
+TMPageNode >> parents [
+	^ self viaTopic
+		ifNil: [ self topicNodes ]
+		ifNotNil: [ self nodesFor: {self viaTopic} ]
+]
+
 { #category : #accessing }
 TMPageNode >> relatedInfo [
 	^ 'Style:', self style
@@ -104,14 +121,11 @@ TMPageNode >> relatedTitle [
 ]
 
 { #category : #mondrian }
-TMPageNode >> roadmapChildren [
-	"Stop the recursion here."
-	^ OrderedCollection new
-]
-
-{ #category : #mondrian }
 TMPageNode >> roadmapNodes [
-	^ self subclassResponsibility
+	| pageNodeWithAllTopics |
+	pageNodeWithAllTopics := self withoutViaTopic.
+	^ self databaseNode roadmapNodes , pageNodeWithAllTopics parents
+		, {pageNodeWithAllTopics}
 ]
 
 { #category : #mondrian }
@@ -144,13 +158,6 @@ TMPageNode >> topics [
 	^ self topicMap topics4Page: self page
 ]
 
-{ #category : #'as yet unclassified' }
-TMPageNode >> treeMapChildren [
-	"For a treemap, a page has no further children."
-
-	^ {}
-]
-
 { #category : #treemaps }
 TMPageNode >> treeMapTooltip [
 	^ BrEditor new
@@ -158,4 +165,21 @@ TMPageNode >> treeMapTooltip [
 		padding: (BlInsets all: 2);
 		text: self treeMapPath;
 		yourself
+]
+
+{ #category : #accessing }
+TMPageNode >> viaTopic [
+	"NB: can be nil or a specific topic."
+
+	^ viaTopic
+]
+
+{ #category : #accessing }
+TMPageNode >> viaTopic: anObject [
+	viaTopic := anObject
+]
+
+{ #category : #accessing }
+TMPageNode >> withoutViaTopic [
+	^ self class for: self page in: self topicMap
 ]

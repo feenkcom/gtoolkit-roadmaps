@@ -7,6 +7,26 @@ Class {
 	#category : #'GToolkit-Roadmaps-Model'
 }
 
+{ #category : #abstract }
+TMAbstractEntity >> database [
+	self subclassResponsibility
+]
+
+{ #category : #abstract }
+TMAbstractEntity >> databaseNode [
+	self subclassResponsibility
+]
+
+{ #category : #utility }
+TMAbstractEntity >> emptyNodes [
+	^ self nodesFor: {}
+]
+
+{ #category : #abstract }
+TMAbstractEntity >> fields [
+	self subclassResponsibility
+]
+
 { #category : #searching }
 TMAbstractEntity >> gtSpotterForPageContent: aSearch [
 	<gtSearch>
@@ -45,7 +65,7 @@ TMAbstractEntity >> isAbstract [
 ]
 
 { #category : #utility }
-TMAbstractEntity >> nodeGroupFor: aNodeCollection [
+TMAbstractEntity >> nodesFor: aNodeCollection [
 	^ TMNodeGroup for: aNodeCollection in: self topicMap
 ]
 
@@ -59,8 +79,13 @@ TMAbstractEntity >> pageGroupFor: aPageCollection [
 	^ TMPageGroup for: aPageCollection in: self topicMap
 ]
 
-{ #category : #querying }
+{ #category : #abstract }
 TMAbstractEntity >> pages [
+	self subclassResponsibility
+]
+
+{ #category : #abstract }
+TMAbstractEntity >> styles [
 	self subclassResponsibility
 ]
 
@@ -69,7 +94,12 @@ TMAbstractEntity >> stylesStandardOrder [
 	^ self topicMap stylesStandardOrder
 ]
 
-{ #category : #querying }
+{ #category : #abstract }
 TMAbstractEntity >> topicMap [
+	self subclassResponsibility
+]
+
+{ #category : #navigation }
+TMAbstractEntity >> topics [
 	self subclassResponsibility
 ]

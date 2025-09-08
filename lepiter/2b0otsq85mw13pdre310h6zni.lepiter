@@ -39,7 +39,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-01T09:40:35.650532+02:00"
+												"dateAndTimeString" : "2025-09-08T09:00:18.221799+02:00"
 											}
 										},
 										"uid" : {
@@ -49,7 +49,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[* Visualize topic maps]] "
+										"string" : "[[Visualize topic maps]] "
 									},
 									{
 										"__type" : "textSnippet",

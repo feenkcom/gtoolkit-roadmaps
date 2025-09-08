@@ -29,6 +29,7 @@ TopicMapExamples >> databaseNode [
 	self assert: databaseNode fields size equals: 5.
 	self assert: databaseNode children isTMNodeGroup.
 	self assert: databaseNode children isTMPageGroup not.
+	self assert: databaseNode parents isEmpty.
 	^ databaseNode
 ]
 
@@ -55,6 +56,8 @@ TopicMapExamples >> fieldNodeGtBasics [
 	self assert: fieldNodeGtBasics pages size < fieldNodeGtBasics database pages size.
 	self assert: fieldNodeGtBasics children isTMTreeNode.
 	self assert: fieldNodeGtBasics children isTMPageGroup not.
+	self assert: fieldNodeGtBasics parents size equals: 1.
+	self assert: fieldNodeGtBasics parents first equals: self databaseNode.
 	^ fieldNodeGtBasics
 ]
 
@@ -77,6 +80,50 @@ TopicMapExamples >> missingPages [
 	missingPages := topicMap missingPages.
 	self assert: missingPages size + topicMap pages size equals: (topicMap json at: 'pages') size.
 	^ missingPages
+]
+
+{ #category : #example }
+TopicMapExamples >> mondrianGraph4Database [
+	"Very slow (~12s), so noTest."
+
+	<gtExample>
+	<noTest>
+	| mondrianTree |
+	mondrianTree := self databaseNode mondrianGraph.
+	^ mondrianTree
+]
+
+{ #category : #example }
+TopicMapExamples >> mondrianGraph4Field [
+	"Slow (3s), so noTest."
+
+	<gtExample>
+	<noTest>
+	| mondrianTree |
+	mondrianTree := self fieldNodeGtBasics mondrianGraph.
+	^ mondrianTree
+]
+
+{ #category : #example }
+TopicMapExamples >> mondrianTree4Database [
+	"Very slow (20s), so noTest."
+
+	<gtExample>
+	<noTest>
+	| mondrianTree |
+	mondrianTree := self databaseNode mondrianTree.
+	^ mondrianTree
+]
+
+{ #category : #example }
+TopicMapExamples >> mondrianTree4Field [
+	"Slow (3s), so noTest."
+
+	<gtExample>
+	<noTest>
+	| mondrianTree |
+	mondrianTree := self fieldNodeGtBasics mondrianTree.
+	^ mondrianTree
 ]
 
 { #category : #example }
@@ -145,14 +192,15 @@ TopicMapExamples >> pageNodeWhatIsGt [
 
 	<gtExample>
 	| pageNodeWhatIsGt |
-	pageNodeWhatIsGt := self styleNodeIntroductionWithinAboutGtTopic pageGroup nodes
-			detect: [ :n | n page title = 'What is Glamorous Toolkit?' ].
+	pageNodeWhatIsGt := self styleNodeIntroductionWithinAboutGtTopic pageGroup
+			nodes detect: [ :n | n page title = 'What is Glamorous Toolkit?' ].
 	self assert: pageNodeWhatIsGt fields size equals: 3.
 	self assert: pageNodeWhatIsGt topics size equals: 5.
 	self assert: pageNodeWhatIsGt styles size equals: 1.
 	self assert: pageNodeWhatIsGt pages size equals: 1.
 	self assert: pageNodeWhatIsGt children isTMNodeGroup.
 	self assert: pageNodeWhatIsGt children isTMPageGroup not.
+	self assert: pageNodeWhatIsGt parents equals: pageNodeWhatIsGt topicNodes.
 	^ pageNodeWhatIsGt
 ]
 
@@ -252,6 +300,8 @@ TopicMapExamples >> topicNodeAboutGt [
 	self assert: topicNodeaAboutGt styles size equals: 5.
 	self assert: topicNodeaAboutGt pages size < topicNodeaAboutGt database pages size.
 	self assert: topicNodeaAboutGt children isTMNodeGroup.
-	self assert: topicNodeaAboutGt children isTMPageGroup not.
+	self assert: topicNodeaAboutGt children isTMPageGroup.
+	self assert: topicNodeaAboutGt parents size equals: 1.
+	self assert: topicNodeaAboutGt parents first equals: self fieldNodeGtBasics.
 	^ topicNodeaAboutGt
 ]

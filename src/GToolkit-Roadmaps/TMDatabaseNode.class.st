@@ -24,12 +24,12 @@ TMDatabaseNode class >> for: aDatabase in: aTopicMap [
 { #category : #navigation }
 TMDatabaseNode >> children [
 	^ self
-		nodeGroupFor: (self fields collect: [ :aField | TMFieldNode for: aField in: self topicMap ])
+		nodesFor: (self fields collect: [ :aField | TMFieldNode for: aField in: self topicMap ])
 ]
 
 { #category : #mondrian }
 TMDatabaseNode >> defaultNodeColor [
-	^ Color paleBlue
+	^ Color lightCyan
 ]
 
 { #category : #navigation }
@@ -61,6 +61,11 @@ TMDatabaseNode >> pages [
 	^ self database pages
 ]
 
+{ #category : #navigation }
+TMDatabaseNode >> parents [
+	^ self emptyNodes
+]
+
 { #category : #mondrian }
 TMDatabaseNode >> roadmapNodeSize [
 	^ 20 @ 20
@@ -68,7 +73,7 @@ TMDatabaseNode >> roadmapNodeSize [
 
 { #category : #mondrian }
 TMDatabaseNode >> roadmapNodes [
-	^ {self}, self roadmapChildren
+	^ self nodesFor: {self} , self children
 ]
 
 { #category : #navigation }

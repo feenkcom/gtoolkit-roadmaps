@@ -8,6 +8,43 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-08T12:29:22.694702+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-08T12:29:44.860594+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ktvdZan6DQC/YFphCd4zPQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "*NB:* these have been refactored to use the  new definition of `treeChildren`"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
 					"items" : [
 						{
 							"__type" : "textSnippet",
@@ -60,7 +97,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-01T17:43:19.087893+02:00"
+									"dateAndTimeString" : "2025-09-08T12:30:02.349557+02:00"
 								}
 							},
 							"editEmail" : {
@@ -71,14 +108,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T16:50:55.949865+02:00"
+									"dateAndTimeString" : "2025-09-08T12:30:17.754026+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "CMm29yD6DQCKOUX5CzydFw=="
+								"uidString" : "kfI6aKn6DQCA8MlhCd4zPQ=="
 							},
-							"code" : "LeDatabase gtBook topicMap databaseNode mondrianGraph"
+							"code" : "TopicMapExamples new mondrianGraph4Database\t\"NB: slow (20s)\""
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -105,85 +142,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T16:51:16.799364+02:00"
+									"dateAndTimeString" : "2025-09-08T12:30:36.888678+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "kIjas3D6DQChNtnSDgOuWw=="
 							},
-							"code" : "LeDatabase gtBook topicMap databaseNode children first mondrianGraph"
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T16:57:59.365223+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T17:03:02.990233+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "C5z4zHD6DQCheu+YDgOuWw=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "Old version:"
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T16:57:46.00667+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T16:59:19.528506+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "SMQszHD6DQChcCnWDgOuWw=="
-							},
-							"code" : "root := LeDatabase gtBook topicMap databaseNode children first.\r\rnodes := root withAllRoadmapGraphChildren.\r\rmondrian := GtMondrian new.\r\rmondrian nodes\r\tshape: [ :node | node roadmapSimpleNodeElement ];\r\twith: nodes.\rmondrian edges connectToAll: #roadmapChildren.\rmondrian layout custom: (GtGraphForceBasedLayout new\r\t\t\tcharge: -200;\r\t\t\tlength: 30).\rmondrian"
+							"code" : "TopicMapExamples new mondrianGraph4Field"
 						}
 					]
 				},
@@ -248,7 +214,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T17:03:30.378865+02:00"
+									"dateAndTimeString" : "2025-09-08T12:31:26.546356+02:00"
 								}
 							},
 							"uid" : {
@@ -258,7 +224,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "In this tree version, we represent each page multiple times, once for each topic. To avoid confusing mondrian when it is building edges, we have to introduce special subclasses {{gtClass:TMPageForTopicNode}} and {{gtClass:name=TMPageForTopicGroup}} which support a refine `=` to consider the topic as well.\nIt looks fine, but is slow and expensive to compute from the database node."
+							"string" : "In this tree version, we represent each page multiple times, once for each topic. To avoid confusing mondrian when it is building edges, we set `viaTopic` in the page nodes."
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -285,14 +251,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T16:48:03.49262+02:00"
+									"dateAndTimeString" : "2025-09-08T12:31:44.255366+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "F+MpekX6DQCkcK9sD7TtKQ=="
 							},
-							"code" : "LeDatabase gtBook topicMap databaseNode mondrianTree"
+							"code" : "TopicMapExamples new mondrianTree4Database \"NB: very slow (20s)\""
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -319,48 +285,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T16:48:34.799871+02:00"
+									"dateAndTimeString" : "2025-09-08T12:31:55.300605+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "aSojqTX6DQCiUz41CTkChg=="
 							},
-							"code" : "LeDatabase gtBook topicMap databaseNode children first mondrianTree"
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T16:48:22.97324+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T16:49:18.922299+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "B5KdqnD6DQCgUDiODgOuWw=="
-							},
-							"code" : "LeDatabase gtBook topicMap databaseNode children first children first mondrianTree"
+							"code" : "TopicMapExamples new mondrianTree4Field"
 						}
 					]
 				},

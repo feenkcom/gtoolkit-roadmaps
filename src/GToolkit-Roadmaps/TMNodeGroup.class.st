@@ -21,6 +21,11 @@ TMNodeGroup class >> for: aNodeCollection in: aTopicMap [
 		yourself
 ]
 
+{ #category : #navigation }
+TMNodeGroup >> , otherCollection [
+	^ self nodesFor: self nodes , otherCollection
+]
+
 { #category : #comparing }
 TMNodeGroup >> = other [
 	self == other ifTrue: [ ^ true ].
@@ -30,7 +35,7 @@ TMNodeGroup >> = other [
 
 { #category : #navigation }
 TMNodeGroup >> children [
-	^ self nodeGroupFor: self nodes
+	^ self nodesFor: self nodes
 ]
 
 { #category : #navigation }
@@ -75,6 +80,13 @@ TMNodeGroup >> pages [
 	^ (self children flatCollect: #pages) copyWithoutDuplicates
 ]
 
+{ #category : #navigation }
+TMNodeGroup >> parents [
+	"Not sure we need this. Perhaps we need a different definition ..."
+
+	^ self nodesFor: (self nodes flatCollect: #parents) copyWithoutDuplicates
+]
+
 { #category : #printing }
 TMNodeGroup >> printOn: aStream [
 super printOn: aStream.
@@ -87,7 +99,7 @@ super printOn: aStream.
 
 { #category : #mondrian }
 TMNodeGroup >> roadmapNodes [
-	self subclassResponsibility
+	self shouldBeImplemented
 ]
 
 { #category : #navigation }
