@@ -61,7 +61,7 @@ TMNodeGroup >> items [
 ]
 
 { #category : #accessing }
-TMNodeGroup >> name [
+TMNodeGroup >> nodeLabel [
 	^ 'Node collection'
 ]
 

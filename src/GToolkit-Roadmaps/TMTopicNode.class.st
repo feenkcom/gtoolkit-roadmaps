@@ -17,7 +17,7 @@ TMTopicNode class >> for: aTopic in: aTopicMap [
 
 { #category : #roadmap }
 TMTopicNode >> breadcrumb [
-	^ self parents first breadcrumb , String cr , '-- ', self name
+	^ self parents first breadcrumb , String cr , '-- ', self nodeLabel
 ]
 
 { #category : #navigation }
@@ -41,7 +41,7 @@ TMTopicNode >> fields [
 ]
 
 { #category : #accessing }
-TMTopicNode >> name [
+TMTopicNode >> nodeLabel [
 	^ 'Topic: ' , self topic
 ]
 

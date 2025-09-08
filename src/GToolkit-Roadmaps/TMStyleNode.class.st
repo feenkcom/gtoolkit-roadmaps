@@ -52,7 +52,7 @@ TMStyleNode >> fields [
 ]
 
 { #category : #accessing }
-TMStyleNode >> name [
+TMStyleNode >> nodeLabel [
 	^ 'Style: ' , self style
 ]
 

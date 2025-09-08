@@ -52,7 +52,7 @@ TMDatabaseNode >> gtDatabaseActionFor: anAction [
 ]
 
 { #category : #accessing }
-TMDatabaseNode >> name [
+TMDatabaseNode >> nodeLabel [
 	^ self database databaseName
 ]
 

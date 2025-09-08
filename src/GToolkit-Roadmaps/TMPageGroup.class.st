@@ -24,7 +24,7 @@ TMPageGroup >> isTMPageGroup [
 ]
 
 { #category : #accessing }
-TMPageGroup >> name [
+TMPageGroup >> nodeLabel [
 	^ 'Page group', self queryString
 ]
 

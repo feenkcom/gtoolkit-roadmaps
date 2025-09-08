@@ -43,7 +43,7 @@ TMPageNode >> breadcrumb [
 	"^ self treeMapPath"
 
 	^ (String cr join: (self parents collect: #breadcrumb)) , String cr
-		, self styleNodes first name , String cr , self name
+		, self styleNodes first nodeLabel , String cr , self nodeLabel
 ]
 
 { #category : #navigation }
@@ -95,7 +95,7 @@ TMPageNode >> hash [
 ]
 
 { #category : #accessing }
-TMPageNode >> name [
+TMPageNode >> nodeLabel [
 	^ 'Page: ', self page title
 ]
 

@@ -23,7 +23,7 @@ TMAbstractTreeNode class >> for: anObject in: aTopicMap [
 TMAbstractTreeNode >> = other [
 	self == other ifTrue: [ ^ true ].
 	self class = other class ifFalse: [^ false ].
-	^ self name = other name
+	^ self nodeLabel = other nodeLabel
 ]
 
 { #category : #roadmap }
@@ -44,7 +44,7 @@ TMAbstractTreeNode >> allTreeChildren [
 
 { #category : #roadmap }
 TMAbstractTreeNode >> breadcrumb [
-	^ self name
+	^ self nodeLabel
 ]
 
 { #category : #roadmap }
@@ -150,7 +150,7 @@ TMAbstractTreeNode >> gtTreeFor: aView [
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
 		column: 'Node'
-			text: [ :each | each name ]
+			text: [ :each | each nodeLabel ]
 			width: 300;
 		column: '# Children'
 			text: [ :each | each children size ]
@@ -181,7 +181,7 @@ TMAbstractTreeNode >> gtTreeMapFor: aView [
 
 { #category : #comparing }
 TMAbstractTreeNode >> hash [
-	^ self name hash
+	^ self nodeLabel hash
 ]
 
 { #category : #testing }
@@ -233,7 +233,7 @@ TMAbstractTreeNode >> mondrianTree [
 ]
 
 { #category : #accessing }
-TMAbstractTreeNode >> name [
+TMAbstractTreeNode >> nodeLabel [
 	self subclassResponsibility
 ]
 
@@ -252,7 +252,7 @@ TMAbstractTreeNode >> printOn: aStream [
 	super printOn: aStream.
 	aStream
 		nextPut: $(;
-		nextPutAll: self name;
+		nextPutAll: self nodeLabel;
 		nextPut: $)
 ]
 
@@ -303,7 +303,7 @@ TMAbstractTreeNode >> roadmapNodeElement [
 	"A mindmap-like element containing the node's name."
 
 	^ BlTextElement new
-		text: self name asRopedText;
+		text: self nodeLabel asRopedText;
 		border: self roadmapNodeBorderColor;
 		background: self roadmapNodeColor;
 		padding: (BlInsets all: 5);
@@ -435,7 +435,7 @@ TMAbstractTreeNode >> treeMap [
 				aNodeContext level = 2
 					ifTrue: [ anElement
 							addChild: (BrLabel new
-									text: node name;
+									text: node nodeLabel;
 									aptitude: (BrGlamorousLabelAptitude new
 											fontSize: 10;
 											foreground: Color blue);
@@ -460,7 +460,7 @@ TMAbstractTreeNode >> treeMapLeaves [
 
 { #category : #treemaps }
 TMAbstractTreeNode >> treeMapNodeLabel [
-	^ self name
+	^ self nodeLabel
 ]
 
 { #category : #treemaps }

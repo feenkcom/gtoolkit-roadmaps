@@ -17,7 +17,7 @@ TMFieldNode class >> for: aField in: aTopicMap [
 
 { #category : #roadmap }
 TMFieldNode >> breadcrumb [
-	^ self parents first breadcrumb , String cr , '- ', self name
+	^ self parents first breadcrumb , String cr , '- ', self nodeLabel
 ]
 
 { #category : #accessing }
@@ -57,7 +57,7 @@ TMFieldNode >> isTMTreeNode [
 ]
 
 { #category : #accessing }
-TMFieldNode >> name [
+TMFieldNode >> nodeLabel [
 	^ 'Field: ' , self field
 ]
 
