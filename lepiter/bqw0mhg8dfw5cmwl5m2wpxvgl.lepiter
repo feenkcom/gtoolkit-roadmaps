@@ -262,7 +262,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T15:56:38.381225+02:00"
+												"dateAndTimeString" : "2025-09-08T17:47:41.969418+02:00"
 											}
 										},
 										"uid" : {
@@ -272,7 +272,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[* Introduce Mondrian Roadmaps]] "
+										"string" : "[[Introduce Mondrian Roadmaps]] "
 									},
 									{
 										"__type" : "textSnippet",
@@ -299,7 +299,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T09:05:15.442661+02:00"
+												"dateAndTimeString" : "2025-09-08T17:47:18.470646+02:00"
 											}
 										},
 										"uid" : {
@@ -309,7 +309,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[*** Simplify design of TopicMap nodes]] "
+										"string" : "[[Simplify design of TopicMap nodes]] "
 									}
 								]
 							},

@@ -76,7 +76,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T17:03:28.952143+02:00"
+												"dateAndTimeString" : "2025-09-08T17:03:29.120114+02:00"
 											}
 										},
 										"uid" : {
@@ -86,7 +86,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Bugs to fix]] "
+										"string" : "[[Bugs to fix]]  "
 									}
 								]
 							},
@@ -299,7 +299,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T09:05:15.442661+02:00"
+												"dateAndTimeString" : "2025-09-08T17:47:18.470646+02:00"
 											}
 										},
 										"uid" : {
@@ -309,7 +309,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[*** Simplify design of TopicMap nodes]] "
+										"string" : "[[Simplify design of TopicMap nodes]] "
 									}
 								]
 							},

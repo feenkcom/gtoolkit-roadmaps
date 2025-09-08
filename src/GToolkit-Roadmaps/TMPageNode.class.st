@@ -131,7 +131,17 @@ TMPageNode >> relatedTitle [
 	^ 'Style'
 ]
 
-{ #category : #mondrian }
+{ #category : #roadmap }
+TMPageNode >> roadmapNodeElement [
+	"Add a hover previewing the page."
+
+	| elt |
+	elt := super roadmapNodeElement.
+	elt aptitude: (self page hoverPage: self page forNodeElement: elt).
+	^ elt
+]
+
+{ #category : #roadmap }
 TMPageNode >> roadmapNodes [
 	| pageNodeWithAllTopics |
 	pageNodeWithAllTopics := self withoutViaTopic.
@@ -139,7 +149,7 @@ TMPageNode >> roadmapNodes [
 		, {pageNodeWithAllTopics}
 ]
 
-{ #category : #mondrian }
+{ #category : #roadmap }
 TMPageNode >> roadmapSimpleNodeElement [
 	^ super roadmapSimpleNodeElement
 		geometry: BlCircleGeometry new;
