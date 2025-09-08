@@ -15,6 +15,11 @@ TMFieldNode class >> for: aField in: aTopicMap [
 	yourself 
 ]
 
+{ #category : #roadmap }
+TMFieldNode >> breadcrumb [
+	^ self parents first breadcrumb , String cr , '- ', self name
+]
+
 { #category : #accessing }
 TMFieldNode >> children [
 	^ self

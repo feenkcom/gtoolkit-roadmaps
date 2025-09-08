@@ -15,6 +15,11 @@ TMTopicNode class >> for: aTopic in: aTopicMap [
 	yourself 
 ]
 
+{ #category : #roadmap }
+TMTopicNode >> breadcrumb [
+	^ self parents first breadcrumb , String cr , '-- ', self name
+]
+
 { #category : #navigation }
 TMTopicNode >> children [
 	^ self pageGroup

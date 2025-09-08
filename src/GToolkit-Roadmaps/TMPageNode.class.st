@@ -35,6 +35,17 @@ TMPageNode >> = other [
 	^ super = other and: [ self viaTopic = other viaTopic ]
 ]
 
+{ #category : #mondrian }
+TMPageNode >> breadcrumb [
+	"NB: This will show only *one* of the paths!
+	If there are multiple topics, only the last one will be shown."
+
+	"^ self treeMapPath"
+
+	^ (String cr join: (self parents collect: #breadcrumb)) , String cr
+		, self styleNodes first name , String cr , self name
+]
+
 { #category : #navigation }
 TMPageNode >> children [
 	^ self emptyNodes
@@ -135,14 +146,6 @@ TMPageNode >> roadmapSimpleNodeElement [
 		yourself
 ]
 
-{ #category : #mondrian }
-TMPageNode >> roadmapTooltipLabel [
-	"NB: This will show only *one* of the paths!
-	If there are multiple topics, only the last one will be shown."
-
-	^ self treeMapPath
-]
-
 { #category : #accessing }
 TMPageNode >> style [
 	^ self topicMap style4Page: self page
@@ -156,15 +159,6 @@ TMPageNode >> styles [
 { #category : #querying }
 TMPageNode >> topics [
 	^ self topicMap topics4Page: self page
-]
-
-{ #category : #treemaps }
-TMPageNode >> treeMapTooltip [
-	^ BrEditor new
-		aptitude: BrGlamorousRegularEditorAptitude new;
-		padding: (BlInsets all: 2);
-		text: self treeMapPath;
-		yourself
 ]
 
 { #category : #accessing }

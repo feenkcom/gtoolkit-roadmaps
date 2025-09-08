@@ -42,6 +42,20 @@ TMAbstractTreeNode >> allTreeChildren [
 	^ allChildren copyWithoutDuplicates
 ]
 
+{ #category : #roadmap }
+TMAbstractTreeNode >> breadcrumb [
+	^ self name
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> breadcrumbTooltip [
+	^ [ BrEditor new
+		aptitude: BrGlamorousRegularEditorAptitude new;
+		padding: (BlInsets all: 2);
+		text: self breadcrumb;
+		yourself ] asStencil
+]
+
 { #category : #navigation }
 TMAbstractTreeNode >> children [
 	self subclassResponsibility
@@ -294,7 +308,7 @@ TMAbstractTreeNode >> roadmapNodeElement [
 		background: self roadmapNodeColor;
 		padding: (BlInsets all: 5);
 		geometry: (BlRoundedRectangleGeometry cornerRadius: 8);
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
 ]
 
 { #category : #roadmap }
@@ -317,21 +331,7 @@ TMAbstractTreeNode >> roadmapSimpleNodeElement [
 		size: self roadmapNodeSize;
 		border: self roadmapNodeBorderColor;
 		background: self roadmapNodeColor;
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> roadmapTooltip [
-	^ [ BrEditor new
-		aptitude: BrGlamorousRegularEditorAptitude new;
-		padding: (BlInsets all: 2);
-		text: self roadmapTooltipLabel;
-		yourself ] asStencil
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> roadmapTooltipLabel [
-	^ self name
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
 ]
 
 { #category : #utility }
@@ -428,7 +428,7 @@ TMAbstractTreeNode >> treeMap [
 					when: BlClickEvent
 					do: [ :e | e target phlow spawnObject: pageNode ].
 				anElement
-					aptitude: (BrGlamorousWithExplicitTooltipAptitude content: [ pageNode treeMapTooltip ]) ];
+					aptitude: (BrGlamorousWithExplicitTooltipAptitude content: [ pageNode breadcrumbTooltip ]) ];
 			containerElement: [ :anElement :aNodeContext | 
 				| node |
 				node := aNodeContext model.
@@ -442,7 +442,7 @@ TMAbstractTreeNode >> treeMap [
 									background: Color white;
 									constraintsDo: [ :c | c ignoreByLayout ]) ].
 
-				anElement border: (BlBorder paint: node treeMapNodeColor width: 2).
+				anElement border: (BlBorder paint: node defaultNodeColor width: 2).
 				anElement padding: (BlInsets top: 12  bottom: 2 left: 2 right: 2) ].
 	^ treemap
 ]
@@ -459,22 +459,8 @@ TMAbstractTreeNode >> treeMapLeaves [
 ]
 
 { #category : #treemaps }
-TMAbstractTreeNode >> treeMapNodeColor [
-	"Can override the default in subclasses if needed."
-
-	^ self defaultNodeColor
-]
-
-{ #category : #treemaps }
 TMAbstractTreeNode >> treeMapNodeLabel [
 	^ self name
-]
-
-{ #category : #accessing }
-TMAbstractTreeNode >> treeMapPath [
-	^ (self parents
-		ifEmpty: [ '' ]
-		ifNotEmpty: [ self parents first treeMapPath , String cr ]) , self name
 ]
 
 { #category : #treemaps }
