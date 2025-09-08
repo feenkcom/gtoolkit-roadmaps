@@ -224,7 +224,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-05T13:33:19.426625+02:00"
+												"dateAndTimeString" : "2025-09-08T08:59:54.228243+02:00"
 											}
 										},
 										"uid" : {
@@ -234,7 +234,44 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[*** Mondrian Roadmaps]] "
+										"string" : "[[Introduce Mondrian Roadmaps]] "
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T09:00:26.836825+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T09:03:07.421287+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "etireqb6DQCIWljeCrrFrA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "[[Simplify design of TopicMap nodes]] "
 									}
 								]
 							},
@@ -257,7 +294,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T13:33:50.424084+02:00"
+									"dateAndTimeString" : "2025-09-08T09:00:18.224495+02:00"
 								}
 							},
 							"uid" : {
@@ -267,7 +304,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[* Visualize topic maps]]  "
+							"string" : "[[Visualize topic maps]]  "
 						},
 						{
 							"__type" : "textSnippet",
