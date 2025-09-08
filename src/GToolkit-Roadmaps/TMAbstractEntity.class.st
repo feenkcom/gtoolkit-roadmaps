@@ -60,7 +60,7 @@ TMAbstractEntity >> isAbstract [
 ]
 
 { #category : #utility }
-TMAbstractEntity >> nodeGroupFor: aNodeCollection [
+TMAbstractEntity >> nodesFor: aNodeCollection [
 	^ TMNodeGroup for: aNodeCollection in: self topicMap
 ]
 

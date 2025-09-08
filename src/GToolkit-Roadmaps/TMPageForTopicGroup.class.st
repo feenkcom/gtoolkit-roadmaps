@@ -9,5 +9,5 @@ TMPageForTopicGroup >> pages: aPageCollection [
 	"Wrap the pages as nodes."
 
 	^ self
-		nodes: (aPageCollection collect: [ :aPage | TMPageForTopicNode for: aPage in: self topicMap ])
+		nodes: (aPageCollection collect: [ :aPage | TMPageNode for: aPage in: self topicMap ])
 ]

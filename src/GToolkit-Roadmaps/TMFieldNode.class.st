@@ -18,7 +18,7 @@ TMFieldNode class >> for: aField in: aTopicMap [
 { #category : #accessing }
 TMFieldNode >> children [
 	^ self
-		nodeGroupFor: (self topics collect: [ :each | TMTopicNode for: each in: self topicMap ])
+		nodesFor: (self topics collect: [ :each | TMTopicNode for: each in: self topicMap ])
 ]
 
 { #category : #mondrian }
@@ -59,6 +59,11 @@ TMFieldNode >> name [
 { #category : #navigation }
 TMFieldNode >> pages [
 	^ (self children flatCollect: #pages) copyWithoutDuplicates
+]
+
+{ #category : #accessing }
+TMFieldNode >> parents [
+	^ self nodesFor: {self databaseNode}
 ]
 
 { #category : #mondrian }

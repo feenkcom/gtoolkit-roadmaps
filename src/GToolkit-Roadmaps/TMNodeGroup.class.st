@@ -30,7 +30,7 @@ TMNodeGroup >> = other [
 
 { #category : #navigation }
 TMNodeGroup >> children [
-	^ self nodeGroupFor: self nodes
+	^ self nodesFor: self nodes
 ]
 
 { #category : #navigation }
@@ -73,6 +73,13 @@ TMNodeGroup >> nodes: anObject [
 { #category : #accessing }
 TMNodeGroup >> pages [
 	^ (self children flatCollect: #pages) copyWithoutDuplicates
+]
+
+{ #category : #navigation }
+TMNodeGroup >> parents [
+	"Not sure we need this. Perhaps we need a different definition ..."
+
+	^ self nodesFor: (self nodes flatCollect: #parents) copyWithoutDuplicates
 ]
 
 { #category : #printing }

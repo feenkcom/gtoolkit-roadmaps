@@ -64,6 +64,13 @@ TMStyleNode >> pages [
 		select: [ :aPage | (self topicMap style4Page: aPage) = self style ]
 ]
 
+{ #category : #accessing }
+TMStyleNode >> parents [
+	"Not sure we need this. Perhaps we need a different definition ..."
+
+	^ self nodesFor: (self context flatCollect: #parents) copyWithoutDuplicates
+]
+
 { #category : #mondrian }
 TMStyleNode >> roadmapNodes [
 	^ self subclassResponsibility

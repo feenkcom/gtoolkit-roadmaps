@@ -45,43 +45,6 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-08T09:05:53.629546+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-08T09:05:56.386528+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "E0wmjqb6DQC9OQa4CT73sw=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "# Done"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
 					"items" : [
 						{
 							"__type" : "textSnippet",
@@ -166,43 +129,6 @@
 														"__type" : "textStyle"
 													},
 													"string" : "We update {{gtMethod:name=TMTopicNode>>#children}} to point  to pages instead."
-												},
-												{
-													"__type" : "textSnippet",
-													"children" : {
-														"__type" : "snippets",
-														"items" : [ ]
-													},
-													"createEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"createTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-09-08T09:47:45.390596+02:00"
-														}
-													},
-													"editEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"editTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-09-08T09:47:45.390596+02:00"
-														}
-													},
-													"uid" : {
-														"__type" : "uid",
-														"uidString" : "hL7cI6f6DQCR2wKAA9j2cg=="
-													},
-													"paragraphStyle" : {
-														"__type" : "textStyle"
-													},
-													"string" : ""
 												}
 											]
 										},
@@ -225,7 +151,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T09:48:46.659159+02:00"
+												"dateAndTimeString" : "2025-09-08T09:48:54.475752+02:00"
 											}
 										},
 										"uid" : {
@@ -235,7 +161,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "{{gtClass:name=TMStyleNode}} is only used in {{gtMethod:name=TMAbstractTreeNode>>#styleNodes}}, so we track down and eliminate the references we don't need. (We leave them in the summary view, in the treeMapChildren and "
+										"string" : "{{gtClass:name=TMStyleNode}} is only used in {{gtMethod:name=TMAbstractTreeNode>>#styleNodes}}, so we track down and eliminate the references we don't need. (We leave them in the summary view, in the treeMapChildren and a test example.)"
 									}
 								]
 							},
@@ -269,7 +195,45 @@
 								"__type" : "textStyle"
 							},
 							"string" : "Unify and simplify the children methods."
-						},
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-08T09:05:53.629546+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-08T09:05:56.386528+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "E0wmjqb6DQC9OQa4CT73sw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Done"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
 						{
 							"__type" : "pharoSnippet",
 							"children" : {
@@ -305,6 +269,298 @@
 							"code" : "TopicMapExamples new databaseNode"
 						},
 						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-08T10:18:42.125301+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-08T10:18:53.938567+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "A0SIkqf6DQCf2WQMBeeNXg=="
+							},
+							"code" : "TopicMapExamples new styleNodeIntroductionWithinAboutGtTopic"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T09:49:06.892583+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T09:49:08.919128+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "sFu4KKf6DQCUM+h0A9j2cg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "For field : { db }; topic : { field }; page : topics or { viaTopic }"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-08T09:49:08.917174+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-08T09:49:11.551319+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "90DXKKf6DQCUO1XIA9j2cg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "For each node compute parents."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T10:33:33.177538+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T10:33:33.177538+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "eqOkx6f6DQCk89rRBeeNXg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Remove page within topic node.\nInstead have viaTopic for PageNode.\nBy default is nil, o/w a specific topic.\n= tests both name and viaTopic."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T10:33:42.446304+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T10:34:52.533559+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "SxIyyKf6DQCk+Y4BBeeNXg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "First remove all sends to treeMapParent.\nThen fix sends to treeMapParent:\nFinally remove the field and its accessors."
+									},
+									{
+										"__type" : "pharoSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T12:32:22.638123+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T12:32:29.456807+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "vJOXcKn6DQCDLpNnCd4zPQ=="
+										},
+										"code" : "#treeMap gtSenders"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T10:27:57.921424+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-08T10:33:33.18094+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "+gips6f6DQCk0C4nBeeNXg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "treeChildren = children except for topic, which sets viaTopic for its pages. (only needed for mondrian tree)"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-08T10:28:01.234645+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-08T10:33:57.180257+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "7Zbbs6f6DQCk3FlUBeeNXg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Remove treeMapParent attribute."
+						},
+						{
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
@@ -329,7 +585,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-08T09:09:47.417248+02:00"
+									"dateAndTimeString" : "2025-09-08T10:27:57.927059+02:00"
 								}
 							},
 							"uid" : {
@@ -339,7 +595,41 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "For each node compute parents.\nFor field : { db }; topic : { field }; page : topics or { viaTopic }\n\nRemove treeParent attribute.\nRemove page within topic node.\nInstead have viaTopic for PageNode.\nBy default is nil, o/w a specific topic.\n= tests both name and viaTopic.\ntreeChildren = children except for topic, which sets viaTopic for its pages. (only needed for mondrian tree)\n\nReplace tooltip by breadcrumb.\nFor pages list fields, topics and then page.\n\nSimplify visualizations.\nTreeMap uses children instead of treeMapChildren.\nMondrian graph uses children; mondrian tree uses treeChildren.\nRoadmap uses children.\n\nRedesign topic Roadmaps.\ndb : db -> fields\nfield : db -> fields -> topics of selected field\ntopic : db -> fields -> selected topic -> pages of selected topic\npage : db -> fields -> topics of page -> page (list each topic -> page)\nquery : db -> fields of query -> topics of query pages -> pages of query (list each topic -> page)\n\nAdd a page preview hover.\nFor Roadmaps don't need breadcrumb, so show page preview instead.\n(Check how this is done ...)\n\n"
+							"string" : "Replace tooltip by breadcrumb.\nFor pages list fields, topics and then page.\n\nSimplify visualizations.\nTreeMap uses children instead of treeMapChildren.\nMondrian graph uses children; mondrian tree uses treeChildren.\nRoadmap uses children.\n\nRedesign topic Roadmaps.\ndb : db -> fields\nfield : db -> fields -> topics of selected field\ntopic : db -> fields -> selected topic -> pages of selected topic\npage : db -> fields -> topics of page -> page (list each topic -> page)\nquery : db -> fields of query -> topics of query pages -> pages of query (list each topic -> page)\n\nAdd a page preview hover.\nFor Roadmaps don't need breadcrumb, so show page preview instead.\n(Check how this is done ...)\n\nMake standardOrder a feature of pageGroups.\nInstead of explicitly ordering a pageGroup, just send a message to order itself by styles.\n\nCheck allAbstractmethods of all Node subclasses."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-08T10:21:40.802524+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-08T10:22:44.273498+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "36Yunaf6DQChARZ/BeeNXg=="
+							},
+							"code" : "TMAbstractTreeNode allSubclasses\r\tselect: [ :c | c hasAbstractMethods ]\r\tthenCollect: [ :c | c -> c allAbstractMethods ]"
 						}
 					]
 				},

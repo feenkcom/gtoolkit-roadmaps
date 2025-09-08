@@ -45,6 +45,11 @@ TMTopicNode >> pages [
 	^ self topicMap topic2Pages at: self topic
 ]
 
+{ #category : #navigation }
+TMTopicNode >> parents [
+	^ self fieldNodes
+]
+
 { #category : #accessing }
 TMTopicNode >> relatedInfo [
 	^ 'Field: ' , self field
@@ -111,6 +116,17 @@ TMTopicNode >> topic: aString [
 { #category : #navigation }
 TMTopicNode >> topics [
 	^ {self topic}
+]
+
+{ #category : #navigation }
+TMTopicNode >> treeChildren [
+	"Set the viaTopic field so pages can appear multiple times, once for each topic."
+
+	^ self children
+		collect: [ :n | 
+			n
+				viaTopic: self;
+				yourself ]
 ]
 
 { #category : #treemaps }

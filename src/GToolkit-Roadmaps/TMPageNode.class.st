@@ -2,7 +2,8 @@ Class {
 	#name : #TMPageNode,
 	#superclass : #TMAbstractTreeNode,
 	#instVars : [
-		'page'
+		'page',
+		'viaTopic'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -29,10 +30,15 @@ TMPageNode class >> for: aPage in: aTopicMap [
 		yourself
 ]
 
+{ #category : #comparing }
+TMPageNode >> = other [
+	^ super = other and: [ self viaTopic = other viaTopic ]
+]
+
 { #category : #navigation }
 TMPageNode >> children [
 	^ self
-		nodeGroupFor: (self topics collect: [ :each | TMTopicNode for: each in: self topicMap ])
+		nodesFor: {} "(self topics collect: [ :each | TMTopicNode for: each in: self topicMap ])"
 ]
 
 { #category : #mondrian }
@@ -73,6 +79,11 @@ TMPageNode >> gtTreeMapFor: aView [
 	^ aView empty
 ]
 
+{ #category : #comparing }
+TMPageNode >> hash [
+	^ super hash bitXor: self viaTopic hash
+]
+
 { #category : #accessing }
 TMPageNode >> name [
 	^ 'Page: ', self page title
@@ -93,6 +104,13 @@ TMPageNode >> pages [
 	^ {self page}
 ]
 
+{ #category : #navigation }
+TMPageNode >> parents [
+	^ self viaTopic
+		ifNil: [ self topicNodes ]
+		ifNotNil: [ self nodesFor: {self viaTopic} ]
+]
+
 { #category : #accessing }
 TMPageNode >> relatedInfo [
 	^ 'Style:', self style
@@ -111,7 +129,12 @@ TMPageNode >> roadmapChildren [
 
 { #category : #mondrian }
 TMPageNode >> roadmapNodes [
-	^ self subclassResponsibility
+	"Same as parent?"
+
+	| parent |
+	parent := self parents first.
+
+	^ parent roadmapNodes
 ]
 
 { #category : #mondrian }
@@ -158,4 +181,16 @@ TMPageNode >> treeMapTooltip [
 		padding: (BlInsets all: 2);
 		text: self treeMapPath;
 		yourself
+]
+
+{ #category : #accessing }
+TMPageNode >> viaTopic [
+	"NB: can be nil or a specific topic."
+
+	^ viaTopic
+]
+
+{ #category : #accessing }
+TMPageNode >> viaTopic: anObject [
+	viaTopic := anObject
 ]
