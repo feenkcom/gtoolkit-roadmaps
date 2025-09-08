@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-08T09:09:37.774685+02:00"
+						"dateAndTimeString" : "2025-09-08T09:30:40.162696+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "After some experiments, it is becoming clear that the current design can be simplified: *styles* should be just attributes of page nodes, not nodes in their own right. We don't need a separate page node within a topic, but can just add an optional *viaTopic* attribute to a page node. The *children* by default should respect database -> fields -> topics -> pages. If we need a tree, then *treeChildren* just needs to set *viaTopic*."
+				"string" : "After some experiments, it is becoming clear that the current design can be simplified: *styles* should be just attributes of page nodes, not children of topics. We don't need a separate page node within a topic, but can just add an optional *viaTopic* attribute to a page node. The *children* by default should respect database -> fields -> topics -> pages. If we need a tree, then *treeChildren* just needs to set *viaTopic*."
 			},
 			{
 				"__type" : "textSnippet",
@@ -113,7 +113,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T09:09:52.377021+02:00"
+												"dateAndTimeString" : "2025-09-08T09:45:10.221961+02:00"
 											}
 										},
 										"uid" : {
@@ -123,13 +123,88 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Have just: db -> fields -> topics -> pages.\nRemove style nodes; only have styles as properties of pages."
+										"string" : "Have just: db -> fields -> topics -> pages.\nRemove style nodes as children of topics. \n(We still need {{gtClass:name=TMStyleNode}} for TreeMaps.)"
 									},
 									{
-										"__type" : "pharoSnippet",
+										"__type" : "textSnippet",
 										"children" : {
 											"__type" : "snippets",
-											"items" : [ ]
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-08T09:35:30.738486+02:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-08T09:47:43.410657+02:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "w9YS+Kb6DQCPSw2ZA9j2cg=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "We update {{gtMethod:name=TMTopicNode>>#children}} to point  to pages instead."
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-08T09:47:45.390596+02:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-08T09:47:45.390596+02:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "hL7cI6f6DQCR2wKAA9j2cg=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : ""
+												}
+											]
 										},
 										"createEmail" : {
 											"__type" : "email",
@@ -139,7 +214,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T09:09:56.483775+02:00"
+												"dateAndTimeString" : "2025-09-08T09:31:33.238447+02:00"
 											}
 										},
 										"editEmail" : {
@@ -150,14 +225,17 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T09:10:12.987224+02:00"
+												"dateAndTimeString" : "2025-09-08T09:48:46.659159+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
-											"uidString" : "jPefnKb6DQCHoJ75CT73sw=="
+											"uidString" : "e97q6ab6DQCNo6vhA9j2cg=="
 										},
-										"code" : "TopicMapExamples data"
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "{{gtClass:name=TMStyleNode}} is only used in {{gtMethod:name=TMAbstractTreeNode>>#styleNodes}}, so we track down and eliminate the references we don't need. (We leave them in the summary view, in the treeMapChildren and "
 									}
 								]
 							},
@@ -191,6 +269,40 @@
 								"__type" : "textStyle"
 							},
 							"string" : "Unify and simplify the children methods."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-08T09:09:56.483775+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-08T09:10:18.690839+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "jPefnKb6DQCHoJ75CT73sw=="
+							},
+							"code" : "TopicMapExamples new databaseNode"
 						},
 						{
 							"__type" : "textSnippet",

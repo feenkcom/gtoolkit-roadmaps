@@ -17,7 +17,7 @@ TMTopicNode class >> for: aTopic in: aTopicMap [
 
 { #category : #navigation }
 TMTopicNode >> children [
-	^ self styleNodes
+	^ self pageGroup
 ]
 
 { #category : #mondrian }

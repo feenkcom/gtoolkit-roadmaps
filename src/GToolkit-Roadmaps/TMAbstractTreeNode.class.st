@@ -387,14 +387,14 @@ TMAbstractTreeNode >> stylePalette [
 	^ {'Introduction' -> Color red lighter.
 		'Media' -> Color green.
 		'Tutorial' -> Color blue muchLighter.
-		'Case study' -> Color purple.
+		'Case study' -> Color purple muchLighter.
 		'Pattern' -> Color orange.
 		'FAQ' -> Color paleYellow.
 		'Examples' -> Color lightRed.
 		'Documentation' -> Color paleBlue.
-		'Definition' -> Color black.
-		'Index' -> Color gray.
-		'Tag' -> Color veryLightGray} asDictionary
+		'Definition' -> Color veryLightGray.
+		'Index' -> Color lightGray.
+		'Tag' -> Color gray} asDictionary
 ]
 
 { #category : #views }

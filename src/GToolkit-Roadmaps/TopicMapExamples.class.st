@@ -252,6 +252,6 @@ TopicMapExamples >> topicNodeAboutGt [
 	self assert: topicNodeaAboutGt styles size equals: 5.
 	self assert: topicNodeaAboutGt pages size < topicNodeaAboutGt database pages size.
 	self assert: topicNodeaAboutGt children isTMNodeGroup.
-	self assert: topicNodeaAboutGt children isTMPageGroup not.
+	self assert: topicNodeaAboutGt children isTMPageGroup.
 	^ topicNodeaAboutGt
 ]
