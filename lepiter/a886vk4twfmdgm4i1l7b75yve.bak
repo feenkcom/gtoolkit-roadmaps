@@ -1242,146 +1242,6 @@
 								"__type" : "textStyle"
 							},
 							"string" : "Remove the class `TMPageForTopicGroup`"
-						}
-					]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-08T09:05:53.629546+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-08T09:05:56.386528+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "E0wmjqb6DQC9OQa4CT73sw=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "# Done"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-08T09:09:56.483775+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-08T09:10:18.690839+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "jPefnKb6DQCHoJ75CT73sw=="
-							},
-							"code" : "TopicMapExamples new databaseNode"
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-08T10:18:42.125301+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-08T10:18:53.938567+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "A0SIkqf6DQCf2WQMBeeNXg=="
-							},
-							"code" : "TopicMapExamples new styleNodeIntroductionWithinAboutGtTopic"
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-08T14:45:22.178985+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-08T14:45:36.030288+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "NrY1TKv6DQCwswuJAeZLCw=="
-							},
-							"code" : "TopicMapExamples new pageNodeWhatIsGt"
 						},
 						{
 							"__type" : "textSnippet",
@@ -1468,7 +1328,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-08T09:02:48.718931+02:00"
+						"dateAndTimeString" : "2025-09-08T09:05:53.629546+02:00"
 					}
 				},
 				"editEmail" : {
@@ -1479,17 +1339,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-08T09:02:53.017971+02:00"
+						"dateAndTimeString" : "2025-09-08T09:05:56.386528+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "askgg6b6DQCJZGUxCrrFrA=="
+					"uidString" : "E0wmjqb6DQC9OQa4CT73sw=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# To do"
+				"string" : "# Done"
 			},
 			{
 				"__type" : "textSnippet",
@@ -1586,12 +1446,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-08T17:34:03.786313+02:00"
+			"dateAndTimeString" : "2025-09-08T17:47:18.461616+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "* Simplify design of TopicMap nodes"
+		"title" : "Simplify design of TopicMap nodes"
 	},
 	"uid" : {
 		"__type" : "uuid",

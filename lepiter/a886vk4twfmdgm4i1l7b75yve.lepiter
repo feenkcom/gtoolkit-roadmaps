@@ -879,7 +879,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T17:06:00.854319+02:00"
+												"dateAndTimeString" : "2025-09-08T17:52:49.158173+02:00"
 											}
 										},
 										"uid" : {
@@ -889,7 +889,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Need to add support for queries.\nAdded {{gtMethod:name=TMPageGroup>>#roadmapNodes}}\nThe treemap display is not quite right yet. See [[Bugs to fix]]."
+										"string" : "Need to add support for queries.\nAdded {{gtMethod:name=TMPageGroup>>#roadmapNodes}}\nThe treemap display is not quite right yet. See [[* Bugs to fix]]."
 									},
 									{
 										"__type" : "pharoSnippet",

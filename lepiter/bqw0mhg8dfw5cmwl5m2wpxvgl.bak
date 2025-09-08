@@ -13,43 +13,6 @@
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T13:44:54.255446+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T13:44:54.955807+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "wdxxGm76DQCjg919A350UA=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "[[GT Roadmaps Todo List]] "
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
 								"items" : [
 									{
 										"__type" : "textSnippet",
@@ -76,7 +39,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T17:03:29.120114+02:00"
+												"dateAndTimeString" : "2025-09-08T17:52:49.15175+02:00"
 											}
 										},
 										"uid" : {
@@ -86,7 +49,44 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Bugs to fix]]  "
+										"string" : "[[* Bugs to fix]]  "
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-05T13:37:24.974112+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-05T13:37:28.158616+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "o1yq/236DQCF5Ko+BGq2Eg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "[[Notes on Mondrian Roadmaps]] "
 									}
 								]
 							},
@@ -98,7 +98,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T13:37:24.974112+02:00"
+									"dateAndTimeString" : "2025-09-05T13:44:54.255446+02:00"
 								}
 							},
 							"editEmail" : {
@@ -109,17 +109,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-05T13:37:28.158616+02:00"
+									"dateAndTimeString" : "2025-09-08T17:52:30.244814+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "o1yq/236DQCF5Ko+BGq2Eg=="
+								"uidString" : "wdxxGm76DQCjg919A350UA=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Notes on Mondrian Roadmaps]] "
+							"string" : "[[* GT Roadmaps Todo List]] "
 						},
 						{
 							"__type" : "textSnippet",
@@ -262,7 +262,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T15:56:38.381225+02:00"
+												"dateAndTimeString" : "2025-09-08T17:47:41.969418+02:00"
 											}
 										},
 										"uid" : {
@@ -272,7 +272,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[* Introduce Mondrian Roadmaps]] "
+										"string" : "[[Introduce Mondrian Roadmaps]] "
 									},
 									{
 										"__type" : "textSnippet",
