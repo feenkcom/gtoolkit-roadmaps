@@ -71,7 +71,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-09T16:37:12.471646+02:00"
+									"dateAndTimeString" : "2025-09-09T17:19:24.273958+02:00"
 								}
 							},
 							"uid" : {
@@ -81,7 +81,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[*** Roadmaps with or without Styles]] "
+							"string" : "[[* Roadmaps with or without Styles]] "
 						},
 						{
 							"__type" : "textSnippet",

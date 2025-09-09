@@ -238,12 +238,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-09T16:37:12.454948+02:00"
+			"dateAndTimeString" : "2025-09-09T17:19:24.262689+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "*** Roadmaps with or without Styles"
+		"title" : "* Roadmaps with or without Styles"
 	},
 	"uid" : {
 		"__type" : "uuid",

@@ -106,9 +106,9 @@ TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 
 { #category : #views }
 TMAbstractTreeNode >> gtRoadmapFor: aView [
-	<gtView>
+	"<gtView>"
 	^ aView forward
-		title: 'Roadmap';
+		title: 'Roadmap OLD';
 		priority: 35;
 		object: [ self roadmap ];
 		view: #gtLiveFor:;
@@ -119,7 +119,7 @@ TMAbstractTreeNode >> gtRoadmapFor: aView [
 TMAbstractTreeNode >> gtRoadmapWithKindFor: aView [
 	<gtView>
 	^ aView forward
-		title: 'Roadmap 2';
+		title: 'Roadmap';
 		priority: 36;
 		object: [ self roadmapWithKind ];
 		view: #gtLiveFor:;

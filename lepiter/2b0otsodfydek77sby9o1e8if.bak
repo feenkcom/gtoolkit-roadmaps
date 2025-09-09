@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-21T18:16:59.691302+02:00"
+						"dateAndTimeString" : "2025-09-09T11:36:23.907653+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "How to profile newcomers?\nDo they have a specific problem to address or not?\nAre they interested in a specific GT component or technique?"
+				"string" : " How to profile newcomers?\nDo they have a specific problem to address or not?\nAre they interested in a specific GT component or technique?"
 			},
 			{
 				"__type" : "pharoSnippet",
