@@ -46,6 +46,18 @@ TMFieldNode >> fields [
 	^ {field}
 ]
 
+{ #category : #views }
+TMFieldNode >> gtMondrianTreeFor: aView [
+	"For Fields only -- too slow for the whole db, and not interesting for topics."
+
+	<gtView>
+	^ aView forward
+		title: 'Mondrian tree';
+		priority: 40;
+		object: [ self mondrianTree ];
+		view: #gtLiveFor:
+]
+
 { #category : #testing }
 TMFieldNode >> isTMFieldNode [
 	^ true

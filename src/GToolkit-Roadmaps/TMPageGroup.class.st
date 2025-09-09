@@ -58,6 +58,12 @@ TMPageGroup >> queryString: aString [
 	queryString := ' query: ', aString
 ]
 
+{ #category : #roadmap }
+TMPageGroup >> roadmapWithStyleNodes [
+	^ self roadmapNodes
+		, (self pageGroup flatCollect: #styleNodes) copyWithoutDuplicates
+]
+
 { #category : #utility }
 TMPageGroup >> sortedByStyles [
 	| sortedPages |

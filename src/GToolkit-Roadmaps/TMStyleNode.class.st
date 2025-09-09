@@ -84,7 +84,7 @@ TMStyleNode >> roadmapNodes [
 { #category : #roadmap }
 TMStyleNode >> roadmapWithStyleNodes [
 
-	^ self pageGroup roadmapWithStyleNodes
+	^ self pageGroup roadmapWithStyleNodes, { self }
 ]
 
 { #category : #accessing }

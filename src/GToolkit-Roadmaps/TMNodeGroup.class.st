@@ -97,7 +97,7 @@ super printOn: aStream.
 		nextPut: $)
 ]
 
-{ #category : #accessing }
+{ #category : #roadmap }
 TMNodeGroup >> roadmapNodes [
 	^ self allParents , self nodes
 ]

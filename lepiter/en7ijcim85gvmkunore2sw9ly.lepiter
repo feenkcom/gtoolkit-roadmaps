@@ -42,6 +42,43 @@
 				"string" : "Without explicit styles we only see the colors.\nWe would like to see topic -> styles -> pages\nBut when we focus on a specific pages we wantto see the mapping between topics and pages, with the style on the side?"
 			},
 			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T15:55:20.704832+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T16:30:42.558331+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "xIBNZMD6DQCx63DQBcgiRA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We introduce the experimental {{gtMethod:name=TMAbstractTreeNode>>#roadmapWithStyle}} under the view *Roadmap 2*"
+			},
+			{
 				"__type" : "pharoSnippet",
 				"children" : {
 					"__type" : "snippets",
@@ -142,6 +179,43 @@
 					"uidString" : "oXa6zLz6DQC7o+ZgC8pd9w=="
 				},
 				"code" : "TopicMapExamples new pageNodeWhatIsGt"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T16:37:26.658553+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T16:37:26.658553+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3s8LZMD6DQCx5jaiBcgiRA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
 			}
 		]
 	},
@@ -164,12 +238,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-09T11:36:56.727064+02:00"
+			"dateAndTimeString" : "2025-09-09T16:37:12.454948+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "*** Roadmaps with or without Styles?"
+		"title" : "*** Roadmaps with or without Styles"
 	},
 	"uid" : {
 		"__type" : "uuid",

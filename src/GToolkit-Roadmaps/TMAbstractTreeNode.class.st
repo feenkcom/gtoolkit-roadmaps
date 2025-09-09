@@ -115,6 +115,17 @@ TMAbstractTreeNode >> gtRoadmapFor: aView [
 		actionUpdateButton
 ]
 
+{ #category : #views }
+TMAbstractTreeNode >> gtRoadmapWithStyleFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Roadmap 2';
+		priority: 36;
+		object: [ self roadmapWithStyle ];
+		view: #gtLiveFor:;
+		actionUpdateButton
+]
+
 { #category : #actions }
 TMAbstractTreeNode >> gtSpawnTopicMapActionFor: anAction [
 	<gtAction>
@@ -278,17 +289,11 @@ TMAbstractTreeNode >> relatedInfo [
 
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmap [
-	^ self roadmapFor: self roadmapNodes
-	"^ self roadmapWithStyleFor: self roadmapWithStyleNodes"
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> roadmapFor: aTMNodeCollection [
 	| mondrian |
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
-		with: aTMNodeCollection.
+		with: self roadmapNodes.
 	mondrian edges connectFromAll: #parents.
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new
@@ -346,14 +351,14 @@ TMAbstractTreeNode >> roadmapSimpleNodeElement [
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> roadmapWithStyleFor: aTMNodeCollection [
+TMAbstractTreeNode >> roadmapWithStyle [
 	"Experimental -- variant in which we also show styles as nodes."
 
 	| mondrian |
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
-		with: aTMNodeCollection.
+		with: self roadmapWithStyleNodes.
 	mondrian edges connectFromAll: #parentsWithStyle.
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new
@@ -389,7 +394,7 @@ TMAbstractTreeNode >> styleNodes [
 { #category : #treemaps }
 TMAbstractTreeNode >> stylePalette [
 	^ {'Introduction' -> Color red muchLighter.
-		'Media' -> Color green.
+		'Media' -> Color green lighter.
 		'Tutorial' -> Color blue muchLighter.
 		'Case study' -> Color purple muchLighter.
 		'Pattern' -> Color orange.
