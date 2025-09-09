@@ -255,6 +255,11 @@ TMAbstractTreeNode >> parents [
 	self subclassResponsibility
 ]
 
+{ #category : #navigation }
+TMAbstractTreeNode >> parentsWithStyle [
+	^ self parents
+]
+
 { #category : #printing }
 TMAbstractTreeNode >> printOn: aStream [
 	super printOn: aStream.
@@ -274,19 +279,17 @@ TMAbstractTreeNode >> relatedInfo [
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmap [
 	^ self roadmapFor: self roadmapNodes
+	"^ self roadmapWithStyleFor: self roadmapWithStyleNodes"
 ]
 
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmapFor: aTMNodeCollection [
-	"NB: The input nodes must have treeMapParent set."
-
 	| mondrian |
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
 		with: aTMNodeCollection.
 	mondrian edges connectFromAll: #parents.
-	"mondrian edges connectFrom: #treeMapParent."
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new
 				levelDistance: 50;
@@ -340,6 +343,30 @@ TMAbstractTreeNode >> roadmapSimpleNodeElement [
 		border: self roadmapNodeBorderColor;
 		background: self roadmapNodeColor;
 		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapWithStyleFor: aTMNodeCollection [
+	"Experimental -- variant in which we also show styles as nodes."
+
+	| mondrian |
+	mondrian := GtMondrian new.
+	mondrian nodes
+		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
+		with: aTMNodeCollection.
+	mondrian edges connectFromAll: #parentsWithStyle.
+	mondrian layout
+		custom: (GtGradHorizontalTreeLayout new
+				levelDistance: 50;
+				nodeDistance: 20).
+	^ mondrian
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapWithStyleNodes [
+	"Should return a kind of TMNodeGroup"
+
+	^ self roadmapNodes
 ]
 
 { #category : #utility }

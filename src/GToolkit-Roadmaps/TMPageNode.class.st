@@ -153,6 +153,11 @@ TMPageNode >> parents [
 		ifNotNil: [ self nodesFor: {self viaTopic} ]
 ]
 
+{ #category : #navigation }
+TMPageNode >> parentsWithStyle [
+	^ self styleNodes
+]
+
 { #category : #accessing }
 TMPageNode >> relatedInfo [
 	^ 'Style:', self style
@@ -186,6 +191,14 @@ TMPageNode >> roadmapSimpleNodeElement [
 	^ super roadmapSimpleNodeElement
 		geometry: BlCircleGeometry new;
 		yourself
+]
+
+{ #category : #roadmap }
+TMPageNode >> roadmapWithStyleNodes [
+	| pageNodeWithAllTopics |
+	pageNodeWithAllTopics := self withoutViaTopic.
+	^ self databaseNode roadmapWithStyleNodes , pageNodeWithAllTopics parents
+		, pageNodeWithAllTopics styleNodes , {pageNodeWithAllTopics}
 ]
 
 { #category : #accessing }

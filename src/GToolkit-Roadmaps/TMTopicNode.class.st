@@ -64,10 +64,21 @@ TMTopicNode >> relatedInfo [
 TMTopicNode >> roadmapNodes [
 	"Want parents, parent peers, and own peers."
 
-	| parent |
+	| parent children |
 	parent := self fieldNodes first.
-	^ parent roadmapNodes
-		, (self children sortedByStyles collect: [ :pn | pn viaTopic: self ])
+	children := self children sortedByStyles collect: [ :pn | pn viaTopic: self ].
+	^ parent roadmapNodes , children
+]
+
+{ #category : #mondrian }
+TMTopicNode >> roadmapWithStyleNodes [
+	"Want parents, parent peers, and own peers."
+
+	| parent children styles |
+	parent := self fieldNodes first.
+	children := self children sortedByStyles collect: [ :pn | pn viaTopic: self ].
+	styles := (children flatCollect: #styleNodes) copyWithoutDuplicates.
+	^ parent roadmapWithStyleNodes , styles, children
 ]
 
 { #category : #navigation }

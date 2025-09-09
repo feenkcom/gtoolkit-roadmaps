@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:49:08.146001+02:00"
+						"dateAndTimeString" : "2025-09-09T11:36:40.08577+02:00"
 					}
 				},
 				"editEmail" : {
@@ -29,128 +29,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T17:18:49.05361+02:00"
+						"dateAndTimeString" : "2025-09-09T11:40:25.904224+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "7pkgG276DQCjlzSEA350UA=="
+					"uidString" : "Takzx7z6DQC6UwFWC8pd9w=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "This database exists to log the development tasks for the GT Roadmap project. The database should not be loaded by default."
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:50:25.785527+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:52:32.118825+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "KZw0Lm76DQCnHy7BA350UA=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "The repo is here: [](https://github.com/feenkcom/gtoolkit-roadmaps) and is loaded by default in GT."
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:50:39.885722+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:51:18.717397+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "frpDLm76DQCnJMFqA350UA=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "The topic map was originally  produced using OpenAI chats in the [Gt Metabook project](https://github.com/feenkcom/gtoolkit-metabook). "
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:52:52.737536+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:53:19.19939+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "guv2Nm76DQCqpIWcA350UA=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "The roadmaps are niot yet ready to use. To enable roadmap actions, evaluate this toggle:"
+				"string" : "Without explicit styles we only see the colors.\nWe would like to see topic -> styles -> pages\nBut when we focus on a specific pages we wantto see the mapping between topics and pages, with the style on the side?"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -166,7 +55,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:53:22.058413+02:00"
+						"dateAndTimeString" : "2025-09-09T11:47:51.020695+02:00"
 					}
 				},
 				"editEmail" : {
@@ -177,14 +66,82 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:53:22.517733+02:00"
+						"dateAndTimeString" : "2025-09-09T11:47:57.48983+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "fVK2OG76DQCsiZhFA350UA=="
+					"uidString" : "LE8x77z6DQC/Wl7ZC8pd9w=="
 				},
-				"code" : "TMRegistry uniqueInstance enableExtensions"
+				"code" : "TopicMapExamples new databaseNode"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T11:36:48.327378+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T11:38:23.864624+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "y2Wxx7z6DQC6WDKZC8pd9w=="
+				},
+				"code" : "TopicMapExamples new topicNodeAboutGt"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T11:38:12.807035+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T11:38:13.303894+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "oXa6zLz6DQC7o+ZgC8pd9w=="
+				},
+				"code" : "TopicMapExamples new pageNodeWhatIsGt"
 			}
 		]
 	},
@@ -196,7 +153,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-04T16:03:17.037962+02:00"
+			"dateAndTimeString" : "2025-09-09T11:36:39.943469+02:00"
 		}
 	},
 	"editEmail" : {
@@ -207,15 +164,15 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-04T16:03:24.110025+02:00"
+			"dateAndTimeString" : "2025-09-09T11:36:56.727064+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "GT Roadmaps"
+		"title" : "*** Roadmaps with or without Styles?"
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "cae67ceb-5bfa-0d00-bea4-856f05726bc6"
+		"uuid" : "a67c31c7-bcfa-0d00-ba52-e9f10bca5df7"
 	}
 }

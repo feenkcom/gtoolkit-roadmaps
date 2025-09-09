@@ -66,8 +66,6 @@ TMStyleNode >> pages [
 
 { #category : #accessing }
 TMStyleNode >> parents [
-	"Not sure we need this. Perhaps we need a different definition ..."
-
 	^ self nodesFor: (self context flatCollect: #parents) copyWithoutDuplicates
 ]
 
@@ -81,6 +79,12 @@ TMStyleNode >> roadmapNodes [
 	"Show the roadmap for the context pages with this style."
 
 	^ self pageGroup roadmapNodes
+]
+
+{ #category : #roadmap }
+TMStyleNode >> roadmapWithStyleNodes [
+
+	^ self pageGroup roadmapWithStyleNodes
 ]
 
 { #category : #accessing }
