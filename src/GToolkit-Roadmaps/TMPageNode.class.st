@@ -83,7 +83,39 @@ TMPageNode >> gtSpawnPageActionFor: anAction [
 			mouseCursor: BlCopyCursor new
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #views }
+TMPageNode >> gtTreeFor: aView [
+	"For a page we want to dive into the topics associated with that page."
+
+	<gtView>
+	^ aView columnedTree
+		title: 'Topic Map';
+		priority: 10;
+		items: [ self topicNodes ];
+		children: #children;
+		column: 'Index'
+			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
+			width: 45;
+		column: 'Node'
+			text: [ :each | each nodeLabel ]
+			width: 300;
+		column: '# Children'
+			text: [ :each | each children size ]
+			width: 100;
+		column: '# Pages'
+			text: [ :each | each pages size ]
+			width: 100;
+		column: '# Styles'
+			text: [ :each | each styles size ]
+			width: 100;
+		column: 'Info'
+			text: [ :each | each relatedInfo ]
+			width: 300;
+		send: [ :each | each ];
+		actionUpdateButton
+]
+
+{ #category : #views }
 TMPageNode >> gtTreeMapFor: aView [
 	<gtView>
 	^ aView empty
