@@ -59,26 +59,26 @@ TMPageGroup >> queryString: aString [
 ]
 
 { #category : #roadmap }
-TMPageGroup >> roadmapWithStyleNodes [
+TMPageGroup >> roadmapWithKindNodes [
 	^ self roadmapNodes
-		, (self pageGroup flatCollect: #styleNodes) copyWithoutDuplicates
+		, (self pageGroup flatCollect: #kindNodes) copyWithoutDuplicates
 ]
 
 { #category : #utility }
-TMPageGroup >> sortedByStyles [
+TMPageGroup >> sortedByKinds [
 	| sortedPages |
 	sortedPages := OrderedCollection new.
-	self stylesStandardOrder
-		do: [ :aStyle | sortedPages addAll: (self nodes select: [ :n | n style = aStyle ]) ].
+	self kindsStandardOrder
+		do: [ :aKind | sortedPages addAll: (self nodes select: [ :n | n kind = aKind ]) ].
 	^ sortedPages
 ]
 
 { #category : #treemaps }
 TMPageGroup >> treeMapChildren [
-	"Want to organize by styles -- fro some reason doesn't display styles in groups as it should."
+	"Want to organize by kinds -- for some reason doesn't display kinds in groups as it should."
 
 	<todo: 'Debug the display of treeMaps for queries.'>
-	^ self styleNodes
+	^ self kindNodes
 ]
 
 { #category : #treemaps }

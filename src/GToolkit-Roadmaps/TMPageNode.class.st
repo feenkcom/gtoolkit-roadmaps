@@ -43,7 +43,7 @@ TMPageNode >> breadcrumb [
 	"^ self treeMapPath"
 
 	^ (String cr join: (self parents collect: #breadcrumb)) , String cr
-		, self styleNodes first nodeLabel , String cr , self nodeLabel
+		, self kindNodes first nodeLabel , String cr , self nodeLabel
 ]
 
 { #category : #navigation }
@@ -53,7 +53,7 @@ TMPageNode >> children [
 
 { #category : #mondrian }
 TMPageNode >> defaultNodeColor [
-	^ self stylePalette at: self style
+	^ self kindPalette at: self kind
 ]
 
 { #category : #navigation }
@@ -105,8 +105,8 @@ TMPageNode >> gtTreeFor: aView [
 		column: '# Pages'
 			text: [ :each | each pages size ]
 			width: 100;
-		column: '# Styles'
-			text: [ :each | each styles size ]
+		column: '# Kinds'
+			text: [ :each | each kinds size ]
 			width: 100;
 		column: 'Info'
 			text: [ :each | each relatedInfo ]
@@ -124,6 +124,16 @@ TMPageNode >> gtTreeMapFor: aView [
 { #category : #comparing }
 TMPageNode >> hash [
 	^ super hash bitXor: self viaTopic hash
+]
+
+{ #category : #accessing }
+TMPageNode >> kind [
+	^ self topicMap kind4Page: self page
+]
+
+{ #category : #navigation }
+TMPageNode >> kinds [
+	^ {self kind}
 ]
 
 { #category : #accessing }
@@ -154,18 +164,18 @@ TMPageNode >> parents [
 ]
 
 { #category : #navigation }
-TMPageNode >> parentsWithStyle [
-	^ self styleNodes
+TMPageNode >> parentsWithKind [
+	^ self kindNodes
 ]
 
 { #category : #accessing }
 TMPageNode >> relatedInfo [
-	^ 'Style:', self style
+	^ 'Kind: ' , self kind
 ]
 
 { #category : #accessing }
 TMPageNode >> relatedTitle [
-	^ 'Style'
+	^ 'Kind'
 ]
 
 { #category : #roadmap }
@@ -194,21 +204,11 @@ TMPageNode >> roadmapSimpleNodeElement [
 ]
 
 { #category : #roadmap }
-TMPageNode >> roadmapWithStyleNodes [
+TMPageNode >> roadmapWithKindNodes [
 	| pageNodeWithAllTopics |
 	pageNodeWithAllTopics := self withoutViaTopic.
-	^ self databaseNode roadmapWithStyleNodes , pageNodeWithAllTopics parents
-		, pageNodeWithAllTopics styleNodes , {pageNodeWithAllTopics}
-]
-
-{ #category : #accessing }
-TMPageNode >> style [
-	^ self topicMap style4Page: self page
-]
-
-{ #category : #navigation }
-TMPageNode >> styles [
-	^ {self style}
+	^ self databaseNode roadmapWithKindNodes , pageNodeWithAllTopics parents
+		, pageNodeWithAllTopics kindNodes , {pageNodeWithAllTopics}
 ]
 
 { #category : #querying }

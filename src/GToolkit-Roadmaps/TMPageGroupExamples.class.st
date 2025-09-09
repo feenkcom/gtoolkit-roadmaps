@@ -40,7 +40,7 @@ TMPageGroupExamples >> projectDiaryPageNode [
 	projectDiaryPageNode := self pageGroup
 			detect: [ :n | n page title = 'Project Diary' ].
 	self assert: projectDiaryPageNode page title equals: 'Project Diary'.
-	self assert: projectDiaryPageNode style equals: 'Pattern'.
+	self assert: projectDiaryPageNode kind equals: 'Pattern'.
 	self
 		assert: projectDiaryPageNode topics asSet
 		equals: #('Using Lepiter' 'Live Documentation' 'Moldable Development Practices' 'Examples and Documentation')

@@ -12,10 +12,10 @@ Class {
 		'json',
 		'database',
 		'page2Topics',
-		'page2Style',
 		'topic2Pages',
 		'fields2Topics',
-		'topic2Field'
+		'topic2Field',
+		'page2Kind'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -55,7 +55,7 @@ TopicMap >> clearCaches [
 
 	database := nil.
 	page2Topics := nil.
-	page2Style := nil.
+	page2Kind := nil.
 	topic2Pages := nil
 ]
 
@@ -72,7 +72,7 @@ TopicMap >> databaseNode [
 
 { #category : #querying }
 TopicMap >> defaultValue [
-	"Default value for lookups that fail (missing style, topic etc)."
+	"Default value for lookups that fail (missing kind, topic etc)."
 
 	^ '<unknown>'
 ]
@@ -220,6 +220,43 @@ TopicMap >> jsonFile: aFileReference [
 	jsonFile := aFileReference
 ]
 
+{ #category : #mapping }
+TopicMap >> kind2Pages [
+	| dict |
+	dict := Dictionary new.
+	self page2Kind
+		associationsDo: [ :assoc | (dict at: assoc value ifAbsentPut: OrderedCollection new) add: assoc key ].
+	^ dict
+]
+
+{ #category : #querying }
+TopicMap >> kind4Page: aPage [
+	^ self page2Kind at: aPage ifAbsent: self defaultValue
+]
+
+{ #category : #accessing }
+TopicMap >> kinds [
+	^ self kindsStandardOrder
+]
+
+{ #category : #querying }
+TopicMap >> kinds4Topic: aTopic [
+	"NB: we list the kinds of pages for a topic in the same canonical order defined in TopicMap>>#kind"
+
+	^ self kinds
+		select: [ :aKind | 
+			((self topic2Pages at: aTopic) collect: [ :aPage | self kind4Page: aPage ])
+				includes: aKind ]
+]
+
+{ #category : #accessing }
+TopicMap >> kindsStandardOrder [
+	"Can be used by nodes to sort kinds and pages into a standard order.
+	Access: self topicMap kindsStandardOrder"
+
+	^ self json at: 'kinds'
+]
+
 { #category : #querying }
 TopicMap >> missingPages [
 	"Pages listed in the JSON but not (or no longer) in the database."
@@ -230,11 +267,11 @@ TopicMap >> missingPages [
 ]
 
 { #category : #mapping }
-TopicMap >> page2Style [
-	^ page2Style
-		ifNil: [ page2Style := ((self json at: 'pages')
+TopicMap >> page2Kind [
+	^ page2Kind
+		ifNil: [ page2Kind := ((self json at: 'pages')
 					select: [ :d | self database hasPageNamed: (d at: 'page') ]
-					thenCollect: [ :d | (self database pageNamed: (d at: 'page')) -> (d at: 'style') ])
+					thenCollect: [ :d | (self database pageNamed: (d at: 'page')) -> (d at: 'kind') ])
 					asDictionary ]
 ]
 
@@ -253,50 +290,13 @@ TopicMap >> pages [
 ]
 
 { #category : #querying }
-TopicMap >> pages4Style: aStyle [
-	^ self style2Pages at: aStyle ifAbsent: {self defaultValue}
+TopicMap >> pages4Kind: aKind [
+	^ self kind2Pages at: aKind ifAbsent: {self defaultValue}
 ]
 
 { #category : #querying }
 TopicMap >> pages4Topic: aTopic [
 	^ self topic2Pages at: aTopic ifAbsent: {self defaultValue}
-]
-
-{ #category : #mapping }
-TopicMap >> style2Pages [
-	| dict |
-	dict := Dictionary new.
-	self page2Style
-		associationsDo: [ :assoc | (dict at: assoc value ifAbsentPut: OrderedCollection new) add: assoc key ].
-	^ dict
-]
-
-{ #category : #querying }
-TopicMap >> style4Page: aPage [
-	^ self page2Style at: aPage ifAbsent: self defaultValue
-]
-
-{ #category : #accessing }
-TopicMap >> styles [
-	^ self stylesStandardOrder
-]
-
-{ #category : #querying }
-TopicMap >> styles4Topic: aTopic [
-	"NB: we list the styles of pages for a topic in the same canonical order defined in TopicMap>>#styles"
-
-	^ self styles
-		select: [ :aStyle | 
-			((self topic2Pages at: aTopic) collect: [ :aPage | self style4Page: aPage ])
-				includes: aStyle ]
-]
-
-{ #category : #accessing }
-TopicMap >> stylesStandardOrder [
-	"Can be used by nodes to sort styles and pages into a standard order.
-	Access: self topicMap stylesStandardOrder"
-
-	^ self json at: 'styles'
 ]
 
 { #category : #mapping }

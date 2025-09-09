@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-09T16:30:42.558331+02:00"
+						"dateAndTimeString" : "2025-09-09T17:06:51.447524+02:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "We introduce the experimental {{gtMethod:name=TMAbstractTreeNode>>#roadmapWithStyle}} under the view *Roadmap 2*"
+				"string" : "We introduce the experimental {{gtMethod:name=TMAbstractTreeNode>>#roadmapWithKind}} under the view *Roadmap 2*"
 			},
 			{
 				"__type" : "pharoSnippet",

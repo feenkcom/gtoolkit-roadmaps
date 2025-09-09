@@ -76,7 +76,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T09:45:10.221961+02:00"
+												"dateAndTimeString" : "2025-09-09T16:43:38.453803+02:00"
 											}
 										},
 										"uid" : {
@@ -86,7 +86,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Have just: db -> fields -> topics -> pages.\nRemove style nodes as children of topics. \n(We still need {{gtClass:name=TMStyleNode}} for TreeMaps.)"
+										"string" : "Have just: db -> fields -> topics -> pages.\nRemove style nodes as children of topics. \n(We still need {{gtClass:name=TMKindNode}} for TreeMaps.)"
 									},
 									{
 										"__type" : "textSnippet",
@@ -151,7 +151,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T09:48:54.475752+02:00"
+												"dateAndTimeString" : "2025-09-09T16:43:38.454902+02:00"
 											}
 										},
 										"uid" : {
@@ -161,7 +161,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "{{gtClass:name=TMStyleNode}} is only used in {{gtMethod:name=TMAbstractTreeNode>>#styleNodes}}, so we track down and eliminate the references we don't need. (We leave them in the summary view, in the treeMapChildren and a test example.)"
+										"string" : "{{gtClass:name=TMKindNode}} is only used in {{gtMethod:name=TMAbstractTreeNode>>#styleNodes}}, so we track down and eliminate the references we don't need. (We leave them in the summary view, in the treeMapChildren and a test example.)"
 									}
 								]
 							},
@@ -879,7 +879,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T17:06:00.854319+02:00"
+												"dateAndTimeString" : "2025-09-08T17:52:49.158173+02:00"
 											}
 										},
 										"uid" : {
@@ -889,7 +889,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Need to add support for queries.\nAdded {{gtMethod:name=TMPageGroup>>#roadmapNodes}}\nThe treemap display is not quite right yet. See [[Bugs to fix]]."
+										"string" : "Need to add support for queries.\nAdded {{gtMethod:name=TMPageGroup>>#roadmapNodes}}\nThe treemap display is not quite right yet. See [[* Bugs to fix]]."
 									},
 									{
 										"__type" : "pharoSnippet",
@@ -988,7 +988,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-08T17:29:20.439384+02:00"
+												"dateAndTimeString" : "2025-09-09T16:43:38.405704+02:00"
 											}
 										},
 										"uid" : {
@@ -998,7 +998,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "We implement {{gtMethod:name=TMStyleNode>>#roadmapNodes}} as those of the pages with that style in the context.\nWe implement {{gtMethod:name=TMNodeGroup>>#roadmapNodes}} to collect all parents with the current nodes, and we can delete the implementation for PageGroups."
+										"string" : "We implement {{gtMethod:name=TMKindNode>>#roadmapNodes}} as those of the pages with that style in the context.\nWe implement {{gtMethod:name=TMNodeGroup>>#roadmapNodes}} to collect all parents with the current nodes, and we can delete the implementation for PageGroups."
 									},
 									{
 										"__type" : "pharoSnippet",

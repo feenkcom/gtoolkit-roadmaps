@@ -40,6 +40,11 @@ TMTopicNode >> fields [
 	^ {self field}
 ]
 
+{ #category : #navigation }
+TMTopicNode >> kinds [
+	^ self topicMap kinds4Topic: self topic
+]
+
 { #category : #accessing }
 TMTopicNode >> nodeLabel [
 	^ 'Topic: ' , self topic
@@ -66,24 +71,19 @@ TMTopicNode >> roadmapNodes [
 
 	| parent children |
 	parent := self fieldNodes first.
-	children := self children sortedByStyles collect: [ :pn | pn viaTopic: self ].
+	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
 	^ parent roadmapNodes , children
 ]
 
 { #category : #mondrian }
-TMTopicNode >> roadmapWithStyleNodes [
+TMTopicNode >> roadmapWithKindNodes [
 	"Want parents, parent peers, and own peers."
 
-	| parent children styles |
+	| parent children kinds |
 	parent := self fieldNodes first.
-	children := self children sortedByStyles collect: [ :pn | pn viaTopic: self ].
-	styles := (children flatCollect: #styleNodes) copyWithoutDuplicates.
-	^ parent roadmapWithStyleNodes , styles, children
-]
-
-{ #category : #navigation }
-TMTopicNode >> styles [
-	^ self topicMap styles4Topic: self topic
+	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
+	kinds := (children flatCollect: #kindNodes) copyWithoutDuplicates.
+	^ parent roadmapWithKindNodes , kinds, children
 ]
 
 { #category : #accessing }
@@ -114,7 +114,7 @@ TMTopicNode >> treeChildren [
 
 { #category : #treemaps }
 TMTopicNode >> treeMapChildren [
-	"For a treeMap we group the pages by styles, so we need an intermediate node."
+	"For a treeMap we group the pages by kinds, so we need an intermediate node."
 
-	^ self styleNodes
+	^ self kindNodes
 ]

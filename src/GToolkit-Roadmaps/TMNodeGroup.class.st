@@ -60,6 +60,11 @@ TMNodeGroup >> items [
 	^ nodes
 ]
 
+{ #category : #navigation }
+TMNodeGroup >> kinds [
+	^ (self children flatCollect: #kinds) copyWithoutDuplicates
+]
+
 { #category : #accessing }
 TMNodeGroup >> nodeLabel [
 	^ 'Node collection'
@@ -100,11 +105,6 @@ super printOn: aStream.
 { #category : #roadmap }
 TMNodeGroup >> roadmapNodes [
 	^ self allParents , self nodes
-]
-
-{ #category : #navigation }
-TMNodeGroup >> styles [
-	^ (self children flatCollect: #styles) copyWithoutDuplicates
 ]
 
 { #category : #navigation }

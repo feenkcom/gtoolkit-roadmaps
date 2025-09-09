@@ -68,6 +68,13 @@ TMFieldNode >> isTMTreeNode [
 	^ true
 ]
 
+{ #category : #navigation }
+TMFieldNode >> kinds [
+	| topicKinds |
+	topicKinds := (self children flatCollect: #kinds) copyWithoutDuplicates.
+	^ self topicMap kinds select: [ :aKind | topicKinds includes: aKind ]
+]
+
 { #category : #accessing }
 TMFieldNode >> nodeLabel [
 	^ 'Field: ' , self field
@@ -88,13 +95,6 @@ TMFieldNode >> roadmapNodes [
 	| root |
 	root := self databaseNode.
 	^ root roadmapNodes , self children
-]
-
-{ #category : #navigation }
-TMFieldNode >> styles [
-	| topicStyles |
-	topicStyles := (self children flatCollect: #styles) copyWithoutDuplicates.
-	^ self topicMap styles select: [ :aStyle | topicStyles includes: aStyle ]
 ]
 
 { #category : #navigation }

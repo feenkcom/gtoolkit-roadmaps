@@ -64,6 +64,16 @@ TMAbstractEntity >> isAbstract [
 	^ self == TMAbstractEntity
 ]
 
+{ #category : #abstract }
+TMAbstractEntity >> kinds [
+	self subclassResponsibility
+]
+
+{ #category : #querying }
+TMAbstractEntity >> kindsStandardOrder [
+	^ self topicMap kindsStandardOrder
+]
+
 { #category : #utility }
 TMAbstractEntity >> nodesFor: aNodeCollection [
 	^ TMNodeGroup for: aNodeCollection in: self topicMap
@@ -82,16 +92,6 @@ TMAbstractEntity >> pageGroupFor: aPageCollection [
 { #category : #abstract }
 TMAbstractEntity >> pages [
 	self subclassResponsibility
-]
-
-{ #category : #abstract }
-TMAbstractEntity >> styles [
-	self subclassResponsibility
-]
-
-{ #category : #querying }
-TMAbstractEntity >> stylesStandardOrder [
-	^ self topicMap stylesStandardOrder
 ]
 
 { #category : #abstract }
