@@ -35,6 +35,17 @@ TMPageNode >> = other [
 	^ super = other and: [ self viaTopic = other viaTopic ]
 ]
 
+{ #category : #mondrian }
+TMPageNode >> breadcrumb [
+	"NB: This will show only *one* of the paths!
+	If there are multiple topics, only the last one will be shown."
+
+	"^ self treeMapPath"
+
+	^ (String cr join: (self parents collect: #breadcrumb)) , String cr
+		, self kindNodes first nodeLabel , String cr , self nodeLabel
+]
+
 { #category : #navigation }
 TMPageNode >> children [
 	^ self emptyNodes
@@ -42,7 +53,7 @@ TMPageNode >> children [
 
 { #category : #mondrian }
 TMPageNode >> defaultNodeColor [
-	^ self stylePalette at: self style
+	^ self kindPalette at: self kind
 ]
 
 { #category : #navigation }
@@ -72,7 +83,39 @@ TMPageNode >> gtSpawnPageActionFor: anAction [
 			mouseCursor: BlCopyCursor new
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #views }
+TMPageNode >> gtTreeFor: aView [
+	"For a page we want to dive into the topics associated with that page."
+
+	<gtView>
+	^ aView columnedTree
+		title: 'Topic Map';
+		priority: 10;
+		items: [ self topicNodes ];
+		children: #children;
+		column: 'Index'
+			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
+			width: 45;
+		column: 'Node'
+			text: [ :each | each nodeLabel ]
+			width: 300;
+		column: '# Children'
+			text: [ :each | each children size ]
+			width: 100;
+		column: '# Pages'
+			text: [ :each | each pages size ]
+			width: 100;
+		column: '# Kinds'
+			text: [ :each | each kinds size ]
+			width: 100;
+		column: 'Info'
+			text: [ :each | each relatedInfo ]
+			width: 300;
+		send: [ :each | each ];
+		actionUpdateButton
+]
+
+{ #category : #views }
 TMPageNode >> gtTreeMapFor: aView [
 	<gtView>
 	^ aView empty
@@ -84,7 +127,17 @@ TMPageNode >> hash [
 ]
 
 { #category : #accessing }
-TMPageNode >> name [
+TMPageNode >> kind [
+	^ self topicMap kind4Page: self page
+]
+
+{ #category : #navigation }
+TMPageNode >> kinds [
+	^ {self kind}
+]
+
+{ #category : #accessing }
+TMPageNode >> nodeLabel [
 	^ 'Page: ', self page title
 ]
 
@@ -110,17 +163,32 @@ TMPageNode >> parents [
 		ifNotNil: [ self nodesFor: {self viaTopic} ]
 ]
 
+{ #category : #navigation }
+TMPageNode >> parentsWithKind [
+	^ self kindNodes
+]
+
 { #category : #accessing }
 TMPageNode >> relatedInfo [
-	^ 'Style:', self style
+	^ 'Kind: ' , self kind
 ]
 
 { #category : #accessing }
 TMPageNode >> relatedTitle [
-	^ 'Style'
+	^ 'Kind'
 ]
 
-{ #category : #mondrian }
+{ #category : #roadmap }
+TMPageNode >> roadmapNodeElement [
+	"Add a hover previewing the page."
+
+	| elt |
+	elt := super roadmapNodeElement.
+	elt aptitude: (self page hoverPage: self page forNodeElement: elt).
+	^ elt
+]
+
+{ #category : #roadmap }
 TMPageNode >> roadmapNodes [
 	| pageNodeWithAllTopics |
 	pageNodeWithAllTopics := self withoutViaTopic.
@@ -128,43 +196,24 @@ TMPageNode >> roadmapNodes [
 		, {pageNodeWithAllTopics}
 ]
 
-{ #category : #mondrian }
+{ #category : #roadmap }
 TMPageNode >> roadmapSimpleNodeElement [
 	^ super roadmapSimpleNodeElement
 		geometry: BlCircleGeometry new;
 		yourself
 ]
 
-{ #category : #mondrian }
-TMPageNode >> roadmapTooltipLabel [
-	"NB: This will show only *one* of the paths!
-	If there are multiple topics, only the last one will be shown."
-
-	^ self treeMapPath
-]
-
-{ #category : #accessing }
-TMPageNode >> style [
-	^ self topicMap style4Page: self page
-]
-
-{ #category : #navigation }
-TMPageNode >> styles [
-	^ {self style}
+{ #category : #roadmap }
+TMPageNode >> roadmapWithKindNodes [
+	| pageNodeWithAllTopics |
+	pageNodeWithAllTopics := self withoutViaTopic.
+	^ self databaseNode roadmapWithKindNodes , pageNodeWithAllTopics parents
+		, pageNodeWithAllTopics kindNodes , {pageNodeWithAllTopics}
 ]
 
 { #category : #querying }
 TMPageNode >> topics [
 	^ self topicMap topics4Page: self page
-]
-
-{ #category : #treemaps }
-TMPageNode >> treeMapTooltip [
-	^ BrEditor new
-		aptitude: BrGlamorousRegularEditorAptitude new;
-		padding: (BlInsets all: 2);
-		text: self treeMapPath;
-		yourself
 ]
 
 { #category : #accessing }

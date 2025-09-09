@@ -60,8 +60,13 @@ TMNodeGroup >> items [
 	^ nodes
 ]
 
+{ #category : #navigation }
+TMNodeGroup >> kinds [
+	^ (self children flatCollect: #kinds) copyWithoutDuplicates
+]
+
 { #category : #accessing }
-TMNodeGroup >> name [
+TMNodeGroup >> nodeLabel [
 	^ 'Node collection'
 ]
 
@@ -97,14 +102,9 @@ super printOn: aStream.
 		nextPut: $)
 ]
 
-{ #category : #mondrian }
+{ #category : #roadmap }
 TMNodeGroup >> roadmapNodes [
-	self shouldBeImplemented
-]
-
-{ #category : #navigation }
-TMNodeGroup >> styles [
-	^ (self children flatCollect: #styles) copyWithoutDuplicates
+	^ self allParents , self nodes
 ]
 
 { #category : #navigation }

@@ -23,7 +23,7 @@ TMAbstractTreeNode class >> for: anObject in: aTopicMap [
 TMAbstractTreeNode >> = other [
 	self == other ifTrue: [ ^ true ].
 	self class = other class ifFalse: [^ false ].
-	^ self name = other name
+	^ self nodeLabel = other nodeLabel
 ]
 
 { #category : #roadmap }
@@ -35,11 +35,33 @@ TMAbstractTreeNode >> allChildren [
 ]
 
 { #category : #roadmap }
+TMAbstractTreeNode >> allParents [
+	| allParents |
+	allParents := OrderedCollection withAll: self parents.
+	self parents do: [ :each | allParents addAll: each allParents ].
+	^ allParents copyWithoutDuplicates
+]
+
+{ #category : #roadmap }
 TMAbstractTreeNode >> allTreeChildren [
 	| allChildren |
 	allChildren := OrderedCollection withAll: self treeChildren.
 	self children do: [ :each | allChildren addAll: each allTreeChildren ].
 	^ allChildren copyWithoutDuplicates
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> breadcrumb [
+	^ self nodeLabel
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> breadcrumbTooltip [
+	^ [ BrEditor new
+		aptitude: BrGlamorousRegularEditorAptitude new;
+		padding: (BlInsets all: 2);
+		text: self breadcrumb;
+		yourself ] asStencil
 ]
 
 { #category : #navigation }
@@ -84,11 +106,22 @@ TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 
 { #category : #views }
 TMAbstractTreeNode >> gtRoadmapFor: aView [
+	"<gtView>"
+	^ aView forward
+		title: 'Roadmap OLD';
+		priority: 35;
+		object: [ self roadmap ];
+		view: #gtLiveFor:;
+		actionUpdateButton
+]
+
+{ #category : #views }
+TMAbstractTreeNode >> gtRoadmapWithKindFor: aView [
 	<gtView>
 	^ aView forward
 		title: 'Roadmap';
-		priority: 35;
-		object: [ self roadmap ];
+		priority: 36;
+		object: [ self roadmapWithKind ];
 		view: #gtLiveFor:;
 		actionUpdateButton
 ]
@@ -130,13 +163,13 @@ TMAbstractTreeNode >> gtTreeFor: aView [
 	^ aView columnedTree
 		title: 'Topic Map';
 		priority: 10;
-		items: [ self children];
+		items: [ self children ];
 		children: #children;
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
 		column: 'Node'
-			text: [ :each | each name ]
+			text: [ :each | each nodeLabel ]
 			width: 300;
 		column: '# Children'
 			text: [ :each | each children size ]
@@ -144,8 +177,8 @@ TMAbstractTreeNode >> gtTreeFor: aView [
 		column: '# Pages'
 			text: [ :each | each pages size ]
 			width: 100;
-		column: '# Styles'
-			text: [ :each | each styles size ]
+		column: '# Kinds'
+			text: [ :each | each kinds size ]
 			width: 100;
 		column: 'Info'
 			text: [ :each | each relatedInfo ]
@@ -167,7 +200,7 @@ TMAbstractTreeNode >> gtTreeMapFor: aView [
 
 { #category : #comparing }
 TMAbstractTreeNode >> hash [
-	^ self name hash
+	^ self nodeLabel hash
 ]
 
 { #category : #testing }
@@ -178,6 +211,32 @@ TMAbstractTreeNode >> isAbstract [
 { #category : #testing }
 TMAbstractTreeNode >> isTMTreeNode [
 	^ true
+]
+
+{ #category : #navigation }
+TMAbstractTreeNode >> kindNodes [
+	^ self
+		nodesFor: (self kinds
+				collect: [ :aKind | 
+					TMKindNode
+						for: aKind
+						in: self topicMap
+						within: self pageGroup ])
+]
+
+{ #category : #treemaps }
+TMAbstractTreeNode >> kindPalette [
+	^ {'Introduction' -> Color red muchLighter.
+		'Media' -> Color green lighter.
+		'Tutorial' -> Color blue muchLighter.
+		'Case study' -> Color purple muchLighter.
+		'Pattern' -> Color orange.
+		'FAQ' -> Color paleYellow.
+		'Examples' -> Color lightRed.
+		'Documentation' -> Color paleBlue.
+		'Definition' -> Color veryLightGray.
+		'Index' -> Color lightGray.
+		'Tag' -> Color gray} asDictionary
 ]
 
 { #category : #roadmap }
@@ -219,7 +278,7 @@ TMAbstractTreeNode >> mondrianTree [
 ]
 
 { #category : #accessing }
-TMAbstractTreeNode >> name [
+TMAbstractTreeNode >> nodeLabel [
 	self subclassResponsibility
 ]
 
@@ -233,12 +292,17 @@ TMAbstractTreeNode >> parents [
 	self subclassResponsibility
 ]
 
+{ #category : #navigation }
+TMAbstractTreeNode >> parentsWithKind [
+	^ self parents
+]
+
 { #category : #printing }
 TMAbstractTreeNode >> printOn: aStream [
 	super printOn: aStream.
 	aStream
 		nextPut: $(;
-		nextPutAll: self name;
+		nextPutAll: self nodeLabel;
 		nextPut: $)
 ]
 
@@ -251,20 +315,12 @@ TMAbstractTreeNode >> relatedInfo [
 
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmap [
-	^ self roadmapFor: self roadmapNodes
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> roadmapFor: aTMNodeCollection [
-	"NB: The input nodes must have treeMapParent set."
-
 	| mondrian |
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
-		with: aTMNodeCollection.
+		with: self roadmapNodes.
 	mondrian edges connectFromAll: #parents.
-	"mondrian edges connectFrom: #treeMapParent."
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new
 				levelDistance: 50;
@@ -289,12 +345,12 @@ TMAbstractTreeNode >> roadmapNodeElement [
 	"A mindmap-like element containing the node's name."
 
 	^ BlTextElement new
-		text: self name asRopedText;
+		text: self nodeLabel asRopedText;
 		border: self roadmapNodeBorderColor;
 		background: self roadmapNodeColor;
 		padding: (BlInsets all: 5);
 		geometry: (BlRoundedRectangleGeometry cornerRadius: 8);
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
 ]
 
 { #category : #roadmap }
@@ -317,53 +373,37 @@ TMAbstractTreeNode >> roadmapSimpleNodeElement [
 		size: self roadmapNodeSize;
 		border: self roadmapNodeBorderColor;
 		background: self roadmapNodeColor;
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> roadmapTooltip [
-	^ [ BrEditor new
-		aptitude: BrGlamorousRegularEditorAptitude new;
-		padding: (BlInsets all: 2);
-		text: self roadmapTooltipLabel;
-		yourself ] asStencil
+TMAbstractTreeNode >> roadmapWithKind [
+	"Experimental -- variant in which we also show kinds as nodes."
+
+	| mondrian |
+	mondrian := GtMondrian new.
+	mondrian nodes
+		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
+		with: self roadmapWithKindNodes.
+	mondrian edges connectFromAll: #parentsWithKind.
+	mondrian layout
+		custom: (GtGradHorizontalTreeLayout new
+				levelDistance: 50;
+				nodeDistance: 20).
+	^ mondrian
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> roadmapTooltipLabel [
-	^ self name
+TMAbstractTreeNode >> roadmapWithKindNodes [
+	"Should return a kind of TMNodeGroup"
+
+	^ self roadmapNodes
 ]
 
 { #category : #utility }
 TMAbstractTreeNode >> sizeAndFirstIfAlone: aCollection [
 	^ aCollection size printString
 		, (aCollection size = 1 ifTrue: [ ' — ' , aCollection first ] ifFalse: [ '' ])
-]
-
-{ #category : #navigation }
-TMAbstractTreeNode >> styleNodes [
-	^ self
-		nodesFor: (self styles
-				collect: [ :aStyle | 
-					TMStyleNode
-						for: aStyle
-						in: self topicMap
-						within: self pageGroup ])
-]
-
-{ #category : #treemaps }
-TMAbstractTreeNode >> stylePalette [
-	^ {'Introduction' -> Color red muchLighter.
-		'Media' -> Color green.
-		'Tutorial' -> Color blue muchLighter.
-		'Case study' -> Color purple muchLighter.
-		'Pattern' -> Color orange.
-		'FAQ' -> Color paleYellow.
-		'Examples' -> Color lightRed.
-		'Documentation' -> Color paleBlue.
-		'Definition' -> Color veryLightGray.
-		'Index' -> Color lightGray.
-		'Tag' -> Color gray} asDictionary
 ]
 
 { #category : #views }
@@ -377,9 +417,9 @@ TMAbstractTreeNode >> summary [
 		{'#Topics'.
 			self sizeAndFirstIfAlone: self topics.
 			self topicNodes}.
-		{'#Styles'.
-			self sizeAndFirstIfAlone: self styles.
-			self styleNodes}.
+		{'#kinds'.
+			self sizeAndFirstIfAlone: self kinds.
+			self kindNodes}.
 		{'#Pages'.
 			self sizeAndFirstIfAlone: (self pages collect: #title).
 			self pageGroup}}
@@ -411,8 +451,8 @@ TMAbstractTreeNode >> treeChildren [
 
 { #category : #treemaps }
 TMAbstractTreeNode >> treeMap [
-	| stylePalette treemap |
-	stylePalette := self stylePalette.
+	| kindPalette treemap |
+	kindPalette := self kindPalette.
 	treemap := GtNestedRectangleTreeMap new
 			roots: self treeMapRoots;
 			leaves: [ :aNode | aNode treeMapLeaves ];
@@ -423,26 +463,26 @@ TMAbstractTreeNode >> treeMap [
 				pageNode := aLeafContext model.
 				page := pageNode page.
 				anElement
-					background: (stylePalette at: pageNode style ifAbsent: Color veryLightGray).
+					background: (kindPalette at: pageNode kind ifAbsent: Color veryLightGray).
 				anElement
 					when: BlClickEvent
 					do: [ :e | e target phlow spawnObject: pageNode ].
 				anElement
-					aptitude: (BrGlamorousWithExplicitTooltipAptitude content: [ pageNode treeMapTooltip ]) ];
+					aptitude: (BrGlamorousWithExplicitTooltipAptitude content: [ pageNode breadcrumbTooltip ]) ];
 			containerElement: [ :anElement :aNodeContext | 
 				| node |
 				node := aNodeContext model.
 				aNodeContext level = 2
 					ifTrue: [ anElement
 							addChild: (BrLabel new
-									text: node name;
+									text: node nodeLabel;
 									aptitude: (BrGlamorousLabelAptitude new
 											fontSize: 10;
 											foreground: Color blue);
 									background: Color white;
 									constraintsDo: [ :c | c ignoreByLayout ]) ].
 
-				anElement border: (BlBorder paint: node treeMapNodeColor width: 2).
+				anElement border: (BlBorder paint: node defaultNodeColor width: 2).
 				anElement padding: (BlInsets top: 12  bottom: 2 left: 2 right: 2) ].
 	^ treemap
 ]
@@ -459,22 +499,8 @@ TMAbstractTreeNode >> treeMapLeaves [
 ]
 
 { #category : #treemaps }
-TMAbstractTreeNode >> treeMapNodeColor [
-	"Can override the default in subclasses if needed."
-
-	^ self defaultNodeColor
-]
-
-{ #category : #treemaps }
 TMAbstractTreeNode >> treeMapNodeLabel [
-	^ self name
-]
-
-{ #category : #accessing }
-TMAbstractTreeNode >> treeMapPath [
-	^ (self parents
-		ifEmpty: [ '' ]
-		ifNotEmpty: [ self parents first treeMapPath , String cr ]) , self name
+	^ self nodeLabel
 ]
 
 { #category : #treemaps }

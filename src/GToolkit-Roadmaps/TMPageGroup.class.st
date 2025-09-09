@@ -24,7 +24,7 @@ TMPageGroup >> isTMPageGroup [
 ]
 
 { #category : #accessing }
-TMPageGroup >> name [
+TMPageGroup >> nodeLabel [
 	^ 'Page group', self queryString
 ]
 
@@ -58,21 +58,27 @@ TMPageGroup >> queryString: aString [
 	queryString := ' query: ', aString
 ]
 
+{ #category : #roadmap }
+TMPageGroup >> roadmapWithKindNodes [
+	^ self roadmapNodes
+		, (self pageGroup flatCollect: #kindNodes) copyWithoutDuplicates
+]
+
 { #category : #utility }
-TMPageGroup >> sortedByStyles [
+TMPageGroup >> sortedByKinds [
 	| sortedPages |
 	sortedPages := OrderedCollection new.
-	self stylesStandardOrder
-		do: [ :aStyle | sortedPages addAll: (self nodes select: [ :n | n style = aStyle ]) ].
+	self kindsStandardOrder
+		do: [ :aKind | sortedPages addAll: (self nodes select: [ :n | n kind = aKind ]) ].
 	^ sortedPages
 ]
 
 { #category : #treemaps }
 TMPageGroup >> treeMapChildren [
-	"Needed for queries?"
-	self error: 'Do we need this? Where is it used?'.
+	"Want to organize by kinds -- for some reason doesn't display kinds in groups as it should."
 
-	^ self topicNodes
+	<todo: 'Debug the display of treeMaps for queries.'>
+	^ self kindNodes
 ]
 
 { #category : #treemaps }

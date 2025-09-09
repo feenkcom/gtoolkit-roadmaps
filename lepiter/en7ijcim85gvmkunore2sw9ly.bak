@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:37:25.845629+02:00"
+						"dateAndTimeString" : "2025-09-09T11:36:40.08577+02:00"
 					}
 				},
 				"editEmail" : {
@@ -29,17 +29,54 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-08T17:55:07.952022+02:00"
+						"dateAndTimeString" : "2025-09-09T11:40:25.904224+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "tMasgd/5DQC8etPCAV3u9A=="
+					"uidString" : "Takzx7z6DQC6UwFWC8pd9w=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "NB: pages that have been *renamed* will appear as *Missing* underthe old name and *unmapped* under the new name. How to patch them? See [[* Repair missing pages]] "
+				"string" : "Without explicit styles we only see the colors.\nWe would like to see topic -> styles -> pages\nBut when we focus on a specific pages we wantto see the mapping between topics and pages, with the style on the side?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T15:55:20.704832+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T17:06:51.447524+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "xIBNZMD6DQCx63DQBcgiRA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We introduce the experimental {{gtMethod:name=TMAbstractTreeNode>>#roadmapWithKind}} under the view *Roadmap 2*"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -55,7 +92,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:37:34.699613+02:00"
+						"dateAndTimeString" : "2025-09-09T11:47:51.020695+02:00"
 					}
 				},
 				"editEmail" : {
@@ -66,14 +103,82 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:37:45.543454+02:00"
+						"dateAndTimeString" : "2025-09-09T11:47:57.48983+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "Mtwzgt/5DQC8fnKUAV3u9A=="
+					"uidString" : "LE8x77z6DQC/Wl7ZC8pd9w=="
 				},
-				"code" : "LeDatabase gtBook topicMap unmappedPages"
+				"code" : "TopicMapExamples new databaseNode"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T11:36:48.327378+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T11:38:23.864624+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "y2Wxx7z6DQC6WDKZC8pd9w=="
+				},
+				"code" : "TopicMapExamples new topicNodeAboutGt"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T11:38:12.807035+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-09T11:38:13.303894+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "oXa6zLz6DQC7o+ZgC8pd9w=="
+				},
+				"code" : "TopicMapExamples new pageNodeWhatIsGt"
 			},
 			{
 				"__type" : "textSnippet",
@@ -89,7 +194,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:47:07.836353+02:00"
+						"dateAndTimeString" : "2025-09-09T16:37:26.658553+02:00"
 					}
 				},
 				"editEmail" : {
@@ -100,86 +205,12 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:47:38.471574+02:00"
+						"dateAndTimeString" : "2025-09-09T16:37:26.658553+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "fT1dpN/5DQC/bKHVAV3u9A=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "For the remaining unmapped pages we need an assistant to generate topics and styles."
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:48:24.424698+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-01T09:37:46.286547+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "gk1Hpt/5DQCBdDhyAV3u9A=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "Add AI assistant for missing topics. \nOffer option to manually edit topics. "
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:42:29.431652+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:42:29.431652+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "Bx/Fk9/5DQC8ycscAV3u9A=="
+					"uidString" : "3s8LZMD6DQCx5jaiBcgiRA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
@@ -196,7 +227,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-08-29T11:37:25.675308+02:00"
+			"dateAndTimeString" : "2025-09-09T11:36:39.943469+02:00"
 		}
 	},
 	"editEmail" : {
@@ -207,15 +238,15 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-08-30T10:39:21.363547+02:00"
+			"dateAndTimeString" : "2025-09-09T16:37:12.454948+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "* Add assistant to updated unmapped pages"
+		"title" : "*** Roadmaps with or without Styles"
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "752caa81-dff9-0d00-bc79-6baf015deef4"
+		"uuid" : "a67c31c7-bcfa-0d00-ba52-e9f10bca5df7"
 	}
 }

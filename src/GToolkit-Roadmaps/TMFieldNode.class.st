@@ -15,6 +15,11 @@ TMFieldNode class >> for: aField in: aTopicMap [
 	yourself 
 ]
 
+{ #category : #roadmap }
+TMFieldNode >> breadcrumb [
+	^ self parents first breadcrumb , String cr , '- ', self nodeLabel
+]
+
 { #category : #accessing }
 TMFieldNode >> children [
 	^ self
@@ -41,6 +46,18 @@ TMFieldNode >> fields [
 	^ {field}
 ]
 
+{ #category : #views }
+TMFieldNode >> gtMondrianTreeFor: aView [
+	"For Fields only -- too slow for the whole db, and not interesting for topics."
+
+	<gtView>
+	^ aView forward
+		title: 'Mondrian tree';
+		priority: 40;
+		object: [ self mondrianTree ];
+		view: #gtLiveFor:
+]
+
 { #category : #testing }
 TMFieldNode >> isTMFieldNode [
 	^ true
@@ -51,8 +68,15 @@ TMFieldNode >> isTMTreeNode [
 	^ true
 ]
 
+{ #category : #navigation }
+TMFieldNode >> kinds [
+	| topicKinds |
+	topicKinds := (self children flatCollect: #kinds) copyWithoutDuplicates.
+	^ self topicMap kinds select: [ :aKind | topicKinds includes: aKind ]
+]
+
 { #category : #accessing }
-TMFieldNode >> name [
+TMFieldNode >> nodeLabel [
 	^ 'Field: ' , self field
 ]
 
@@ -71,13 +95,6 @@ TMFieldNode >> roadmapNodes [
 	| root |
 	root := self databaseNode.
 	^ root roadmapNodes , self children
-]
-
-{ #category : #navigation }
-TMFieldNode >> styles [
-	| topicStyles |
-	topicStyles := (self children flatCollect: #styles) copyWithoutDuplicates.
-	^ self topicMap styles select: [ :aStyle | topicStyles includes: aStyle ]
 ]
 
 { #category : #navigation }

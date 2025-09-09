@@ -51,8 +51,13 @@ TMDatabaseNode >> gtDatabaseActionFor: anAction [
 		action: [ :aButton | aButton phlow spawnObject: self database ]
 ]
 
+{ #category : #navigation }
+TMDatabaseNode >> kinds [
+	^ self topicMap kind
+]
+
 { #category : #accessing }
-TMDatabaseNode >> name [
+TMDatabaseNode >> nodeLabel [
 	^ self database databaseName
 ]
 
@@ -74,11 +79,6 @@ TMDatabaseNode >> roadmapNodeSize [
 { #category : #mondrian }
 TMDatabaseNode >> roadmapNodes [
 	^ self nodesFor: {self} , self children
-]
-
-{ #category : #navigation }
-TMDatabaseNode >> styles [
-	^ self topicMap styles
 ]
 
 { #category : #navigation }
