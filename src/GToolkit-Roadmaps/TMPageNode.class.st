@@ -53,7 +53,7 @@ TMPageNode >> children [
 
 { #category : #mondrian }
 TMPageNode >> defaultNodeColor [
-	^ self kindPalette at: self kind
+	^ Color paleOrange
 ]
 
 { #category : #navigation }
@@ -176,6 +176,11 @@ TMPageNode >> relatedInfo [
 { #category : #accessing }
 TMPageNode >> relatedTitle [
 	^ 'Kind'
+]
+
+{ #category : #mondrian }
+TMPageNode >> roadmapNodeColor [
+	^ self kindPalette at: self kind ifAbsent: self defaultNodeColor
 ]
 
 { #category : #roadmap }

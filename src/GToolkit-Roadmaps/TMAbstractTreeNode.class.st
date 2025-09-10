@@ -106,10 +106,10 @@ TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 
 { #category : #views }
 TMAbstractTreeNode >> gtRoadmapFor: aView [
-	"<gtView>"
+	<gtView>
 	^ aView forward
 		title: 'Roadmap OLD';
-		priority: 35;
+		priority: 37;
 		object: [ self roadmap ];
 		view: #gtLiveFor:;
 		actionUpdateButton

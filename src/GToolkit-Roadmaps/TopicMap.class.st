@@ -13,9 +13,9 @@ Class {
 		'database',
 		'page2Topics',
 		'topic2Pages',
-		'fields2Topics',
 		'topic2Field',
-		'page2Kind'
+		'page2Kind',
+		'field2Topics'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -54,9 +54,11 @@ TopicMap >> clearCaches [
 	"If we update the json and write it out, we need to clear the caches so they will be updated too."
 
 	database := nil.
+	field2Topics := nil.
 	page2Topics := nil.
 	page2Kind := nil.
-	topic2Pages := nil
+	topic2Pages := nil.
+	topic2Field := nil.
 ]
 
 { #category : #accessing }
@@ -79,8 +81,8 @@ TopicMap >> defaultValue [
 
 { #category : #accessing }
 TopicMap >> field2Topics [
-	^ fields2Topics
-		ifNil: [ fields2Topics := ((self json at: 'fields')
+	^ field2Topics
+		ifNil: [ field2Topics := ((self json at: 'fields')
 					collect: [ :d | (d at: 'field') -> (d at: 'topics') ]) asDictionary ]
 ]
 
@@ -137,10 +139,10 @@ TopicMap >> gtPageGroupActionFor: anAction [
 
 { #category : #views }
 TopicMap >> gtRoadmapFor: aView [
-	"<gtView>"
+	<gtView>
 	^ aView forward
 		title: 'OLD Roadmap';
-		priority: 35;
+		priority: 37;
 		object: [ self databaseNode ];
 		view: #gtRoadmapFor:
 ]
