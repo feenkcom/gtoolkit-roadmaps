@@ -207,14 +207,22 @@ TopicMap >> gtUnmappedPagesFor: aView [
 	"Pages not listed in the JSON. These will need an assistant to update the JSON."
 
 	<gtView>
-	^ aView columnedList
+"	^ aView columnedList
 		title: 'Unmapped pages';
 		priority: 40;
 		items: [ self unmappedPages ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
-		column: 'Value' text: [ :each | each gtDisplayString ]
+		column: 'Value' text: [ :each | each gtDisplayString ];
+		actionUpdateButton"
+
+	^ aView forward
+		title: 'Unmapped pages';
+		priority: 40;
+		object: [ self unmappedPages ];
+		view: #gtTreeFor:;
+		actionUpdateButton
 ]
 
 { #category : #accessing }
@@ -353,5 +361,6 @@ TopicMap >> topics4Page: aPage [
 
 { #category : #querying }
 TopicMap >> unmappedPages [
-	^ (self database pages copyWithoutAll: self pages) sortedAs: #title
+	^ self
+		pageGroupFor: ((self database pages copyWithoutAll: self pages) sortedAs: #title)
 ]

@@ -105,7 +105,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-08T17:58:35.031068+02:00"
+									"dateAndTimeString" : "2025-09-08T17:58:54.478436+02:00"
 								}
 							},
 							"uid" : {
@@ -115,7 +115,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : ""
+							"string" : "This treemap also doesn't break down nicely into Styles:"
 						},
 						{
 							"__type" : "pharoSnippet",
