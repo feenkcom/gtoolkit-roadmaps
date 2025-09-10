@@ -122,7 +122,36 @@ TopicMap >> gtMissingPagesFor: aView [
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
-		column: 'Value' text: [ :each | each gtDisplayString ]
+		column: 'Missing page title'
+			text: [ :each | each gtDisplayString ]
+			width: 300;
+		column: 'Closest match'
+			text: [ :each | self unmappedPageFor: each ]
+			width: 300;
+		column: 'Accept'
+			do: [ :column | 
+				column
+					stencil: [ :each | 
+						BrButton new
+							aptitude: BrGlamorousButtonWithIconAptitude;
+							icon: BrGlamorousVectorIcons accept;
+							label: 'Accept renaming';
+							action: [ :aButton | 
+								self updateMissingTitle: each.
+								aButton phlow fireViewUpdateWish ] ];
+					width: 60 ];
+		column: 'Delete'
+			do: [ :column | 
+				column
+					stencil: [ :aCard | 
+						BrButton new
+							aptitude: BrGlamorousButtonWithIconAptitude;
+							icon: BrGlamorousVectorIcons close;
+							label: 'Delete the missing page';
+							action: [ :aButton | self shouldBeImplemented ] ];
+					width: 60 ];
+		send: [ :each | self unmappedPageFor: each ];
+		actionUpdateButton
 ]
 
 { #category : #actions }
@@ -360,7 +389,47 @@ TopicMap >> topics4Page: aPage [
 ]
 
 { #category : #querying }
+TopicMap >> unmappedPageFor: aMissingTitle [
+	"Find the unmapped page whose title has the smallest edit distance to a title of a missing page."
+
+	| pages |
+	pages := self unmappedPages pages.
+	self assert: pages isNotEmpty description: 'There are no unmapped pages to search.'.
+
+	^ ((pages
+		collect: [ :aPage | 
+			{GtLevenshtein distanceBetween: aPage title and: aMissingTitle.
+				aPage} ]) sortedAs: #first) first second
+]
+
+{ #category : #querying }
 TopicMap >> unmappedPages [
+	"Pages in the database but not listed in the json. Could either be new or renamed pages.
+	NB: the latter will also show up as missing pages."
+
 	^ self
 		pageGroupFor: ((self database pages copyWithoutAll: self pages) sortedAs: #title)
+]
+
+{ #category : #updating }
+TopicMap >> updateMissingTitle: aMissingTitle [
+	| jsonPages aPage dict |
+	self
+		assert: (self missingPages includes: aMissingTitle)
+		description: aMissingTitle , ' has already been deleted or renamed.'.
+	aPage := self unmappedPageFor: aMissingTitle.
+	jsonPages := self json at: 'pages'.
+	dict := jsonPages detect: [ :d | (d at: 'page') = aMissingTitle ].
+	dict at: 'page' put: aPage title.
+	self
+		assert: ((self json at: 'pages') select: [ :d | (d at: 'page') = aMissingTitle ])
+				isEmpty.
+	self clearCaches.
+	self writeJsonFile
+]
+
+{ #category : #updating }
+TopicMap >> writeJsonFile [
+	self error: 'This implementation is broken.'.
+	^ STON put: self json asJsonOnStreamPretty: self jsonFile writeStream
 ]
