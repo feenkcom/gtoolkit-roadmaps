@@ -226,7 +226,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T16:31:31.042259+02:00"
+												"dateAndTimeString" : "2025-09-10T12:00:40.361941+02:00"
 											}
 										},
 										"uid" : {
@@ -236,7 +236,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[* Add better way to search for a topic]] "
+										"string" : "[[Add better way to search for a topic]] "
 									}
 								]
 							},

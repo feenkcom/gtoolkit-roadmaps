@@ -7,6 +7,11 @@ Class {
 	#category : #'GToolkit-Roadmaps-Model'
 }
 
+{ #category : #querying }
+TMAbstractEntity >> contentIncludes: query [
+	^ self pageGroup contentIncludes: query
+]
+
 { #category : #abstract }
 TMAbstractEntity >> database [
 	self subclassResponsibility
@@ -92,6 +97,11 @@ TMAbstractEntity >> pageGroupFor: aPageCollection [
 { #category : #abstract }
 TMAbstractEntity >> pages [
 	self subclassResponsibility
+]
+
+{ #category : #querying }
+TMAbstractEntity >> titleIncludes: query [
+	^ self pageGroup titleIncludes: query
 ]
 
 { #category : #abstract }

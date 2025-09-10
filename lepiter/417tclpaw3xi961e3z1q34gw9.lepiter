@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-09T16:32:34.209059+02:00"
+						"dateAndTimeString" : "2025-09-10T11:49:39.40473+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,115 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Currently you need to go to the TopicMap spotter, and select a group of responses to get a page group view. Need a better way to go directrly from a query to an ad hoc query for that ad hoc topic."
+				"string" : "Currently you need to go to the TopicMap spotter, and select a group of responses to get a page group view. Need a better way to go directly from a query to an ad hoc query for that ad hoc topic."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-10T11:58:35.0226+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-10T11:59:26.067202+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "CV1rM9H6DQCEHQ9VAP70tA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "We add {{gtMethod:name=TMPageGroup>>#titleIncludes:}} and {{gtMethod:name=TMPageGroup>>#contentIncludes:}} as well as delegation methods {{gtMethod:name=TMAbstractEntity>>#titleIncludes:}} and {{gtMethod:name=TMAbstractEntity>>#contentIncludes:}}"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-10T12:00:44.047049+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-10T12:00:52.856508+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "4B4cO9H6DQCGMPKgAP70tA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "De we need a dedicated action?"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-10T11:48:07.367178+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-10T11:59:45.419294+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "PBgCDtH6DQCAx4bHAP70tA=="
+				},
+				"code" : "LeDatabase gtBook topicMap contentIncludes: 'SmaCC'"
 			}
 		]
 	},
@@ -62,12 +170,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-09T16:31:31.029944+02:00"
+			"dateAndTimeString" : "2025-09-10T12:00:40.350512+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "* Add better way to search for a topic"
+		"title" : "Add better way to search for a topic"
 	},
 	"uid" : {
 		"__type" : "uuid",
