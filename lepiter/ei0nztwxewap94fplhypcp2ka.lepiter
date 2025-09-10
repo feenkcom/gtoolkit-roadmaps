@@ -216,7 +216,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-10T13:39:54.303409+02:00"
+									"dateAndTimeString" : "2025-09-10T18:39:28.698902+02:00"
 								}
 							},
 							"uid" : {
@@ -226,7 +226,44 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We need to embed actions within views. (We did this in IMAD for the Card Decks.)\nSee {{gtMethod:name=TopicMap>>#gtMissingPagesFor:}}  "
+							"string" : "We need to embed actions within views. (We did this in IMAD for the Card Decks.)\nSee {{gtMethod:name=TopicMap>>#gtMissingPagesFor:}}  \nWe implement {{gtMethod:name=TopicMap>>#updateMissingTitle:}}"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-10T18:24:28.803725+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-10T18:39:42.428006+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "FQh+l9b6DQCocoLpCBCv3g=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "We also need to implement the deletion button.\nWe implement {{gtMethod:name=TopicMap>>#deleteMissingPageWithTitle:}}"
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -253,48 +290,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-10T16:40:16.183999+02:00"
+									"dateAndTimeString" : "2025-09-10T18:24:06.226878+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "m5rwktL6DQCWxKE0CwLN8w=="
 							},
-							"code" : "LeDatabase gtBook topicMap "
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-10T13:38:05.322547+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-10T13:39:34.217191+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "SelGl9L6DQCX+o17CwLN8w=="
-							},
-							"code" : "TopicMapExamples new topicMap "
+							"code" : "TopicMapExamples new tempTopicMap"
 						}
 					]
 				},
@@ -317,7 +320,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-01T12:54:42.496967+02:00"
+						"dateAndTimeString" : "2025-09-10T18:39:49.888968+02:00"
 					}
 				},
 				"uid" : {
@@ -327,7 +330,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# *** Repairing the missing pages (to do)"
+				"string" : "# Repairing the missing pages"
 			},
 			{
 				"__type" : "textSnippet",
@@ -605,7 +608,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-10T17:02:09.085471+02:00"
+						"dateAndTimeString" : "2025-09-10T18:40:07.935545+02:00"
 					}
 				},
 				"uid" : {
@@ -615,7 +618,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Fixing the writeJsonFile method"
+				"string" : "# Fixing the writeJsonFile method (done)"
 			},
 			{
 				"__type" : "textSnippet",
@@ -1326,12 +1329,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-08T17:55:07.936932+02:00"
+			"dateAndTimeString" : "2025-09-10T18:39:55.382282+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "* Repair missing pages"
+		"title" : "Repair missing pages"
 	},
 	"uid" : {
 		"__type" : "uuid",

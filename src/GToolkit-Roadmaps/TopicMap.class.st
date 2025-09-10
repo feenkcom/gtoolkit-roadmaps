@@ -62,6 +62,20 @@ TopicMap >> clearCaches [
 	topic2Field := nil.
 ]
 
+{ #category : #querying }
+TopicMap >> closestUnmappedPageFor: aMissingTitle [
+	"Find the unmapped page whose title has the smallest edit distance to a title of a missing page."
+
+	| pages |
+	pages := self unmappedPages pages.
+	self assert: pages isNotEmpty description: 'There are no unmapped pages to search.'.
+
+	^ ((pages
+		collect: [ :aPage | 
+			{GtLevenshtein distanceBetween: aPage title and: aMissingTitle.
+				aPage} ]) sortedAs: #first) first second
+]
+
 { #category : #accessing }
 TopicMap >> database [
 	^ database
@@ -78,6 +92,17 @@ TopicMap >> defaultValue [
 	"Default value for lookups that fail (missing kind, topic etc)."
 
 	^ '<unknown>'
+]
+
+{ #category : #accessing }
+TopicMap >> deleteMissingPageWithTitle: aTitle [
+	| newPages index |
+	index := (self json at: 'pages') detectIndex: [ :d | (d at: 'page') = aTitle ].
+	newPages := (self json at: 'pages') copyWithoutIndex: index.
+	self json at: 'pages' put: newPages.
+	self assert: (self jsonDict4PageTitle: aTitle ifNone: [ nil ]) isNil.
+	self clearCaches.
+	self writeJsonFile
 ]
 
 { #category : #accessing }
@@ -128,7 +153,7 @@ TopicMap >> gtMissingPagesFor: aView [
 			text: [ :each | each gtDisplayString ]
 			width: 300;
 		column: 'Closest match'
-			text: [ :each | self unmappedPageFor: each ]
+			text: [ :each | self closestUnmappedPageFor: each ]
 			width: 300;
 		column: 'Accept'
 			do: [ :column | 
@@ -145,14 +170,16 @@ TopicMap >> gtMissingPagesFor: aView [
 		column: 'Delete'
 			do: [ :column | 
 				column
-					stencil: [ :aCard | 
+					stencil: [ :each | 
 						BrButton new
 							aptitude: BrGlamorousButtonWithIconAptitude;
 							icon: BrGlamorousVectorIcons close;
 							label: 'Delete the missing page';
-							action: [ :aButton | self shouldBeImplemented ] ];
+							action: [ :aButton | 
+								self deleteMissingPageWithTitle: each.
+								aButton phlow fireViewUpdateWish ] ];
 					width: 60 ];
-		send: [ :each | self unmappedPageFor: each ];
+		send: [ :each | self closestUnmappedPageFor: each ];
 		actionUpdateButton
 ]
 
@@ -208,8 +235,11 @@ TopicMap >> gtTopicMapMenuFor: anAction [
 		content: [ :aButton | 
 			BrGlamorousSimpleContextMenuContent new
 				items: {'Inspect database node' -> [ aButton phlow spawnObject: self databaseNode ].
-						'Enable topic map actions' -> [ TMRegistry uniqueInstance enableExtensions ].
-						'Disable topic map actions' -> [ TMRegistry uniqueInstance disableExtensions ]};
+						'Enable topic map actions'
+							-> [ TMRegistry uniqueInstance enableExtensions ].
+						'Disable topic map actions'
+							-> [ TMRegistry uniqueInstance disableExtensions ].
+						'Inspect JSON file' -> [ aButton phlow spawnObject: self jsonFile ]};
 				yourself ]
 ]
 
@@ -254,6 +284,11 @@ TopicMap >> initialize [
 { #category : #accessing }
 TopicMap >> json [
 	^ json ifNil: [ json := STON fromString: self jsonFile contents ]
+]
+
+{ #category : #querying }
+TopicMap >> jsonDict4PageTitle: aTitle ifNone: aBlock [
+	^ (self json at: 'pages') detect: [ :d | (d at: 'page') = aTitle ] ifNone: aBlock
 ]
 
 { #category : #accessing }
@@ -386,20 +421,6 @@ TopicMap >> topics4Page: aPage [
 ]
 
 { #category : #querying }
-TopicMap >> unmappedPageFor: aMissingTitle [
-	"Find the unmapped page whose title has the smallest edit distance to a title of a missing page."
-
-	| pages |
-	pages := self unmappedPages pages.
-	self assert: pages isNotEmpty description: 'There are no unmapped pages to search.'.
-
-	^ ((pages
-		collect: [ :aPage | 
-			{GtLevenshtein distanceBetween: aPage title and: aMissingTitle.
-				aPage} ]) sortedAs: #first) first second
-]
-
-{ #category : #querying }
 TopicMap >> unmappedPages [
 	"Pages in the database but not listed in the json. Could either be new or renamed pages.
 	NB: the latter will also show up as missing pages."
@@ -410,17 +431,17 @@ TopicMap >> unmappedPages [
 
 { #category : #updating }
 TopicMap >> updateMissingTitle: aMissingTitle [
-	| jsonPages aPage dict |
+	| aPage |
 	self
 		assert: (self missingPages includes: aMissingTitle)
 		description: aMissingTitle , ' has already been deleted or renamed.'.
-	aPage := self unmappedPageFor: aMissingTitle.
-	jsonPages := self json at: 'pages'.
-	dict := jsonPages detect: [ :d | (d at: 'page') = aMissingTitle ].
-	dict at: 'page' put: aPage title.
-	self
-		assert: ((self json at: 'pages') select: [ :d | (d at: 'page') = aMissingTitle ])
-				isEmpty.
+	aPage := self closestUnmappedPageFor: aMissingTitle.
+	(self
+		jsonDict4PageTitle: aMissingTitle
+		ifNone: [ self error: 'Could not find entry for ' , aMissingTitle ])
+		at: 'page'
+		put: aPage title.
+	self assert: (self jsonDict4PageTitle: aMissingTitle ifNone: [ nil ]) isNil.
 	self clearCaches.
 	self writeJsonFile
 ]
