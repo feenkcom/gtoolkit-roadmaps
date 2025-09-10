@@ -84,7 +84,7 @@ TMPageNode >> gtSpawnPageActionFor: anAction [
 ]
 
 { #category : #views }
-TMPageNode >> gtTreeFor: aView [
+TMPageNode >> gtTopicMapTreeFor: aView [
 	"For a page we want to dive into the topics associated with that page."
 
 	<gtView>

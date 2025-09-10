@@ -15,7 +15,8 @@ Class {
 		'topic2Pages',
 		'topic2Field',
 		'page2Kind',
-		'field2Topics'
+		'field2Topics',
+		'monitor'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -115,6 +116,7 @@ TopicMap >> gtMissingPagesFor: aView [
 	Renamed pages will appear in the Unmapped pages view under their new name."
 
 	<gtView>
+	<todo: 'Implement the delete button'>
 	^ aView columnedList
 		title: 'Missing pages';
 		priority: 45;
@@ -218,7 +220,7 @@ TopicMap >> gtTopicMapTreeFor: aView [
 		title: 'Topic Map';
 		priority: 10;
 		object: [ self databaseNode ];
-		view: #gtTreeFor:
+		view: #gtTopicMapTreeFor:
 ]
 
 { #category : #views }
@@ -236,27 +238,22 @@ TopicMap >> gtUnmappedPagesFor: aView [
 	"Pages not listed in the JSON. These will need an assistant to update the JSON."
 
 	<gtView>
-"	^ aView columnedList
-		title: 'Unmapped pages';
-		priority: 40;
-		items: [ self unmappedPages ];
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Value' text: [ :each | each gtDisplayString ];
-		actionUpdateButton"
-
 	^ aView forward
 		title: 'Unmapped pages';
 		priority: 40;
 		object: [ self unmappedPages ];
-		view: #gtTreeFor:;
-		actionUpdateButton
+		view: #gtTopicMapTreeFor:
+]
+
+{ #category : #initialization }
+TopicMap >> initialize [
+	super initialize.
+	monitor := Monitor new
 ]
 
 { #category : #accessing }
 TopicMap >> json [
-	^ json ifNil: [ json := STONJSON fromString: self jsonFile contents ]
+	^ json ifNil: [ json := STON fromString: self jsonFile contents ]
 ]
 
 { #category : #accessing }
@@ -294,7 +291,7 @@ TopicMap >> kinds4Topic: aTopic [
 
 	^ self kinds
 		select: [ :aKind | 
-			((self topic2Pages at: aTopic) collect: [ :aPage | self kind4Page: aPage ])
+			((self topic2Pages at: aTopic ifAbsent: {}) collect: [ :aPage | self kind4Page: aPage ])
 				includes: aKind ]
 ]
 
@@ -430,6 +427,17 @@ TopicMap >> updateMissingTitle: aMissingTitle [
 
 { #category : #updating }
 TopicMap >> writeJsonFile [
-	self error: 'This implementation is broken.'.
-	^ STON put: self json asJsonOnStreamPretty: self jsonFile writeStream
+	| writeStream tempFile |
+	tempFile := self jsonFile copyWithPath: self jsonFile path , 'temp.json'.
+	tempFile ensureDelete.
+	writeStream := tempFile writeStream.
+	STON put: self json asJsonOnStreamPretty: writeStream.
+	writeStream close.
+	[ STON fromStream: tempFile readStream ]
+		onErrorDo: [ tempFile ensureDelete.
+			self error: 'Writing JSON failed -- leaving old JSON as is.' ].
+	monitor
+		critical: [ self jsonFile ensureDelete.
+			tempFile renameTo: self jsonFile basename ].
+	^ self jsonFile
 ]
