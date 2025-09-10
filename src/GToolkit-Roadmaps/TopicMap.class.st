@@ -13,9 +13,10 @@ Class {
 		'database',
 		'page2Topics',
 		'topic2Pages',
-		'fields2Topics',
 		'topic2Field',
-		'page2Kind'
+		'page2Kind',
+		'field2Topics',
+		'monitor'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -54,9 +55,25 @@ TopicMap >> clearCaches [
 	"If we update the json and write it out, we need to clear the caches so they will be updated too."
 
 	database := nil.
+	field2Topics := nil.
 	page2Topics := nil.
 	page2Kind := nil.
-	topic2Pages := nil
+	topic2Pages := nil.
+	topic2Field := nil.
+]
+
+{ #category : #querying }
+TopicMap >> closestUnmappedPageFor: aMissingTitle [
+	"Find the unmapped page whose title has the smallest edit distance to a title of a missing page."
+
+	| pages |
+	pages := self unmappedPages pages.
+	self assert: pages isNotEmpty description: 'There are no unmapped pages to search.'.
+
+	^ ((pages
+		collect: [ :aPage | 
+			{GtLevenshtein distanceBetween: aPage title and: aMissingTitle.
+				aPage} ]) sortedAs: #first) first second
 ]
 
 { #category : #accessing }
@@ -78,9 +95,20 @@ TopicMap >> defaultValue [
 ]
 
 { #category : #accessing }
+TopicMap >> deleteMissingPageWithTitle: aTitle [
+	| newPages index |
+	index := (self json at: 'pages') detectIndex: [ :d | (d at: 'page') = aTitle ].
+	newPages := (self json at: 'pages') copyWithoutIndex: index.
+	self json at: 'pages' put: newPages.
+	self assert: (self jsonDict4PageTitle: aTitle ifNone: [ nil ]) isNil.
+	self clearCaches.
+	self writeJsonFile
+]
+
+{ #category : #accessing }
 TopicMap >> field2Topics [
-	^ fields2Topics
-		ifNil: [ fields2Topics := ((self json at: 'fields')
+	^ field2Topics
+		ifNil: [ field2Topics := ((self json at: 'fields')
 					collect: [ :d | (d at: 'field') -> (d at: 'topics') ]) asDictionary ]
 ]
 
@@ -113,6 +141,7 @@ TopicMap >> gtMissingPagesFor: aView [
 	Renamed pages will appear in the Unmapped pages view under their new name."
 
 	<gtView>
+	<todo: 'Implement the delete button'>
 	^ aView columnedList
 		title: 'Missing pages';
 		priority: 45;
@@ -120,7 +149,38 @@ TopicMap >> gtMissingPagesFor: aView [
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
-		column: 'Value' text: [ :each | each gtDisplayString ]
+		column: 'Missing page title'
+			text: [ :each | each gtDisplayString ]
+			width: 300;
+		column: 'Closest match'
+			text: [ :each | self closestUnmappedPageFor: each ]
+			width: 300;
+		column: 'Accept'
+			do: [ :column | 
+				column
+					stencil: [ :each | 
+						BrButton new
+							aptitude: BrGlamorousButtonWithIconAptitude;
+							icon: BrGlamorousVectorIcons accept;
+							label: 'Accept renaming';
+							action: [ :aButton | 
+								self updateMissingTitle: each.
+								aButton phlow fireViewUpdateWish ] ];
+					width: 60 ];
+		column: 'Delete'
+			do: [ :column | 
+				column
+					stencil: [ :each | 
+						BrButton new
+							aptitude: BrGlamorousButtonWithIconAptitude;
+							icon: BrGlamorousVectorIcons close;
+							label: 'Delete the missing page';
+							action: [ :aButton | 
+								self deleteMissingPageWithTitle: each.
+								aButton phlow fireViewUpdateWish ] ];
+					width: 60 ];
+		send: [ :each | self closestUnmappedPageFor: each ];
+		actionUpdateButton
 ]
 
 { #category : #actions }
@@ -137,10 +197,10 @@ TopicMap >> gtPageGroupActionFor: anAction [
 
 { #category : #views }
 TopicMap >> gtRoadmapFor: aView [
-	"<gtView>"
+	<gtView>
 	^ aView forward
 		title: 'OLD Roadmap';
-		priority: 35;
+		priority: 37;
 		object: [ self databaseNode ];
 		view: #gtRoadmapFor:
 ]
@@ -175,8 +235,11 @@ TopicMap >> gtTopicMapMenuFor: anAction [
 		content: [ :aButton | 
 			BrGlamorousSimpleContextMenuContent new
 				items: {'Inspect database node' -> [ aButton phlow spawnObject: self databaseNode ].
-						'Enable topic map actions' -> [ TMRegistry uniqueInstance enableExtensions ].
-						'Disable topic map actions' -> [ TMRegistry uniqueInstance disableExtensions ]};
+						'Enable topic map actions'
+							-> [ TMRegistry uniqueInstance enableExtensions ].
+						'Disable topic map actions'
+							-> [ TMRegistry uniqueInstance disableExtensions ].
+						'Inspect JSON file' -> [ aButton phlow spawnObject: self jsonFile ]};
 				yourself ]
 ]
 
@@ -187,7 +250,7 @@ TopicMap >> gtTopicMapTreeFor: aView [
 		title: 'Topic Map';
 		priority: 10;
 		object: [ self databaseNode ];
-		view: #gtTreeFor:
+		view: #gtTopicMapTreeFor:
 ]
 
 { #category : #views }
@@ -205,19 +268,27 @@ TopicMap >> gtUnmappedPagesFor: aView [
 	"Pages not listed in the JSON. These will need an assistant to update the JSON."
 
 	<gtView>
-	^ aView columnedList
+	^ aView forward
 		title: 'Unmapped pages';
 		priority: 40;
-		items: [ self unmappedPages ];
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Value' text: [ :each | each gtDisplayString ]
+		object: [ self unmappedPages ];
+		view: #gtTopicMapTreeFor:
+]
+
+{ #category : #initialization }
+TopicMap >> initialize [
+	super initialize.
+	monitor := Monitor new
 ]
 
 { #category : #accessing }
 TopicMap >> json [
-	^ json ifNil: [ json := STONJSON fromString: self jsonFile contents ]
+	^ json ifNil: [ json := STON fromString: self jsonFile contents ]
+]
+
+{ #category : #querying }
+TopicMap >> jsonDict4PageTitle: aTitle ifNone: aBlock [
+	^ (self json at: 'pages') detect: [ :d | (d at: 'page') = aTitle ] ifNone: aBlock
 ]
 
 { #category : #accessing }
@@ -255,7 +326,7 @@ TopicMap >> kinds4Topic: aTopic [
 
 	^ self kinds
 		select: [ :aKind | 
-			((self topic2Pages at: aTopic) collect: [ :aPage | self kind4Page: aPage ])
+			((self topic2Pages at: aTopic ifAbsent: {}) collect: [ :aPage | self kind4Page: aPage ])
 				includes: aKind ]
 ]
 
@@ -351,5 +422,43 @@ TopicMap >> topics4Page: aPage [
 
 { #category : #querying }
 TopicMap >> unmappedPages [
-	^ (self database pages copyWithoutAll: self pages) sortedAs: #title
+	"Pages in the database but not listed in the json. Could either be new or renamed pages.
+	NB: the latter will also show up as missing pages."
+
+	^ self
+		pageGroupFor: ((self database pages copyWithoutAll: self pages) sortedAs: #title)
+]
+
+{ #category : #updating }
+TopicMap >> updateMissingTitle: aMissingTitle [
+	| aPage |
+	self
+		assert: (self missingPages includes: aMissingTitle)
+		description: aMissingTitle , ' has already been deleted or renamed.'.
+	aPage := self closestUnmappedPageFor: aMissingTitle.
+	(self
+		jsonDict4PageTitle: aMissingTitle
+		ifNone: [ self error: 'Could not find entry for ' , aMissingTitle ])
+		at: 'page'
+		put: aPage title.
+	self assert: (self jsonDict4PageTitle: aMissingTitle ifNone: [ nil ]) isNil.
+	self clearCaches.
+	self writeJsonFile
+]
+
+{ #category : #updating }
+TopicMap >> writeJsonFile [
+	| writeStream tempFile |
+	tempFile := self jsonFile copyWithPath: self jsonFile path , 'temp.json'.
+	tempFile ensureDelete.
+	writeStream := tempFile writeStream.
+	STON put: self json asJsonOnStreamPretty: writeStream.
+	writeStream close.
+	[ STON fromStream: tempFile readStream ]
+		onErrorDo: [ tempFile ensureDelete.
+			self error: 'Writing JSON failed -- leaving old JSON as is.' ].
+	monitor
+		critical: [ self jsonFile ensureDelete.
+			tempFile renameTo: self jsonFile basename ].
+	^ self jsonFile
 ]

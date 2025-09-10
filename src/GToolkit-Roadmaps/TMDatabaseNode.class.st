@@ -53,7 +53,7 @@ TMDatabaseNode >> gtDatabaseActionFor: anAction [
 
 { #category : #navigation }
 TMDatabaseNode >> kinds [
-	^ self topicMap kind
+	^ self topicMap kinds
 ]
 
 { #category : #accessing }

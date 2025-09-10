@@ -106,10 +106,10 @@ TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 
 { #category : #views }
 TMAbstractTreeNode >> gtRoadmapFor: aView [
-	"<gtView>"
+	<gtView>
 	^ aView forward
 		title: 'Roadmap OLD';
-		priority: 35;
+		priority: 37;
 		object: [ self roadmap ];
 		view: #gtLiveFor:;
 		actionUpdateButton
@@ -158,7 +158,7 @@ TMAbstractTreeNode >> gtSummaryFor: aView [
 ]
 
 { #category : #views }
-TMAbstractTreeNode >> gtTreeFor: aView [
+TMAbstractTreeNode >> gtTopicMapTreeFor: aView [
 	<gtView>
 	^ aView columnedTree
 		title: 'Topic Map';
@@ -173,6 +173,9 @@ TMAbstractTreeNode >> gtTreeFor: aView [
 			width: 300;
 		column: '# Children'
 			text: [ :each | each children size ]
+			width: 100;
+		column: '# Topics'
+			text: [ :each | each topics size ]
 			width: 100;
 		column: '# Pages'
 			text: [ :each | each pages size ]
@@ -417,7 +420,7 @@ TMAbstractTreeNode >> summary [
 		{'#Topics'.
 			self sizeAndFirstIfAlone: self topics.
 			self topicNodes}.
-		{'#kinds'.
+		{'#Kinds'.
 			self sizeAndFirstIfAlone: self kinds.
 			self kindNodes}.
 		{'#Pages'.

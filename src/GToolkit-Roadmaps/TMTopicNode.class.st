@@ -52,7 +52,7 @@ TMTopicNode >> nodeLabel [
 
 { #category : #querying }
 TMTopicNode >> pages [
-	^ self topicMap topic2Pages at: self topic
+	^ self topicMap topic2Pages at: self topic ifAbsent: {}
 ]
 
 { #category : #navigation }

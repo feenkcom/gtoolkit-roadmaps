@@ -275,6 +275,36 @@ TopicMapExamples >> smaccQuery [
 ]
 
 { #category : #example }
+TopicMapExamples >> tempTopicMap [
+	"NB: the temp file must be deleted explicitly."
+
+	<gtExample>
+	<noTest>
+	| topicMap |
+	topicMap := TopicMap forJson: self tempTopicMapTestFile.
+	self assert: topicMap database equals: LeDatabase gtBook.
+	self assert: topicMap missingPages notNil.
+	^ topicMap
+]
+
+{ #category : #example }
+TopicMapExamples >> tempTopicMapTestFile [
+	"Create a copy of the test data file with a new random file name.
+	NB: the temp file must be deleted explicitly."
+
+	<gtExample>
+	<noTest>
+	| origFile tempFile |
+	origFile := self topicMapTestFile.
+	origFile := TopicMapExamples new topicMapTestFile.
+	tempFile := origFile
+			copyWithPath: origFile path , (10000 atRandom printString , '-temp.json').
+	tempFile ensureDelete.
+	origFile copyTo: tempFile.
+	^ tempFile
+]
+
+{ #category : #example }
 TopicMapExamples >> topic2Pages [
 	<gtExample>
 	| topicMap topic2Pages |
@@ -299,7 +329,7 @@ TopicMapExamples >> topicMap [
 
 { #category : #example }
 TopicMapExamples >> topicMapTestFile [
-	"NB: This test file forthe GT Book is a frozne snapshop. 
+	"NB: This test file forthe GT Book is a frozen snapshop. 
 	It is *not* intended to match the current state of the book. 
 	In fact, some tests depend on mismatches existing between the pages in the book and version of the topic map."
 
