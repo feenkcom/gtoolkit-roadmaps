@@ -145,9 +145,9 @@
 					"uidString" : "Ip3bpeP6DQCI3GuPCQGWkg=="
 				},
 				"exampleSelector" : "gtBookTopicMap",
-				"previewHeight" : 200,
+				"previewHeight" : 300,
 				"previewShowSelector" : "gtViewsFor:",
-				"exampleBehaviorName" : "TMPageGroupExamples",
+				"exampleBehaviorName" : "TMRegistryExamples",
 				"codeExpanded" : true,
 				"previewExpanded" : false,
 				"noCode" : true

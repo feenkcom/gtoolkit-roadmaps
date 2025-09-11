@@ -25,14 +25,6 @@ TMPageGroupExamples >> gtBookTestTopicMap [
 ]
 
 { #category : #examples }
-TMPageGroupExamples >> gtBookTopicMap [
-	"TopicMap for the GT Book."
-
-	<gtExample>
-	^ TMRegistry gtBookTopicMap
-]
-
-{ #category : #examples }
 TMPageGroupExamples >> pageGroup [
 	<gtExample>
 	| pageNodes |

@@ -147,7 +147,7 @@
 				"exampleSelector" : "gtBookTopicMap",
 				"previewHeight" : 300,
 				"previewShowSelector" : "gtViewsFor:",
-				"exampleBehaviorName" : "TMPageGroupExamples",
+				"exampleBehaviorName" : "TMRegistryExamples",
 				"codeExpanded" : true,
 				"previewExpanded" : false,
 				"noCode" : true
