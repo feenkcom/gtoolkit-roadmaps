@@ -62,7 +62,7 @@ Your task is to assign a category to a page provided as input. A single answer i
 In your answers, simply provide the category without any further explanation.
 
 Below follows a series of examples of User inputs consisting of notebook page contents, and the expected Assistant category as an answer.';
-			exampleDatabaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples';
+			exampleDatabaseNamed: self exampleDatabaseName;
 			examples: {'Glamorous Toolkit' -> 'Introduction'.
 					'Getting started with GT in 7''' -> 'Video'.
 					'Working with a REST API: the GitHub case study' -> 'Case study'.
@@ -123,7 +123,7 @@ Also one of the categories listed above is preferred as an answer, but if none o
 In your answers, simply provide the category without any further explanation.
 
 Below follows a series of examples of User inputs consisting of notebook page contents, and the expected Assistant category as an answer.';
-			exampleDatabaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples';
+			exampleDatabaseNamed: self exampleDatabaseName;
 			examples: {'Glamorous Toolkit' -> 'Introduction'.
 					'Getting started with GT in 7''' -> 'Video'.
 					'Working with a REST API: the GitHub case study' -> 'Case study'.
@@ -211,7 +211,7 @@ Do not propose any new categories.
 In your answers, simply provide the category without any further explanation.
 
 Below follows a series of examples of User inputs consisting of notebook page contents, and the expected Assistant category as an answer.';
-			exampleDatabaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples';
+			exampleDatabaseNamed: self exampleDatabaseName;
 			examples: {'Glamorous Toolkit' -> 'Introduction'.
 					'Getting started with GT in 7''' -> 'Media'.
 					'Working with a REST API: the GitHub case study' -> 'Case study'.
@@ -262,6 +262,18 @@ CategoryClassifierExperiments >> categoryMap [
 			collect: [ :d | (d at: 'pageName') -> (d at: 'results') first ]) sorted
 			asDictionary.
 	^ dict
+]
+
+{ #category : #examples }
+CategoryClassifierExperiments >> ensureGtBookExampleDatabase [
+	<gtExample>
+	^ PageClassifierExamples new ensureGtBookExampleDatabase
+]
+
+{ #category : #examples }
+CategoryClassifierExperiments >> exampleDatabaseName [
+	<gtExample>
+	^ PageClassifierExamples new exampleDatabaseName
 ]
 
 { #category : #examples }

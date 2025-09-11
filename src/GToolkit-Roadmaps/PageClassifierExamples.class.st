@@ -105,6 +105,15 @@ PageClassifierExamples >> browseStoredPCs [
 ]
 
 { #category : #examples }
+PageClassifierExamples >> ensureGtBookExampleDatabase [
+	<gtExample>
+	(LeDatabasesRegistry uniqueInstance defaultLogicalDatabase
+		hasDatabaseNamed: self exampleDatabaseName)
+		ifFalse: [ BaselineOfGtoolkitRoadmaps loadLepiterGtbookExamples ].
+	^ LeDatabase databaseNamed: self exampleDatabaseName
+]
+
+{ #category : #examples }
 PageClassifierExamples >> exampleBasedPageClassifier [
 	"NB: the results are only initialized after the jsonFile path is set."
 
@@ -161,12 +170,17 @@ PageClassifierExamples >> exampleDatabase [
 
 	<gtExample>
 	| exampleDatabase |
-	BaselineOfGtoolkitRoadmaps loadLepiterGtbookExamples.
-	exampleDatabase := LeDatabase
-			databaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples'.
+	self ensureGtBookExampleDatabase.
+	exampleDatabase := LeDatabase databaseNamed: self exampleDatabaseName.
 	exampleDatabase pages
 		do: [ :page | self assert: (LeDatabase gtBook hasPageNamed: page title) ].
 	^ exampleDatabase
+]
+
+{ #category : #examples }
+PageClassifierExamples >> exampleDatabaseName [
+	<gtExample>
+	^ 'feenkcom/gtoolkit-roadmaps/gtbook-examples'
 ]
 
 { #category : #examples }
@@ -190,9 +204,10 @@ PageClassifierExamples >> newBasicPageClassifierFromJson [
 PageClassifierExamples >> simpleExampleBasedPrompt [
 	<gtExample>
 	| prompt |
+	self ensureGtBookExampleDatabase.
 	prompt := PCExampleBasedPrompt new
 			promptString: 'Please classify notebook pages into categories reflecting the kind of information they express, as in the following examples:';
-			exampleDatabaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples';
+			exampleDatabaseNamed: self exampleDatabaseName;
 			examples: {'Glamorous Toolkit' -> 'Introduction'.
 					'Getting started with GT in 7''' -> 'Video'.
 					'Working with a REST API: the GitHub case study' -> 'Case study'.
