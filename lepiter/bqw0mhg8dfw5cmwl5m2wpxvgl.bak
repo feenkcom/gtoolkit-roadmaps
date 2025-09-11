@@ -34,7 +34,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-11T09:47:20.256766+02:00"
+									"dateAndTimeString" : "2025-09-11T09:47:25.653304+02:00"
 								}
 							},
 							"uid" : {
@@ -44,7 +44,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : ""
+							"string" : "[[How to activate]] "
 						},
 						{
 							"__type" : "textSnippet",

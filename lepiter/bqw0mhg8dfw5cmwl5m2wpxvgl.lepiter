@@ -225,7 +225,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T16:30:28.454276+02:00"
+												"dateAndTimeString" : "2025-09-11T11:34:54.407425+02:00"
 											}
 										},
 										"uid" : {
@@ -235,7 +235,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[* Reassign Topic or Style to a page]] "
+										"string" : "[[* Manually reassign Topic or Style to a page]] "
 									},
 									{
 										"__type" : "textSnippet",

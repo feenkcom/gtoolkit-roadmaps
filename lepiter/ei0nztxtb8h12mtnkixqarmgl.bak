@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:37:25.845629+02:00"
+						"dateAndTimeString" : "2025-09-11T11:33:32.230563+02:00"
 					}
 				},
 				"editEmail" : {
@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-08T17:55:07.952022+02:00"
+						"dateAndTimeString" : "2025-09-11T11:34:34.0768+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "NB: pages that have been *renamed* will appear as *Missing* underthe old name and *unmapped* under the new name. How to patch them? See [[* Repair missing pages]] "
+				"string" : "Unmapped pages are pages that are new or have been renamed. The latter we deala with when we [[Repair missing pages]].\nThe remaining unampped pages should be handled with the help of an assistant to generate topics and styles."
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -89,7 +89,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:47:07.836353+02:00"
+						"dateAndTimeString" : "2025-09-11T11:35:03.062583+02:00"
 					}
 				},
 				"editEmail" : {
@@ -100,17 +100,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:47:38.471574+02:00"
+						"dateAndTimeString" : "2025-09-11T11:36:39.270064+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "fT1dpN/5DQC/bKHVAV3u9A=="
+					"uidString" : "qfEZ/eT6DQCOgfzqCQGWkg=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "For the remaining unmapped pages we need an assistant to generate topics and styles."
+				"string" : "Add AI assistant for missing topics. Recover \n"
 			},
 			{
 				"__type" : "textSnippet",
@@ -137,7 +137,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-01T09:37:46.286547+02:00"
+						"dateAndTimeString" : "2025-09-11T11:35:09.00206+02:00"
 					}
 				},
 				"uid" : {
@@ -147,7 +147,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Add AI assistant for missing topics. \nOffer option to manually edit topics. "
+				"string" : "Also offer option to manually edit topics: [[* Manually reassign Topic or Style to a page]]"
 			},
 			{
 				"__type" : "textSnippet",
