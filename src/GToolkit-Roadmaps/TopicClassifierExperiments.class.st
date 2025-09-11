@@ -334,7 +334,7 @@ TopicClassifierExperiments >> top5TopicMapFile [
 
 	<gtExample>
 	^ FileLocator gtResource
-		/ 'feenkcom/gtoolkit-metabook/data/pc-json/top5ClassifierOnEntireGtBookEdited.json'
+		/ 'feenkcom/gtoolkit-roadmaps/data/pc-json/top5ClassifierOnEntireGtBookEdited.json'
 ]
 
 { #category : #'as yet unclassified' }

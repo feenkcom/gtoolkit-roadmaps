@@ -161,8 +161,9 @@ PageClassifierExamples >> exampleDatabase [
 
 	<gtExample>
 	| exampleDatabase |
+	BaselineOfGtoolkitRoadmaps loadLepiterGtbookExamples.
 	exampleDatabase := LeDatabase
-			databaseNamed: 'feenkcom/gtoolkit-metabook/gtbook-examples'.
+			databaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples'.
 	exampleDatabase pages
 		do: [ :page | self assert: (LeDatabase gtBook hasPageNamed: page title) ].
 	^ exampleDatabase
@@ -191,7 +192,7 @@ PageClassifierExamples >> simpleExampleBasedPrompt [
 	| prompt |
 	prompt := PCExampleBasedPrompt new
 			promptString: 'Please classify notebook pages into categories reflecting the kind of information they express, as in the following examples:';
-			exampleDatabaseNamed: 'feenkcom/gtoolkit-metabook/gtbook-examples';
+			exampleDatabaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples';
 			examples: {'Glamorous Toolkit' -> 'Introduction'.
 					'Getting started with GT in 7''' -> 'Video'.
 					'Working with a REST API: the GitHub case study' -> 'Case study'.

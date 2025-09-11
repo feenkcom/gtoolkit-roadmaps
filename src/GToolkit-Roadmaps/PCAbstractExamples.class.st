@@ -54,5 +54,5 @@ PCAbstractExamples >> jsonFilePath [
 { #category : #examples }
 PCAbstractExamples >> jsonTestDirPath [
 	<gtExample>
-	^ 'feenkcom/gtoolkit-metabook/data/pc-json'
+	^ 'feenkcom/gtoolkit-roadmaps/data/pc-json'
 ]

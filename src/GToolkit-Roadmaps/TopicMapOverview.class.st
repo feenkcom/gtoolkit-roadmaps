@@ -92,7 +92,7 @@ TopicMapOverview >> groupsAndPagesJson [
 TopicMapOverview >> groupsAndPagesJsonFile [
 	<gtExample>
 	^ FileLocator gtResource
-		/ 'feenkcom/gtoolkit-metabook/data/pc-json/groupsAndPagesJson.json'
+		/ 'feenkcom/gtoolkit-roadmaps/data/pc-json/groupsAndPagesJson.json'
 ]
 
 { #category : #examples }

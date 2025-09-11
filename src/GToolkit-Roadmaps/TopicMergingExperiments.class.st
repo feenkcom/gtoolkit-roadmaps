@@ -389,7 +389,7 @@ TopicMergingExperiments >> topicClustersExpt5File [
 	"This is the output of Experiment 5, a list of 40 groups of topics (missing 93)."
 	<gtExample>
 	^ FileLocator gtResource
-		/ 'feenkcom/gtoolkit-metabook/data/pc-json/topicClusters-v5.json'
+		/ 'feenkcom/gtoolkit-roadmaps/data/pc-json/topicClusters-v5.json'
 ]
 
 { #category : #examples }
@@ -398,7 +398,7 @@ TopicMergingExperiments >> topicClustersExpt5ReducedFile [
 	We add `Using Magritte` after running TopicClassifierExperiments>>#top5ClassifierOnEntireGtBook"
 	<gtExample>
 	^ FileLocator gtResource
-		/ 'feenkcom/gtoolkit-metabook/data/pc-json/topicClusters-v5-reduced.json'
+		/ 'feenkcom/gtoolkit-roadmaps/data/pc-json/topicClusters-v5-reduced.json'
 ]
 
 { #category : #examples }
@@ -409,7 +409,7 @@ TopicMergingExperiments >> topicClustersFile [
 	- v3 ..."
 	<gtExample>
 	^ FileLocator gtResource
-		/ 'feenkcom/gtoolkit-metabook/data/pc-json/topicClusters.json'
+		/ 'feenkcom/gtoolkit-roadmaps/data/pc-json/topicClusters.json'
 ]
 
 { #category : #examples }

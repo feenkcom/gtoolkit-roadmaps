@@ -28,8 +28,8 @@ TMPageGroupExamples >> gtBookTestTopicMap [
 TMPageGroupExamples >> pageGroup [
 	<gtExample>
 	| pageNodes |
-	pageNodes := self gtBookPageGroup pageGroup.
-	self assert: pageNodes size equals: self gtBookPageGroup pages size.
+	pageNodes := self gtBookTestPageGroup pageGroup.
+	self assert: pageNodes size equals: self gtBookTestPageGroup pages size.
 	^ pageNodes
 ]
 

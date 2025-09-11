@@ -62,7 +62,7 @@ Your task is to assign a category to a page provided as input. A single answer i
 In your answers, simply provide the category without any further explanation.
 
 Below follows a series of examples of User inputs consisting of notebook page contents, and the expected Assistant category as an answer.';
-			exampleDatabaseNamed: 'feenkcom/gtoolkit-metabook/gtbook-examples';
+			exampleDatabaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples';
 			examples: {'Glamorous Toolkit' -> 'Introduction'.
 					'Getting started with GT in 7''' -> 'Video'.
 					'Working with a REST API: the GitHub case study' -> 'Case study'.
@@ -123,7 +123,7 @@ Also one of the categories listed above is preferred as an answer, but if none o
 In your answers, simply provide the category without any further explanation.
 
 Below follows a series of examples of User inputs consisting of notebook page contents, and the expected Assistant category as an answer.';
-			exampleDatabaseNamed: 'feenkcom/gtoolkit-metabook/gtbook-examples';
+			exampleDatabaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples';
 			examples: {'Glamorous Toolkit' -> 'Introduction'.
 					'Getting started with GT in 7''' -> 'Video'.
 					'Working with a REST API: the GitHub case study' -> 'Case study'.
@@ -175,7 +175,7 @@ CategoryClassifierExperiments >> cat4CategoryMapFile [
 
 	<gtExample>
 	^ FileLocator gtResource
-		/ 'feenkcom/gtoolkit-metabook/data/pc-json/cat4DetailedPromptCategoryClassifier4.json'
+		/ 'feenkcom/gtoolkit-roadmaps/data/pc-json/cat4DetailedPromptCategoryClassifier4.json'
 ]
 
 { #category : #examples }
@@ -211,7 +211,7 @@ Do not propose any new categories.
 In your answers, simply provide the category without any further explanation.
 
 Below follows a series of examples of User inputs consisting of notebook page contents, and the expected Assistant category as an answer.';
-			exampleDatabaseNamed: 'feenkcom/gtoolkit-metabook/gtbook-examples';
+			exampleDatabaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples';
 			examples: {'Glamorous Toolkit' -> 'Introduction'.
 					'Getting started with GT in 7''' -> 'Media'.
 					'Working with a REST API: the GitHub case study' -> 'Case study'.
