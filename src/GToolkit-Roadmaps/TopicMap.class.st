@@ -197,9 +197,11 @@ TopicMap >> gtPageGroupActionFor: anAction [
 
 { #category : #views }
 TopicMap >> gtRoadmapFor: aView [
+	"Roadmap without Kind nodes."
+
 	<gtView>
 	^ aView forward
-		title: 'OLD Roadmap';
+		title: 'ALT Roadmap';
 		priority: 37;
 		object: [ self databaseNode ];
 		view: #gtRoadmapFor:

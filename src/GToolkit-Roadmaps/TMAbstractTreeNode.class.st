@@ -106,9 +106,11 @@ TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 
 { #category : #views }
 TMAbstractTreeNode >> gtRoadmapFor: aView [
+	"Roadmap without Kind nodes."
+	
 	<gtView>
 	^ aView forward
-		title: 'Roadmap OLD';
+		title: 'ALT Roadmap';
 		priority: 37;
 		object: [ self roadmap ];
 		view: #gtLiveFor:;
