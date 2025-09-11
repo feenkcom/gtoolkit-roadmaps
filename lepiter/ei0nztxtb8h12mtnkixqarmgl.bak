@@ -100,7 +100,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T11:36:39.270064+02:00"
+						"dateAndTimeString" : "2025-09-11T11:37:16.747029+02:00"
 					}
 				},
 				"uid" : {
@@ -110,7 +110,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Add AI assistant for missing topics. Recover \n"
+				"string" : "Add AI assistant for missing topics. Recover and adapt code from the Metabook project.\n"
 			},
 			{
 				"__type" : "textSnippet",
@@ -153,7 +153,116 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-11T11:53:21.949864+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-11T11:53:42.967711+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "VqOZPuX6DQCAbV7lAvSYMw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-11T11:53:55.308075+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-11T11:59:02.868338+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "h6SWQOX6DQCCeSvuAvSYMw=="
+							},
+							"code" : "({PCAbstractExamples.\r\tPCEntity.\r\tTopicMapOverview} flatCollect: #withAllSubclasses)\r\tdo: [:aClass |\r\t\tSmalltalk compiler\r\t\t\tevaluate: (aClass definitionString\r\t\t\t\t\tcopyReplaceAll: 'package: ''GtoolkitMetabook-TopicMining'''\r\t\t\t\t\twith: 'package: ''GToolkit-Roadmaps-PageClassifier''')\r\t]."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-11T12:01:41.371745+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-11T12:01:43.74666+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "NDVeXOX6DQC60SJADbw9CQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "We move th"
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -174,7 +283,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:42:29.431652+02:00"
+						"dateAndTimeString" : "2025-09-11T11:53:20.629128+02:00"
 					}
 				},
 				"uid" : {
@@ -184,7 +293,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : ""
+				"string" : "# Moving the PageClassifier"
 			}
 		]
 	},
