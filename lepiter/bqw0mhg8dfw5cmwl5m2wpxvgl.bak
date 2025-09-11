@@ -865,45 +865,7 @@
 								"__type" : "textStyle"
 							},
 							"string" : "[[Introducing topic map views for pages and databases]] "
-						}
-					]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:35:14.603043+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-05T13:44:52.595969+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "U7KL5236DQCDFf13BGq2Eg=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "[[GT Roadmaps]]  "
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [
+						},
 						{
 							"__type" : "textSnippet",
 							"children" : {
@@ -1265,7 +1227,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-07-30T09:23:07.6347+02:00"
+									"dateAndTimeString" : "2025-09-11T12:10:23.227955+02:00"
 								}
 							},
 							"uid" : {
@@ -1275,7 +1237,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Prototypes]]"
+							"string" : "[[Prototypes]] "
 						},
 						{
 							"__type" : "textSnippet",
@@ -1600,7 +1562,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-07-30T09:38:53.071206+02:00"
+									"dateAndTimeString" : "2025-09-11T12:10:28.044745+02:00"
 								}
 							},
 							"uid" : {
@@ -1610,7 +1572,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[PageClassifier implementation]]"
+							"string" : "[[PageClassifier implementation]] "
 						}
 					]
 				},
@@ -1622,7 +1584,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T12:09:10.869748+02:00"
+						"dateAndTimeString" : "2025-09-05T13:35:14.603043+02:00"
 					}
 				},
 				"editEmail" : {
@@ -1633,7 +1595,44 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T12:09:37.339973+02:00"
+						"dateAndTimeString" : "2025-09-05T13:44:52.595969+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "U7KL5236DQCDFf13BGq2Eg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "[[GT Roadmaps]]  "
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T12:10:32.790271+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-11T12:10:32.790271+02:00"
 					}
 				},
 				"uid" : {
@@ -1643,7 +1642,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "MOVE TO TOC"
+				"string" : ""
 			}
 		]
 	},
