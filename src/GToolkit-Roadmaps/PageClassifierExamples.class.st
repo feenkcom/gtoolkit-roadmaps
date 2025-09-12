@@ -107,6 +107,18 @@ PageClassifierExamples >> browseStoredPCs [
 { #category : #examples }
 PageClassifierExamples >> ensureGtBookExampleDatabase [
 	<gtExample>
+	
+	(([ LeLocalStoreMonitor shutdownMonitor 
+		critical: [ (LeDatabasesRegistry uniqueInstance defaultLogicalDatabase
+			hasDatabaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples')
+					ifFalse: [ BaselineOfGtoolkitRoadmaps 
+						loadLepiterGtbookExamples ]. ] ]
+			asAsyncFuture await: (AsyncFutureExecutionConfiguration new 
+				customGroup: #Lepiter))
+					then: [ ]
+					otherwise: [ :anException |
+						anException debug ]) wait.
+	
 	(LeDatabasesRegistry uniqueInstance defaultLogicalDatabase
 		hasDatabaseNamed: self exampleDatabaseName)
 		ifFalse: [ BaselineOfGtoolkitRoadmaps loadLepiterGtbookExamples ].
