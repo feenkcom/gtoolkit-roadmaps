@@ -13,6 +13,7 @@ TopicMergingExperiments >> clus1TopicClusterChat [
 	Each run is rather different, and only a few topics are stable."
 
 	<gtExample>
+	<noTest>
 	| chat |
 	chat := GtLlmChat new.
 	chat provider instructions: self clusteringPrompt1.
@@ -66,6 +67,7 @@ TopicMergingExperiments >> clus2TopicClusterChat [
 	Insteda of all the answers it often just gives the first answer."
 
 	<gtExample>
+	<noTest>
 	| chat |
 	chat := GtLlmChat new.
 	chat provider instructions: self clusteringPrompt2.
@@ -100,6 +102,7 @@ TopicMergingExperiments >> clus3TopicClusterChat [
 	and *then* propose a name to cover the group."
 
 	<gtExample>
+	<noTest>
 	| chat |
 	chat := GtLlmChat new.
 	chat provider instructions: self clusteringPrompt3Simplified.
@@ -127,6 +130,7 @@ TopicMergingExperiments >> clus4TopicClusterChat [
 	"We provide a specialized format for the list of groups."
 
 	<gtExample>
+	<noTest>
 	| chat |
 	chat := GtLlmChat new.
 	chat provider instructions: self clusteringPrompt4.
@@ -155,6 +159,7 @@ TopicMergingExperiments >> clus5TopicClusterChat [
 	"We provide a specialized format for the list of groups."
 
 	<gtExample>
+	<noTest>
 	| chat |
 	chat := GtLlmChat new.
 	chat provider instructions: self clusteringPrompt5.
