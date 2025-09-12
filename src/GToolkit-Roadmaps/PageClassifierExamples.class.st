@@ -113,10 +113,10 @@ PageClassifierExamples >> ensureGtBookExampleDatabase [
 			hasDatabaseNamed: self exampleDatabaseName) ifFalse: [ 
 				| databaseFolder defaultDatabase newDatabase  |
 				
-				databaseFolder := FileLocator gtResource 
+				databaseFolder := (FileLocator gtResource 
 					/ 'feenkcom' 
 					/ 'gtoolkit-roadmaps'
-					/ 'gtbook-examples'.
+					/ 'gtbook-examples') asFileReference asAbsolute.
 				self assert: databaseFolder exists.
 				defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
 				newDatabase := LeLocalStoreLoad current 
