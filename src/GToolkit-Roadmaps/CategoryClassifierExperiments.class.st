@@ -41,6 +41,7 @@ CategoryClassifierExperiments >> cat0SimplePrompt [
 CategoryClassifierExperiments >> cat1DetailedPrompt1 [
 	<gtExample>
 	| prompt |
+	self ensureGtBookExampleDatabase.
 	prompt := PCExampleBasedPrompt new
 			promptString: 'The Glamorous Toolkit Book consists of numerous notebook pages documenting various aspects of Moldable Development and the Glamorous Toolkit (GT) IDE that supports it.
 We are interested in categorizing the pages according to the kind of information they contain.

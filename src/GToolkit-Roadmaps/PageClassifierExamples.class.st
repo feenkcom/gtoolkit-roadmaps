@@ -111,20 +111,18 @@ PageClassifierExamples >> ensureGtBookExampleDatabase [
 	(([ LeLocalStoreMonitor shutdownMonitor 
 		critical: [ (LeDatabasesRegistry uniqueInstance defaultLogicalDatabase
 			hasDatabaseNamed: self exampleDatabaseName) ifFalse: [ 
-				IceRepository registry  
-					detect: [ :aRepository |
-						aRepository name = 'gtoolkit-roadmaps' ]
-					ifFound: [ :aRepository | 
-						| defaultDatabase newDatabase |
-						defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
-						newDatabase := LeLocalStoreLoad current 
-							loadAndMonitorFrom: aRepository repositoryDirectory 
-								/ 'gtbook-examples'.
-
-						defaultDatabase
-							addDB: newDatabase ]
-		ifNone: [
-			self inform: 'Repository not found.' ] ] ] ]
+				| databaseFolder defaultDatabase currentProperties  |
+				
+				databaseFolder := FileLocator gtResource 
+					/ 'feenkcom' 
+					/ 'gtoolkit-roadmaps'
+					/ 'gtbook-examples'.
+				self assert: databaseFolder exists.
+				
+				defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
+				currentProperties := defaultDatabase properties.
+				currentProperties addRegisteredDirectory: databaseFolder.
+				defaultDatabase reload	 ] ] ]
 			asAsyncFuture await: (AsyncFutureExecutionConfiguration new 
 				customGroup: #Lepiter))
 					then: [ ]
