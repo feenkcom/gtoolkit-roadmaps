@@ -108,7 +108,7 @@ PageClassifierExamples >> browseStoredPCs [
 PageClassifierExamples >> ensureGtBookExampleDatabase [
 	<gtExample>
 	
-	(([ LeLocalStoreMonitor shutdownMonitor 
+	LeLocalStoreMonitor shutdownMonitor 
 		critical: [ (LeDatabasesRegistry uniqueInstance defaultLogicalDatabase
 			hasDatabaseNamed: self exampleDatabaseName) ifFalse: [ 
 				| databaseFolder defaultDatabase newDatabase  |
@@ -118,15 +118,10 @@ PageClassifierExamples >> ensureGtBookExampleDatabase [
 					/ 'gtoolkit-roadmaps'
 					/ 'gtbook-examples'.
 				self assert: databaseFolder exists.
-				
+				defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
 				newDatabase := LeLocalStoreLoad current 
 					loadAndMonitorFrom: databaseFolder .
-				defaultDatabase addDB: newDatabase	 ] ] ]
-			asAsyncFuture await: (AsyncFutureExecutionConfiguration new 
-				customGroup: #Lepiter))
-					then: [ ]
-					otherwise: [ :anException |
-						anException debug ]) wait.
+				defaultDatabase addDB: newDatabase ] ].
 	
 	self 
 		assert: (LeDatabasesRegistry defaultLogicalDatabase 
