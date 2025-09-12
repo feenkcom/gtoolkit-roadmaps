@@ -110,18 +110,35 @@ PageClassifierExamples >> ensureGtBookExampleDatabase [
 	
 	(([ LeLocalStoreMonitor shutdownMonitor 
 		critical: [ (LeDatabasesRegistry uniqueInstance defaultLogicalDatabase
-			hasDatabaseNamed: 'feenkcom/gtoolkit-roadmaps/gtbook-examples')
-					ifFalse: [ BaselineOfGtoolkitRoadmaps 
-						loadLepiterGtbookExamples ]. ] ]
+			hasDatabaseNamed: self exampleDatabaseName) ifFalse: [ 
+				IceRepository registry  
+					detect: [ :aRepository |
+						aRepository name = 'gtoolkit-roadmaps' ]
+					ifFound: [ :aRepository | 
+						| defaultDatabase newDatabase |
+						defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
+						newDatabase := LeLocalStoreLoad current 
+							loadAndMonitorFrom: aRepository repositoryDirectory 
+								/ 'gtbook-examples'.
+
+						defaultDatabase
+							addDB: newDatabase ]
+		ifNone: [
+			self inform: 'Repository not found.' ] ] ] ]
 			asAsyncFuture await: (AsyncFutureExecutionConfiguration new 
 				customGroup: #Lepiter))
 					then: [ ]
 					otherwise: [ :anException |
 						anException debug ]) wait.
 	
-	(LeDatabasesRegistry uniqueInstance defaultLogicalDatabase
-		hasDatabaseNamed: self exampleDatabaseName)
-		ifFalse: [ BaselineOfGtoolkitRoadmaps loadLepiterGtbookExamples ].
+	self 
+		assert: (LeDatabasesRegistry defaultLogicalDatabase 
+			hasDatabaseNamed: self exampleDatabaseName)
+		description: (('Database with name {1} not found in the registry. Currently registered databases: {2}') format: {
+			self exampleDatabaseName .
+				(LeDatabasesRegistry defaultLogicalDatabase databases 
+					collect: [ :aDatabase | aDatabase databaseName ]) asCommaString}).
+	
 	^ LeDatabase databaseNamed: self exampleDatabaseName
 ]
 
@@ -150,6 +167,7 @@ PageClassifierExamples >> exampleBasedPageClassifierFromJson [
 
 	<gtExample>
 	| pc |
+	self ensureGtBookExampleDatabase.
 	pc := PageClassifier new
 			jsonFile: self exampleBasedPageClassifierJsonFilePath;
 			loadJSONresults;
