@@ -253,12 +253,21 @@ PageClassifierExamples >> testPages [
 
 	<gtExample>
 	| testPages |
-	testPages := {'A single starting point for scripting, linking and documenting'.
+	testPages := {
+			'A single starting point for scripting, linking and documenting'.
 			'How to find stuff in GT in 7'''.
 			'Working with AT Protocol'.
 			'Querying objects'.
 			'How to create a Lepiter page?'.
 			'Debugger'.
-			'Bloc'} collect: [ :title | self exampleDatabase pageNamed: title ].
+			'Bloc'} collect: [ :title | 
+				self 
+					assert: (self exampleDatabase hasPageNamed: title)
+					description: ('Page "{1}" not found in database. Current pages: {2}' 
+						format: {
+							title. 
+							(self exampleDatabase pages collect: [:aPage |
+								'"',aPage title,'"' ]) asCommaString}).
+				self exampleDatabase pageNamed: title ].
 	^ testPages
 ]
