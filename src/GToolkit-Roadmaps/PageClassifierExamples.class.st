@@ -79,7 +79,7 @@ PageClassifierExamples >> basicPageClassifierWithResultsFromJSON [
 	self assert: (pc chats flatCollect: #results) isEmpty.
 	pc loadJSONresults.
 	self assert: (pc chats flatCollect: #results) isNotEmpty.
-	self assert: (pc jsonString) equals: (self jsonTestFileWithResults contents).
+	self assert: (pc jsonString lines) equals: (self jsonTestFileWithResults contents lines).
 	
 	^ pc
 ]
