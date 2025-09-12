@@ -111,7 +111,7 @@ PageClassifierExamples >> ensureGtBookExampleDatabase [
 	(([ LeLocalStoreMonitor shutdownMonitor 
 		critical: [ (LeDatabasesRegistry uniqueInstance defaultLogicalDatabase
 			hasDatabaseNamed: self exampleDatabaseName) ifFalse: [ 
-				| databaseFolder defaultDatabase currentProperties  |
+				| databaseFolder defaultDatabase newDatabase  |
 				
 				databaseFolder := FileLocator gtResource 
 					/ 'feenkcom' 
@@ -119,10 +119,9 @@ PageClassifierExamples >> ensureGtBookExampleDatabase [
 					/ 'gtbook-examples'.
 				self assert: databaseFolder exists.
 				
-				defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
-				currentProperties := defaultDatabase properties.
-				currentProperties addRegisteredDirectory: databaseFolder.
-				defaultDatabase reload	 ] ] ]
+				newDatabase := LeLocalStoreLoad current 
+					loadAndMonitorFrom: databaseFolder .
+				defaultDatabase addDB: newDatabase	 ] ] ]
 			asAsyncFuture await: (AsyncFutureExecutionConfiguration new 
 				customGroup: #Lepiter))
 					then: [ ]
