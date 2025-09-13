@@ -26,11 +26,6 @@ Class {
 	#category : #'GToolkit-Roadmaps-Model'
 }
 
-{ #category : #accessing }
-TMRegistry class >> gtBookTopicMap [
-	^ self uniqueInstance topicMapFor: LeDatabase gtBookName
-]
-
 { #category : #initialization }
 TMRegistry >> defaultRegistry [
 	^ {'Glamorous Toolkit Book' -> 'feenkcom/gtoolkit-roadmaps/data/gtbookTopicMap.json'}

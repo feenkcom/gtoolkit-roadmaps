@@ -5,19 +5,19 @@ Class {
 }
 
 { #category : #examples }
-TMPageGroupExamples >> gtBookPageGroup [
+TMPageGroupExamples >> gtBookTestPageGroup [
 	"PageGroup for all pages from the test file."
 
 	<gtExample>
 	| pageGroup topicMap |
-	topicMap := self gtBookTopicMap.
+	topicMap := self gtBookTestTopicMap.
 	pageGroup := topicMap pageGroup.
 	self assert: pageGroup pages size equals: topicMap pages size.
 	^ pageGroup
 ]
 
 { #category : #examples }
-TMPageGroupExamples >> gtBookTopicMap [
+TMPageGroupExamples >> gtBookTestTopicMap [
 	"TopicMap for all pages from the test file."
 
 	<gtExample>
@@ -28,8 +28,8 @@ TMPageGroupExamples >> gtBookTopicMap [
 TMPageGroupExamples >> pageGroup [
 	<gtExample>
 	| pageNodes |
-	pageNodes := self gtBookPageGroup pageGroup.
-	self assert: pageNodes size equals: self gtBookPageGroup pages size.
+	pageNodes := self gtBookTestPageGroup pageGroup.
+	self assert: pageNodes size equals: self gtBookTestPageGroup pages size.
 	^ pageNodes
 ]
 

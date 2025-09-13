@@ -106,9 +106,11 @@ TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 
 { #category : #views }
 TMAbstractTreeNode >> gtRoadmapFor: aView [
+	"Roadmap without Kind nodes."
+	
 	<gtView>
 	^ aView forward
-		title: 'Roadmap OLD';
+		title: 'ALT Roadmap';
 		priority: 37;
 		object: [ self roadmap ];
 		view: #gtLiveFor:;
@@ -477,6 +479,11 @@ TMAbstractTreeNode >> treeMap [
 				node := aNodeContext model.
 				aNodeContext level = 2
 					ifTrue: [ anElement
+							padding: (BlInsets
+									top: 12
+									bottom: 2
+									left: 2
+									right: 2);
 							addChild: (BrLabel new
 									text: node nodeLabel;
 									aptitude: (BrGlamorousLabelAptitude new
@@ -485,8 +492,10 @@ TMAbstractTreeNode >> treeMap [
 									background: Color white;
 									constraintsDo: [ :c | c ignoreByLayout ]) ].
 
-				anElement border: (BlBorder paint: node defaultNodeColor width: 2).
-				anElement padding: (BlInsets top: 12  bottom: 2 left: 2 right: 2) ].
+				anElement
+					border: (BlBorder
+							paint: (node defaultNodeColor alpha: 0.7 / aNodeContext level)
+							width: 2) ].
 	^ treemap
 ]
 

@@ -101,3 +101,8 @@ TMPageGroup >> treeMapChildren [
 TMPageGroup >> treeMapLeaves [
 	^ self
 ]
+
+{ #category : #'as yet unclassified' }
+TMPageGroup >> treeMapRoots [
+	^ self kindNodes
+]
