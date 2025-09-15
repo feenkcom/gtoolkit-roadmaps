@@ -1,7 +1,6 @@
 {
-	"bookName" : "Glamorous Toolkit Book",
 	"resultType" : "Category",
-	"jsonFile" : "feenkcom/gtoolkit-roadmaps/data/pc-json/cat4DetailedPromptCategoryClassifier4.json",
+	"bookName" : "Glamorous Toolkit Book",
 	"prompt" : {
 		"promptString" : "The Glamorous Toolkit Book consists of numerous notebook pages documenting various aspects of Moldable Development and the Glamorous Toolkit (GT) IDE that supports it.\nWe are interested in categorizing the pages according to the kind of information they contain.\n\nHere is a description of each of the categories:\n\n- Introduction: a page that introduces a topic, usually with little or no code.\n- Media: a page pointing the reader to a slideshow or an on-line video for a given topic.\n- Case study: a page describing an existing case study that illustrates a topic, with detailed code examples.\n- Examples: a page listing one or more examples of a tool or technique, but not a proper case study.\n- Tutorial: a page containing a step-by-step series of explanations and exercises with code to teach the reader about a topic. Whereas a case study focuses on a specific application, a tutorial focuses on how to acquire a specific skill. A tutorial often takes the form of an exercise to be performed by the reader.\n- Pattern: a pattern describes a recurring design problem and its solution. A pattern must include sections describing the Context, the Problem, Forces, and Solution, and may also have sections Steps and Examples.\n- FAQ: a page containing a \"how to\" question related to a topic, with a detailed answer to just that question. The title will often start with \"How to\".\n- Index: a structuring page that serves only to point to or list other pages.\n- Definition: a page whose title is a term and whose contents consists of a concise definition of that term.\n- Tag: a page whose title consist of a single word identifying a topic, and little or no contents, to be used as a tag in other pages on that topic. A tag never has a title of more than two words.\n- Documentation: a page containing a technical description, a set of metrics, release notes, or other details of some component or API.\n\nYour task is to assign a category to a page provided as input. A single answer is preferred, but in case of doubt, please propose two, or at most three alternatives.\n\nNote that the category Video is preferred instead of Tutorial or FAQ, and FAQ is preferred over Definition.\nThe category Documentation should be used as a default only if none of the other categories fits.\nDo not propose any new categories.\n\nIn your answers, simply provide the category without any further explanation.\n\nBelow follows a series of examples of User inputs consisting of notebook page contents, and the expected Assistant category as an answer.",
 		"examples" : [
@@ -52,6 +51,7 @@
 		],
 		"exampleDatabaseName" : "feenkcom/gtoolkit-roadmaps/gtbook-examples"
 	},
+	"jsonFile" : "feenkcom/gtoolkit-roadmaps/data/pc-json/cat4DetailedPromptCategoryClassifier4.json",
 	"chats" : [
 		{
 			"pageName" : "How to deal with \"Detached Working Copy\" message",

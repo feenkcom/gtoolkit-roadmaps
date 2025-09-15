@@ -1,10 +1,10 @@
 {
-	"bookName" : "feenkcom/gtoolkit-roadmaps/gtbook-examples",
 	"resultType" : "Topic",
-	"jsonFile" : "feenkcom/gtoolkit-roadmaps/data/pc-json/basicPageClassifierExampleWithResults.json",
+	"bookName" : "feenkcom/gtoolkit-roadmaps/gtbook-examples",
 	"prompt" : {
 		"promptString" : "Propose up to three keywords for the above text, which is a page in the Glamorous Toolkit book."
 	},
+	"jsonFile" : "feenkcom/gtoolkit-roadmaps/data/pc-json/basicPageClassifierExampleWithResults.json",
 	"chats" : [
 		{
 			"pageName" : "A single starting point for scripting, linking and documenting",
