@@ -120,6 +120,11 @@ GtBookMockDatabase >> howToPagesRelatedToGemStone [
 ]
 
 { #category : #initialization }
+GtBookMockDatabase >> initialize [
+	self initializeDatabase
+]
+
+{ #category : #initialization }
 GtBookMockDatabase >> initializeDatabase [
 	"Create and initialize a transient Lepiter database for the dynamically created pages. We need to create a transient registry as well, so that links will work within the database. Automatically load all pages defined in methods with a <lePage> pragma."
 

@@ -212,6 +212,20 @@ PageClassifierExamples >> jsonTestFileWithResults [
 ]
 
 { #category : #examples }
+PageClassifierExamples >> mockDatabase [
+	"The mock database is a collection of sample pages from the GT Book.
+	NB: if this fails, then a sample page has been renamed in or removed from the book."
+
+	<gtExample>
+	| mockDb |
+	mockDb := GtBookMockDatabase new.
+	self assert: mockDb database pages size equals: 18.
+	mockDb database pages
+		do: [ :page | self assert: (LeDatabase gtBook hasPageNamed: page title) ].
+	^ mockDb database
+]
+
+{ #category : #examples }
 PageClassifierExamples >> newBasicPageClassifierFromJson [
 	<gtExample>
 	| pc newPC |
