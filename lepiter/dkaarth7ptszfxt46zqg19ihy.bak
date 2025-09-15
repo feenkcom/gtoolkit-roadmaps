@@ -470,14 +470,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-15T09:35:26.923226+02:00"
+									"dateAndTimeString" : "2025-09-15T09:31:50.918987+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "0lhYYTP7DQCDKrsQBXzn0g=="
 							},
-							"code" : "db := PageClassifierExamples new ensureGtBookExampleDatabase.\rclass := GtBookMockDatabase.\rpages := db pages.\raPage := pages first .\rcleanTitle := (aPage title reject: [:aChar | aChar isLetter not and: [aChar isSpaceSeparator not ]]).\rselector := (((Character space split: cleanTitle) collect: #capitalized) joinUsing: '') uncapitalized.\rmethodBody := selector, '\r<lePage>\r<gtExample>\r^ ',\raPage storeString .\rclass compile: methodBody.\rmethod := class methodNamed: selector asSymbol.\rclass organization classify: selector asSymbol under: 'page'.\rmethod"
+							"code" : "db := PageClassifierExamples new ensureGtBookExampleDatabase.\rclass := GtBookMockDatabase.\rpages := db pages.\raPage := pages first .\rcleanTitle := (aPage title reject: [:aChar | aChar isLetter not and: [aChar isSpaceSeparator not ]]).\rselector := (((Character space split: cleanTitle) collect: #capitalized) joinUsing: '') uncapitalized.\rmethodBody := selector, '\r<page>\r<gtExample>\r^ ',\raPage storeString .\rclass compile: methodBody.\rmethod := class methodNamed: selector asSymbol.\rclass organization classify: selector asSymbol under: 'page'.\rmethod"
 						},
 						{
 							"__type" : "pharoSnippet",
