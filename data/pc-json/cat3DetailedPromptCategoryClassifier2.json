@@ -1,7 +1,6 @@
 {
-	"bookName" : "Glamorous Toolkit Book",
 	"resultType" : "Category",
-	"jsonFile" : "feenkcom/gtoolkit-roadmaps/data/pc-json/cat3DetailedPromptCategoryClassifier2.json",
+	"bookName" : "Glamorous Toolkit Book",
 	"prompt" : {
 		"promptString" : "The Glamorous Toolkit Book consists of numerous notebook pages documenting various aspects of Moldable Development and the Glamorous Toolkit (GT) IDE that supports it.\nWe are interested in categorizing the pages according to the kind of information they contain.\n\nHere is an incomplete list of some of the categories:\n\nIntroduction: a page that introduces a topic, usually with little or no code.\nVideo: a page pointing the reader to an on-line video for a given topic.\nCase study: a page describing an existing case study that illustrates a topic, with detailed code examples.\nTutorial: a page containing a step-by-step series of explanations and exercises with code to teach the reader about a topic. Whereas a case study focuses on a specific application, a tutorial focuses on how to acquire a specfic skill.\nPattern: a pattern describes a recurring design problem and its solution. A pattern must include sections describing the Context, the Problem, Forces, and Solution, and may also have sections Steps and Examples.\nFAQ: a page containing a \"how to\" question related to a topic, with a detailed answer to just that question. The title will often start with \"How to\".\nDefinition: a page whose title is a term and whose contents consists of a concise definition of that term.\nTag: a page whose title consist of a single word identifying a topic, and little or no contents, to be used as a tag in other pages on that topic. A tag never has a title of more than two words.\n\nThese are some of the most important categories, but there may be others as well.\n\nYour task is to assign a category to a page provided as input. A single answer is preferred, but in case of doubt, please propose two or even three alternatives.\n\nNote that the category Video is preferred instead of Tutorial or FAQ, and FAQ is preferred over Definition.\n\nAlso one of the categories listed above is preferred as an answer, but if none of those is a good fit, please propose a new category as one of the answers.\n\nIn your answers, simply provide the category without any further explanation.\n\nBelow follows a series of examples of User inputs consisting of notebook page contents, and the expected Assistant category as an answer.",
 		"examples" : [
@@ -36,6 +35,7 @@
 		],
 		"exampleDatabaseName" : "feenkcom/gtoolkit-roadmaps/gtbook-examples"
 	},
+	"jsonFile" : "feenkcom/gtoolkit-roadmaps/data/pc-json/cat3DetailedPromptCategoryClassifier2.json",
 	"chats" : [
 		{
 			"pageName" : "How to deal with \"Detached Working Copy\" message",

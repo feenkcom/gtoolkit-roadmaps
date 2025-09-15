@@ -18,7 +18,12 @@ PCExampleBasedPrompt >> exampleDatabase [
 	^ exampleDatabase
 ]
 
-{ #category : #accessing }
+{ #category : #initialization }
+PCExampleBasedPrompt >> exampleDatabase: aLeDatabase [
+	exampleDatabase := aLeDatabase
+]
+
+{ #category : #initialization }
 PCExampleBasedPrompt >> exampleDatabaseNamed: aString [
 	exampleDatabase := LeDatabase databaseNamed: aString
 ]

@@ -79,7 +79,7 @@ PageClassifierExamples >> basicPageClassifierWithResultsFromJSON [
 	self assert: (pc chats flatCollect: #results) isEmpty.
 	pc loadJSONresults.
 	self assert: (pc chats flatCollect: #results) isNotEmpty.
-	self assert: (pc jsonString lines) equals: (self jsonTestFileWithResults contents lines).
+	self assert: (pc jsonString lines) asSet equals: (self jsonTestFileWithResults contents lines) asSet.
 	
 	^ pc
 ]
@@ -209,6 +209,20 @@ PageClassifierExamples >> exampleDatabaseName [
 PageClassifierExamples >> jsonTestFileWithResults [
 	<gtExample>
 	^ FileLocator gtResource / self basicPageClassifierWithResultsJSONFilePath
+]
+
+{ #category : #examples }
+PageClassifierExamples >> mockDatabase [
+	"The mock database is a collection of sample pages from the GT Book.
+	NB: if this fails, then a sample page has been renamed in or removed from the book."
+
+	<gtExample>
+	| mockDb |
+	mockDb := GtBookMockDatabase new.
+	self assert: mockDb database pages size equals: 18.
+	mockDb database pages
+		do: [ :page | self assert: (LeDatabase gtBook hasPageNamed: page title) ].
+	^ mockDb database
 ]
 
 { #category : #examples }
