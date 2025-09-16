@@ -1,6 +1,6 @@
 Extension { #name : #ByteString }
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-Roadmaps-LLM' }
 ByteString >> asPrompt [
 	^ PCSimplePrompt new
 		promptString: self;

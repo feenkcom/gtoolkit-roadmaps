@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'promptString'
 	],
-	#category : #'GToolkit-Roadmaps-PageClassifier'
+	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
 
 { #category : #converting }

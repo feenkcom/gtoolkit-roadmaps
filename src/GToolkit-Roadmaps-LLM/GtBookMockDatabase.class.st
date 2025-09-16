@@ -3,7 +3,7 @@ Class {
 	#superclass : #Object,
 	#traits : 'TDatabaseHolder',
 	#classTraits : 'TDatabaseHolder classTrait',
-	#category : #'GToolkit-Roadmaps-PageClassifier'
+	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
 
 { #category : #page }

@@ -4,7 +4,7 @@ Experiments in generating topics for pages.
 Class {
 	#name : #TopicClassifierExperiments,
 	#superclass : #PCAbstractExamples,
-	#category : #'GToolkit-Roadmaps-PageClassifier'
+	#category : #'GToolkit-Roadmaps-LLM-Examples'
 }
 
 { #category : #'as yet unclassified' }

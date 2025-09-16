@@ -9,7 +9,7 @@ TO DO: after mining a list of categories from all pages, we edit the resulting l
 Class {
 	#name : #CategoryClassifierExperiments,
 	#superclass : #PCAbstractExamples,
-	#category : #'GToolkit-Roadmaps-PageClassifier'
+	#category : #'GToolkit-Roadmaps-LLM-Examples'
 }
 
 { #category : #examples }

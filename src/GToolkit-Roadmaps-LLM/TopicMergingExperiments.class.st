@@ -4,7 +4,7 @@ These experiments take the long list of mined topics, and attempt to *cluster* t
 Class {
 	#name : #TopicMergingExperiments,
 	#superclass : #PCAbstractExamples,
-	#category : #'GToolkit-Roadmaps-PageClassifier'
+	#category : #'GToolkit-Roadmaps-LLM-Examples'
 }
 
 { #category : #examples }

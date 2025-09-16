@@ -10,7 +10,7 @@ Class {
 		'exampleDatabase',
 		'examples'
 	],
-	#category : #'GToolkit-Roadmaps-PageClassifier'
+	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
 
 { #category : #accessing }
