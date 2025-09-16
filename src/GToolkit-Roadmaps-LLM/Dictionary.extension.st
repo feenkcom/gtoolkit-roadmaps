@@ -1,6 +1,6 @@
 Extension { #name : #Dictionary }
 
-{ #category : #'*GToolkit-Roadmaps' }
+{ #category : #'*GToolkit-Roadmaps-LLM' }
 Dictionary >> asPrompt [
 	"NB: convert the examples JSON back into a dictionary."
 

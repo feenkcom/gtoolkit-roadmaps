@@ -71,7 +71,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-07-28T11:48:35.356003+02:00"
+									"dateAndTimeString" : "2025-09-16T08:31:28.358961+02:00"
 								}
 							},
 							"uid" : {
@@ -81,7 +81,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We add a `gtbook-examples` database and {{gtMethod:name=BaselineOfGtoolkitMetabook class>>#loadLepiterGtbookExamples}}. "
+							"string" : "We add a `gtbook-examples` database and {{gtMethod:name=BaselineOfGtoolkitMetabook class>>#loadLepiterGtbookExamples}}. (Moved to {{gtMethod:name=BaselineOfGtoolkitRoadmaps class>>#loadLepiterGtbookExamples}}"
 						},
 						{
 							"__type" : "textSnippet",
@@ -689,7 +689,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-15T14:46:04.790205+02:00"
+												"dateAndTimeString" : "2025-09-15T14:47:28.302286+02:00"
 											}
 										},
 										"uid" : {
@@ -699,7 +699,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "*What would help is not necessarily using a mock database (we could a normal database or LeTemporaryDatabase), but having those examples be decoupled from the global lepiter database registry. Tried it as one solution but some places like {{gtMethod:name=Dictionary>>#asPrompt}} and all usages of {{gtMethod:name=LeDatabase class>>#databaseNamed:}} go though the global registry.*"
+										"string" : "*What would help is not necessarily using a mock database (we could a normal database or {{gtClass:name=LeTemporaryDatabase}}), but having those examples be decoupled from the global lepiter database registry. Tried it as one solution but some places like {{gtMethod:name=Dictionary>>#asPrompt}} and all usages of {{gtMethod:name=LeDatabase class>>#databaseNamed:}} go though the global registry.*"
 									},
 									{
 										"__type" : "textSnippet",
@@ -726,7 +726,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-15T14:47:03.615443+02:00"
+												"dateAndTimeString" : "2025-09-15T14:47:18.453379+02:00"
 											}
 										},
 										"uid" : {
@@ -736,7 +736,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "The test examples should use an explicit DB, without a lookup. This means that the test files shoudl speci"
+										"string" : "The test examples should use an explicit DB, without a lookup. This means that the test files shoudl specify a temp database class instead of a named db."
 									}
 								]
 							},

@@ -1,17 +1,17 @@
 Class {
-	#name : #BaselineOfGtoolkitRoadmaps,
+	#name : #BaselineOfGtoolkitRoadmapsLLM,
 	#superclass : #BaselineOf,
-	#category : #BaselineOfGtoolkitRoadmaps
+	#category : #BaselineOfGtoolkitRoadmapsLLM
 }
 
-{ #category : #baseline }
-BaselineOfGtoolkitRoadmaps class >> gtDependencyAnalysisPreloadedBaselines [
+{ #category : #baselines }
+BaselineOfGtoolkitRoadmapsLLM class >> gtDependencyAnalysisPreloadedBaselines [
 	^ super gtDependencyAnalysisPreloadedBaselines
 		copyWith: BaselineOfGToolkit
 ]
 
 { #category : #loading }
-BaselineOfGtoolkitRoadmaps class >> loadLepiter [
+BaselineOfGtoolkitRoadmapsLLM class >> loadLepiterGtbookExamples [
 	IceRepository registry  
 		detect: [ :aRepository |
 			aRepository name = 'gtoolkit-roadmaps' ]
@@ -19,16 +19,16 @@ BaselineOfGtoolkitRoadmaps class >> loadLepiter [
 			| defaultDatabase currentProperties |
 			defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
 			currentProperties := defaultDatabase properties.
-			currentProperties addRegisteredDirectory: aRepository repositoryDirectory / 'lepiter'.
+			currentProperties addRegisteredDirectory: aRepository repositoryDirectory / 'gtbook-examples'.
 			defaultDatabase reload ]
 		ifNone: [
 			self inform: 'Repository not found.' ]
 ]
 
-{ #category : #baseline }
-BaselineOfGtoolkitRoadmaps >> baseline: spec [
+{ #category : #baselines }
+BaselineOfGtoolkitRoadmapsLLM >> baseline: spec [
 	<baseline>
 		^ spec for: #common do: [
-			spec package: 'GToolkit-Roadmaps'
+			spec package: 'GToolkit-Roadmaps-LLM'
 		]
 ]

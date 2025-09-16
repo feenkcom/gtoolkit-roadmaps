@@ -1,7 +1,7 @@
 Class {
 	#name : #PageClassifierExamples,
 	#superclass : #PCAbstractExamples,
-	#category : #'GToolkit-Roadmaps-PageClassifier'
+	#category : #'GToolkit-Roadmaps-LLM-Examples'
 }
 
 { #category : #examples }

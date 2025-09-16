@@ -4,7 +4,7 @@ I serve as an abstract parent for all PageClassifier examples and experiments, p
 Class {
 	#name : #PCAbstractExamples,
 	#superclass : #Object,
-	#category : #'GToolkit-Roadmaps-PageClassifier'
+	#category : #'GToolkit-Roadmaps-LLM-Examples'
 }
 
 { #category : #examples }
