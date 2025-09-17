@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-17T09:04:11.451945+02:00"
+						"dateAndTimeString" : "2025-07-30T09:41:06.218022+02:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Package: {{gtPackage:name=GToolkit-Roadmaps-LLM}}"
+				"string" : "Package: {{gtPackage:name=GtoolkitMetabook}}"
 			},
 			{
 				"__type" : "textSnippet",

@@ -4,17 +4,35 @@ Class {
 	#category : #'GToolkit-Roadmaps-Examples'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
+TMRegistryExamples >> gtBookJsonFile [
+	<gtExample>
+	| fileReference |
+	fileReference := self tmRegistrySingelton jsonFileFor: LeDatabase gtBookName.
+	self assert: fileReference exists.
+	^ fileReference
+]
+
+{ #category : #examples }
+TMRegistryExamples >> gtBookJsonFilePath [
+	<gtExample>
+	| filePath |
+	filePath := self tmRegistrySingelton jsonFilePathFor: LeDatabase gtBookName.
+	self assert: (filePath endsWith: '.json').
+	^ filePath
+]
+
+{ #category : #examples }
 TMRegistryExamples >> gtBookTopicMap [
 	"TopicMap for all pages from the test file."
 
 	<gtExample>
 	| gtBookTopicMap |
-	gtBookTopicMap := TMRegistry uniqueInstance topicMapFor: LeDatabase gtBookName.
+	gtBookTopicMap := self tmRegistrySingelton topicMapFor: LeDatabase gtBookName.
 	^ gtBookTopicMap
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 TMRegistryExamples >> tmRegistrySingelton [
 	<gtExample>
 	| tmRegistry |

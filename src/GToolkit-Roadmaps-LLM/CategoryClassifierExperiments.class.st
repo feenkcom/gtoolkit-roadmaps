@@ -4,7 +4,10 @@ Each example is an experiment stored in a json file.
 The experiments ask an assistant to propose categories of pages, given a list of suggestions.
 New categories may be proposed.
 
-TO DO: after mining a list of categories from all pages, we edit the resulting list as use it as a canonical list for assigning categories to pages.
+After mining a list of categories from all pages, we edit the resulting list as use it as a canonical list for assigning categories to pages.
+
+NB: “categories” are now called “kinds” of pages.
+
 "
 Class {
 	#name : #CategoryClassifierExperiments,
@@ -233,7 +236,7 @@ Below follows a series of examples of User inputs consisting of notebook page co
 
 { #category : #examples }
 CategoryClassifierExperiments >> cat4DetailedPromptCategoryClassifier4 [
-	"New experiment on the entire bookm with the revised category list."
+	"New experiment on the entire book with the revised category list."
 
 	<gtExample>
 	<noTest>

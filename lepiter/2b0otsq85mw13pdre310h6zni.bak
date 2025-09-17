@@ -60,7 +60,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-10T12:48:34.080511+02:00"
+									"dateAndTimeString" : "2025-09-17T09:06:16.767709+02:00"
 								}
 							},
 							"editEmail" : {
@@ -71,7 +71,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-10T12:48:35.733353+02:00"
+									"dateAndTimeString" : "2025-09-17T09:06:16.767709+02:00"
 								}
 							},
 							"uid" : {
@@ -81,7 +81,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[* Bugs to fix]] "
+							"string" : ""
 						},
 						{
 							"__type" : "textSnippet",
@@ -224,7 +224,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-10T12:49:52.606898+02:00"
+												"dateAndTimeString" : "2025-09-11T11:34:54.40374+02:00"
 											}
 										},
 										"uid" : {
@@ -234,7 +234,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[* Reassign Topic or Style to a page]] "
+										"string" : "[[* Manually reassign Topic or Style to a page]] "
 									},
 									{
 										"__type" : "textSnippet",

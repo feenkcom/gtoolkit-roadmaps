@@ -1232,7 +1232,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-07-30T09:40:07.903519+02:00"
+												"dateAndTimeString" : "2025-09-17T09:03:01.513068+02:00"
 											}
 										},
 										"uid" : {
@@ -1242,7 +1242,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[* PageClassifier — to do tasks]] "
+										"string" : "[[PageClassifier — to do tasks]] "
 									},
 									{
 										"__type" : "textSnippet",
@@ -1380,7 +1380,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-07-28T12:06:14.238979+02:00"
+												"dateAndTimeString" : "2025-09-17T09:02:25.78805+02:00"
 											}
 										},
 										"uid" : {
