@@ -58,11 +58,21 @@ TMRegistry >> initialize [
 ]
 
 { #category : #accessing }
+TMRegistry >> jsonFileFor: aDatabaseName [
+	^ FileLocator gtResource / (self jsonFilePathFor: aDatabaseName)
+]
+
+{ #category : #accessing }
+TMRegistry >> jsonFilePathFor: aDatabaseName [
+	^ self registry at: aDatabaseName
+]
+
+{ #category : #accessing }
 TMRegistry >> registry [
 	^ registry
 ]
 
 { #category : #accessing }
 TMRegistry >> topicMapFor: aDatabaseName [
-	^ TopicMap forJson: FileLocator gtResource / (self registry at: aDatabaseName)
+	^ TopicMap forJson: (self jsonFileFor: aDatabaseName)
 ]

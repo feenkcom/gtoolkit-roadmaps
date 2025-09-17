@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T11:34:34.0768+02:00"
+						"dateAndTimeString" : "2025-09-17T09:06:43.911766+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Unmapped pages are pages that are new or have been renamed. The latter we deala with when we [[Repair missing pages]].\nThe remaining unampped pages should be handled with the help of an assistant to generate topics and styles."
+				"string" : "Unmapped pages are pages that are new or have been renamed. The latter we deal with when we [[Repair missing pages]].\nThe remaining unampped pages should be handled with the help of an assistant to generate topics and styles."
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -179,7 +179,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-11T11:53:42.967711+02:00"
+									"dateAndTimeString" : "2025-09-17T09:09:23.195761+02:00"
 								}
 							},
 							"uid" : {
@@ -189,41 +189,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo."
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-11T11:53:55.308075+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-11T11:59:02.868338+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "h6SWQOX6DQCCeSvuAvSYMw=="
-							},
-							"code" : "({PCAbstractExamples.\r\tPCEntity.\r\tTopicMapOverview} flatCollect: #withAllSubclasses)\r\tdo: [:aClass |\r\t\tSmalltalk compiler\r\t\t\tevaluate: (aClass definitionString\r\t\t\t\t\tcopyReplaceAll: 'package: ''GtoolkitMetabook-TopicMining'''\r\t\t\t\t\twith: 'package: ''GToolkit-Roadmaps-PageClassifier''')\r\t]."
+							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo in the package {{gtPackage:name=GToolkit-Roadmaps-LLM}}. "
 						},
 						{
 							"__type" : "textSnippet",
@@ -294,6 +260,152 @@
 					"__type" : "textStyle"
 				},
 				"string" : "# Moving the PageClassifier"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-17T09:58:17.172249+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-17T09:58:21.018561+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "0VYXVlz7DQC/SIPyA4bzGw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "We need to adapt the experiment {{gtMethod:name=CategoryClassifierExperiments>>#cat4DetailedPromptCategoryClassifier4}}. \nWe introduce {{gtClass:name=PCKindClassifier}}."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-17T09:58:22.178178+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-17T09:59:34.982189+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "nbdjVlz7DQC/ZGi1A4bzGw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "*Problem:* The {{gtClass:name=PageClassifier}} assumes a different format for the JSON files, that does not match that of the topic maps. We either need to bridge it, or introduce a new, more specific classifier that works with the topicMaps."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-17T09:22:44.8742+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-17T09:58:02.629138+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "tgf/1lv7DQC2vafkA4bzGw=="
+							},
+							"code" : ""
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-17T09:08:43.458937+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-17T09:18:48.114909+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "sQvYpFv7DQCu4RDqA4bzGw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Applying the CategoryClassifier to the existing topic map"
 			}
 		]
 	},

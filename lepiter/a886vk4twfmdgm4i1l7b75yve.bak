@@ -151,7 +151,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T16:43:38.454902+02:00"
+												"dateAndTimeString" : "2025-09-09T17:03:40.718446+02:00"
 											}
 										},
 										"uid" : {
@@ -161,7 +161,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "{{gtClass:name=TMKindNode}} is only used in {{gtMethod:name=TMAbstractTreeNode>>#styleNodes}}, so we track down and eliminate the references we don't need. (We leave them in the summary view, in the treeMapChildren and a test example.)"
+										"string" : "{{gtClass:name=TMKindNode}} is only used in {{gtMethod:name=TMAbstractTreeNode>>#kindNodes}}, so we track down and eliminate the references we don't need. (We leave them in the summary view, in the treeMapChildren and a test example.)"
 									}
 								]
 							},
