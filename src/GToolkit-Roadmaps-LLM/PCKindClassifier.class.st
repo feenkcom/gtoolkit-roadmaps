@@ -6,7 +6,7 @@ I can be used to classify unmapped pages.
 Class {
 	#name : #PCKindClassifier,
 	#superclass : #Object,
-	#category : #'GToolkit-Roadmaps-LLM-Model'
+	#category : #'GToolkit-Roadmaps-LLM-Experiments'
 }
 
 { #category : #examples }

@@ -328,7 +328,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-17T09:59:32.385576+02:00"
+									"dateAndTimeString" : "2025-09-17T09:59:34.982189+02:00"
 								}
 							},
 							"uid" : {
@@ -338,7 +338,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "*Problem:* The {{gtClass:name=PageClassifier}} assumes a different format for the JSON files, that does not match that of the topic maps. We either need to bridge it, or introduce a new, more specific classifier that works with "
+							"string" : "*Problem:* The {{gtClass:name=PageClassifier}} assumes a different format for the JSON files, that does not match that of the topic maps. We either need to bridge it, or introduce a new, more specific classifier that works with the topicMaps."
 						},
 						{
 							"__type" : "pharoSnippet",

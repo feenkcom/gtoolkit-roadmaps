@@ -12,7 +12,7 @@ NB: “categories” are now called “kinds” of pages.
 Class {
 	#name : #CategoryClassifierExperiments,
 	#superclass : #PCAbstractExamples,
-	#category : #'GToolkit-Roadmaps-LLM-Examples'
+	#category : #'GToolkit-Roadmaps-LLM-Experiments'
 }
 
 { #category : #examples }

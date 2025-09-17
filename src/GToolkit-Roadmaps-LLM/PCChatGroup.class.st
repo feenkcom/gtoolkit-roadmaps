@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'pageClassifier'
 	],
-	#category : #'GToolkit-Roadmaps-LLM-Model'
+	#category : #'GToolkit-Roadmaps-LLM-Experiments'
 }
 
 { #category : #forwarding }

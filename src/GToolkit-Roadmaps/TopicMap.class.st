@@ -180,6 +180,9 @@ TopicMap >> gtMissingPagesFor: aView [
 								aButton phlow fireViewUpdateWish ] ];
 					width: 60 ];
 		send: [ :each | self closestUnmappedPageFor: each ];
+		actionButtonIcon: BrGlamorousVectorIcons changes
+			tooltip: 'Inspect  pages'
+			action: [ :aButton :aTab | aButton phlow spawnObject: self missingPages ];
 		actionUpdateButton
 ]
 

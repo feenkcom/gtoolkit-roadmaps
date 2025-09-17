@@ -114,6 +114,9 @@ TMAbstractTreeNode >> gtRoadmapFor: aView [
 		priority: 37;
 		object: [ self roadmap ];
 		view: #gtLiveFor:;
+		actionButtonIcon: BrGlamorousVectorIcons changes
+			tooltip: 'Inspect  pages'
+			action: [ :aButton :aTab | aButton phlow spawnObject: self roadmapNodes ];
 		actionUpdateButton
 ]
 
@@ -125,6 +128,9 @@ TMAbstractTreeNode >> gtRoadmapWithKindFor: aView [
 		priority: 36;
 		object: [ self roadmapWithKind ];
 		view: #gtLiveFor:;
+		actionButtonIcon: BrGlamorousVectorIcons changes
+			tooltip: 'Inspect  pages'
+			action: [ :aButton :aTab | aButton phlow spawnObject: self roadmapNodes ];
 		actionUpdateButton
 ]
 
@@ -189,6 +195,9 @@ TMAbstractTreeNode >> gtTopicMapTreeFor: aView [
 			text: [ :each | each relatedInfo ]
 			width: 300;
 		send: [ :each | each ];
+		actionButtonIcon: BrGlamorousVectorIcons changes
+			tooltip: 'Inspect  pages'
+			action: [ :aButton :aTab | aButton phlow spawnObject: self children ];
 		actionUpdateButton
 ]
 

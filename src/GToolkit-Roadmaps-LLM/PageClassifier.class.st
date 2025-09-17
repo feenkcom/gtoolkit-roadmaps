@@ -13,7 +13,7 @@ Class {
 		'jsonFile',
 		'definingMethod'
 	],
-	#category : #'GToolkit-Roadmaps-LLM-Model'
+	#category : #'GToolkit-Roadmaps-LLM-Experiments'
 }
 
 { #category : #'instance creation' }
