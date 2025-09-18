@@ -608,7 +608,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-10T17:02:09.085471+02:00"
+						"dateAndTimeString" : "2025-09-10T18:40:07.935545+02:00"
 					}
 				},
 				"uid" : {
@@ -618,7 +618,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Fixing the writeJsonFile method"
+				"string" : "# Fixing the writeJsonFile method (done)"
 			},
 			{
 				"__type" : "textSnippet",
@@ -1329,12 +1329,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-08T17:55:07.936932+02:00"
+			"dateAndTimeString" : "2025-09-10T18:39:55.382282+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "* Repair missing pages"
+		"title" : "Repair missing pages"
 	},
 	"uid" : {
 		"__type" : "uuid",

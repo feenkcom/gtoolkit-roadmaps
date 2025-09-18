@@ -12,7 +12,7 @@ NB: “categories” are now called “kinds” of pages.
 Class {
 	#name : #CategoryClassifierExperiments,
 	#superclass : #PCAbstractExamples,
-	#category : #'GToolkit-Roadmaps-LLM-Examples'
+	#category : #'GToolkit-Roadmaps-LLM-Experiments'
 }
 
 { #category : #examples }
@@ -223,7 +223,7 @@ Below follows a series of examples of User inputs consisting of notebook page co
 					'Working with a REST API: the GitHub case study' -> 'Case study'.
 					'Treemap' -> 'Examples'.
 					'A gentle introduction to Pharo Smalltalk' -> 'Tutorial'.
-					'Custom View' -> 'Pattern'.
+					'Contextual View' -> 'Pattern'.
 					'How do I recover my work after a crash?' -> 'FAQ'.
 					'How to pages related to GemStone' -> 'Index'.
 					'Coder' -> 'Definition'.

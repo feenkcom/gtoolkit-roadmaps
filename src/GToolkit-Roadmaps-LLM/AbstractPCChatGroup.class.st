@@ -8,7 +8,7 @@ Class {
 		'process',
 		'mutex'
 	],
-	#category : #'GToolkit-Roadmaps-LLM-Model'
+	#category : #'GToolkit-Roadmaps-LLM-Experiments'
 }
 
 { #category : #testing }

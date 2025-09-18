@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'cachedGroupsAndPagesJson'
 	],
-	#category : #'GToolkit-Roadmaps-LLM-Model'
+	#category : #'GToolkit-Roadmaps-LLM-Experiments'
 }
 
 { #category : #utility }

@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-17T09:06:43.911766+02:00"
+						"dateAndTimeString" : "2025-09-18T09:05:14.429181+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Unmapped pages are pages that are new or have been renamed. The latter we deal with when we [[Repair missing pages]].\nThe remaining unampped pages should be handled with the help of an assistant to generate topics and styles."
+				"string" : "Unmapped pages are pages that are new or have been renamed. The latter we deal with when we [[Repair missing pages (done)]].\nThe remaining unampped pages should be handled with the help of an assistant to generate topics and styles."
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -428,12 +428,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-08-30T10:39:21.363547+02:00"
+			"dateAndTimeString" : "2025-09-17T12:39:03.787906+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "* Add assistant to updated unmapped pages"
+		"title" : "* Add assistant to update unmapped pages"
 	},
 	"uid" : {
 		"__type" : "uuid",

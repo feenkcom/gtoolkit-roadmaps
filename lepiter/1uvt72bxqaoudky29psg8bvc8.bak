@@ -532,12 +532,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-18T09:05:37.120711+02:00"
+			"dateAndTimeString" : "2025-09-01T12:14:47.16596+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Implementing Levenshtein (done)"
+		"title" : "Implementing Levenshtein"
 	},
 	"uid" : {
 		"__type" : "uuid",
