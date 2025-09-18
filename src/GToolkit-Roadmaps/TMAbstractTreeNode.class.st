@@ -108,7 +108,7 @@ TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 TMAbstractTreeNode >> gtRoadmapFor: aView [
 	"Roadmap without Kind nodes."
 	
-	<gtView>
+	"<gtView>"
 	^ aView forward
 		title: 'ALT Roadmap';
 		priority: 37;
