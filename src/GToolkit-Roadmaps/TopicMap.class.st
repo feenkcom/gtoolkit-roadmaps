@@ -435,6 +435,21 @@ TopicMap >> unmappedPages [
 ]
 
 { #category : #updating }
+TopicMap >> updateKindForPage: aPageNode to: aKind [
+	| dict |
+	self
+		assert: (self kindsStandardOrder includes: aKind)
+		description: 'Unknown kind: ' , aKind.
+	dict := self
+			jsonDict4PageTitle: aPageNode title
+			ifNone: [ self error: 'Could not find JSON entry for page ' , aPageNode title ].
+	self assert: (dict at: 'kind') ~= aKind description: 'Kind is unchanged.'.
+	dict at: 'kind' put: aKind.
+	self clearCaches.
+	self writeJsonFile
+]
+
+{ #category : #updating }
 TopicMap >> updateMissingTitle: aMissingTitle [
 	| aPage |
 	self
