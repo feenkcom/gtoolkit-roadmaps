@@ -5,6 +5,40 @@
 		"__type" : "snippets",
 		"items" : [
 			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T10:48:34.000554+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-19T10:48:49.420842+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "aDyXRYX7DQCtr9f9BLhTqw=="
+				},
+				"code" : "LeDatabase gtBook topicMap"
+			},
+			{
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
@@ -55,45 +89,7 @@
 										"__type" : "textSnippet",
 										"children" : {
 											"__type" : "snippets",
-											"items" : [
-												{
-													"__type" : "textSnippet",
-													"children" : {
-														"__type" : "snippets",
-														"items" : [ ]
-													},
-													"createEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"createTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-09-17T11:36:05.000755+02:00"
-														}
-													},
-													"editEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"editTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-09-17T11:36:29.815669+02:00"
-														}
-													},
-													"uid" : {
-														"__type" : "uid",
-														"uidString" : "AEbXs137DQCTtgl6B4TtoA=="
-													},
-													"paragraphStyle" : {
-														"__type" : "textStyle"
-													},
-													"string" : "Rename topics\nAdd new topics\nSplit Fields"
-												}
-											]
+											"items" : [ ]
 										},
 										"createEmail" : {
 											"__type" : "email",
@@ -103,7 +99,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-08-21T18:16:11.71619+02:00"
+												"dateAndTimeString" : "2025-09-19T09:34:19.090257+02:00"
 											}
 										},
 										"editEmail" : {
@@ -114,7 +110,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-18T09:43:19.097078+02:00"
+												"dateAndTimeString" : "2025-09-19T09:34:47.014282+02:00"
 											}
 										},
 										"uid" : {
@@ -124,7 +120,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Provide a way to add or rename topics and kinds."
+										"string" : "[[* Edit fields, topics and kinds]] "
 									},
 									{
 										"__type" : "textSnippet",
@@ -533,6 +529,81 @@
 				"children" : {
 					"__type" : "snippets",
 					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-19T09:51:53.05457+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-19T09:52:42.690288+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "8OrgeoT7DQCzVhsbBHi1Bg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Use topicTreeChildren instead of children"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-19T09:52:35.477682+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-19T09:52:35.477682+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "ez1ofYT7DQC1ru7YBHi1Bg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Fix the “Topic Tree” so that pages can continue to open up via kinds. "
+						},
 						{
 							"__type" : "textSnippet",
 							"children" : {

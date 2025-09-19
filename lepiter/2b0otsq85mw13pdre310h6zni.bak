@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-08T17:53:39.713273+02:00"
+						"dateAndTimeString" : "2025-09-18T09:43:06.658627+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "We have already mined a reaasonable set of topics and page categories. The following tasks are open:"
+				"string" : "We have already mined a reaasonable set of topics and page kinds. The following tasks are open:"
 			},
 			{
 				"__type" : "textSnippet",
@@ -55,45 +55,7 @@
 										"__type" : "textSnippet",
 										"children" : {
 											"__type" : "snippets",
-											"items" : [
-												{
-													"__type" : "textSnippet",
-													"children" : {
-														"__type" : "snippets",
-														"items" : [ ]
-													},
-													"createEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"createTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-09-17T11:36:05.000755+02:00"
-														}
-													},
-													"editEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"editTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-09-17T11:36:29.815669+02:00"
-														}
-													},
-													"uid" : {
-														"__type" : "uid",
-														"uidString" : "AEbXs137DQCTtgl6B4TtoA=="
-													},
-													"paragraphStyle" : {
-														"__type" : "textStyle"
-													},
-													"string" : "Rename topics\nAdd new topics\nSplit Fields"
-												}
-											]
+											"items" : [ ]
 										},
 										"createEmail" : {
 											"__type" : "email",
@@ -103,7 +65,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-08-21T18:16:11.71619+02:00"
+												"dateAndTimeString" : "2025-09-19T09:34:19.090257+02:00"
 											}
 										},
 										"editEmail" : {
@@ -114,7 +76,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-08-27T11:16:33.469523+02:00"
+												"dateAndTimeString" : "2025-09-19T09:34:47.014282+02:00"
 											}
 										},
 										"uid" : {
@@ -124,7 +86,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Provide a way to add or rename topics and categories."
+										"string" : "[[* Edit fields, topics and kinds]] "
 									},
 									{
 										"__type" : "textSnippet",
@@ -221,7 +183,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-08-27T11:16:40.446019+02:00"
+									"dateAndTimeString" : "2025-09-18T09:43:10.456579+02:00"
 								}
 							},
 							"uid" : {
@@ -231,7 +193,116 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Provide a way to find pages missing topics and categories, and trigger an assistant."
+							"string" : "Provide a way to find pages missing topics and kinds, and trigger an assistant."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-19T09:51:53.05457+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-19T09:52:42.690288+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "8OrgeoT7DQCzVhsbBHi1Bg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Use topicTreeChildren instead of children"
+									},
+									{
+										"__type" : "pharoSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-19T10:48:34.000554+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-19T10:48:49.420842+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "aDyXRYX7DQCtr9f9BLhTqw=="
+										},
+										"code" : "LeDatabase gtBook topicMap"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-19T09:52:35.477682+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-19T09:52:35.477682+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "ez1ofYT7DQC1ru7YBHi1Bg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Fix the “Topic Tree” so that pages can continue to open up via kinds. "
 						},
 						{
 							"__type" : "textSnippet",

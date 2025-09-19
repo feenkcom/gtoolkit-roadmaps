@@ -84,38 +84,6 @@ TMPageNode >> gtSpawnPageActionFor: anAction [
 ]
 
 { #category : #views }
-TMPageNode >> gtTopicMapTreeFor: aView [
-	"For a page we want to dive into the topics associated with that page."
-
-	<gtView>
-	^ aView columnedTree
-		title: 'Topic Map';
-		priority: 10;
-		items: [ self topicNodes ];
-		children: #children;
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Node'
-			text: [ :each | each nodeLabel ]
-			width: 300;
-		column: '# Children'
-			text: [ :each | each children size ]
-			width: 100;
-		column: '# Pages'
-			text: [ :each | each pages size ]
-			width: 100;
-		column: '# Kinds'
-			text: [ :each | each kinds size ]
-			width: 100;
-		column: 'Info'
-			text: [ :each | each relatedInfo ]
-			width: 300;
-		send: [ :each | each ];
-		actionUpdateButton
-]
-
-{ #category : #views }
 TMPageNode >> gtTreeMapFor: aView [
 	<gtView>
 	^ aView empty
@@ -131,6 +99,38 @@ TMPageNode >> kind [
 	^ self topicMap kind4Page: self page
 ]
 
+{ #category : #updating }
+TMPageNode >> kindUpdateElement [
+	"Experimental -- need a way to change the kind.
+	Perhaps better would be a view listing the kinds with a checkbox for the selected kind."
+
+	| menu kindLabel kindValueLabel |
+	kindLabel := BrLabel new
+			text: 'Kind:';
+			aptitude: BrGlamorousLabelAptitude new italic;
+			yourself.
+	kindValueLabel := BrLabel new
+			text: self kind;
+			aptitude: BrGlamorousLabelAptitude new;
+			yourself.
+	menu := BrMenuItems new.
+	self kindsStandardOrder
+		do: [ :aKind | 
+			menu
+				addItemLabel: aKind
+				action: [ self topicMap updateKindForPage: self to: aKind.
+					kindValueLabel text: self kind ] ].
+	kindValueLabel
+		addAptitude: (BrGlamorousWithExplicitContextMenuAptitude new
+				stencil: [ :aContext | BrMenuExplicitHandle new menu: menu ]).
+	^ BrHorizontalPane new
+		fitContent;
+		cellSpacing: 5;
+		addChildren: {kindLabel.
+				kindValueLabel};
+		yourself
+]
+
 { #category : #navigation }
 TMPageNode >> kinds [
 	^ {self kind}
@@ -138,7 +138,12 @@ TMPageNode >> kinds [
 
 { #category : #accessing }
 TMPageNode >> nodeLabel [
-	^ "'Page: '," self page title
+	^ self title
+]
+
+{ #category : #accessing }
+TMPageNode >> nodeType [
+	^ 'Page'
 ]
 
 { #category : #accessing }
@@ -215,6 +220,16 @@ TMPageNode >> roadmapWithKindNodes [
 	pageNodeWithAllTopics := self withoutViaTopic.
 	^ self databaseNode roadmapWithKindNodes , pageNodeWithAllTopics parents
 		, pageNodeWithAllTopics kindNodes , {pageNodeWithAllTopics}
+]
+
+{ #category : #accessing }
+TMPageNode >> title [
+	^ self page title
+]
+
+{ #category : #navigation }
+TMPageNode >> topicTreeChildren [
+	^ self topicNodes
 ]
 
 { #category : #querying }

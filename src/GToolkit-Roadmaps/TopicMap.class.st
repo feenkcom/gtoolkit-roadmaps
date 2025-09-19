@@ -249,13 +249,13 @@ TopicMap >> gtTopicMapMenuFor: anAction [
 ]
 
 { #category : #views }
-TopicMap >> gtTopicMapTreeFor: aView [
+TopicMap >> gtTopicTreeFor: aView [
 	<gtView>
 	^ aView forward
-		title: 'Topic Map';
+		title: 'Topic Tree';
 		priority: 25;
 		object: [ self databaseNode ];
-		view: #gtTopicMapTreeFor:
+		view: #gtTopicTreeFor:
 ]
 
 { #category : #views }
@@ -277,7 +277,7 @@ TopicMap >> gtUnmappedPagesFor: aView [
 		title: 'Unmapped pages';
 		priority: 40;
 		object: [ self unmappedPages ];
-		view: #gtTopicMapTreeFor:
+		view: #gtTopicTreeFor:
 ]
 
 { #category : #initialization }
@@ -432,6 +432,21 @@ TopicMap >> unmappedPages [
 
 	^ self
 		pageGroupFor: ((self database pages copyWithoutAll: self pages) sortedAs: #title)
+]
+
+{ #category : #updating }
+TopicMap >> updateKindForPage: aPageNode to: aKind [
+	| dict |
+	self
+		assert: (self kindsStandardOrder includes: aKind)
+		description: 'Unknown kind: ' , aKind.
+	dict := self
+			jsonDict4PageTitle: aPageNode title
+			ifNone: [ self error: 'Could not find JSON entry for page ' , aPageNode title ].
+	self assert: (dict at: 'kind') ~= aKind description: 'Kind is unchanged.'.
+	dict at: 'kind' put: aKind.
+	self clearCaches.
+	self writeJsonFile
 ]
 
 { #category : #updating }

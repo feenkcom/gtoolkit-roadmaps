@@ -50,6 +50,11 @@ TMTopicNode >> nodeLabel [
 	^ "'Topic: ' ," self topic
 ]
 
+{ #category : #accessing }
+TMTopicNode >> nodeType [
+	^ 'Topic'
+]
+
 { #category : #querying }
 TMTopicNode >> pages [
 	^ self topicMap topic2Pages at: self topic ifAbsent: {}

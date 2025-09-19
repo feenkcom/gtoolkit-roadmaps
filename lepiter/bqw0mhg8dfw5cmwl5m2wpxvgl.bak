@@ -76,7 +76,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-05T13:37:28.158616+02:00"
+												"dateAndTimeString" : "2025-09-19T14:22:34.42308+02:00"
 											}
 										},
 										"uid" : {
@@ -135,7 +135,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-18T09:19:36.590197+02:00"
+									"dateAndTimeString" : "2025-09-19T14:22:34.859905+02:00"
 								}
 							},
 							"editEmail" : {
@@ -146,17 +146,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-18T09:21:14.952565+02:00"
+									"dateAndTimeString" : "2025-09-19T14:22:36.403787+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "d3Cd6W/7DQCw4I2QDa/XHA=="
+								"uidString" : "Ui73Qoj7DQCIbB/QC2xL6w=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Rename (again) Categories/Styles/Kinds -> Types]] "
+							"string" : "[[* Edit fields, topics and kinds]] "
 						},
 						{
 							"__type" : "textSnippet",

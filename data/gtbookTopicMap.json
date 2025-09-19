@@ -998,7 +998,7 @@
 			]
 		},
 		{
-			"page" : "Setting different behavior for cursor word movement and double click selection",
+			"page" : "How to control the word navigation and selection",
 			"kind" : "FAQ",
 			"topics" : [
 				"Using Coder",

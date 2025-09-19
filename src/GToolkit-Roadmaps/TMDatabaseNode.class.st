@@ -61,6 +61,11 @@ TMDatabaseNode >> nodeLabel [
 	^ self database databaseName
 ]
 
+{ #category : #accessing }
+TMDatabaseNode >> nodeType [
+	^ 'Database'
+]
+
 { #category : #navigation }
 TMDatabaseNode >> pages [
 	^ self database pages

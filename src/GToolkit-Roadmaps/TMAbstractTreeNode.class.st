@@ -166,19 +166,22 @@ TMAbstractTreeNode >> gtSummaryFor: aView [
 ]
 
 { #category : #views }
-TMAbstractTreeNode >> gtTopicMapTreeFor: aView [
+TMAbstractTreeNode >> gtTopicTreeFor: aView [
 	<gtView>
 	^ aView columnedTree
-		title: 'Topic Map';
+		title: 'Topic Tree';
 		priority: 25;
-		items: [ self children ];
-		children: #children;
+		items: [ self topicTreeChildren ];
+		children: #topicTreeChildren;
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
 		column: 'Node'
 			text: [ :each | each nodeLabel ]
 			width: 300;
+		column: 'Node type'
+			text: [ :each | each nodeType ]
+			width: 100;
 		column: '# Children'
 			text: [ :each | each children size ]
 			width: 100;
@@ -293,6 +296,11 @@ TMAbstractTreeNode >> mondrianTree [
 
 { #category : #accessing }
 TMAbstractTreeNode >> nodeLabel [
+	self subclassResponsibility
+]
+
+{ #category : #accessing }
+TMAbstractTreeNode >> nodeType [
 	self subclassResponsibility
 ]
 
@@ -456,9 +464,15 @@ TMAbstractTreeNode >> topicNodes [
 ]
 
 { #category : #navigation }
+TMAbstractTreeNode >> topicTreeChildren [
+	^ self children
+]
+
+{ #category : #navigation }
 TMAbstractTreeNode >> treeChildren [
 	"Like children, but when we get to pages, set the viaTopic field
-	so the same page can appear as a leaf for each topic."
+	so the same page can appear as a leaf for each topic.
+	Used by TMAbstractTreeNode>>#mondrianTree"
 
 	^ self children
 ]
