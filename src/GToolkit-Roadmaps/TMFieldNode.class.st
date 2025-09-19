@@ -22,8 +22,7 @@ TMFieldNode >> breadcrumb [
 
 { #category : #accessing }
 TMFieldNode >> children [
-	^ self
-		nodesFor: (self topics collect: [ :each | TMTopicNode for: each in: self topicMap ])
+	^ self nodesFor: (self topics collect: [ :aTopic | self topicNodeFor: aTopic ])
 ]
 
 { #category : #mondrian }

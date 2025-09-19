@@ -115,6 +115,7 @@ TMPageNode >> gtEditTopicsFor: aView [
 						self topicMap updateTopicsForPage: self to: (self topicsToggling: each).
 						checkbox phlow fireViewUpdateWish ].
 				checkbox ];
+		send: [ :each | self topicNodeFor: each ];
 		actionUpdateButton
 ]
 

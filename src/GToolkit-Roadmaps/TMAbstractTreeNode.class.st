@@ -86,12 +86,6 @@ TMAbstractTreeNode >> defaultNodeColor [
 	^ Color gray
 ]
 
-{ #category : #navigation }
-TMAbstractTreeNode >> fieldNodes [
-	^ self
-		nodesFor: (self fields collect: [ :aField | TMFieldNode for: aField in: self topicMap ])
-]
-
 { #category : #actions }
 TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 	<gtAction>
@@ -250,17 +244,6 @@ TMAbstractTreeNode >> isAbstract [
 { #category : #testing }
 TMAbstractTreeNode >> isTMTreeNode [
 	^ true
-]
-
-{ #category : #navigation }
-TMAbstractTreeNode >> kindNodes [
-	^ self
-		nodesFor: (self kinds
-				collect: [ :aKind | 
-					TMKindNode
-						for: aKind
-						in: self topicMap
-						within: self pageGroup ])
 ]
 
 { #category : #treemaps }
@@ -477,12 +460,6 @@ TMAbstractTreeNode >> topicMap [
 { #category : #navigation }
 TMAbstractTreeNode >> topicMap: anObject [
 	topicMap := anObject
-]
-
-{ #category : #navigation }
-TMAbstractTreeNode >> topicNodes [
-	^ self
-		nodesFor: (self topics collect: [ :aTopic | TMTopicNode for: aTopic in: self topicMap ])
 ]
 
 { #category : #navigation }

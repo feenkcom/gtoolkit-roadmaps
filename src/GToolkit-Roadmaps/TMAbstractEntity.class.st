@@ -27,6 +27,12 @@ TMAbstractEntity >> emptyNodes [
 	^ self nodesFor: {}
 ]
 
+{ #category : #navigation }
+TMAbstractEntity >> fieldNodes [
+	^ self
+		nodesFor: (self fields collect: [ :aField | TMFieldNode for: aField in: self topicMap ])
+]
+
 { #category : #abstract }
 TMAbstractEntity >> fields [
 	self subclassResponsibility
@@ -74,6 +80,17 @@ TMAbstractEntity >> kindNodeFor: aKind [
 	^ TMKindNode for: aKind in: self topicMap
 ]
 
+{ #category : #navigation }
+TMAbstractEntity >> kindNodes [
+	^ self
+		nodesFor: (self kinds
+				collect: [ :aKind | 
+					TMKindNode
+						for: aKind
+						in: self topicMap
+						within: self pageGroup ])
+]
+
 { #category : #abstract }
 TMAbstractEntity >> kinds [
 	self subclassResponsibility
@@ -99,6 +116,13 @@ TMAbstractEntity >> pageGroupFor: aPageCollection [
 	^ TMPageGroup for: aPageCollection in: self topicMap
 ]
 
+{ #category : #navigation }
+TMAbstractEntity >> pageNodes [
+	"Alias for convenience."
+
+	^ self pageGroup
+]
+
 { #category : #abstract }
 TMAbstractEntity >> pages [
 	self subclassResponsibility
@@ -112,6 +136,16 @@ TMAbstractEntity >> titleIncludes: query [
 { #category : #abstract }
 TMAbstractEntity >> topicMap [
 	self subclassResponsibility
+]
+
+{ #category : #utility }
+TMAbstractEntity >> topicNodeFor: aTopic [
+	^ TMTopicNode for: aTopic in: self topicMap
+]
+
+{ #category : #navigation }
+TMAbstractEntity >> topicNodes [
+	^ self nodesFor: (self topics collect: [ :aTopic | self topicNodeFor: aTopic ])
 ]
 
 { #category : #navigation }
