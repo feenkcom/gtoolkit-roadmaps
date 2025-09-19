@@ -125,7 +125,7 @@ TMAbstractTreeNode >> gtRoadmapWithKindFor: aView [
 	<gtView>
 	^ aView forward
 		title: 'Roadmap';
-		priority: 36;
+		priority: 10;
 		object: [ self roadmapWithKind ];
 		view: #gtLiveFor:;
 		actionButtonIcon: BrGlamorousVectorIcons changes
@@ -170,7 +170,7 @@ TMAbstractTreeNode >> gtTopicMapTreeFor: aView [
 	<gtView>
 	^ aView columnedTree
 		title: 'Topic Map';
-		priority: 10;
+		priority: 25;
 		items: [ self children ];
 		children: #children;
 		column: 'Index'
@@ -206,7 +206,7 @@ TMAbstractTreeNode >> gtTreeMapFor: aView [
 	<gtView>
 	^ aView forward
 		title: 'Tree Map';
-		priority: 30;
+		priority: 15;
 		object: [ self treeMap ];
 		view: #gtLiveFor:;
 		actionUpdateButton
@@ -248,9 +248,9 @@ TMAbstractTreeNode >> kindPalette [
 		'FAQ' -> Color paleYellow.
 		'Examples' -> Color lightRed.
 		'Documentation' -> Color paleBlue.
-		'Definition' -> Color veryLightGray.
-		'Index' -> Color lightGray.
-		'Tag' -> Color gray} asDictionary
+		'Definition' -> Color veryVeryLightGray.
+		'Index' -> Color veryLightGray.
+		'Tag' -> Color lightGray} asDictionary
 ]
 
 { #category : #roadmap }

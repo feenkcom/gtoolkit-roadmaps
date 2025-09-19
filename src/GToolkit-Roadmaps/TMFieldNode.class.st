@@ -77,7 +77,7 @@ TMFieldNode >> kinds [
 
 { #category : #accessing }
 TMFieldNode >> nodeLabel [
-	^ 'Field: ' , self field
+	^ "'Field: ' ," self field
 ]
 
 { #category : #navigation }

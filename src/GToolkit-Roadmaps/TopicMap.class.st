@@ -202,7 +202,7 @@ TopicMap >> gtPageGroupActionFor: anAction [
 TopicMap >> gtRoadmapFor: aView [
 	"Roadmap without Kind nodes."
 
-	<gtView>
+	"<gtView>"
 	^ aView forward
 		title: 'ALT Roadmap';
 		priority: 37;
@@ -215,7 +215,7 @@ TopicMap >> gtRoadmapWithKindFor: aView [
 	<gtView>
 	^ aView forward
 		title: 'Roadmap';
-		priority: 36;
+		priority: 10;
 		object: [ self databaseNode ];
 		view: #gtRoadmapWithKindFor:
 ]
@@ -253,7 +253,7 @@ TopicMap >> gtTopicMapTreeFor: aView [
 	<gtView>
 	^ aView forward
 		title: 'Topic Map';
-		priority: 10;
+		priority: 25;
 		object: [ self databaseNode ];
 		view: #gtTopicMapTreeFor:
 ]
@@ -263,7 +263,7 @@ TopicMap >> gtTreeMapFor: aView [
 	<gtView>
 	^ aView forward
 		title: 'Tree Map';
-		priority: 30;
+		priority: 15;
 		object: [ self databaseNode ];
 		view: #gtTreeMapFor:
 ]
