@@ -252,7 +252,7 @@ TopicMap >> gtTopicMapMenuFor: anAction [
 TopicMap >> gtTopicMapTreeFor: aView [
 	<gtView>
 	^ aView forward
-		title: 'Topic Map';
+		title: 'Topic Tree';
 		priority: 25;
 		object: [ self databaseNode ];
 		view: #gtTopicMapTreeFor:

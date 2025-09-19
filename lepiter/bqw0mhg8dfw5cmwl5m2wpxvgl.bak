@@ -146,7 +146,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-18T09:21:14.952565+02:00"
+									"dateAndTimeString" : "2025-09-18T09:22:00.995174+02:00"
 								}
 							},
 							"uid" : {
@@ -156,7 +156,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Rename (again) Categories/Styles/Kinds -> Types]] "
+							"string" : "[[Rename (again) Categories/Styles/Kinds -> Types ?]] "
 						},
 						{
 							"__type" : "textSnippet",

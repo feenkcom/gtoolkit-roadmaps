@@ -89,7 +89,7 @@ TMPageNode >> gtTopicMapTreeFor: aView [
 
 	<gtView>
 	^ aView columnedTree
-		title: 'Topic Map';
+		title: 'Topic Tree';
 		priority: 10;
 		items: [ self topicNodes ];
 		children: #children;

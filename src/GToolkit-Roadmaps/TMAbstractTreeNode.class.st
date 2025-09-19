@@ -169,7 +169,7 @@ TMAbstractTreeNode >> gtSummaryFor: aView [
 TMAbstractTreeNode >> gtTopicMapTreeFor: aView [
 	<gtView>
 	^ aView columnedTree
-		title: 'Topic Map';
+		title: 'Topic Tree';
 		priority: 25;
 		items: [ self children ];
 		children: #children;
@@ -458,7 +458,8 @@ TMAbstractTreeNode >> topicNodes [
 { #category : #navigation }
 TMAbstractTreeNode >> treeChildren [
 	"Like children, but when we get to pages, set the viaTopic field
-	so the same page can appear as a leaf for each topic."
+	so the same page can appear as a leaf for each topic.
+	Used by TMAbstractTreeNode>>#mondrianTree"
 
 	^ self children
 ]
