@@ -671,6 +671,40 @@
 								"__type" : "textStyle"
 							},
 							"string" : "Alternatively, we could just list the kinds and select one, and the topics and tick off the ones we want."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-19T14:34:58.342993+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-19T14:35:01.095153+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "x9VHb4j7DQCImL3sC2xL6w=="
+							},
+							"code" : "LeDatabase gtBook topicMap pageGroup first "
 						}
 					]
 				},

@@ -626,14 +626,51 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-19T12:01:59.998038+02:00"
+									"dateAndTimeString" : "2025-09-19T13:43:01.984996+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "lc2ESIb7DQCCSacDBLhTqw=="
 							},
-							"code" : "aPageNode := LeDatabase gtBook topicMap pageGroup first.\rmenu := BrMenuItems new.\raPageNode kindsStandardOrder\r\tdo: [ :aKind | menu addItemLabel: aKind action: [  ] ].\rBrHorizontalPane new\r\tfitContent;\r\tcellSpacing: 5;\r\taddChildren: {BrLabel new\r\t\t\t\ttext: 'Kind:';\r\t\t\t\taptitude: BrGlamorousLabelAptitude new italic;\r\t\t\t\tyourself.\r\t\t\tBrLabel new\r\t\t\t\ttext: aPageNode kind;\r\t\t\t\taptitude: BrGlamorousLabelAptitude new;\r\t\t\t\taddAptitude: (BrGlamorousWithExplicitContextMenuAptitude new\r\t\t\t\t\t\tstencil: [ :aContext | BrMenuExplicitHandle new menu: menu ]);\r\t\t\t\tyourself}"
+							"code" : "LeDatabase gtBook topicMap pageGroup first kindUpdateElement"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-19T13:15:47.083772+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-19T13:44:19.588405+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "oWMVVIf7DQCiQo+jBP7lhA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Alternatively, we could just list the kinds and select one, and the topics and tick off the ones we want."
 						}
 					]
 				},
