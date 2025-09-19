@@ -62,6 +62,63 @@ TMPageNode >> fields [
 ]
 
 { #category : #views }
+TMPageNode >> gtEditKindFor: aView [
+	"NB: This view will be updated, but the others will need to be explicitly refreshed."
+
+	<gtView>
+	^ aView columnedList
+		title: 'Edit kind';
+		priority: 50;
+		items: [ self kindsStandardOrder ];
+		column: 'Index'
+			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
+			width: 45;
+		column: 'Kind'
+			text: [ :each | each gtDisplayString ]
+			width: 200;
+		column: ''
+			stencil: [ :each | 
+				| checkbox |
+				checkbox := BrCheckbox new aptitude: BrGlamorousCheckboxAptitude.
+				self kind = each ifTrue: [ checkbox check ].
+				checkbox
+					action: [ :aButton :aTab | 
+						self topicMap updateKindForPage: self to: each.	"checkbox phlow fireToolUpdateWish."
+						checkbox phlow fireViewUpdateWish ].
+				checkbox ];
+		send: [ :each | self kindNodeFor: each ];
+		actionUpdateButton
+]
+
+{ #category : #views }
+TMPageNode >> gtEditTopicsFor: aView [
+	"NB: This view will be updated, but the others will need to be explicitly refreshed."
+
+	<gtView>
+	^ aView columnedList
+		title: 'Edit topics';
+		priority: 52;
+		items: [ self topicMap topics sorted ];
+		column: 'Index'
+			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
+			width: 45;
+		column: 'Kind'
+			text: [ :each | each gtDisplayString ]
+			width: 300;
+		column: ''
+			stencil: [ :each | 
+				| checkbox |
+				checkbox := BrCheckbox new aptitude: BrGlamorousCheckboxAptitude.
+				(self topics includes: each) ifTrue: [ checkbox check ].
+				checkbox
+					action: [ :aButton :aTab | 
+						self topicMap updateTopicsForPage: self to: (self topicsToggling: each).
+						checkbox phlow fireViewUpdateWish ].
+				checkbox ];
+		actionUpdateButton
+]
+
+{ #category : #views }
 TMPageNode >> gtLivePageFor: aView [
 	<gtView>
 	^ aView forward
@@ -235,6 +292,13 @@ TMPageNode >> topicTreeChildren [
 { #category : #querying }
 TMPageNode >> topics [
 	^ self topicMap topics4Page: self page
+]
+
+{ #category : #upd }
+TMPageNode >> topicsToggling: aTopic [
+	^ (self topics includes: aTopic)
+		ifTrue: [ self topics copyWithout: aTopic ]
+		ifFalse: [ self topics copyWith: aTopic ]
 ]
 
 { #category : #accessing }

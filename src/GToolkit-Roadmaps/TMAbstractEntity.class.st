@@ -69,6 +69,11 @@ TMAbstractEntity >> isAbstract [
 	^ self == TMAbstractEntity
 ]
 
+{ #category : #utility }
+TMAbstractEntity >> kindNodeFor: aKind [
+	^ TMKindNode for: aKind in: self topicMap
+]
+
 { #category : #abstract }
 TMAbstractEntity >> kinds [
 	self subclassResponsibility

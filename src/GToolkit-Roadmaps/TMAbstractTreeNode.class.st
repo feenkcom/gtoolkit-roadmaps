@@ -215,6 +215,28 @@ TMAbstractTreeNode >> gtTreeMapFor: aView [
 		actionUpdateButton
 ]
 
+{ #category : #actions }
+TMAbstractTreeNode >> gtTreeNodeMenuFor: anAction [
+	<gtAction>
+	^ anAction dropdown
+		icon: BrGlamorousVectorIcons hamburger;
+		priority: 40;
+		tooltip: 'Tree Node Menu';
+		content: [ :aButton | 
+			| ifSlow |
+			ifSlow := self nodeType = 'Database'
+					ifTrue: [ ' (NB: slow)' ]
+					ifFalse: [ '' ].
+			BrGlamorousSimpleContextMenuContent new
+				items: {('Inspect Mondrian tree' , ifSlow)
+							-> [ aButton phlow spawnObject: self mondrianTree ].
+						('Inspect Mondrian graph' , ifSlow)
+							-> [ aButton phlow spawnObject: self mondrianGraph ].
+						'Inspect JSON file'
+							-> [ aButton phlow spawnObject: self topicMap jsonFile ]};
+				yourself ]
+]
+
 { #category : #comparing }
 TMAbstractTreeNode >> hash [
 	^ self nodeLabel hash

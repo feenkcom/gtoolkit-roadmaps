@@ -467,6 +467,25 @@ TopicMap >> updateMissingTitle: aMissingTitle [
 ]
 
 { #category : #updating }
+TopicMap >> updateTopicsForPage: aPageNode to: aTopicArray [
+	| dict |
+	aTopicArray
+		do: [ :aTopic | 
+			self
+				assert: (self topics includes: aTopic)
+				description: 'Unknown topic: ' , aTopic ].
+	dict := self
+			jsonDict4PageTitle: aPageNode title
+			ifNone: [ self error: 'Could not find JSON entry for page ' , aPageNode title ].
+	self
+		assert: (dict at: 'topics') ~= aTopicArray
+		description: 'Topics are unchanged.'.
+	dict at: 'topics' put: aTopicArray.
+	self clearCaches.
+	self writeJsonFile
+]
+
+{ #category : #updating }
 TopicMap >> writeJsonFile [
 	| writeStream tempFile |
 	tempFile := self jsonFile copyWithPath: self jsonFile path , 'temp.json'.
