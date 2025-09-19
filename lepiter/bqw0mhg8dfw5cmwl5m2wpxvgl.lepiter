@@ -177,43 +177,6 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T16:29:27.866391+02:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-11T11:34:54.407425+02:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "ibVS3sD6DQC1XPX6BcgiRA=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "[[* Manually reassign Topic or Style to a page]] "
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
 												"dateAndTimeString" : "2025-09-05T13:32:17.630003+02:00"
 											}
 										},
@@ -295,7 +258,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-19T14:34:34.999858+02:00"
+									"dateAndTimeString" : "2025-09-19T18:20:40.849356+02:00"
 								}
 							},
 							"uid" : {
@@ -305,7 +268,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[* Edit fields, topics and kinds]] "
+							"string" : "[[* Edit fields, topics and kinds (partly done)]] "
 						},
 						{
 							"__type" : "textSnippet",

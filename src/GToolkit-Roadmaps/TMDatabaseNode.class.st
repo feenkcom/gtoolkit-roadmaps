@@ -23,8 +23,7 @@ TMDatabaseNode class >> for: aDatabase in: aTopicMap [
 
 { #category : #navigation }
 TMDatabaseNode >> children [
-	^ self
-		nodesFor: (self fields collect: [ :aField | TMFieldNode for: aField in: self topicMap ])
+	^ self nodesFor: (self fields collect: [ :aField | self fieldNodeFor: aField ])
 ]
 
 { #category : #mondrian }

@@ -40,6 +40,30 @@ TMTopicNode >> fields [
 	^ {self field}
 ]
 
+{ #category : #views }
+TMTopicNode >> gtEditFieldFor: aView [
+	<gtView>
+	^ aView columnedList
+		title: 'Edit Field';
+		priority: 50;
+		items: [ self topicMap fields ];
+		column: 'Index'
+			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
+			width: 45;
+		column: 'Field' text: [ :aField | aField gtDisplayString ];	column: ''
+			stencil: [ :aField | 
+				| checkbox |
+				checkbox := BrCheckbox new aptitude: BrGlamorousCheckboxAptitude.
+				self field = aField ifTrue: [ checkbox check ].
+				checkbox
+					action: [ :aButton :aTab | 
+						self topicMap updateFieldForTopic: self to: aField.
+						checkbox phlow fireViewUpdateWish ].
+				checkbox ];
+		send: [ :aField | self fieldNodeFor: aField ];
+		actionUpdateButton
+]
+
 { #category : #navigation }
 TMTopicNode >> kinds [
 	^ self topicMap kinds4Topic: self topic

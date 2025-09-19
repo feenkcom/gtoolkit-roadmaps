@@ -86,12 +86,6 @@ TMAbstractTreeNode >> defaultNodeColor [
 	^ Color gray
 ]
 
-{ #category : #navigation }
-TMAbstractTreeNode >> fieldNodes [
-	^ self
-		nodesFor: (self fields collect: [ :aField | TMFieldNode for: aField in: self topicMap ])
-]
-
 { #category : #actions }
 TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 	<gtAction>
@@ -215,6 +209,30 @@ TMAbstractTreeNode >> gtTreeMapFor: aView [
 		actionUpdateButton
 ]
 
+{ #category : #actions }
+TMAbstractTreeNode >> gtTreeNodeMenuFor: anAction [
+	<gtAction>
+	^ anAction dropdown
+		icon: BrGlamorousVectorIcons hamburger;
+		priority: 40;
+		tooltip: 'Tree Node Menu';
+		content: [ :aButton | 
+			| ifSlow |
+			ifSlow := self nodeType = 'Database'
+					ifTrue: [ ' (NB: slow)' ]
+					ifFalse: [ '' ].
+			BrGlamorousSimpleContextMenuContent new
+				items: {('Inspect Mondrian tree' , ifSlow)
+							-> [ aButton phlow spawnObject: self mondrianTree ].
+						('Inspect Mondrian graph' , ifSlow)
+							-> [ aButton phlow spawnObject: self mondrianGraph ].
+						'Inspect JSON object'
+							-> [ aButton phlow spawnObject: self topicMap json ].
+						'Inspect JSON file'
+							-> [ aButton phlow spawnObject: self topicMap jsonFile ]};
+				yourself ]
+]
+
 { #category : #comparing }
 TMAbstractTreeNode >> hash [
 	^ self nodeLabel hash
@@ -228,17 +246,6 @@ TMAbstractTreeNode >> isAbstract [
 { #category : #testing }
 TMAbstractTreeNode >> isTMTreeNode [
 	^ true
-]
-
-{ #category : #navigation }
-TMAbstractTreeNode >> kindNodes [
-	^ self
-		nodesFor: (self kinds
-				collect: [ :aKind | 
-					TMKindNode
-						for: aKind
-						in: self topicMap
-						within: self pageGroup ])
 ]
 
 { #category : #treemaps }
@@ -455,12 +462,6 @@ TMAbstractTreeNode >> topicMap [
 { #category : #navigation }
 TMAbstractTreeNode >> topicMap: anObject [
 	topicMap := anObject
-]
-
-{ #category : #navigation }
-TMAbstractTreeNode >> topicNodes [
-	^ self
-		nodesFor: (self topics collect: [ :aTopic | TMTopicNode for: aTopic in: self topicMap ])
 ]
 
 { #category : #navigation }

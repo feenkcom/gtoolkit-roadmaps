@@ -292,6 +292,13 @@ TopicMap >> json [
 ]
 
 { #category : #querying }
+TopicMap >> jsonDict4FieldName: aField ifNone: aBlock [
+	^ (self json at: 'fields')
+		detect: [ :d | (d at: 'field') = aField ]
+		ifNone: aBlock
+]
+
+{ #category : #querying }
 TopicMap >> jsonDict4PageTitle: aTitle ifNone: aBlock [
 	^ (self json at: 'pages') detect: [ :d | (d at: 'page') = aTitle ] ifNone: aBlock
 ]
@@ -435,6 +442,30 @@ TopicMap >> unmappedPages [
 ]
 
 { #category : #updating }
+TopicMap >> updateFieldForTopic: aTopicNode to: aField [
+	"Remove the topic from the old field and add it to the new one."
+
+	| topic oldField oldDict newDict |
+	topic := aTopicNode topic.
+	oldField := aTopicNode field.
+	oldDict := self
+			jsonDict4FieldName: oldField
+			ifNone: [ self error: 'Could not find JSON entry for field ' , oldField ].
+	newDict := self
+			jsonDict4FieldName: aField
+			ifNone: [ self error: 'Could not find JSON entry for field ' , aField ].
+
+	self assert: ((oldDict at: 'topics') includes: topic).
+	self assert: ((newDict at: 'topics') includes: topic) not.
+
+	oldDict at: 'topics' put: ((oldDict at: 'topics') copyWithout: topic).
+	newDict at: 'topics' put: ((newDict at: 'topics') copyWith: topic) sorted.
+
+	self clearCaches.
+	self writeJsonFile
+]
+
+{ #category : #updating }
 TopicMap >> updateKindForPage: aPageNode to: aKind [
 	| dict |
 	self
@@ -462,6 +493,25 @@ TopicMap >> updateMissingTitle: aMissingTitle [
 		at: 'page'
 		put: aPage title.
 	self assert: (self jsonDict4PageTitle: aMissingTitle ifNone: [ nil ]) isNil.
+	self clearCaches.
+	self writeJsonFile
+]
+
+{ #category : #updating }
+TopicMap >> updateTopicsForPage: aPageNode to: aTopicArray [
+	| dict |
+	aTopicArray
+		do: [ :aTopic | 
+			self
+				assert: (self topics includes: aTopic)
+				description: 'Unknown topic: ' , aTopic ].
+	dict := self
+			jsonDict4PageTitle: aPageNode title
+			ifNone: [ self error: 'Could not find JSON entry for page ' , aPageNode title ].
+	self
+		assert: (dict at: 'topics') ~= aTopicArray
+		description: 'Topics are unchanged.'.
+	dict at: 'topics' put: aTopicArray.
 	self clearCaches.
 	self writeJsonFile
 ]
