@@ -47,7 +47,7 @@ TMTopicNode >> kinds [
 
 { #category : #accessing }
 TMTopicNode >> nodeLabel [
-	^ 'Topic: ' , self topic
+	^ "'Topic: ' ," self topic
 ]
 
 { #category : #querying }

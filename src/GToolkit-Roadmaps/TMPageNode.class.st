@@ -138,7 +138,7 @@ TMPageNode >> kinds [
 
 { #category : #accessing }
 TMPageNode >> nodeLabel [
-	^ 'Page: ', self page title
+	^ "'Page: '," self page title
 ]
 
 { #category : #accessing }
@@ -190,6 +190,7 @@ TMPageNode >> roadmapNodeElement [
 	| elt |
 	elt := super roadmapNodeElement.
 	elt aptitude: (self page hoverPage: self page forNodeElement: elt).
+	elt geometry: (BlRoundedRectangleGeometry cornerRadius: 0).
 	^ elt
 ]
 

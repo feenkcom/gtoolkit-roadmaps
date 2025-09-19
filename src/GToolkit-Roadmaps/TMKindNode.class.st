@@ -68,7 +68,7 @@ TMKindNode >> kinds [
 
 { #category : #accessing }
 TMKindNode >> nodeLabel [
-	^ 'Kind: ' , self kind
+	^ "'Kind '," self kind
 ]
 
 { #category : #querying }
