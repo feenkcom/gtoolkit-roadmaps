@@ -249,13 +249,13 @@ TopicMap >> gtTopicMapMenuFor: anAction [
 ]
 
 { #category : #views }
-TopicMap >> gtTopicMapTreeFor: aView [
+TopicMap >> gtTopicTreeFor: aView [
 	<gtView>
 	^ aView forward
 		title: 'Topic Tree';
 		priority: 25;
 		object: [ self databaseNode ];
-		view: #gtTopicMapTreeFor:
+		view: #gtTopicTreeFor:
 ]
 
 { #category : #views }
@@ -277,7 +277,7 @@ TopicMap >> gtUnmappedPagesFor: aView [
 		title: 'Unmapped pages';
 		priority: 40;
 		object: [ self unmappedPages ];
-		view: #gtTopicMapTreeFor:
+		view: #gtTopicTreeFor:
 ]
 
 { #category : #initialization }

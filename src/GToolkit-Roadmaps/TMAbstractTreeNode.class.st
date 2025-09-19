@@ -166,19 +166,22 @@ TMAbstractTreeNode >> gtSummaryFor: aView [
 ]
 
 { #category : #views }
-TMAbstractTreeNode >> gtTopicMapTreeFor: aView [
+TMAbstractTreeNode >> gtTopicTreeFor: aView [
 	<gtView>
 	^ aView columnedTree
 		title: 'Topic Tree';
 		priority: 25;
-		items: [ self children ];
-		children: #children;
+		items: [ self topicTreeChildren ];
+		children: #topicTreeChildren;
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
 		column: 'Node'
 			text: [ :each | each nodeLabel ]
 			width: 300;
+		column: 'Node type'
+			text: [ :each | each nodeType ]
+			width: 100;
 		column: '# Children'
 			text: [ :each | each children size ]
 			width: 100;
@@ -293,6 +296,11 @@ TMAbstractTreeNode >> mondrianTree [
 
 { #category : #accessing }
 TMAbstractTreeNode >> nodeLabel [
+	self subclassResponsibility
+]
+
+{ #category : #accessing }
+TMAbstractTreeNode >> nodeType [
 	self subclassResponsibility
 ]
 
@@ -453,6 +461,11 @@ TMAbstractTreeNode >> topicMap: anObject [
 TMAbstractTreeNode >> topicNodes [
 	^ self
 		nodesFor: (self topics collect: [ :aTopic | TMTopicNode for: aTopic in: self topicMap ])
+]
+
+{ #category : #navigation }
+TMAbstractTreeNode >> topicTreeChildren [
+	^ self children
 ]
 
 { #category : #navigation }

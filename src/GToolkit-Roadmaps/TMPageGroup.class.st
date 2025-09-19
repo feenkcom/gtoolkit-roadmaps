@@ -36,6 +36,11 @@ TMPageGroup >> nodeLabel [
 	^ 'Page group', self queryString
 ]
 
+{ #category : #accessing }
+TMPageGroup >> nodeType [
+	^ 'Page group'
+]
+
 { #category : #navigation }
 TMPageGroup >> pageGroup [
 	^ self
