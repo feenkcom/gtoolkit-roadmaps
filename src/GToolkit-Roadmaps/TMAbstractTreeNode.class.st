@@ -226,6 +226,8 @@ TMAbstractTreeNode >> gtTreeNodeMenuFor: anAction [
 							-> [ aButton phlow spawnObject: self mondrianTree ].
 						('Inspect Mondrian graph' , ifSlow)
 							-> [ aButton phlow spawnObject: self mondrianGraph ].
+						'Inspect JSON object'
+							-> [ aButton phlow spawnObject: self topicMap json ].
 						'Inspect JSON file'
 							-> [ aButton phlow spawnObject: self topicMap jsonFile ]};
 				yourself ]

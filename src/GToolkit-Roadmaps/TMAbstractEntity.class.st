@@ -27,10 +27,14 @@ TMAbstractEntity >> emptyNodes [
 	^ self nodesFor: {}
 ]
 
+{ #category : #utility }
+TMAbstractEntity >> fieldNodeFor: aField [
+	^ TMFieldNode for: aField in: self topicMap
+]
+
 { #category : #navigation }
 TMAbstractEntity >> fieldNodes [
-	^ self
-		nodesFor: (self fields collect: [ :aField | TMFieldNode for: aField in: self topicMap ])
+	^ self nodesFor: (self fields collect: [ :aField | self fieldNodeFor: aField ])
 ]
 
 { #category : #abstract }

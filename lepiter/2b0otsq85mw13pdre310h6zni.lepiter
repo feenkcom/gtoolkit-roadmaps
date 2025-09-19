@@ -110,7 +110,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-19T09:34:47.014282+02:00"
+												"dateAndTimeString" : "2025-09-19T18:20:40.852707+02:00"
 											}
 										},
 										"uid" : {
@@ -120,7 +120,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[* Edit fields, topics and kinds]] "
+										"string" : "[[* Edit fields, topics and kinds (partly done)]] "
 									},
 									{
 										"__type" : "textSnippet",
