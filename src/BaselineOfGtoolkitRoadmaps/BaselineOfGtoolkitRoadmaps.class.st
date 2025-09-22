@@ -25,6 +25,21 @@ BaselineOfGtoolkitRoadmaps class >> loadLepiter [
 			self inform: 'Repository not found.' ]
 ]
 
+{ #category : #loading }
+BaselineOfGtoolkitRoadmaps class >> loadRoadmapsHelpLepiter [
+	IceRepository registry  
+		detect: [ :aRepository |
+			aRepository name = 'gtoolkit-roadmaps' ]
+		ifFound: [ :aRepository | 
+			| defaultDatabase currentProperties |
+			defaultDatabase := LeDatabasesRegistry defaultLogicalDatabase.
+			currentProperties := defaultDatabase properties.
+			currentProperties addRegisteredDirectory: aRepository repositoryDirectory / 'roadmaps-help'.
+			defaultDatabase reload ]
+		ifNone: [
+			self inform: 'Repository not found.' ]
+]
+
 { #category : #baseline }
 BaselineOfGtoolkitRoadmaps >> baseline: spec [
 	<baseline>
