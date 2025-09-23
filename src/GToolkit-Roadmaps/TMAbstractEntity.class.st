@@ -42,6 +42,18 @@ TMAbstractEntity >> fields [
 	self subclassResponsibility
 ]
 
+{ #category : #'as yet unclassified' }
+TMAbstractEntity >> gtHelpPageActionFor: anAction [
+	<gtAction>
+	^ anAction button
+		tooltip: 'Help';
+		priority: 45;
+		icon: BrGlamorousIcons help;
+		action: [ :aButton | aButton phlow spawnObject: self helpPage ];
+		primaryModifierAction: [ :aButton | aButton phlow showObject: self helpPage ]
+			mouseCursor: BlCopyCursor new
+]
+
 { #category : #searching }
 TMAbstractEntity >> gtSpotterForPageContent: aSearch [
 	<gtSearch>
@@ -72,6 +84,28 @@ TMAbstractEntity >> gtSpotterForPageTitles: aSearch [
 				queryString: aStep searchQuery;
 				yourself ];
 		filterBySubstring
+]
+
+{ #category : #acccessing }
+TMAbstractEntity >> helpDatabase [
+	^ TMHelpDatabase database
+]
+
+{ #category : #acccessing }
+TMAbstractEntity >> helpPage [
+	^ self helpDatabase pageNamed: self helpPageName
+]
+
+{ #category : #acccessing }
+TMAbstractEntity >> helpPageName [
+	"Override in subclasses"
+
+	^ self helpPageNameDefault
+]
+
+{ #category : #acccessing }
+TMAbstractEntity >> helpPageNameDefault [
+	^ 'Topic Map'
 ]
 
 { #category : #testing }
