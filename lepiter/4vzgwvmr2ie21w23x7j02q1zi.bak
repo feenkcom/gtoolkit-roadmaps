@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-22T15:38:20.977734+02:00"
+						"dateAndTimeString" : "2025-09-23T12:02:33.722561+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : ""
+				"string" : "Add test examples for reassigning, adding, deleting and renaming topics, fields and kinds.\nCopy the GT book JSON to a temporary location and apply modifications there. Each example creates its own copy of the JSON.\nShould these be real files or some kind of in-memory pseudo files?"
 			}
 		]
 	},
@@ -62,12 +62,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-22T15:38:20.922691+02:00"
+			"dateAndTimeString" : "2025-09-22T15:38:31.234586+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Add tests for editing nodes"
+		"title" : "* Add tests for editing nodes"
 	},
 	"uid" : {
 		"__type" : "uuid",
