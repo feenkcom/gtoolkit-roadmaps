@@ -25,16 +25,9 @@ TMHelpDatabase
 "
 Class {
 	#name : #TMHelpDatabase,
-	#superclass : #Object,
-	#traits : 'TLeInMemoryDatabaseHolder + TGtUniqueInstance',
-	#classTraits : 'TLeInMemoryDatabaseHolder classTrait + TGtUniqueInstance classTrait',
+	#superclass : #LeAbstractInMemoryDatabaseSingleton,
 	#category : #'GToolkit-Roadmaps-Model'
 }
-
-{ #category : #loading }
-TMHelpDatabase class >> database [
-	^ self uniqueInstance database
-]
 
 { #category : #loading }
 TMHelpDatabase class >> databaseName [
