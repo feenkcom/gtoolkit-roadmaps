@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-23T09:19:18.290071+02:00"
+						"dateAndTimeString" : "2025-09-24T13:23:39.891392+02:00"
 					}
 				},
 				"editEmail" : {
@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-23T09:19:49.131939+02:00"
+						"dateAndTimeString" : "2025-09-24T13:26:34.834858+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,44 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Placeholder page for Topic Map help.\nWe'll have separate pages  for different contexts."
+				"string" : "A *Topic Map* organizes the pages of a Lepiter notebook into *topics*, which are grouped into a number of *fields* or “domains”. Each page may deal with several topics. Additional each page is of a partiuclar *kind*, such as an “introduction”, a “tutorial”, or an “FAQ”."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-24T13:26:55.537161+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-24T13:29:24.102733+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "g4QMEOz7DQCAzvAJA+vavQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "In the `Roadmap` view we see a visualization of the top levels of the topic map, showing the database, and the different fields covered in the database. We can dive into fields by clicking on them."
 			}
 		]
 	},
@@ -62,7 +99,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-23T09:19:23.402704+02:00"
+			"dateAndTimeString" : "2025-09-24T13:22:01.112268+02:00"
 		}
 	},
 	"pageType" : {

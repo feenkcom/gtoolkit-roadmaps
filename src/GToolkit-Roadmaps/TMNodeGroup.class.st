@@ -50,6 +50,11 @@ TMNodeGroup >> hash [
 	^ self nodes first hash
 ]
 
+{ #category : #help }
+TMNodeGroup >> helpPageName [
+	^ 'Topic Group'
+]
+
 { #category : #testing }
 TMNodeGroup >> isTMNodeGroup [
 	^ true

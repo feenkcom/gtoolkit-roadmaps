@@ -280,6 +280,11 @@ TopicMap >> gtUnmappedPagesFor: aView [
 		view: #gtTopicTreeFor:
 ]
 
+{ #category : #help }
+TopicMap >> helpPageName [
+	^ 'Topic Map'
+]
+
 { #category : #initialization }
 TopicMap >> initialize [
 	super initialize.

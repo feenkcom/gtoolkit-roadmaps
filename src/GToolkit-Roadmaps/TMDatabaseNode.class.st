@@ -50,6 +50,11 @@ TMDatabaseNode >> gtDatabaseActionFor: anAction [
 		action: [ :aButton | aButton phlow spawnObject: self database ]
 ]
 
+{ #category : #help }
+TMDatabaseNode >> helpPageName [
+	^ 'Topic Database'
+]
+
 { #category : #navigation }
 TMDatabaseNode >> kinds [
 	^ self topicMap kinds

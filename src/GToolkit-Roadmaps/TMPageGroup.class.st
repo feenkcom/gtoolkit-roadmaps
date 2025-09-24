@@ -26,6 +26,11 @@ TMPageGroup >> contentIncludes: query [
 		yourself
 ]
 
+{ #category : #help }
+TMPageGroup >> helpPageName [
+	^ 'Topic Page Group'
+]
+
 { #category : #testing }
 TMPageGroup >> isTMPageGroup [
 	^ true
