@@ -64,6 +64,11 @@ TMTopicNode >> gtEditFieldFor: aView [
 		actionUpdateButton
 ]
 
+{ #category : #help }
+TMTopicNode >> helpPageName [
+	^ 'Topic'
+]
+
 { #category : #navigation }
 TMTopicNode >> kinds [
 	^ self topicMap kinds4Topic: self topic

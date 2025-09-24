@@ -152,6 +152,11 @@ TMPageNode >> hash [
 	^ super hash bitXor: self viaTopic hash
 ]
 
+{ #category : #help }
+TMPageNode >> helpPageName [
+	^ 'Topic Page'
+]
+
 { #category : #accessing }
 TMPageNode >> kind [
 	^ self topicMap kind4Page: self page

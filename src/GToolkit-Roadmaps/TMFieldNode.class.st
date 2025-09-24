@@ -57,6 +57,11 @@ TMFieldNode >> gtMondrianTreeFor: aView [
 		view: #gtLiveFor:
 ]
 
+{ #category : #help }
+TMFieldNode >> helpPageName [
+	^ 'Topic Field'
+]
+
 { #category : #testing }
 TMFieldNode >> isTMFieldNode [
 	^ true

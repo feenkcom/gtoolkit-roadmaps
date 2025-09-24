@@ -86,26 +86,26 @@ TMAbstractEntity >> gtSpotterForPageTitles: aSearch [
 		filterBySubstring
 ]
 
-{ #category : #acccessing }
+{ #category : #help }
 TMAbstractEntity >> helpDatabase [
 	^ TMHelpDatabase database
 ]
 
-{ #category : #acccessing }
+{ #category : #help }
 TMAbstractEntity >> helpPage [
 	^ self helpDatabase pageNamed: self helpPageName
 ]
 
-{ #category : #acccessing }
+{ #category : #help }
 TMAbstractEntity >> helpPageName [
 	"Override in subclasses"
 
 	^ self helpPageNameDefault
 ]
 
-{ #category : #acccessing }
+{ #category : #help }
 TMAbstractEntity >> helpPageNameDefault [
-	^ 'Topic Map'
+	^ 'Topic Roadmap'
 ]
 
 { #category : #testing }

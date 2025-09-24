@@ -51,6 +51,11 @@ TMKindNode >> fields [
 	^ (self topicNodes nodes flatCollect: #fields) copyWithoutDuplicates
 ]
 
+{ #category : #help }
+TMKindNode >> helpPageName [
+	^ 'Topic Kind'
+]
+
 { #category : #accessing }
 TMKindNode >> kind [
 	^ kind

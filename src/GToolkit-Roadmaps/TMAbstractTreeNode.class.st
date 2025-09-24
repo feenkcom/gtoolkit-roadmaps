@@ -238,6 +238,11 @@ TMAbstractTreeNode >> hash [
 	^ self nodeLabel hash
 ]
 
+{ #category : #help }
+TMAbstractTreeNode >> helpPageNameDefault [
+	^ super helpPageNameDefault
+]
+
 { #category : #testing }
 TMAbstractTreeNode >> isAbstract [
 	^ self == TMAbstractTreeNode
