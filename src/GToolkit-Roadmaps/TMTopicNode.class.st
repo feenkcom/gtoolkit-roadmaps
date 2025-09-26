@@ -103,21 +103,25 @@ TMTopicNode >> relatedInfo [
 TMTopicNode >> roadmapNodes [
 	"Want parents, parent peers, and own peers."
 
-	| parent children |
+	| parent children roadmapNodes |
 	parent := self fieldNodes first.
 	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
-	^ parent roadmapNodes , children
+	roadmapNodes := parent roadmapNodes , children.
+	roadmapNodes items do: [ :n | n = self ifTrue: [ n highlightOn ] ].
+	^ roadmapNodes
 ]
 
 { #category : #mondrian }
 TMTopicNode >> roadmapWithKindNodes [
 	"Want parents, parent peers, and own peers."
 
-	| parent children kinds |
+	| parent children kinds roadmapNodes |
 	parent := self fieldNodes first.
 	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
 	kinds := (children flatCollect: #kindNodes) copyWithoutDuplicates.
-	^ parent roadmapWithKindNodes , kinds, children
+	roadmapNodes := parent roadmapWithKindNodes , kinds , children.
+	roadmapNodes items do: [ :n | n = self ifTrue: [ n highlightOn ] ].
+	^ roadmapNodes
 ]
 
 { #category : #accessing }

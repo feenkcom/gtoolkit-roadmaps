@@ -101,9 +101,11 @@ TMFieldNode >> parents [
 
 { #category : #mondrian }
 TMFieldNode >> roadmapNodes [
-	| root |
+	| root roadmapNodes |
 	root := self databaseNode.
-	^ root roadmapNodes , self children
+	roadmapNodes := root roadmapNodes , self children.
+	roadmapNodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
+	^ roadmapNodes
 ]
 
 { #category : #navigation }

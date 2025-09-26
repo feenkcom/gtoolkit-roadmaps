@@ -248,7 +248,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-24T13:43:52.171141+02:00"
+												"dateAndTimeString" : "2025-09-24T13:43:10.550008+02:00"
 											}
 										},
 										"editEmail" : {
@@ -259,58 +259,20 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-24T13:44:11.542635+02:00"
+												"dateAndTimeString" : "2025-09-26T18:57:31.280464+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
-											"uidString" : "8ae6Tez7DQCVkOCAA+vavQ=="
+											"uidString" : "h8YnS+z7DQCUE9duA+vavQ=="
 										},
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "highlight the field"
-									}
-								]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-24T13:44:11.535794+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-24T13:44:11.535794+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "1yLiTuz7DQCVypk3A+vavQ=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "Field view "
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [
+										"string" : "highlight the topic and its field (done)\n***only show links from that topic to its kind/pages (hide links to other topics)***"
+									},
 									{
-										"__type" : "textSnippet",
+										"__type" : "pharoSnippet",
 										"children" : {
 											"__type" : "snippets",
 											"items" : [ ]
@@ -323,7 +285,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-24T13:43:10.550008+02:00"
+												"dateAndTimeString" : "2025-09-26T18:42:54.920708+02:00"
 											}
 										},
 										"editEmail" : {
@@ -334,17 +296,14 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-24T13:45:36.173632+02:00"
+												"dateAndTimeString" : "2025-09-26T18:43:22.095615+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
-											"uidString" : "h8YnS+z7DQCUE9duA+vavQ=="
+											"uidString" : "Hgzithj8DQCTntQDAG6XtQ=="
 										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "highlight the topic and its field\nonly show links from that topic to its kind/pages (hide links to other topics)"
+										"code" : "LeDatabase gtBook topicMap fieldNodes first topicNodes first"
 									}
 								]
 							},
@@ -566,7 +525,117 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-24T13:43:52.171141+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-24T13:44:11.542635+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "8ae6Tez7DQCVkOCAA+vavQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "highlight the field"
+									},
+									{
+										"__type" : "pharoSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-26T18:22:19.697375+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-26T18:22:40.665223+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "+ghCbRj8DQCS+oNDAG6XtQ=="
+										},
+										"code" : "LeDatabase gtBook topicMap fieldNodes first"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-24T13:44:11.535794+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-24T13:44:11.535794+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "1yLiTuz7DQCVypk3A+vavQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Field view "
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
