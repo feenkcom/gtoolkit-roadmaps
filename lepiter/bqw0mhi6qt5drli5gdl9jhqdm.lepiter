@@ -200,6 +200,114 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-26T18:19:59.894531+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-26T18:19:59.894531+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "lszsZBj8DQCEqmApAG6XtQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Then just go to a page, such as:{{gtPage:Glamorous Toolkit|db=2j9m7db2i4oz116bexd7wbdxo}}  and select the roadmap button.\nAlternatively, inspect a page or a database and select the roadmap button."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-26T18:20:02.301856+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-26T18:20:14.655758+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "tIgRZRj8DQCEsxuyAG6XtQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "To edit the help pages:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-26T18:20:33.495931+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-26T18:20:48.743341+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "lIftZhj8DQCFadiiAG6XtQ=="
+				},
+				"code" : "TMHelpDatabase cleanUp; loadRoadmapsHelpLepiter; database"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2025-09-11T09:47:49.481489+02:00"
 					}
 				},
@@ -211,7 +319,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T09:54:42.256678+02:00"
+						"dateAndTimeString" : "2025-09-26T18:19:59.899352+02:00"
 					}
 				},
 				"uid" : {
@@ -221,7 +329,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Then just go to a page, such as:{{gtPage:Glamorous Toolkit|db=2j9m7db2i4oz116bexd7wbdxo}}  and select the roadmap button.\nAlternatively, inspect a page or a database and select the roadmap button.\nHere is the topic map for the GT book:"
+				"string" : "Here is the topic map for the GT book:"
 			},
 			{
 				"__type" : "exampleSnippet",
@@ -256,7 +364,7 @@
 					"uidString" : "Ip3bpeP6DQCI3GuPCQGWkg=="
 				},
 				"exampleSelector" : "gtBookTopicMap",
-				"previewHeight" : 300,
+				"previewHeight" : 500,
 				"previewShowSelector" : "gtViewsFor:",
 				"exampleBehaviorName" : "TMRegistryExamples",
 				"codeExpanded" : true,

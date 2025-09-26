@@ -7,7 +7,8 @@ Class {
 	#name : #TMAbstractTreeNode,
 	#superclass : #TMAbstractEntity,
 	#instVars : [
-		'topicMap'
+		'topicMap',
+		'isHighlighted'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -243,29 +244,35 @@ TMAbstractTreeNode >> helpPageNameDefault [
 	^ super helpPageNameDefault
 ]
 
+{ #category : #initialization }
+TMAbstractTreeNode >> highlightOff [
+	isHighlighted := false
+]
+
+{ #category : #initialization }
+TMAbstractTreeNode >> highlightOn [
+	isHighlighted := true
+]
+
+{ #category : #initialization }
+TMAbstractTreeNode >> initialize [
+	super initialize.
+	self highlightOff
+]
+
 { #category : #testing }
 TMAbstractTreeNode >> isAbstract [
 	^ self == TMAbstractTreeNode
 ]
 
 { #category : #testing }
-TMAbstractTreeNode >> isTMTreeNode [
-	^ true
+TMAbstractTreeNode >> isHighlighted [
+	^ isHighlighted
 ]
 
-{ #category : #treemaps }
-TMAbstractTreeNode >> kindPalette [
-	^ {'Introduction' -> Color red muchLighter.
-		'Media' -> Color green lighter.
-		'Tutorial' -> Color blue muchLighter.
-		'Case study' -> Color purple muchLighter.
-		'Pattern' -> Color orange.
-		'FAQ' -> Color paleYellow.
-		'Examples' -> Color lightRed.
-		'Documentation' -> Color paleBlue.
-		'Definition' -> Color veryVeryLightGray.
-		'Index' -> Color veryLightGray.
-		'Tag' -> Color lightGray} asDictionary
+{ #category : #testing }
+TMAbstractTreeNode >> isTMTreeNode [
+	^ true
 ]
 
 { #category : #roadmap }
@@ -363,8 +370,10 @@ TMAbstractTreeNode >> roadmap [
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> roadmapNodeBorderColor [
-	^ Color black
+TMAbstractTreeNode >> roadmapNodeBorder [
+	^ self isHighlighted
+		ifTrue: [ BlBorder paint: Color blue width: 2 ]
+		ifFalse: [ BlBorder paint: Color black width: 1 ]
 ]
 
 { #category : #roadmap }
@@ -380,7 +389,7 @@ TMAbstractTreeNode >> roadmapNodeElement [
 
 	^ BlTextElement new
 		text: self nodeLabel asRopedText;
-		border: self roadmapNodeBorderColor;
+		border: self roadmapNodeBorder;
 		background: self roadmapNodeColor;
 		padding: (BlInsets all: 5);
 		geometry: (BlRoundedRectangleGeometry cornerRadius: 8);
@@ -405,7 +414,7 @@ TMAbstractTreeNode >> roadmapSimpleNodeElement [
 
 	^ BlElement new
 		size: self roadmapNodeSize;
-		border: self roadmapNodeBorderColor;
+		border: self roadmapNodeBorder;
 		background: self roadmapNodeColor;
 		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
 ]

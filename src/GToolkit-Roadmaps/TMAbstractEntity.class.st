@@ -129,6 +129,21 @@ TMAbstractEntity >> kindNodes [
 						within: self pageGroup ])
 ]
 
+{ #category : #treemaps }
+TMAbstractEntity >> kindPalette [
+	^ {'Introduction' -> Color red muchLighter.
+		'Media' -> Color green lighter.
+		'Tutorial' -> Color blue muchLighter.
+		'Case study' -> Color purple muchLighter.
+		'Pattern' -> Color orange.
+		'FAQ' -> Color paleYellow.
+		'Examples' -> Color lightRed.
+		'Documentation' -> Color paleBlue.
+		'Definition' -> Color veryVeryLightGray.
+		'Index' -> Color veryLightGray.
+		'Tag' -> Color lightGray} asDictionary
+]
+
 { #category : #abstract }
 TMAbstractEntity >> kinds [
 	self subclassResponsibility

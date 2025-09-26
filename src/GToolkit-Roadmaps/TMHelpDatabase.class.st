@@ -53,6 +53,7 @@ TMHelpDatabase class >> unloadRoadmapsHelpLepiter [
 
 { #category : #initialization }
 TMHelpDatabase >> initialize [
+	super initialize.
 	self databaseName: self class databaseName.
 	self initializeDatabase
 ]
