@@ -16,6 +16,11 @@ Object >> isTMPageGroup [
 ]
 
 { #category : #'*GToolkit-Roadmaps' }
+Object >> isTMPageNode [
+	^ false
+]
+
+{ #category : #'*GToolkit-Roadmaps' }
 Object >> isTMTreeNode [
 	^ false
 ]

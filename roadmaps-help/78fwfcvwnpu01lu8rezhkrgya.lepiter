@@ -79,7 +79,7 @@
 				"string" : "In the `Roadmap` view we see a visualization of the top levels of the topic map, showing the database, and the different fields covered in the database. We can dive into fields by clicking on them."
 			},
 			{
-				"__type" : "elementSnippet",
+				"__type" : "exampleSnippet",
 				"children" : {
 					"__type" : "snippets",
 					"items" : [ ]
@@ -92,7 +92,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-27T09:08:15.784635+02:00"
+						"dateAndTimeString" : "2025-09-27T09:30:19.412711+02:00"
 					}
 				},
 				"editEmail" : {
@@ -103,17 +103,20 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-27T09:08:23.878009+02:00"
+						"dateAndTimeString" : "2025-09-27T09:30:19.412711+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "2Y6bzST8DQCK8SMiBC2Q5g=="
+					"uidString" : "A4WAHCX8DQCyZkthBcat1w=="
 				},
-				"code" : "LeDatabase gtBook topicMap roadmap",
-				"elementHeight" : 520,
-				"codeHeight" : 50,
-				"codeVisible" : false
+				"exampleSelector" : "gtBookTopicMap",
+				"previewHeight" : 400,
+				"previewShowSelector" : "gtRoadmap:",
+				"exampleBehaviorName" : "TMGtBookRoadmapExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : true
 			}
 		]
 	},

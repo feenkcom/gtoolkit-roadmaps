@@ -87,6 +87,8 @@ TMDatabaseNode >> roadmapNodeSize [
 
 { #category : #roadmap }
 TMDatabaseNode >> roadmapNodes [
+	"database -> fields"
+
 	^ self nodesFor: {self} , self children
 ]
 

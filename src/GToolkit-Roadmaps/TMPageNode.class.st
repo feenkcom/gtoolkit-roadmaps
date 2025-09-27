@@ -154,7 +154,12 @@ TMPageNode >> hash [
 
 { #category : #help }
 TMPageNode >> helpPageName [
-	^ 'Topic Page'
+	^ 'TopicMap Page'
+]
+
+{ #category : #testing }
+TMPageNode >> isTMPageNode [
+	^ true
 ]
 
 { #category : #accessing }
@@ -264,10 +269,39 @@ TMPageNode >> roadmapNodeElement [
 
 { #category : #roadmap }
 TMPageNode >> roadmapNodes [
-	| pageNodeWithAllTopics |
-	pageNodeWithAllTopics := self withoutViaTopic.
-	^ self databaseNode roadmapNodes , pageNodeWithAllTopics parents
-		, pageNodeWithAllTopics kindNodes , {pageNodeWithAllTopics}
+	"page in topic (or unique t): db -> fields -> p.t.f.topics -> p.t.pages
+	page (multiple topics): db -> fields -> p.topics -> p"
+
+	self topicNodes size = 1 ifTrue: [ self viaTopic: self topicNodes first ].
+	^ self viaTopic
+		ifNil: [ self roadmapNodesWithAllTopics ]
+		ifNotNil: [ self roadmapNodesViaParentTopic ]
+]
+
+{ #category : #roadmap }
+TMPageNode >> roadmapNodesViaParentTopic [
+	"page in topic (or unique t): db -> fields -> p.t.f.topics -> p.t.pages"
+
+	| roadmapNodes |
+	self assert: self viaTopic isNotNil.
+	roadmapNodes := self viaTopic roadmapNodes.
+	roadmapNodes
+		do: [ :n | 
+			n = self ifTrue: [ n highlightOn ].
+			n = self kindNodes first ifTrue: [ n highlightOn ] ].
+	^ roadmapNodes
+]
+
+{ #category : #roadmap }
+TMPageNode >> roadmapNodesWithAllTopics [
+	"page (multiple topics): db -> fields -> p.topics -> p"
+
+	| roadmapNodes |
+	self assert: self viaTopic isNil.
+	self highlightOn.
+	roadmapNodes := self databaseNode roadmapNodes , self parents , self kindNodes
+			, {self}.
+	^ roadmapNodes
 ]
 
 { #category : #roadmap }

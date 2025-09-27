@@ -77,6 +77,46 @@
 					"__type" : "textStyle"
 				},
 				"string" : "In the `Roadmap` view we see a visualization of the top levels of the topic map, showing the database, and the different fields covered in the database. We can dive into fields by clicking on them."
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T09:30:19.412711+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T09:30:19.412711+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "A4WAHCX8DQCyZkthBcat1w=="
+				},
+				"exampleSelector" : "gtBookTopicMap",
+				"previewHeight" : 400,
+				"previewShowSelector" : "gtRoadmap:",
+				"exampleBehaviorName" : "TMGtBookRoadmapExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : true
 			}
 		]
 	},

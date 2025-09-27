@@ -358,7 +358,7 @@ TMAbstractTreeNode >> roadmap [
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmapNodeBorder [
 	^ self isHighlighted
-		ifTrue: [ BlBorder paint: Color blue width: 2 ]
+		ifTrue: [ BlBorder paint: Color red width: 2 ]
 		ifFalse: [ BlBorder paint: Color black width: 1 ]
 ]
 

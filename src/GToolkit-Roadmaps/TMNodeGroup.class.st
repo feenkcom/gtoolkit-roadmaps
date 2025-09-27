@@ -107,9 +107,16 @@ TMNodeGroup >> printOn: aStream [
 super printOn: aStream.
 	aStream
 		nextPut: $(;
-		print: self pages size;
+		print: self items size;
 		nextPutAll: ' nodes';
 		nextPut: $)
+]
+
+{ #category : #'as yet unclassified' }
+TMNodeGroup >> roadmapNodes [
+	"node group: ? db -> fields -> ng.topics"
+
+	^ self
 ]
 
 { #category : #navigation }

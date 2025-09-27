@@ -263,10 +263,7 @@ TopicMapExamples >> smaccQuery [
 	| query databaseNode smaccQuery |
 	query := 'SmaCC'.
 	databaseNode := self topicMap databaseNode.
-	smaccQuery := (self topicMap databaseNode
-			pageGroupFor: (databaseNode pages select: [ :p | p asMarkdownPage includesSubstring: query ]))
-			queryString: query;
-			yourself.
+	smaccQuery := databaseNode contentIncludes: query.
 	self assert: smaccQuery fields size equals: 5.
 	self assert: smaccQuery children isTMNodeGroup.
 	self assert: smaccQuery children isTMPageGroup not.
