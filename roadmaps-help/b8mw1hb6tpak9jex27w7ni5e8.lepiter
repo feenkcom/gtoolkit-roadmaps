@@ -40,6 +40,43 @@
 					"__type" : "textStyle"
 				},
 				"string" : "The topic *database* is the topmost node in a topic map hierarchy. The `Roadmap` view for a database is the same as that of a topic map, showing us just the top of the tree, with the different fields covered in the database. Click on the fields to dive in."
+			},
+			{
+				"__type" : "elementSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T09:07:48.48168+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T09:09:04.22822+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "rfL6yyT8DQCK7eYwBC2Q5g=="
+				},
+				"code" : "LeDatabase gtBook topicMap databaseNode roadmap",
+				"elementHeight" : 499,
+				"codeHeight" : 50,
+				"codeVisible" : false
 			}
 		]
 	},

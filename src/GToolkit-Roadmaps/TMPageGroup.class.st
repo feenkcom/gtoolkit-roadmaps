@@ -77,8 +77,8 @@ TMPageGroup >> queryString: aString [
 ]
 
 { #category : #roadmap }
-TMPageGroup >> roadmapWithKindNodes [
-	^ self roadmapNodes
+TMPageGroup >> roadmapNodes [
+	^ self allParents , self nodes
 		, (self pageGroup flatCollect: #kindNodes) copyWithoutDuplicates
 ]
 

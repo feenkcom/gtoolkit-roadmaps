@@ -199,25 +199,13 @@ TopicMap >> gtPageGroupActionFor: anAction [
 ]
 
 { #category : #views }
-TopicMap >> gtRoadmapFor: aView [
-	"Roadmap without Kind nodes."
-
-	"<gtView>"
-	^ aView forward
-		title: 'ALT Roadmap';
-		priority: 37;
-		object: [ self databaseNode ];
-		view: #gtRoadmapFor:
-]
-
-{ #category : #views }
-TopicMap >> gtRoadmapWithKindFor: aView [
+TopicMap >> gtRoadmap: aView [
 	<gtView>
 	^ aView forward
 		title: 'Roadmap';
 		priority: 10;
 		object: [ self databaseNode ];
-		view: #gtRoadmapWithKindFor:
+		view: #gtRoadmap:
 ]
 
 { #category : #views }
@@ -395,6 +383,11 @@ TopicMap >> pages4Kind: aKind [
 { #category : #querying }
 TopicMap >> pages4Topic: aTopic [
 	^ self topic2Pages at: aTopic ifAbsent: {self defaultValue}
+]
+
+{ #category : #accessing }
+TopicMap >> roadmap [
+	^ self databaseNode roadmap
 ]
 
 { #category : #mapping }

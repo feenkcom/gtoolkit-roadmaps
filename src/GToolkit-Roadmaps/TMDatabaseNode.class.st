@@ -85,7 +85,7 @@ TMDatabaseNode >> roadmapNodeSize [
 	^ 20 @ 20
 ]
 
-{ #category : #mondrian }
+{ #category : #roadmap }
 TMDatabaseNode >> roadmapNodes [
 	^ self nodesFor: {self} , self children
 ]

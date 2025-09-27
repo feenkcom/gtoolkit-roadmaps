@@ -101,15 +101,7 @@ TMKindNode >> roadmapNodeColor [
 
 { #category : #roadmap }
 TMKindNode >> roadmapNodes [
-	"Show the roadmap for the context pages with this kind."
-
-	^ self pageGroup roadmapNodes
-]
-
-{ #category : #roadmap }
-TMKindNode >> roadmapWithKindNodes [
-
-	^ self pageGroup roadmapWithKindNodes, { self }
+	^ self pageGroup roadmapNodes , {self}
 ]
 
 { #category : #querying }

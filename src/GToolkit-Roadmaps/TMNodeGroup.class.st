@@ -112,11 +112,6 @@ super printOn: aStream.
 		nextPut: $)
 ]
 
-{ #category : #roadmap }
-TMNodeGroup >> roadmapNodes [
-	^ self allParents , self nodes
-]
-
 { #category : #navigation }
 TMNodeGroup >> topics [
 	^ (self children flatCollect: #topics) copyWithoutDuplicates

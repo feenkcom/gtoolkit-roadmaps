@@ -66,7 +66,7 @@ TMTopicNode >> gtEditFieldFor: aView [
 
 { #category : #help }
 TMTopicNode >> helpPageName [
-	^ 'Topic'
+	^ 'TopicMap Topic'
 ]
 
 { #category : #navigation }
@@ -103,23 +103,11 @@ TMTopicNode >> relatedInfo [
 TMTopicNode >> roadmapNodes [
 	"Want parents, parent peers, and own peers."
 
-	| parent children roadmapNodes |
-	parent := self fieldNodes first.
-	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
-	roadmapNodes := parent roadmapNodes , children.
-	roadmapNodes items do: [ :n | n = self ifTrue: [ n highlightOn ] ].
-	^ roadmapNodes
-]
-
-{ #category : #mondrian }
-TMTopicNode >> roadmapWithKindNodes [
-	"Want parents, parent peers, and own peers."
-
 	| parent children kinds roadmapNodes |
 	parent := self fieldNodes first.
 	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
 	kinds := (children flatCollect: #kindNodes) copyWithoutDuplicates.
-	roadmapNodes := parent roadmapWithKindNodes , kinds , children.
+	roadmapNodes := parent roadmapNodes , kinds , children.
 	roadmapNodes items do: [ :n | n = self ifTrue: [ n highlightOn ] ].
 	^ roadmapNodes
 ]

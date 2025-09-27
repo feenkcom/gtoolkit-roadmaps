@@ -100,28 +100,12 @@ TMAbstractTreeNode >> gtPageGroupActionFor: anAction [
 ]
 
 { #category : #views }
-TMAbstractTreeNode >> gtRoadmapFor: aView [
-	"Roadmap without Kind nodes."
-	
-	"<gtView>"
-	^ aView forward
-		title: 'ALT Roadmap';
-		priority: 37;
-		object: [ self roadmap ];
-		view: #gtLiveFor:;
-		actionButtonIcon: BrGlamorousVectorIcons changes
-			tooltip: 'Inspect  pages'
-			action: [ :aButton :aTab | aButton phlow spawnObject: self roadmapNodes ];
-		actionUpdateButton
-]
-
-{ #category : #views }
-TMAbstractTreeNode >> gtRoadmapWithKindFor: aView [
+TMAbstractTreeNode >> gtRoadmap: aView [
 	<gtView>
 	^ aView forward
 		title: 'Roadmap';
 		priority: 10;
-		object: [ self roadmapWithKind ];
+		object: [ self roadmap ];
 		view: #gtLiveFor:;
 		actionButtonIcon: BrGlamorousVectorIcons changes
 			tooltip: 'Inspect  pages'
@@ -356,12 +340,14 @@ TMAbstractTreeNode >> relatedInfo [
 
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmap [
+	"Amondrian roadmap showing: database > fields > topics > kinds > pages."
+
 	| mondrian |
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
 		with: self roadmapNodes.
-	mondrian edges connectFromAll: #parents.
+	mondrian edges connectFromAll: #parentsWithKind.
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new
 				levelDistance: 50;
@@ -403,7 +389,7 @@ TMAbstractTreeNode >> roadmapNodeSize [
 
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmapNodes [
-	"Should return a kind of TMNodeGroup"
+	"Returns all the nodes for the roadmap for this kind of node as a kind of TMNodeGroup"
 
 	^ self subclassResponsibility
 ]
@@ -417,30 +403,6 @@ TMAbstractTreeNode >> roadmapSimpleNodeElement [
 		border: self roadmapNodeBorder;
 		background: self roadmapNodeColor;
 		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> roadmapWithKind [
-	"Experimental -- variant in which we also show kinds as nodes."
-
-	| mondrian |
-	mondrian := GtMondrian new.
-	mondrian nodes
-		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
-		with: self roadmapWithKindNodes.
-	mondrian edges connectFromAll: #parentsWithKind.
-	mondrian layout
-		custom: (GtGradHorizontalTreeLayout new
-				levelDistance: 50;
-				nodeDistance: 20).
-	^ mondrian
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> roadmapWithKindNodes [
-	"Should return a kind of TMNodeGroup"
-
-	^ self roadmapNodes
 ]
 
 { #category : #utility }

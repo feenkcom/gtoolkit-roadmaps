@@ -99,7 +99,7 @@ TMFieldNode >> parents [
 	^ self nodesFor: {self databaseNode}
 ]
 
-{ #category : #mondrian }
+{ #category : #roadmap }
 TMFieldNode >> roadmapNodes [
 	| root roadmapNodes |
 	root := self databaseNode.

@@ -267,7 +267,7 @@ TMPageNode >> roadmapNodes [
 	| pageNodeWithAllTopics |
 	pageNodeWithAllTopics := self withoutViaTopic.
 	^ self databaseNode roadmapNodes , pageNodeWithAllTopics parents
-		, {pageNodeWithAllTopics}
+		, pageNodeWithAllTopics kindNodes , {pageNodeWithAllTopics}
 ]
 
 { #category : #roadmap }
@@ -275,14 +275,6 @@ TMPageNode >> roadmapSimpleNodeElement [
 	^ super roadmapSimpleNodeElement
 		geometry: BlCircleGeometry new;
 		yourself
-]
-
-{ #category : #roadmap }
-TMPageNode >> roadmapWithKindNodes [
-	| pageNodeWithAllTopics |
-	pageNodeWithAllTopics := self withoutViaTopic.
-	^ self databaseNode roadmapWithKindNodes , pageNodeWithAllTopics parents
-		, pageNodeWithAllTopics kindNodes , {pageNodeWithAllTopics}
 ]
 
 { #category : #accessing }
