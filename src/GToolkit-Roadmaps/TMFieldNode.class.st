@@ -101,6 +101,9 @@ TMFieldNode >> parents [
 
 { #category : #roadmap }
 TMFieldNode >> roadmapNodes [
+	"database -> fields -> f.topics
+	highlight f in fields"
+
 	| root roadmapNodes |
 	root := self databaseNode.
 	roadmapNodes := root roadmapNodes , self children.

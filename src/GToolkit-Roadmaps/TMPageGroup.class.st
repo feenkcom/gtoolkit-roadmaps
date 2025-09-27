@@ -18,14 +18,6 @@ TMPageGroup class >> for: aPageCollection in: aTopicMap [
 		yourself
 ]
 
-{ #category : #querying }
-TMPageGroup >> contentIncludes: query [
-	^ (self
-		pageGroupFor: (self pages select: [ :p | p asMarkdownPage includesSubstring: query ]))
-		queryString: query;
-		yourself
-]
-
 { #category : #help }
 TMPageGroup >> helpPageName [
 	^ 'Topic Page Group'
@@ -78,8 +70,9 @@ TMPageGroup >> queryString: aString [
 
 { #category : #roadmap }
 TMPageGroup >> roadmapNodes [
+	"page group: db -> fields -> pg.topics -> pages"
 	^ self allParents , self nodes
-		, (self pageGroup flatCollect: #kindNodes) copyWithoutDuplicates
+		, (self  flatCollect: #kindNodes) copyWithoutDuplicates
 ]
 
 { #category : #utility }
@@ -89,14 +82,6 @@ TMPageGroup >> sortedByKinds [
 	self kindsStandardOrder
 		do: [ :aKind | sortedPages addAll: (self nodes select: [ :n | n kind = aKind ]) ].
 	^ sortedPages
-]
-
-{ #category : #querying }
-TMPageGroup >> titleIncludes: query [
-	^ (self
-		pageGroupFor: (self pages select: [ :p | p title includesSubstring: query ]))
-		queryString: query;
-		yourself
 ]
 
 { #category : #treemaps }

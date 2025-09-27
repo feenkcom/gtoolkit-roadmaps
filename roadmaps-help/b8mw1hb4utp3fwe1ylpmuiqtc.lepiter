@@ -42,7 +42,7 @@
 				"string" : "The topics in a database are partitioned into thematic *fields*.\nThe `Roadmap` of a field shows all the topics that are grouped into that field, as well as the other fields. From this roadmap you can dive into a topic or switch to another field."
 			},
 			{
-				"__type" : "elementSnippet",
+				"__type" : "exampleSnippet",
 				"children" : {
 					"__type" : "snippets",
 					"items" : [ ]
@@ -55,7 +55,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-27T09:09:20.739601+02:00"
+						"dateAndTimeString" : "2025-09-27T09:37:48.496364+02:00"
 					}
 				},
 				"editEmail" : {
@@ -66,17 +66,20 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-27T09:10:28.632643+02:00"
+						"dateAndTimeString" : "2025-09-27T09:37:48.496364+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "K7F60ST8DQCLji1OBC2Q5g=="
+					"uidString" : "Cv5ENyX8DQCz3OEuBcat1w=="
 				},
-				"code" : "LeDatabase gtBook topicMap fieldNodes first roadmap",
-				"elementHeight" : 752,
-				"codeHeight" : 50,
-				"codeVisible" : false
+				"exampleSelector" : "gtBasicsFieldNode",
+				"previewHeight" : 600,
+				"previewShowSelector" : "gtRoadmap:",
+				"exampleBehaviorName" : "TMGtBookRoadmapExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : true
 			}
 		]
 	},

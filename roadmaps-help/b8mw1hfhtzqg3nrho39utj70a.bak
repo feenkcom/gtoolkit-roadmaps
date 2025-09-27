@@ -18,6 +18,83 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T12:03:07.195343+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T12:03:07.195343+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "bcTxPif8DQCYnHyrBcat1w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "A *page group* shows the result of a query, including all matching pages (by content or by title), with their kinds, topics, fields and database."
+			},
+			{
+				"__type" : "exampleSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T12:03:11.548363+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T12:03:11.548363+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6DM0Pyf8DQCYouNmBcat1w=="
+				},
+				"exampleSelector" : "rustQuery",
+				"previewHeight" : 500,
+				"previewShowSelector" : "gtRoadmap:",
+				"exampleBehaviorName" : "TMGtBookRoadmapExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : true
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2025-09-24T13:11:02.48407+02:00"
 					}
 				},
@@ -29,7 +106,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-24T13:11:02.48407+02:00"
+						"dateAndTimeString" : "2025-09-27T12:04:35.24342+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +116,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : ""
+				"string" : "The resulting roadmap may be noisy if there are a lot of query results, so it may be useful to dive deeper, or to switch to a d"
 			}
 		]
 	},
@@ -62,12 +139,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-24T13:11:02.406215+02:00"
+			"dateAndTimeString" : "2025-09-24T13:11:09.527821+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Page Group"
+		"title" : "Topic Page Group"
 	},
 	"uid" : {
 		"__type" : "uuid",

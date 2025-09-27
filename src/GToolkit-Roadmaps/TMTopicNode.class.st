@@ -101,14 +101,19 @@ TMTopicNode >> relatedInfo [
 
 { #category : #mondrian }
 TMTopicNode >> roadmapNodes [
-	"Want parents, parent peers, and own peers."
+	"database -> fields -> topic -> t.kinds -> t.pages
+	highlight t, t.field
+	NB: we do not show the topic's peers, to avoid "
 
 	| parent children kinds roadmapNodes |
 	parent := self fieldNodes first.
 	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
 	kinds := (children flatCollect: #kindNodes) copyWithoutDuplicates.
-	roadmapNodes := parent roadmapNodes , kinds , children.
-	roadmapNodes items do: [ :n | n = self ifTrue: [ n highlightOn ] ].
+	roadmapNodes := parent databaseNode roadmapNodes , {self} , kinds , children.
+	roadmapNodes
+		do: [ :n | 
+			n = self ifTrue: [ n highlightOn ].
+			n = parent ifTrue: [ n highlightOn ] ].
 	^ roadmapNodes
 ]
 

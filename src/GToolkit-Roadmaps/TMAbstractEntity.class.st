@@ -14,7 +14,10 @@ TMAbstractEntity >> asElement [
 
 { #category : #querying }
 TMAbstractEntity >> contentIncludes: query [
-	^ self pageGroup contentIncludes: query
+	^ (self
+		pageGroupFor: (self pages select: [ :p | p asMarkdownPage includesSubstring: query ]))
+		queryString: query;
+		yourself
 ]
 
 { #category : #abstract }
@@ -68,10 +71,7 @@ TMAbstractEntity >> gtSpotterForPageContent: aSearch [
 		items: [ self pages ];
 		itemsLimit: Float infinity;
 		itemName: #asMarkdownPage;
-		sendCategory: [ :aCategory :aStep :thisSearch | 
-			(self pageGroupFor: aCategory items contents)
-				queryString: aStep searchQuery;
-				yourself ];
+		sendCategory: [ :aCategory :aStep :thisSearch | self contentIncludes: aStep searchQuery ];
 		filterBySubstring
 ]
 
@@ -84,10 +84,7 @@ TMAbstractEntity >> gtSpotterForPageTitles: aSearch [
 		items: [ self pages ];
 		itemsLimit: Float infinity;
 		itemName: #title;
-		sendCategory: [ :aCategory :aStep :thisSearch | 
-			(self pageGroupFor: aCategory items contents)
-				queryString: aStep searchQuery;
-				yourself ];
+		sendCategory: [ :aCategory :aStep :thisSearch | self titleIncludes: aStep searchQuery ];
 		filterBySubstring
 ]
 
@@ -183,6 +180,8 @@ TMAbstractEntity >> pageNodes [
 
 { #category : #abstract }
 TMAbstractEntity >> pages [
+	"NB: These are the actual LePage instances, not TMPageNode instances."
+
 	self subclassResponsibility
 ]
 
@@ -193,7 +192,10 @@ TMAbstractEntity >> roadmap [
 
 { #category : #querying }
 TMAbstractEntity >> titleIncludes: query [
-	^ self pageGroup titleIncludes: query
+	^ (self
+		pageGroupFor: (self pages select: [ :p | p title includesSubstring: query ]))
+		queryString: query;
+		yourself
 ]
 
 { #category : #abstract }

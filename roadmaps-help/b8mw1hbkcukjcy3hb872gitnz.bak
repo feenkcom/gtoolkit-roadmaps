@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-24T13:53:04.787452+02:00"
+						"dateAndTimeString" : "2025-09-27T09:52:16.772453+02:00"
 					}
 				},
 				"uid" : {
@@ -39,10 +39,10 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "A *topic* characterizes the subject matter of a notebook page.\nThe `Roadmap` view of a topic shows all the pages related to that topic, grouped by kinds of pages.\nFrom this roadmap you can dive into a particular kind of page. You can also switch the topic or field."
+				"string" : "A *topic* characterizes the subject matter of a notebook page.\nThe `Roadmap` view of a topic shows all the pages related to that topic, grouped by kinds of pages.\nFrom this roadmap you can dive into a particular kind of page. \nYou can also go to the field to see related topics, or switch to another field."
 			},
 			{
-				"__type" : "elementSnippet",
+				"__type" : "exampleSnippet",
 				"children" : {
 					"__type" : "snippets",
 					"items" : [ ]
@@ -55,7 +55,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-27T09:10:44.133305+02:00"
+						"dateAndTimeString" : "2025-09-27T09:39:10.258933+02:00"
 					}
 				},
 				"editEmail" : {
@@ -66,17 +66,20 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-27T09:10:46.719883+02:00"
+						"dateAndTimeString" : "2025-09-27T09:39:10.258933+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "2C1z1iT8DQCMXeIlBC2Q5g=="
+					"uidString" : "E5ckPCX8DQCz9rRMBcat1w=="
 				},
-				"code" : "LeDatabase gtBook topicMap fieldNodes first topicNodes first roadmap",
-				"elementHeight" : 672,
-				"codeHeight" : 50,
-				"codeVisible" : false
+				"exampleSelector" : "aboutGtTopicNode",
+				"previewHeight" : 600,
+				"previewShowSelector" : "gtRoadmap:",
+				"exampleBehaviorName" : "TMGtBookRoadmapExamples",
+				"codeExpanded" : true,
+				"previewExpanded" : false,
+				"noCode" : true
 			}
 		]
 	},
@@ -99,12 +102,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-24T13:11:45.709174+02:00"
+			"dateAndTimeString" : "2025-09-27T09:11:44.904591+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Topic"
+		"title" : "TopicMap Topic"
 	},
 	"uid" : {
 		"__type" : "uuid",
