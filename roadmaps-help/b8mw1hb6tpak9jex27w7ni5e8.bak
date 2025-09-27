@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-24T13:31:27.527226+02:00"
+						"dateAndTimeString" : "2025-09-24T13:47:33.784592+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,44 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "The *Topic Database* is the topmost node in a topic map hierarchy. The `Roadmap` view for a database is the same as that of a topic map, showing us just the top of the tree, with the different fields covered in the database. Click on the fields to dive in."
+				"string" : "The topic *database* is the topmost node in a topic map hierarchy. The `Roadmap` view for a database is the same as that of a topic map, showing us just the top of the tree, with the different fields covered in the database. Click on the fields to dive in."
+			},
+			{
+				"__type" : "elementSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T09:07:48.48168+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T09:07:48.48168+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "rfL6yyT8DQCK7eYwBC2Q5g=="
+				},
+				"code" : "",
+				"elementHeight" : 100,
+				"codeHeight" : 50,
+				"codeVisible" : true
 			}
 		]
 	},

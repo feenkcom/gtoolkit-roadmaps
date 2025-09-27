@@ -182,7 +182,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-24T13:11:43.174923+02:00"
+									"dateAndTimeString" : "2025-09-27T09:11:44.912833+02:00"
 								}
 							},
 							"uid" : {
@@ -192,7 +192,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Topic]] "
+							"string" : "[[TopicMap Topic]] "
 						},
 						{
 							"__type" : "textSnippet",

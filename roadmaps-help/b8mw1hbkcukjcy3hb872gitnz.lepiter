@@ -40,6 +40,43 @@
 					"__type" : "textStyle"
 				},
 				"string" : "A *topic* characterizes the subject matter of a notebook page.\nThe `Roadmap` view of a topic shows all the pages related to that topic, grouped by kinds of pages.\nFrom this roadmap you can dive into a particular kind of page. You can also switch the topic or field."
+			},
+			{
+				"__type" : "elementSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T09:10:44.133305+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-27T09:10:46.719883+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "2C1z1iT8DQCMXeIlBC2Q5g=="
+				},
+				"code" : "LeDatabase gtBook topicMap fieldNodes first topicNodes first roadmap",
+				"elementHeight" : 672,
+				"codeHeight" : 50,
+				"codeVisible" : false
 			}
 		]
 	},
@@ -62,12 +99,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-24T13:11:45.709174+02:00"
+			"dateAndTimeString" : "2025-09-27T09:11:44.904591+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Topic"
+		"title" : "TopicMap Topic"
 	},
 	"uid" : {
 		"__type" : "uuid",

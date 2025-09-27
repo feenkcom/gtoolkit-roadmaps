@@ -7,6 +7,11 @@ Class {
 	#category : #'GToolkit-Roadmaps-Model'
 }
 
+{ #category : #converting }
+TMAbstractEntity >> asElement [
+	^ self roadmap
+]
+
 { #category : #querying }
 TMAbstractEntity >> contentIncludes: query [
 	^ self pageGroup contentIncludes: query
@@ -178,6 +183,11 @@ TMAbstractEntity >> pageNodes [
 
 { #category : #abstract }
 TMAbstractEntity >> pages [
+	self subclassResponsibility
+]
+
+{ #category : #abstract }
+TMAbstractEntity >> roadmap [
 	self subclassResponsibility
 ]
 

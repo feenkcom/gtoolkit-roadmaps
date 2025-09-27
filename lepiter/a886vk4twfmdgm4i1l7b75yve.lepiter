@@ -879,7 +879,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-17T12:56:18.74463+02:00"
+												"dateAndTimeString" : "2025-09-27T08:53:24.077604+02:00"
 											}
 										},
 										"uid" : {
@@ -889,7 +889,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Need to add support for queries.\nAdded {{gtMethod:name=TMPageGroup>>#roadmapNodes}}\nThe treemap display is not quite right yet. See [[* Bugs to fix]]."
+										"string" : "Need to add support for queries.\nAdded {{gtMethod:name=TMPageGroup>>#roadmapNodesOBSOLETE}}\nThe treemap display is not quite right yet. See [[* Bugs to fix]]."
 									},
 									{
 										"__type" : "pharoSnippet",
@@ -988,7 +988,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T16:43:38.405704+02:00"
+												"dateAndTimeString" : "2025-09-27T08:53:24.070929+02:00"
 											}
 										},
 										"uid" : {
@@ -998,7 +998,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "We implement {{gtMethod:name=TMKindNode>>#roadmapNodes}} as those of the pages with that style in the context.\nWe implement {{gtMethod:name=TMNodeGroup>>#roadmapNodes}} to collect all parents with the current nodes, and we can delete the implementation for PageGroups."
+										"string" : "We implement {{gtMethod:name=TMKindNode>>#roadmapNodesOBSOLETE}} as those of the pages with that style in the context.\nWe implement {{gtMethod:name=TMNodeGroup>>#roadmapNodesOBSOLETE}} to collect all parents with the current nodes, and we can delete the implementation for PageGroups."
 									},
 									{
 										"__type" : "pharoSnippet",
