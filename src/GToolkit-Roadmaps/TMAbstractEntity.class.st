@@ -56,7 +56,7 @@ TMAbstractEntity >> gtHelpPageActionFor: anAction [
 	^ anAction button
 		tooltip: 'Help';
 		priority: 45;
-		icon: BrGlamorousIcons help;
+		icon: BrGlamorousVectorIcons help;
 		action: [ :aButton | aButton phlow spawnObject: self helpPage ];
 		primaryModifierAction: [ :aButton | aButton phlow showObject: self helpPage ]
 			mouseCursor: BlCopyCursor new
