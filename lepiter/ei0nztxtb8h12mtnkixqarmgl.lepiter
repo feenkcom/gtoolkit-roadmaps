@@ -100,7 +100,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T11:37:16.747029+02:00"
+						"dateAndTimeString" : "2025-09-29T18:05:17.019017+02:00"
 					}
 				},
 				"uid" : {
@@ -110,44 +110,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Add AI assistant for missing topics. Recover and adapt code from the Metabook project.\n"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-08-29T11:48:24.424698+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T11:35:09.00206+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "gk1Hpt/5DQCBdDhyAV3u9A=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "Also offer option to manually edit topics: [[* Manually reassign Topic or Style to a page]]"
+				"string" : "Add AI assistant for missing topics. Recover and adapt code from the Metabook project."
 			},
 			{
 				"__type" : "textSnippet",
