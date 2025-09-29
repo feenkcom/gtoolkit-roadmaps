@@ -171,6 +171,11 @@ TMAbstractEntity >> pageGroupFor: aPageCollection [
 	^ TMPageGroup for: aPageCollection in: self topicMap
 ]
 
+{ #category : #querying }
+TMAbstractEntity >> pageNodeWithTitle: aTitle [
+	^ self pageNodes detect: [ :pn | pn page title = aTitle ]
+]
+
 { #category : #navigation }
 TMAbstractEntity >> pageNodes [
 	"Alias for convenience."
@@ -206,6 +211,11 @@ TMAbstractEntity >> topicMap [
 { #category : #utility }
 TMAbstractEntity >> topicNodeFor: aTopic [
 	^ TMTopicNode for: aTopic in: self topicMap
+]
+
+{ #category : #querying }
+TMAbstractEntity >> topicNodeNamed: aTopic [
+	^ self topicNodes detect: [ :n | n topic = aTopic ]
 ]
 
 { #category : #navigation }

@@ -20,6 +20,11 @@ TMTopicNode >> breadcrumb [
 	^ self parents first breadcrumb , String cr , '-- ', self nodeLabel
 ]
 
+{ #category : #views }
+TMTopicNode >> changeFieldTo: aField [
+	self topicMap updateFieldForTopic: self to: aField
+]
+
 { #category : #navigation }
 TMTopicNode >> children [
 	^ self pageGroup
@@ -50,14 +55,15 @@ TMTopicNode >> gtEditFieldFor: aView [
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
 			width: 45;
-		column: 'Field' text: [ :aField | aField gtDisplayString ];	column: ''
+		column: 'Field' text: [ :aField | aField gtDisplayString ];
+		column: ''
 			stencil: [ :aField | 
 				| checkbox |
 				checkbox := BrCheckbox new aptitude: BrGlamorousCheckboxAptitude.
 				self field = aField ifTrue: [ checkbox check ].
 				checkbox
 					action: [ :aButton :aTab | 
-						self topicMap updateFieldForTopic: self to: aField.
+						self changeFieldTo: aField.
 						checkbox phlow fireViewUpdateWish ].
 				checkbox ];
 		send: [ :aField | self fieldNodeFor: aField ];
