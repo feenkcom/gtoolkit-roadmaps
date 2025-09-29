@@ -34,7 +34,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-24T13:58:55.551254+02:00"
+									"dateAndTimeString" : "2025-09-29T11:42:51.364864+02:00"
 								}
 							},
 							"uid" : {
@@ -44,7 +44,121 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Introduction — introduces a topic\nMedia — provides a link to s\nTutorial\nCase study\nDocumentation\nPattern\nExamples\nFAQ\nDefinition\nIndex\nTag — "
+							"string" : "Introduction — an introduction to a topic\nMedia — a page containing links to external media, such as YouTube videos\nTutorial — a step-by-step tutorial to a topic\nCase study — a detailed \nDocumentation\nPattern\nExamples\nFAQ\nDefinition\nIndex\nTag — "
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T11:40:05.387024+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T11:40:05.387024+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Z8xDKE/8DQCHCUflCwppVg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : ""
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T11:40:39.057917+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T11:41:24.113161+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "MRNHKE/8DQCHD/gWCwppVg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Here we see that the *Explainable Systems* topic contains pages of many different kinds."
+						},
+						{
+							"__type" : "exampleSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T11:39:40.514757+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T11:39:40.514757+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "4knIJk/8DQCHAv4+CwppVg=="
+							},
+							"exampleSelector" : "explainableSystemsTopicNode",
+							"previewHeight" : 800,
+							"previewShowSelector" : "gtRoadmap:",
+							"exampleBehaviorName" : "TMGtBookRoadmapExamples",
+							"codeExpanded" : true,
+							"previewExpanded" : false,
+							"noCode" : true
 						}
 					]
 				},

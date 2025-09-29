@@ -101,8 +101,10 @@ TMKindNode >> roadmapNodeColor [
 
 { #category : #roadmap }
 TMKindNode >> roadmapNodes [
-	"TBD ..."
-	^ self pageGroup roadmapNodes , {self}
+	| roadmapNodes |
+	roadmapNodes := self pageGroup roadmapNodes.
+	roadmapNodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
+	^ roadmapNodes
 ]
 
 { #category : #querying }
