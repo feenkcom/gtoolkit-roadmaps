@@ -1,0 +1,832 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:04:07.575187+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:16:54.719565+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "d44S0U38DQC0uXw4CwppVg=="
+							},
+							"code" : "instruction := 'Glamorous Toolkit uses a number of SVG icons to display actions as buttons in its user interface.\rThese SVG icons in general are 16 x 16 pixels in shape. Sometimes they are larger icons, which are scaled down to 16x16, but then it is important that the smaller icon be clearly readable.\r\rSVG icons within GT only make use of the SCG \"path\" feature, not any more advanced features.\rHere is a typical example of a method \"BrGlamorousVectorIcons class>>#hierarchy\" which generates a small class hierarchy icon:\r\r```pharo\r' , (BrGlamorousVectorIcons class >> #hierarchy) sourceCode\r\t\t, '\r```\r'.\rassistant := GtLlmAssistant new\r\t\tdescription: 'You are an assistant working with Pharo and Glamorous Toolkit.'.\rassistant\r\taddInstructionSection: (GtLlmInstructionSection new\r\t\t\ttitle: 'Generating SVG icons for use in GT';\r\t\t\tbody: instruction;\r\t\t\tyourself).\rchat := assistant createChat.\rchat sendChatRequest: 'Please produce a Pharo method that generates a 16x16 SVG path icon illustrating a roadmap. The roadmap icon will be used to spawn a visualization that helps uses navigate through the Glamorous Toolkit book. The icon should evoke this meaning.'"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:20:44.896089+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:22:42.912851+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "cXmEDE78DQCGY2l/CwppVg=="
+							},
+							"code" : "chat sendChatRequest: 'That''s a bit hard to read. Can you instead produce an icon that looks something like a physical roadsign, for example a post with a couple of signs pointing in different directions?'"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:26:54.924361+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:30:55.546665+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "0KiSIk78DQCL+ahdCwppVg=="
+							},
+							"code" : "chat sendChatRequest: 'I see that the 16x16 format is difficult to see. Can you please produce a 64x64 icon that can afterward be scaled down to 16x16? Make the post and signs can be outlines instead of solid black.'"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:24:06.113852+02:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:24:28.290456+02:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "ic+CGE78DQCK3KLkCwppVg=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "*NB: had to delete the semi-colon before `viewbox:`"
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:21:51.422238+02:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:24:17.3093+02:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "O5d7EE78DQCIzI/bCwppVg=="
+													},
+													"code" : "roadmap\n\t^ [ BlElement new\n\t\tsize: 16@16;\n\t\taddChildren: {\n\t\t\tBlElement new\n\t\t\t\tsize: 16@16;\n\t\t\t\toutskirts: BlOutskirts centered;\n\t\t\t\tgeometry: (BlSvgPath new\n\t\t\t\t\tsvg: 'M 3 12 L 5 12 L 5 14 L 3 14 Z\n\t\t\t\t\t      M 7 9 L 9 9 L 9 11 L 7 11 Z\n\t\t\t\t\t      M 11 5 L 13 5 L 13 7 L 11 7 Z\n\t\t\t\t\t      M 4 11 L 5 11 L 5 12 L 4 12 Z\n\t\t\t\t\t      M 5 11 L 7 11 L 7 12 L 5 12 Z\n\t\t\t\t\t      M 8 7 L 9 7 L 9 9 L 8 9 Z\n\t\t\t\t\t      M 9 7 L 11 7 L 11 8 L 9 8 Z\n\t\t\t\t\t      M 12 3 L 13 3 L 13 5 L 12 5 Z\n\t\t\t\t\t      M 13 2 L 14 2 L 14 7 L 13 7 Z\n\t\t\t\t\t      M 14 3 L 15.5 2 L 15.5 4 Z';\n\t\t\t\t\tviewbox: (0@0 extent: 16@16));\n\t\t\t\tbackground: Color black } ] asStencil"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T10:23:57.12127+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T10:24:04.517877+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "9pb5F078DQCKv8ZkCwppVg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Here is a compact icon method you can add to BrGlamorousVectorIcons class as #roadmap. It uses only SVG path commands and renders a clear 16x16 “roadmap” with an origin dot, two waypoints, a connecting route, and a destination flag."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:23:45.382275+02:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:29:42.519031+02:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "ontGF078DQCKt4KyCwppVg=="
+													},
+													"code" : "roadSign\n\t^ [ BlElement new\n\t\tsize: 16@16;\n\t\taddChildren: {\n\t\t\tBlElement new\n\t\t\t\tsize: 16@16;\n\t\t\t\toutskirts: BlOutskirts centered;\n\t\t\t\tgeometry: (BlSvgPath new\n\t\t\t\t\tsvg: 'M 7 2 L 9 2 L 9 14 L 7 14 Z\n\t\t\t\t\t      M 6 1 L 10 1 L 10 2 L 6 2 Z\n\t\t\t\t\t      M 6 14 L 10 14 L 10 15 L 6 15 Z\n\t\t\t\t\t      M 3 4 L 9 4 L 9 7 L 3 7 Z\n\t\t\t\t\t      M 9 4 L 13 5.5 L 9 7 Z\n\t\t\t\t\t      M 7 8 L 3 8 L 3 11 L 7 11 Z\n\t\t\t\t\t      M 3 8 L 1 9.5 L 3 11 Z';\n\t\t\t\t\tviewbox: (0@0 extent: 16@16));\n\t\t\t\tbackground: Color black } ] asStencil"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T10:23:42.09879+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T10:23:43.919444+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "1evHFE78DQCKfLbLCwppVg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Here is a clearer “road sign” icon: a vertical post with two directional plates. Add it to BrGlamorousVectorIcons class (e.g., as #roadSign)."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:33:27.332668+02:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:33:39.42731+02:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "VFf2OU78DQCRAYzUCwppVg=="
+													},
+													"code" : "roadSignOutline64\n\t^ [ BlElement new\n\t\tsize: 64@64;\n\t\taddChildren: {\n\t\t\tBlElement new\n\t\t\t\tsize: 64@64;\n\t\t\t\toutskirts: BlOutskirts centered;\n\t\t\t\tgeometry: (BlSvgPath new\n\t\t\t\t\tsvg: 'M 28 8 L 40 8 L 40 12 L 28 12 Z\n\t\t\t\t\t      M 28 12 L 32 12 L 32 56 L 28 56 Z\n\t\t\t\t\t      M 36 12 L 40 12 L 40 56 L 36 56 Z\n\t\t\t\t\t      M 28 56 L 40 56 L 40 60 L 28 60 Z\n\t\t\t\t\t      M 22 56 L 46 56 L 46 60 L 22 60 Z\n\t\t\t\t\t      M 22 60 L 26 60 L 26 64 L 22 64 Z\n\t\t\t\t\t      M 42 60 L 46 60 L 46 64 L 42 64 Z\n\t\t\t\t\t      M 40 12 L 56 12 L 56 16 L 40 16 Z\n\t\t\t\t\t      M 40 24 L 56 24 L 56 28 L 40 28 Z\n\t\t\t\t\t      M 40 12 L 44 12 L 44 28 L 40 28 Z\n\t\t\t\t\t      M 56 16 L 60 16 L 60 24 L 56 24 Z\n\t\t\t\t\t      M 56 12 L 60 20 L 56 20 L 56 16 Z\n\t\t\t\t\t      M 56 28 L 60 20 L 56 20 L 56 24 Z\n\t\t\t\t\t      M 12 36 L 28 36 L 28 40 L 12 40 Z\n\t\t\t\t\t      M 12 48 L 28 48 L 28 52 L 12 52 Z\n\t\t\t\t\t      M 24 36 L 28 36 L 28 52 L 24 52 Z\n\t\t\t\t\t      M 12 40 L 16 40 L 16 48 L 12 48 Z\n\t\t\t\t\t      M 12 36 L 4 44 L 12 44 L 12 40 Z\n\t\t\t\t\t      M 12 52 L 4 44 L 12 44 L 12 48 Z'\n\t\t\t\t\tviewbox: (0 @ 0 extent: 64 @ 64));\n\t\t\t\tbackground: Color black } ] asStencil"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T10:31:12.191375+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T10:33:22.958601+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "sD/oMU78DQCQ9dH+CwppVg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Here is a 64x64 outline-style signpost icon (post with two plates pointing in opposite directions). It uses only SVG paths and scales cleanly down to 16x16 (strokes are 4px at 64, i.e., ~1px at 16).\n\nAdd this to BrGlamorousVectorIcons class, e.g., as #roadSignOutline64."
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:21:42.682355+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:35:38.885667+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Kzn2D078DQCIhoCBCwppVg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "# Results"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-29T09:50:13.448592+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-29T10:35:31.292303+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "p89an038DQCuZMOICwppVg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# First attempt"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-29T09:50:02.181731+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-29T09:50:02.181731+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "deSunk38DQCuY6n3CwppVg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:36:11.496919+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:37:13.022148+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "TEi/Q078DQCR6G4MCwppVg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "The instructions should not emphasize the scalability to 16x16. Instead it would be better to get a nice icon first and then worry about scaling down."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:36:13.951744+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:41:38.928733+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "G7/kQ078DQCR7sIXCwppVg=="
+							},
+							"code" : "instruction := 'Glamorous Toolkit uses a number of SVG icons to display actions as buttons in its user interface. Icons can be various sizes, such as 16x16, 48x48 or even 64x64, but generally they are scaled down to 16x16.\r\rSVG icons within GT only make use of the SCG \"path\" feature, not any more advanced features.\rHere is a typical example of a method \"BrGlamorousVectorIcons class>>#hierarchy\" which generates a small class hierarchy icon:\r\r```pharo\r' , (BrGlamorousVectorIcons class >> #hierarchy) sourceCode\r\t\t, '\r```\r\rNote that the first message sent to the instance of BlSvgPath is #svg:viewbox:, taking two arguments, so there is no semi-colon  following the SVG path string.\r'.\rassistant := GtLlmAssistant new\r\t\tdescription: 'You are an assistant working with Pharo and Glamorous Toolkit.'.\rassistant\r\taddInstructionSection: (GtLlmInstructionSection new\r\t\t\ttitle: 'Generating SVG icons for use in GT';\r\t\t\tbody: instruction;\r\t\t\tyourself).\rchat := assistant createChat.\rchat sendChatRequest: 'Please produce a Pharo method that generates a 48x48 SVG path icon illustrating a roadsign. The roadsign icon will be used to spawn a visualization that helps uses navigate through the Glamorous Toolkit book. The roadsign should be a simple outline, showing a post with two or three signs pointing in different directions.\r'"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:43:25.311607+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:44:26.469925+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "4cSaXU78DQCdl1PdCwppVg=="
+							},
+							"code" : "chat sendChatRequest: 'That''s not bad, but a bit hard to recognize as a signpost. Could you please make the post and the signs be empty outlines?\r'"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:42:43.779556+02:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:42:53.905256+02:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "/gshW078DQCdkK7NCwppVg=="
+													},
+													"code" : "\"Class-side method for an icon of a roadsign (48x48)\"\nroadsign\n\t^ [\n\t\tBlElement new\n\t\t\tsize: 48@48;\n\t\t\taddChildren: {\n\t\t\t\tBlElement new\n\t\t\t\t\tsize: 48 @ 48;\n\t\t\t\t\toutskirts: BlOutskirts centered;\n\t\t\t\t\tgeometry: (BlSvgPath new svg: 'M 22 8 L 26 8 L 26 40 L 22 40 Z\nM 18 40 L 30 40 L 30 44 L 18 44 Z\nM 26 10 L 40 10 L 46 13 L 40 16 L 26 16 Z\nM 22 20 L 8 20 L 4 23 L 8 26 L 22 26 Z\nM 26 30 L 36 30 L 42 33 L 36 36 L 26 36 Z' viewbox: (0 @ 0 extent: 48 @ 48));\n\t\t\t\t\tbackground: Color black\n\t\t\t} ] asStencil"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T10:42:38.041031+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T10:44:37.491114+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "33nJWk78DQCdhzllCwppVg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "\"Class-side method for an icon of a roadsign (48x48)\""
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:44:47.481063+02:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-09-29T10:45:43.606412+02:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "AZWAYk78DQCgfpUlCwppVg=="
+													},
+													"code" : "\"Class-side method for a 48x48 outline roadsign icon\"\nroadsign\n\t^ [\n\t\tBlElement new\n\t\t\tsize: 48@48;\n\t\t\taddChildren: {\n\t\t\t\tBlElement new\n\t\t\t\t\tsize: 48 @ 48;\n\t\t\t\t\toutskirts: BlOutskirts centered;\n\t\t\t\t\tgeometry: (BlSvgPath new svg: 'M 22 8 L 24 8 L 24 42 L 22 42 Z\nM 26 8 L 28 8 L 28 42 L 26 42 Z\nM 24 10 L 26 10 L 26 16 L 24 16 Z\nM 24 10 L 40 10 L 40 12 L 24 12 Z\nM 24 14 L 40 14 L 40 16 L 24 16 Z\nM 39.4 10.8 L 43.4 13.8 L 44.6 12.2 L 40.6 9.2 Z\nM 40.6 16.8 L 44.6 13.8 L 43.4 12.2 L 39.4 15.2 Z\nM 24 20 L 26 20 L 26 26 L 24 26 Z\nM 8 20 L 24 20 L 24 22 L 8 22 Z\nM 8 24 L 24 24 L 24 26 L 8 26 Z\nM 7.4 19.2 L 3.4 22.2 L 4.6 23.8 L 8.6 20.8 Z\nM 8.6 25.2 L 4.6 22.2 L 3.4 23.8 L 7.4 26.8 Z\nM 24 30 L 26 30 L 26 36 L 24 36 Z\nM 24 30 L 38 30 L 38 32 L 24 32 Z\nM 24 34 L 38 34 L 38 36 L 24 36 Z\nM 37.4 30.8 L 41.4 33.8 L 42.6 32.2 L 38.6 29.2 Z\nM 38.6 36.8 L 42.6 33.8 L 41.4 32.2 L 37.4 35.2 Z' viewbox: (0 @ 0 extent: 48 @ 48));\n\t\t\t\t\tbackground: Color black\n\t\t\t} ] asStencil"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T10:21:42.366195+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T10:45:47.679771+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "UGbxD078DQCIgk3XCwppVg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "\"Class-side method for a 48x48 outline roadsign icon\""
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:42:31.551959+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-29T10:42:37.01796+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "9ndmWk78DQCdWBJvCwppVg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "# Results"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-29T10:21:42.075049+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-29T10:36:10.283477+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "xfPsD078DQCIfq4CCwppVg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Second attempt"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-09-29T09:50:13.439704+02:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-09-29T09:50:13.439704+02:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Asking ChatGPT To generate a roadmap icon"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "7a81ae9e-4dfc-0d00-ae62-6fa80b0a6956"
+	}
+}

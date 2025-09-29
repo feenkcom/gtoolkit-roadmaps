@@ -117,7 +117,7 @@ TMAbstractTreeNode >> gtRoadmap: aView [
 TMAbstractTreeNode >> gtSpawnTopicMapActionFor: anAction [
 	<gtAction>
 	^ anAction button
-		tooltip: 'Topic map';
+		tooltip: 'Topic roadmap';
 		priority: 35;
 		icon: TopicMap topicMapIcon;
 		action: [ :aButton | aButton phlow spawnObject: self topicMap ];
