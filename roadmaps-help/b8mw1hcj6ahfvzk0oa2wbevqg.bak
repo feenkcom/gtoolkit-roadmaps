@@ -34,7 +34,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-29T11:42:51.364864+02:00"
+									"dateAndTimeString" : "2025-09-29T13:37:14.862954+02:00"
 								}
 							},
 							"uid" : {
@@ -44,13 +44,54 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Introduction — an introduction to a topic\nMedia — a page containing links to external media, such as YouTube videos\nTutorial — a step-by-step tutorial to a topic\nCase study — a detailed \nDocumentation\nPattern\nExamples\nFAQ\nDefinition\nIndex\nTag — "
+							"string" : "*Introduction* — an introduction to a topic\n*Media* — a page containing links to external media, such as YouTube videos\n*Tutorial* — a step-by-step tutorial to a topic\n*Case study* — a detailed case study illustrating the topic in practice\n*Documentation* — more general documentation about a topic (not a tutorial per se)\n*Pattern* — a design pattern related to moldable development\n*Examples* — concrete examples illustrating a topic (not full case studies)\n*FAQ* — answers a frequently-asked question\n*Definition* — defines a term or component of GT\n*Index* — a page that mainly serves as an index to other pages related to a topic\n*Tag* — a page with little or  no content, serving mainly as a tag for other related pages"
 						},
 						{
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
-								"items" : [ ]
+								"items" : [
+									{
+										"__type" : "exampleSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T13:49:56.515427+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-09-29T13:49:56.515427+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "lf6m+FD8DQC+h2olBhA5HA=="
+										},
+										"exampleSelector" : "kind2Pages",
+										"previewHeight" : 350,
+										"previewShowSelector" : "gtTreeFor:context:",
+										"exampleBehaviorName" : "TMGtBookRoadmapExamples",
+										"codeExpanded" : true,
+										"previewExpanded" : false,
+										"noCode" : true
+									}
+								]
 							},
 							"createEmail" : {
 								"__type" : "email",
@@ -60,7 +101,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-29T11:40:05.387024+02:00"
+									"dateAndTimeString" : "2025-09-29T13:37:27.924163+02:00"
 								}
 							},
 							"editEmail" : {
@@ -71,17 +112,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-29T11:40:05.387024+02:00"
+									"dateAndTimeString" : "2025-09-29T13:51:47.720861+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "Z8xDKE/8DQCHCUflCwppVg=="
+								"uidString" : "5WUIzFD8DQC7B1B+BhA5HA=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : ""
+							"string" : "Below we see all the pages of the GT book categorized by kind:"
 						},
 						{
 							"__type" : "textSnippet",
@@ -108,7 +149,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-29T11:41:24.113161+02:00"
+									"dateAndTimeString" : "2025-09-29T13:36:30.75401+02:00"
 								}
 							},
 							"uid" : {
@@ -118,7 +159,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Here we see that the *Explainable Systems* topic contains pages of many different kinds."
+							"string" : "Here we see that the *Explainable Systems* topic contains pages illustrating most of these kinds of pages."
 						},
 						{
 							"__type" : "exampleSnippet",

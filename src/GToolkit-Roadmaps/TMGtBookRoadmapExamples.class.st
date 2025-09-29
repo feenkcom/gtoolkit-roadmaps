@@ -57,6 +57,15 @@ TMGtBookRoadmapExamples >> gtBookTopicMap [
 	^ topicMap
 ]
 
+{ #category : #accessing }
+TMGtBookRoadmapExamples >> kind2Pages [
+	<gtExample>
+	| kind2Pages |
+	kind2Pages := self gtBookTopicMap kind2Pages.
+	self assert: kind2Pages keys asSet equals: self gtBookTopicMap kinds asSet.
+	^ kind2Pages
+]
+
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> rustQuery [
 	<gtExample>
