@@ -17,6 +17,19 @@ TMGtBookRoadmapExamples >> aboutGtTopicNode [
 	^ topicNode
 ]
 
+{ #category : #accessing }
+TMGtBookRoadmapExamples >> explainableSystemsTopicNode [
+	"A small example with many dkinds of pages.
+	NB: assertion is fragile -- might change."
+
+	<gtExample>
+	| topicNode |
+	topicNode := self gtBookTopicMap topicNodes
+			detect: [ :tn | tn topic = 'Explainable Systems' ].
+	self assert: topicNode kindNodes size >= 9.
+	^ topicNode
+]
+
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> gtBasicsFieldNode [
 	<gtExample>
