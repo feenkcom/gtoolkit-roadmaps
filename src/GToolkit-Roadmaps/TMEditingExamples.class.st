@@ -16,7 +16,6 @@ Class {
 { #category : #examples }
 TMEditingExamples >> changeFieldOfLiveDocumentationTopicNode [
 	<gtExample>
-	<noTest>
 	| topicNode newField topic |
 	topic := 'Live Documentation'.
 	topicNode := self topicMap topicNodeNamed: topic.
@@ -52,7 +51,6 @@ TMEditingExamples >> clonedTestJsonFile [
 { #category : #examples }
 TMEditingExamples >> deleteMissingPage [
 	<gtExample>
-	<noTest>
 	| missingPageTitle topicMap missingPageCount updatedTopicMap |
 	topicMap := self topicMap.
 	missingPageTitle := self missingPage.
@@ -123,7 +121,6 @@ TMEditingExamples >> testJsonFile [
 { #category : #examples }
 TMEditingExamples >> toggleTopicsOfFeenkPageNode [
 	<gtExample>
-	<noTest>
 	| pageNode topicToAdd topicToDelete updatedTopicMap topic2ToAdd |
 	pageNode := self feenkPageNode.
 	topicToAdd := 'Code Analysis'.
@@ -167,7 +164,6 @@ TMEditingExamples >> topicMap [
 { #category : #examples }
 TMEditingExamples >> updateKindOfFeenkPageNode [
 	<gtExample>
-	<noTest>
 	| pageNode |
 	pageNode := self feenkPageNode.
 	self assert: pageNode kind equals: 'Introduction'.
@@ -185,7 +181,6 @@ TMEditingExamples >> updateKindOfFeenkPageNode [
 { #category : #examples }
 TMEditingExamples >> updateMissingPage [
 	<gtExample>
-	<noTest>
 	| missingPageTitle topicMap newPage newTitle missingPageCount updatedTopicMap |
 	topicMap := self topicMap.
 	missingPageTitle := self missingPage.

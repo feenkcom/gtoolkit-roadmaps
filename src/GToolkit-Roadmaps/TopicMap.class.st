@@ -520,13 +520,12 @@ TopicMap >> updateTopicsForPage: aPageNode to: aTopicArray [
 
 { #category : #updating }
 TopicMap >> writeJsonFile [
-	| writeStream tempFile |
+	| tempFile |
 	tempFile := self jsonFile copyWithPath: self jsonFile path , 'temp.json'.
 	tempFile ensureDelete.
-	writeStream := tempFile writeStream.
-	STON put: self json asJsonOnStreamPretty: writeStream.
-	writeStream close.
-	[ STON fromStream: tempFile readStream ]
+	tempFile writeStreamDo: [ :aStream |
+		STON put: self json asJsonOnStreamPretty: aStream ].
+	[ tempFile readStreamDo: [ :aStream | STON fromStream: aStream ] ]
 		onErrorDo: [ tempFile ensureDelete.
 			self error: 'Writing JSON failed -- leaving old JSON as is.' ].
 	monitor
