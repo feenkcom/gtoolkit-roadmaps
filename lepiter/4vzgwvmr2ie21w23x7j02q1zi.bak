@@ -40,6 +40,74 @@
 					"__type" : "textStyle"
 				},
 				"string" : "Add test examples for reassigning, adding, deleting and renaming topics, fields and kinds.\nCopy the GT book JSON to a temporary location and apply modifications there. Each example creates its own copy of the JSON.\nShould these be real files or some kind of in-memory pseudo files?"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-23T12:05:31.359249+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-23T12:12:45.700733+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YAws0Nb7DQCFsUSJAym4mQ=="
+				},
+				"code" : "FileLocator imageDirectory"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-23T12:12:14.619998+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-09-23T12:14:01.115954+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "/E416Nb7DQCHecU8Aym4mQ=="
+				},
+				"code" : "testFile := LeDatabase gtBook topicMap jsonFile copyWithPath: FileLocator imageDirectory / 'test.json'"
 			}
 		]
 	},

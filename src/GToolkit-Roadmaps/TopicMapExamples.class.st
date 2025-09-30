@@ -232,7 +232,7 @@ TopicMapExamples >> pageNodeWhatIsGt [
 	<gtExample>
 	| pageNodeWhatIsGt |
 	pageNodeWhatIsGt := self kindNodeIntroductionWithinAboutGtTopic pageGroup
-			nodes detect: [ :n | n page title = 'What is Glamorous Toolkit?' ].
+			pageNodeWithTitle: 'What is Glamorous Toolkit?'.
 	self assert: pageNodeWhatIsGt fields size equals: 3.
 	self assert: pageNodeWhatIsGt topics size equals: 5.
 	self assert: pageNodeWhatIsGt kinds size equals: 1.
@@ -320,13 +320,13 @@ TopicMapExamples >> topicMap [
 	| topicMap |
 	topicMap := TopicMap forJson: self topicMapTestFile.
 	self assert: topicMap database equals: LeDatabase gtBook.
-	self assert: topicMap missingPages notNil.
+	self assert: topicMap missingPages size > 0.
 	^ topicMap
 ]
 
 { #category : #example }
 TopicMapExamples >> topicMapTestFile [
-	"NB: This test file forthe GT Book is a frozen snapshop. 
+	"NB: This test file for the GT Book is a frozen snapshop. 
 	It is *not* intended to match the current state of the book. 
 	In fact, some tests depend on mismatches existing between the pages in the book and version of the topic map."
 
@@ -340,8 +340,8 @@ TopicMapExamples >> topicNodeAboutGt [
 
 	<gtExample>
 	| topicNodeaAboutGt |
-	topicNodeaAboutGt := self fieldNodeGtBasics topicNodes nodes
-			detect: [ :n | n topic = 'About Glamorous Toolkit' ].
+	topicNodeaAboutGt := self fieldNodeGtBasics
+			topicNodeNamed: 'About Glamorous Toolkit'.
 	self assert: topicNodeaAboutGt fields size equals: 1.
 	self assert: topicNodeaAboutGt topics size equals: 1.
 	self assert: topicNodeaAboutGt kinds size equals: 5.

@@ -83,7 +83,7 @@ TMPageNode >> gtEditKindFor: aView [
 				self kind = each ifTrue: [ checkbox check ].
 				checkbox
 					action: [ :aButton :aTab | 
-						self topicMap updateKindForPage: self to: each.	"checkbox phlow fireToolUpdateWish."
+						self updateKindTo: each.
 						checkbox phlow fireViewUpdateWish ].
 				checkbox ];
 		send: [ :each | self kindNodeFor: each ];
@@ -112,7 +112,7 @@ TMPageNode >> gtEditTopicsFor: aView [
 				(self topics includes: each) ifTrue: [ checkbox check ].
 				checkbox
 					action: [ :aButton :aTab | 
-						self topicMap updateTopicsForPage: self to: (self topicsToggling: each).
+						self toggleTopic: each.
 						checkbox phlow fireViewUpdateWish ].
 				checkbox ];
 		send: [ :each | self topicNodeFor: each ];
@@ -316,6 +316,11 @@ TMPageNode >> title [
 	^ self page title
 ]
 
+{ #category : #views }
+TMPageNode >> toggleTopic: aTopicString [
+	self topicMap updateTopicsForPage: self to: (self topicsToggling: aTopicString)
+]
+
 { #category : #navigation }
 TMPageNode >> topicTreeChildren [
 	^ self topicNodes
@@ -327,10 +332,15 @@ TMPageNode >> topics [
 ]
 
 { #category : #upd }
-TMPageNode >> topicsToggling: aTopic [
-	^ (self topics includes: aTopic)
-		ifTrue: [ self topics copyWithout: aTopic ]
-		ifFalse: [ self topics copyWith: aTopic ]
+TMPageNode >> topicsToggling: aTopicString [
+	^ (self topics includes: aTopicString)
+		ifTrue: [ self topics copyWithout: aTopicString ]
+		ifFalse: [ self topics copyWith: aTopicString ]
+]
+
+{ #category : #views }
+TMPageNode >> updateKindTo: aKindString [
+	self topicMap updateKindForPage: self to: aKindString
 ]
 
 { #category : #accessing }

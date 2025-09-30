@@ -37,8 +37,7 @@ TMPageGroupExamples >> pageGroup [
 TMPageGroupExamples >> projectDiaryPageNode [
 	<gtExample>
 	| projectDiaryPageNode |
-	projectDiaryPageNode := self pageGroup
-			detect: [ :n | n page title = 'Project Diary' ].
+	projectDiaryPageNode := self pageGroup pageNodeWithTitle: 'Project Diary' .
 	self assert: projectDiaryPageNode page title equals: 'Project Diary'.
 	self assert: projectDiaryPageNode kind equals: 'Pattern'.
 	self

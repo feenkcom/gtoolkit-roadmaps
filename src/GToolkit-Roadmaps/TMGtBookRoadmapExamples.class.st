@@ -24,8 +24,7 @@ TMGtBookRoadmapExamples >> explainableSystemsTopicNode [
 
 	<gtExample>
 	| topicNode |
-	topicNode := self gtBookTopicMap topicNodes
-			detect: [ :tn | tn topic = 'Explainable Systems' ].
+	topicNode := self gtBookTopicMap topicNodeNamed: 'Explainable Systems'.
 	self assert: topicNode kindNodes size >= 9.
 	^ topicNode
 ]
@@ -55,6 +54,15 @@ TMGtBookRoadmapExamples >> gtBookTopicMap [
 	topicMap := LeDatabase gtBook topicMap.
 	self assert: topicMap database databaseName equals: 'Glamorous Toolkit Book'.
 	^ topicMap
+]
+
+{ #category : #accessing }
+TMGtBookRoadmapExamples >> kind2Pages [
+	<gtExample>
+	| kind2Pages |
+	kind2Pages := self gtBookTopicMap kind2Pages.
+	self assert: kind2Pages keys asSet equals: self gtBookTopicMap kinds asSet.
+	^ kind2Pages
 ]
 
 { #category : #'as yet unclassified' }
@@ -93,8 +101,7 @@ TMGtBookRoadmapExamples >> whatIsGtPageNode [
 
 	<gtExample>
 	| pageNode |
-	pageNode := self gtBookTopicMap pageNodes
-			detect: [ :pn | pn title = 'What is Glamorous Toolkit?' ].
+	pageNode := self gtBookTopicMap pageNodeWithTitle: 'What is Glamorous Toolkit?'.
 	self assert: pageNode viaTopic isNil.
 	self assert: pageNode title equals: 'What is Glamorous Toolkit?'.
 	^ pageNode

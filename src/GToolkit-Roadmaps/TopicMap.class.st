@@ -16,7 +16,8 @@ Class {
 		'topic2Field',
 		'page2Kind',
 		'field2Topics',
-		'monitor'
+		'monitor',
+		'kind2Pages'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -56,10 +57,11 @@ TopicMap >> clearCaches [
 
 	database := nil.
 	field2Topics := nil.
-	page2Topics := nil.
-	page2Kind := nil.
 	topic2Pages := nil.
 	topic2Field := nil.
+	kind2Pages := nil.
+	page2Topics := nil.
+	page2Kind := nil.
 ]
 
 { #category : #querying }
@@ -308,11 +310,13 @@ TopicMap >> jsonFile: aFileReference [
 
 { #category : #mapping }
 TopicMap >> kind2Pages [
-	| dict |
-	dict := Dictionary new.
-	self page2Kind
-		associationsDo: [ :assoc | (dict at: assoc value ifAbsentPut: OrderedCollection new) add: assoc key ].
-	^ dict
+	^ kind2Pages
+		ifNil: [ kind2Pages := Dictionary new.
+			self page2Kind
+				associationsDo: [ :assoc | (kind2Pages at: assoc value ifAbsentPut: OrderedCollection new) add: assoc key ].
+			kind2Pages keys
+				do: [ :key | (kind2Pages at: key) sort: [ :a :b | a title < b title ] ].
+			kind2Pages ]
 ]
 
 { #category : #querying }
