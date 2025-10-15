@@ -68,6 +68,7 @@ TMGtBookRoadmapExamples >> kind2Pages [
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> rustQuery [
 	<gtExample>
+	<noTest>
 	| query databaseNode rustQuery |
 	query := 'Rust'.
 	databaseNode := self gtBookDatabaseNode.
