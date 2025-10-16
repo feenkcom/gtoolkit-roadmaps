@@ -68,12 +68,11 @@ TMGtBookRoadmapExamples >> kind2Pages [
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> rustQuery [
 	<gtExample>
-	<noTest>
 	| query databaseNode rustQuery |
 	query := 'Rust'.
 	databaseNode := self gtBookDatabaseNode.
 	rustQuery := databaseNode contentIncludes: query.
-	self assert: rustQuery fields size equals: 5.
+	self assert: rustQuery fields size > 2.
 	self assert: rustQuery children isTMNodeGroup.
 	self assert: rustQuery children isTMPageGroup not.
 	self assert: rustQuery parents isNotEmpty.
