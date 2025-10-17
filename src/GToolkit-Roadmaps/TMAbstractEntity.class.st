@@ -40,6 +40,11 @@ TMAbstractEntity >> fieldNodeFor: aField [
 	^ TMFieldNode for: aField in: self topicMap
 ]
 
+{ #category : #accessing }
+TMAbstractEntity >> fieldNodeNamed: aField [
+	^ self fieldNodes detect: [ :n | n field = aField ]
+]
+
 { #category : #navigation }
 TMAbstractEntity >> fieldNodes [
 	^ self nodesFor: (self fields collect: [ :aField | self fieldNodeFor: aField ])
@@ -118,6 +123,11 @@ TMAbstractEntity >> isAbstract [
 { #category : #utility }
 TMAbstractEntity >> kindNodeFor: aKind [
 	^ TMKindNode for: aKind in: self topicMap
+]
+
+{ #category : #querying }
+TMAbstractEntity >> kindNodeNamed: aKind [
+	^ self kindNodes detect: [ :n | n kind = aKind ]
 ]
 
 { #category : #navigation }

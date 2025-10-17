@@ -114,7 +114,8 @@ TMTopicNode >> roadmapNodes [
 	| parent children kinds roadmapNodes |
 	parent := self fieldNodes first.
 	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
-	kinds := (children flatCollect: #kindNodes) copyWithoutDuplicates.
+	"kinds := (children flatCollect: #kindNodes) copyWithoutDuplicates."
+	kinds := self kindNodes.
 	roadmapNodes := parent databaseNode roadmapNodes , {self} , kinds , children.
 	roadmapNodes
 		do: [ :n | 

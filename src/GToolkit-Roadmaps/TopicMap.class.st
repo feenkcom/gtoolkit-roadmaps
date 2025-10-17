@@ -325,6 +325,11 @@ TopicMap >> kind4Page: aPage [
 ]
 
 { #category : #accessing }
+TopicMap >> kindNodeNamed: aKind inFieldNamed: aField [
+	^ (self fieldNodeNamed: aField) kindNodeNamed: aKind
+]
+
+{ #category : #accessing }
 TopicMap >> kinds [
 	^ self kindsStandardOrder
 ]
