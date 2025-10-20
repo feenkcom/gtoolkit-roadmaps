@@ -254,7 +254,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-08T09:00:19.874737+02:00"
+									"dateAndTimeString" : "2025-10-20T16:42:17.588271+02:00"
 								}
 							},
 							"uid" : {
@@ -264,7 +264,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Database — bar chart of fields with page bars broken down by styles\nField — bar chart of styles by # topics or # pages\nTopic — bar chart of styles with # pages\nPage — ?\nStyle — ?"
+							"string" : "Database — bar chart of fields with page bars broken down by styles\nField — bar chart of styles by # topics or # pages\nTopic — bar chart of styles with # pages\nPage — ?\nKi nd — ?"
 						}
 					]
 				},

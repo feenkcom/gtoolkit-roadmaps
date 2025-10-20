@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-09T11:40:25.904224+02:00"
+						"dateAndTimeString" : "2025-10-20T16:39:45.510784+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Without explicit styles we only see the colors.\nWe would like to see topic -> styles -> pages\nBut when we focus on a specific pages we wantto see the mapping between topics and pages, with the style on the side?"
+				"string" : "Without explicit kinds we only see the colors.\nWe would like to see topic -> kinds -> pages\nBut when we focus on a specific pages we want to see the mapping between topics and pages, with the kind on the side?"
 			},
 			{
 				"__type" : "textSnippet",
@@ -238,12 +238,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-10T13:02:53.283083+02:00"
+			"dateAndTimeString" : "2025-10-20T16:39:26.125946+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "... Roadmaps with or without Styles"
+		"title" : "Roadmaps with or without Kinds"
 	},
 	"uid" : {
 		"__type" : "uuid",

@@ -44,6 +44,17 @@ TopicMap class >> forJson: aFileReference [
 		yourself
 ]
 
+{ #category : #loading }
+TopicMap class >> llmPackage [
+	"Send #load to access the LLM features.
+		TopicMap llmPackage load.
+		TopicMap llmPackage unload.
+	"
+
+	^ (IceRepository registry detect: [ :repo | repo name = 'gtoolkit-roadmaps' ])
+		packageNamed: 'GToolkit-Roadmaps-LLM'
+]
+
 { #category : #icons }
 TopicMap class >> topicMapIcon [
 	"^ BrGlamorousVectorIcons bookmark"

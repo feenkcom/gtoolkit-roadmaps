@@ -84,6 +84,43 @@
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-18T09:29:53.376064+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-18T09:29:54.05422+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Zxiejcv9DQCjm5mSBe+0fA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Rethink the visualizations — may need multiple ways to visualize a given node, depending on the context (especially kind nodes and pages).\nHighlight breadcrumbs in roadmaps\nAdd tests for editing nodes\nAdd methods and tools for editing nodes\nAdd back LLM support for new pages\nCreate Help pages for nodes; move them to the GT book\nStart preparing newcomer guides ...."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
 								"items" : [
 									{
 										"__type" : "pharoSnippet",
@@ -512,7 +549,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-09-10T13:02:53.309307+02:00"
+															"dateAndTimeString" : "2025-10-20T16:39:26.142158+02:00"
 														}
 													},
 													"uid" : {
@@ -522,7 +559,7 @@
 													"paragraphStyle" : {
 														"__type" : "textStyle"
 													},
-													"string" : "[[... Roadmaps with or without Styles]] "
+													"string" : "[[Roadmaps with or without Kinds]] "
 												}
 											]
 										},

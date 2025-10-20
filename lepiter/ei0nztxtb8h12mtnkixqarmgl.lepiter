@@ -142,7 +142,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-17T09:09:23.195761+02:00"
+									"dateAndTimeString" : "2025-10-20T16:45:42.482948+02:00"
 								}
 							},
 							"uid" : {
@@ -152,7 +152,109 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo in the package {{gtPackage:name=GToolkit-Roadmaps-LLM}}. "
+							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo in the package {{gtPackage:name=GToolkit-Roadmaps-LLM}}.  "
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-20T16:53:28.467109+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-20T16:54:13.085164+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Iueu+/n9DQCtT40TDl4bcA=="
+							},
+							"code" : "Metacello new\n\trepository: 'github://feenkcom/gtoolkit-roadmaps:main/src';\n\tbaseline: 'GtoolkitRoadmaps';\n\tload.\r\t#BaselineOfGtoolkitRoadmaps asClass loadLepiter"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-20T16:48:54.35543+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-20T16:53:28.473246+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "w0pY6/n9DQCme/1ODl4bcA=="
+							},
+							"code" : "Metacello new\n\trepository: 'github://feenkcom/gtoolkit-roadmaps:main/src';\n\tbaseline: 'GtoolkitRoadmaps';\n\tload.\r\tTopicMap llmPackage load"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-20T16:44:49.902694+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-20T16:48:54.357761+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "gEDG3Pn9DQCbcImODl4bcA=="
+							},
+							"code" : "TopicMap llmPackage unload"
 						},
 						{
 							"__type" : "textSnippet",
@@ -391,12 +493,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-17T12:39:03.787906+02:00"
+			"dateAndTimeString" : "2025-10-20T16:43:09.491362+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "* Add assistant to update unmapped pages"
+		"title" : "*** Add assistant to update unmapped pages"
 	},
 	"uid" : {
 		"__type" : "uuid",
