@@ -146,7 +146,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-08-26T08:58:42.571881+02:00"
+									"dateAndTimeString" : "2025-10-20T16:41:12.360131+02:00"
 								}
 							},
 							"uid" : {
@@ -156,7 +156,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "• field — the domain of a cluster of related topics, e.g., *GT basics*\n• topic — the topic of a particular GT book page, e.g., *About GT*\n• page — the title of a given page, e.g. *How to work with Lepiter*\n• style — the kind of content of a page, e.g., *Tutorial* or *FAQ*"
+							"string" : "• field — the domain of a cluster of related topics, e.g., *GT basics*\n• topic — the topic of a particular GT book page, e.g., *About GT*\n• page — the title of a given page, e.g. *How to work with Lepiter*\n• kind — the kind of content of a page, e.g., *Tutorial* or *FAQ*"
 						}
 					]
 				},
@@ -221,7 +221,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-08-26T09:01:27.947795+02:00"
+									"dateAndTimeString" : "2025-10-20T16:41:20.284221+02:00"
 								}
 							},
 							"uid" : {
@@ -231,7 +231,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "groups -> fields\ngroup -> field\ncategories -> styles\ncategory -> style"
+							"string" : "groups -> fields\ngroup -> field\ncategories -> kinds\ncategory -> kind"
 						}
 					]
 				},

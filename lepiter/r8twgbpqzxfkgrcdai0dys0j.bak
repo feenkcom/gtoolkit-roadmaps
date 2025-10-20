@@ -433,7 +433,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T16:40:48.425558+02:00"
+									"dateAndTimeString" : "2025-10-20T16:40:44.763335+02:00"
 								}
 							},
 							"uid" : {
@@ -443,7 +443,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We need to be able to navigate fields -> topics -> kinds -> pages -> topics ...\nAlso topic -> field and page -> kind."
+							"string" : "We need to be able to navigate fields -> topics -> kinds -> pages -> topics ...\nAlso topic -> field and page -> style."
 						},
 						{
 							"__type" : "pharoSnippet",

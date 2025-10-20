@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-20T16:42:01.252522+02:00"
+						"dateAndTimeString" : "2025-08-26T09:28:54.014996+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "*Caveat:* Later we rename \"category\" to \"style\", and then later again to \"kind\"."
+				"string" : "*Caveat:* Later we rename \"category\" to \"style\"."
 			},
 			{
 				"__type" : "textSnippet",

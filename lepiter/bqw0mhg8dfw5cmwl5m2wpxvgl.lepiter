@@ -188,7 +188,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-19T14:34:30.969997+02:00"
+												"dateAndTimeString" : "2025-10-20T16:43:09.506473+02:00"
 											}
 										},
 										"uid" : {
@@ -198,7 +198,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[* Add assistant to update unmapped pages]] "
+										"string" : "[[*** Add assistant to update unmapped pages]] "
 									},
 									{
 										"__type" : "textSnippet",
@@ -337,7 +337,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-10T13:02:53.31538+02:00"
+												"dateAndTimeString" : "2025-10-20T16:39:26.137877+02:00"
 											}
 										},
 										"uid" : {
@@ -347,7 +347,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[... Roadmaps with or without Styles]] "
+										"string" : "[[Roadmaps with or without Kinds]] "
 									}
 								]
 							},
