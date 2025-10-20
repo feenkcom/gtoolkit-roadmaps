@@ -25,8 +25,8 @@ Class {
 { #category : #icons }
 TopicMap class >> directionsIcon [
 	"Based on https://www.svgrepo.com/svg/509081/directions.
-	Just a placeholder icon -- to be replaced by one we create ourselves 
-	with Inkscape or OmniGraffle"
+	Just a placeholder icon -- to be replaced by one we create
+	ourselves with Inkscape or OmniGraffle."
 
 	<script: 'self add directions'>
 	^ [ BlElement new
@@ -57,7 +57,11 @@ TopicMap class >> llmPackage [
 
 { #category : #icons }
 TopicMap class >> topicMapIcon [
-	"^ BrGlamorousVectorIcons bookmark"
+	"
+		^ BrGlamorousVectorIcons bookmark
+		^ TopicMap directionsIcon
+		^ BrGlamorousVectorIcons branching
+	"
 
 	^ TopicMap directionsIcon
 ]
