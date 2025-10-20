@@ -218,6 +218,8 @@ TopicMapExamples >> pageGroupChildrenOfKindsWithinAboutGt [
 
 { #category : #example }
 TopicMapExamples >> pageGroupFromTopicMap [
+	"Not a useful page group as it is too cluttered."
+
 	<gtExample>
 	| pageGroup |
 	pageGroup := self topicMap pageGroup.

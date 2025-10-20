@@ -107,6 +107,7 @@ TMFieldNode >> roadmapNodes [
 	| root roadmapNodes |
 	root := self databaseNode.
 	roadmapNodes := root roadmapNodes , self children.
+	root highlightOn.
 	roadmapNodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
 	^ roadmapNodes
 ]
