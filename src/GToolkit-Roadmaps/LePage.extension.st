@@ -16,7 +16,7 @@ LePage >> gtTopicMapActionFor: anAction [
 	self hasTopicMap ifFalse: [ ^ anAction empty ].
 	^ anAction button
 		tooltip: 'Inspect topic map';
-		icon: TopicMap topicMapIcon;
+		icon: BrGlamorousVectorIcons roadmap;
 		action: [ :aButton | aButton phlow spawnObject: self asPageNode ];
 		primaryModifierAction: [ :aButton | aButton phlow showObject: self asPageNode ]
 			mouseCursor: BlCopyCursor new
@@ -26,7 +26,7 @@ LePage >> gtTopicMapActionFor: anAction [
 LePage >> gtTopicMapMenuFor: anAction [
 	<gtAction>
 	^ anAction dropdown
-		icon: TopicMap topicMapIcon;
+		icon: BrGlamorousVectorIcons roadmap;
 		priority: 20;
 		tooltip: 'Topic Map Menu';
 		content: [ :aButton | 
