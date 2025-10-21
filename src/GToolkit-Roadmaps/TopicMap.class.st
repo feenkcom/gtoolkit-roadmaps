@@ -110,6 +110,20 @@ TopicMap >> deleteMissingPageWithTitle: aTitle [
 	self writeJsonFile
 ]
 
+{ #category : #querying }
+TopicMap >> emptyKindPages [
+	"This group should always be empty -- only unmapped pages should be missing kinds."
+
+	^ self pageGroupFor: (self pageNodes select: [ :n | n kinds isEmpty ])
+]
+
+{ #category : #querying }
+TopicMap >> emptyTopicPages [
+	"This group should always be empty -- only unmapped pages should be missing topics."
+
+	^ self pageGroupFor: (self pageNodes select: [ :n | n topics isEmpty ])
+]
+
 { #category : #accessing }
 TopicMap >> field2Topics [
 	^ field2Topics
@@ -211,16 +225,6 @@ TopicMap >> gtRoadmap: aView [
 		priority: 10;
 		object: [ self databaseNode ];
 		view: #gtRoadmap:
-]
-
-{ #category : #views }
-TopicMap >> gtSummaryFor: aView [
-	<gtView>
-	^ aView forward
-		title: 'Summary';
-		priority: 20;
-		object: [ self databaseNode ];
-		view: #gtSummaryFor:
 ]
 
 { #category : #actions }
@@ -357,7 +361,8 @@ TopicMap >> kindsStandardOrder [
 
 { #category : #querying }
 TopicMap >> missingPages [
-	"Pages listed in the JSON but not (or no longer) in the database."
+	"Pages listed in the JSON but not (or no longer) in the database.
+	NB: We cannot return a PageGroup because these pages do not exist!"
 
 	^ ((self json at: 'pages')
 		collect: [ :d | d at: 'page' ]
@@ -400,6 +405,19 @@ TopicMap >> pages4Topic: aTopic [
 { #category : #accessing }
 TopicMap >> roadmap [
 	^ self databaseNode roadmap
+]
+
+{ #category : #views }
+TopicMap >> summary [
+	"These should always be empty -- only unmapped pages should be missing kinds or topics."
+
+	^ super summary
+		, {{'#Pages without kinds'.
+					self emptyKindPages size.
+					self emptyKindPages}.
+				{'#Pages without topics'.
+					self emptyTopicPages size.
+					self emptyTopicPages}}
 ]
 
 { #category : #mapping }

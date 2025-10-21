@@ -126,25 +126,6 @@ TMAbstractTreeNode >> gtSpawnTopicMapActionFor: anAction [
 ]
 
 { #category : #views }
-TMAbstractTreeNode >> gtSummaryFor: aView [
-	<gtView>
-	"self summary ifEmpty: [ ^ aView empty ]."
-	^ aView columnedList
-		title: 'Summary';
-		priority: 20;
-		items: [ self summary ];
-		actionUpdateButtonTooltip: 'Update item list';
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Key'
-			text: #first
-			width: 100;
-		column: 'Value' text: #second;
-		send: #last
-]
-
-{ #category : #views }
 TMAbstractTreeNode >> gtTopicTreeFor: aView [
 	<gtView>
 	^ aView columnedTree
@@ -403,31 +384,6 @@ TMAbstractTreeNode >> roadmapSimpleNodeElement [
 		border: self roadmapNodeBorder;
 		background: self roadmapNodeColor;
 		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
-]
-
-{ #category : #utility }
-TMAbstractTreeNode >> sizeAndFirstIfAlone: aCollection [
-	^ aCollection size printString
-		, (aCollection size = 1 ifTrue: [ ' — ' , aCollection first ] ifFalse: [ '' ])
-]
-
-{ #category : #views }
-TMAbstractTreeNode >> summary [
-	^ {{'Database'.
-			self database.
-			self databaseNode}.
-		{'#Fields'.
-			self sizeAndFirstIfAlone: self fields.
-			self fieldNodes}.
-		{'#Topics'.
-			self sizeAndFirstIfAlone: self topics.
-			self topicNodes}.
-		{'#Kinds'.
-			self sizeAndFirstIfAlone: self kinds.
-			self kindNodes}.
-		{'#Pages'.
-			self sizeAndFirstIfAlone: (self pages collect: #title).
-			self pageGroup}}
 ]
 
 { #category : #navigation }

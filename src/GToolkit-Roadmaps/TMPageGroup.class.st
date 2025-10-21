@@ -18,6 +18,13 @@ TMPageGroup class >> for: aPageCollection in: aTopicMap [
 		yourself
 ]
 
+{ #category : #navigation }
+TMPageGroup >> children [
+	"Or just return self?"
+
+	^ self pageGroupFor: self pages
+]
+
 { #category : #help }
 TMPageGroup >> helpPageName [
 	^ 'Topic Page Group'

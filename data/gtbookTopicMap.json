@@ -469,7 +469,7 @@
 			]
 		},
 		{
-			"page" : "How to give feedback and contribute",
+			"page" : "Engage with the community and contribute",
 			"kind" : "FAQ",
 			"topics" : [
 				"Community & Support",
@@ -4042,7 +4042,7 @@
 			]
 		},
 		{
-			"page" : "Smalltalk Syntax in 7'",
+			"page" : "Smalltalk syntax in 7'",
 			"kind" : "Media",
 			"topics" : [
 				"Programming Smalltalk"

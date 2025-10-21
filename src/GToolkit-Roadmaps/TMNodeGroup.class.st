@@ -35,6 +35,7 @@ TMNodeGroup >> = other [
 
 { #category : #navigation }
 TMNodeGroup >> children [
+	"Or just return self?"
 	^ self nodesFor: self nodes
 ]
 
