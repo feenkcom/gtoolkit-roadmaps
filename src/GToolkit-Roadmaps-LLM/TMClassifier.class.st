@@ -8,7 +8,8 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'kindClassifier',
-		'topicMap'
+		'topicMap',
+		'pageGroup'
 	],
 	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
@@ -34,7 +35,7 @@ TMClassifier >> gtKindClassifierFor: aView [
 		object: [ self kindClassifier ];
 		view: #gtChatsFor:;
 		actionButtonIcon: BrGlamorousVectorIcons inspect
-			tooltip: 'Inspect  classifier'
+			tooltip: 'Inspect Page classifier'
 			action: [ :aButton :aTab | aButton phlow spawnObject: self kindClassifier ];
 		actionButtonIcon: BrGlamorousVectorIcons play
 			tooltip: 'Run  classifier'
@@ -110,11 +111,21 @@ TMClassifier >> pageClassiferFor: aResultType withPrompt: aPrompt [
 			'bookName' -> self topicMap database databaseName.
 			'prompt' -> aPrompt jsonObject.
 			'chats'
-				-> (self topicMap unmappedPages
+				-> (self pageGroup
 						collect: [ :p | 
 							{'pageName' -> p title.
 								'results' -> Array new} asDictionary ]) asArray} asDictionary.
 	^ PageClassifier newFromJson: json
+]
+
+{ #category : #accessing }
+TMClassifier >> pageGroup [
+	^ pageGroup ifNil: [ pageGroup := self topicMap unmappedPages ]
+]
+
+{ #category : #accessing }
+TMClassifier >> pageGroup: anObject [
+	pageGroup := anObject
 ]
 
 { #category : #accessing }
