@@ -17,7 +17,8 @@ Class {
 		'page2Kind',
 		'field2Topics',
 		'monitor',
-		'kind2Pages'
+		'kind2Pages',
+		'isClean'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -46,6 +47,18 @@ TopicMap class >> llmPackage [
 
 	^ (IceRepository registry detect: [ :repo | repo name = 'gtoolkit-roadmaps' ])
 		packageNamed: 'GToolkit-Roadmaps-LLM'
+]
+
+{ #category : #updating }
+TopicMap >> addDraftPage: aDraftPage [
+	| topicMapPages |
+	topicMapPages := self json at: 'pages'.
+	self
+		assert: (topicMapPages select: [ :d | (d at: 'page') = aDraftPage page title ]) isEmpty.
+	self json at: 'pages' put: (topicMapPages copyWith: aDraftPage json).
+	self clearCaches.
+	self isClean: false.
+	^ self pageNodeWithTitle: aDraftPage page title
 ]
 
 { #category : #utility }
@@ -144,7 +157,10 @@ TopicMap >> gtJsonFor: aView [
 		title: 'JSON';
 		priority: 60;
 		object: [ self json ];
-		view: #gtTreeFor:context:
+		view: #gtTreeFor:context:;
+		actionButtonIcon: BrGlamorousVectorIcons inspect
+			tooltip: 'Inspect  JSON'
+			action: [ :aButton :aTab | aButton phlow spawnObject: self json asGtJson ]
 ]
 
 { #category : #views }
@@ -275,15 +291,47 @@ TopicMap >> gtUnmappedPagesFor: aView [
 				aButton phlow spawnObject: (#TMClassifier asClass for: self) ]
 ]
 
+{ #category : #actions }
+TopicMap >> gtWriteJsonActionFor: anAction [
+	<gtAction>
+	^ anAction button
+		tooltip: 'Write JSON'
+				, (self isClean ifTrue: [ ' (not needed)' ] ifFalse: [ ' (needed' ]);
+		priority: 50;
+		icon: BrGlamorousVectorIcons savetodisk;
+		action: [ :aButton | 
+			aButton phlow fireToolUpdateWish.
+			aButton phlow spawnObject: self writeJsonFile ]
+]
+
 { #category : #help }
 TopicMap >> helpPageName [
 	^ 'Topic Map'
 ]
 
+{ #category : #icons }
+TopicMap >> hotSaveToDisk [
+	^ [ BrGlamorousVectorIcons savetodisk valuable value background: Color lightRed ]
+		asStencil
+]
+
 { #category : #initialization }
 TopicMap >> initialize [
 	super initialize.
+	isClean := true.
 	monitor := Monitor new
+]
+
+{ #category : #accessing }
+TopicMap >> isClean [
+	"The JSON is in sync with the file on disk."
+
+	^ isClean
+]
+
+{ #category : #accessing }
+TopicMap >> isClean: aBoolean [
+	isClean := aBoolean
 ]
 
 { #category : #accessing }
@@ -554,6 +602,7 @@ TopicMap >> writeJsonFile [
 			self error: 'Writing JSON failed -- leaving old JSON as is.' ].
 	monitor
 		critical: [ self jsonFile ensureDelete.
-			tempFile renameTo: self jsonFile basename ].
+			tempFile renameTo: self jsonFile basename.
+			self isClean: true ].
 	^ self jsonFile
 ]

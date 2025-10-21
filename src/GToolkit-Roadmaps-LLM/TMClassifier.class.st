@@ -10,7 +10,8 @@ Class {
 		'kindClassifier',
 		'topicMap',
 		'topicClassifier',
-		'unmappedPages'
+		'unmappedPages',
+		'announcer'
 	],
 	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
@@ -20,6 +21,11 @@ TMClassifier class >> for: aTopicMap [
 	^ self new
 		topicMap: aTopicMap;
 		yourself
+]
+
+{ #category : #accessing }
+TMClassifier >> announcer [
+	^ announcer
 ]
 
 { #category : #examples }
@@ -53,9 +59,17 @@ TMClassifier >> gtPagesFor: aView [
 		priority: 10;
 		object: [ self unmappedPages ];
 		view: #gtTopicTreeFor:;
-		actionButtonIcon: BrGlamorousVectorIcons repair
-			tooltip: 'Update from classifiers'
-			action: [ :aButton :aTab |  ]
+		actionButtonIcon: BrGlamorousVectorIcons play
+			tooltip: 'Run classifiers'
+			action: [ :aButton :aTab | 
+				self kindClassifier requestResults.
+				self topicClassifier requestResults ];
+		actionButtonIcon: BrGlamorousVectorIcons save
+			tooltip: 'Save updates to Topic Map'
+			action: [ :aButton :aTab | 
+				self unmappedPages addPagesToTopicMap.
+				aButton phlow spawnObject: self topicMap ];
+		updateWhen: PCResultsUpdatedAnnouncement in: self announcer
 ]
 
 { #category : #views }
@@ -74,12 +88,23 @@ TMClassifier >> gtTopicClassifierFor: aView [
 			action: [ :aButton | self topicClassifier requestResults ]
 ]
 
+{ #category : #initialization }
+TMClassifier >> initialize [
+	super initialize.
+	announcer := Announcer new.
+]
+
 { #category : #factory }
 TMClassifier >> kindClassifier [
 	<gtExample>
 	<noTest>
 	^ kindClassifier
-		ifNil: [ kindClassifier := self pageClassiferFor: 'Kind' withPrompt: self kindPrompt ]
+		ifNil: [ kindClassifier := self pageClassiferFor: 'Kind' withPrompt: self kindPrompt.
+			kindClassifier announcer
+				when: PCResultsUpdatedAnnouncement
+				send: #resultsUpdated
+				to: self.
+			kindClassifier ]
 ]
 
 { #category : #examples }
@@ -144,6 +169,11 @@ In your answers, simply provide the category without any further explanation.
 Below follows a series of examples of User inputs consisting of notebook page contents, and the expected Assistant category as an answer.'
 ]
 
+{ #category : #announcements }
+TMClassifier >> notifyResultsUpdated [
+	self announcer announce: PCResultsUpdatedAnnouncement new
+]
+
 { #category : #factory }
 TMClassifier >> pageClassiferFor: aResultType withPrompt: aPrompt [
 	| json |
@@ -158,13 +188,29 @@ TMClassifier >> pageClassiferFor: aResultType withPrompt: aPrompt [
 	^ PageClassifier newFromJson: json
 ]
 
+{ #category : #announcements }
+TMClassifier >> resultsUpdated [
+	self storeKindClassifierResults.
+	self storeTopicClassifierResults.
+	self notifyResultsUpdated
+]
+
 { #category : #updating }
 TMClassifier >> storeKindClassifierResults [
 	^ (self kindClassifier jsonObject at: 'chats')
 		collect: [ :d | 
 			(d at: 'results')
 				ifNotEmpty: [ (self unmappedPages pageNodeWithTitle: (d at: 'pageName'))
-						updateKindTo: (d at: 'results') first ] ]
+						kind: (d at: 'results') first ] ]
+]
+
+{ #category : #updating }
+TMClassifier >> storeTopicClassifierResults [
+	^ (self topicClassifier jsonObject at: 'chats')
+		collect: [ :d | 
+			(d at: 'results')
+				ifNotEmpty: [ (self unmappedPages pageNodeWithTitle: (d at: 'pageName'))
+						topics: (d at: 'results') ] ]
 ]
 
 { #category : #factory }
@@ -172,7 +218,12 @@ TMClassifier >> topicClassifier [
 	<gtExample>
 	<noTest>
 	^ topicClassifier
-		ifNil: [ topicClassifier := self pageClassiferFor: 'Topic' withPrompt: self topicPrompt ]
+		ifNil: [ topicClassifier := self pageClassiferFor: 'Topic' withPrompt: self topicPrompt.
+			topicClassifier announcer
+				when: PCResultsUpdatedAnnouncement
+				send: #resultsUpdated
+				to: self.
+			topicClassifier ]
 ]
 
 { #category : #accessing }

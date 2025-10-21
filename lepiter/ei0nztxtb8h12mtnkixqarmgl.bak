@@ -544,7 +544,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T16:16:20.275026+02:00"
+									"dateAndTimeString" : "2025-10-21T18:48:40.064202+02:00"
 								}
 							},
 							"uid" : {
@@ -554,75 +554,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : ""
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T16:06:54.35844+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T16:07:16.612522+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "EpL7cg3+DQC/2IdSAXXtvg=="
-							},
-							"code" : "#json gtSenders & #at: gtSenders & 'kind' gtReferences"
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T16:08:05.748324+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T16:08:12.678188+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "9+Q8dw3+DQCArilzAXXtvg=="
-							},
-							"code" : "#json gtSenders & #at: gtSenders & 'topics' gtReferences"
+							"string" : "We introduce {{gtMethod:name=TopicMap>>#addDraftPage:}}"
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -943,7 +875,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T16:56:54.957103+02:00"
+									"dateAndTimeString" : "2025-10-21T16:57:09.803126+02:00"
 								}
 							},
 							"uid" : {
@@ -953,7 +885,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We also override {{gtMethod:name=TMDraftPageNode>>#updateKindTo:}} and {{gtMethod:name=TMDraftPageNode>>#toggleTopic:}} so that we can use the edit views to mod"
+							"string" : "We also override {{gtMethod:name=TMDraftPageNode>>#updateKindTo:}} and {{gtMethod:name=TMDraftPageNode>>#toggleTopic:}} so that we can use the edit views to modify the kind and topics directrly without using the LLM."
 						}
 					]
 				},
