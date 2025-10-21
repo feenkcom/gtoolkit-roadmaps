@@ -119,7 +119,7 @@ TMAbstractTreeNode >> gtSpawnTopicMapActionFor: anAction [
 	^ anAction button
 		tooltip: 'Topic roadmap';
 		priority: 35;
-		icon: TopicMap topicMapIcon;
+		icon: BrGlamorousVectorIcons roadmap;
 		action: [ :aButton | aButton phlow spawnObject: self topicMap ];
 		primaryModifierAction: [ :aButton | aButton phlow showObject: self topicMap ]
 			mouseCursor: BlCopyCursor new
