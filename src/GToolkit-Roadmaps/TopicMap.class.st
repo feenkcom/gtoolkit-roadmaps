@@ -22,6 +22,16 @@ Class {
 	#category : #'GToolkit-Roadmaps-Model'
 }
 
+{ #category : #loading }
+TopicMap class >> ensureLlmLoaded [
+	self llmPackage isLoaded
+		ifFalse: [ Metacello new
+				repository: 'github://feenkcom/gtoolkit-roadmaps:main/src';
+				baseline: 'GtoolkitRoadmapsLLM';
+				load ].
+	^ true
+]
+
 { #category : #'instance creation' }
 TopicMap class >> forJson: aFileReference [
 	^ self new
@@ -31,27 +41,10 @@ TopicMap class >> forJson: aFileReference [
 
 { #category : #loading }
 TopicMap class >> llmPackage [
-	"Fast alternative to:
-		TopicMap loadLlmPackage.
-	Send #load to access the LLM features.
-		TopicMap llmPackage load.
-		TopicMap llmPackage unload.
-	"
+	"To test if loaded, or to quickly load or unload."
 
 	^ (IceRepository registry detect: [ :repo | repo name = 'gtoolkit-roadmaps' ])
 		packageNamed: 'GToolkit-Roadmaps-LLM'
-]
-
-{ #category : #loading }
-TopicMap class >> loadLlmPackage [
-	"The proper way to load the LLM features, via the baseline.
-			TopicMap loadLlmPackage.
-	"
-
-	Metacello new
-		repository: 'github://feenkcom/gtoolkit-roadmaps:main/src';
-		baseline: 'GtoolkitRoadmapsLLM';
-		load
 ]
 
 { #category : #utility }
@@ -274,7 +267,12 @@ TopicMap >> gtUnmappedPagesFor: aView [
 		title: 'Unmapped pages';
 		priority: 40;
 		object: [ self unmappedPages ];
-		view: #gtTopicTreeFor:
+		view: #gtTopicTreeFor:;
+		actionButtonIcon: BrGlamorousVectorIcons load
+			tooltip: 'Inspect  pages'
+			action: [ :aButton :aTab | 
+				self class ensureLlmLoaded.
+				aButton phlow spawnObject: (#TMClassifier asClass for: self) ]
 ]
 
 { #category : #help }
