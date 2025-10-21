@@ -1,16 +1,16 @@
 "
-I am modeled after the classifier experiment `CategoryClassifierExperiments>>#cat4DetailedPromptCategoryClassifier4`.
+I am modeled after the classifier experiments `CategoryClassifierExperiments>>#cat4DetailedPromptCategoryClassifier4`.
 
 I can be used to classify unmapped pages.
 "
 Class {
-	#name : #PCKindClassifier,
+	#name : #TMClassifier,
 	#superclass : #Object,
-	#category : #'GToolkit-Roadmaps-LLM-Experiments'
+	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
 
 { #category : #examples }
-PCKindClassifier >> detailedPrompt [
+TMClassifier >> detailedPrompt [
 	"Based on CategoryClassifierExperiments>>#cat4DetailedPromptCategoryClassifier4"
 
 	<gtExample>
@@ -24,13 +24,13 @@ PCKindClassifier >> detailedPrompt [
 ]
 
 { #category : #examples }
-PCKindClassifier >> gtBookDatabase [
+TMClassifier >> gtBookDatabase [
 	<gtExample>
 	^ LeDatabase gtBook
 ]
 
 { #category : #examples }
-PCKindClassifier >> gtBookJsonFile [
+TMClassifier >> gtBookJsonFile [
 	<gtExample>
 	| aFile |
 	aFile := TMRegistry uniqueInstance jsonFileFor: LeDatabase gtBookName.
@@ -39,13 +39,13 @@ PCKindClassifier >> gtBookJsonFile [
 ]
 
 { #category : #examples }
-PCKindClassifier >> gtBookJsonFilePath [
+TMClassifier >> gtBookJsonFilePath [
 	<gtExample>
 	^ TMRegistry uniqueInstance jsonFilePathFor: LeDatabase gtBookName
 ]
 
 { #category : #examples }
-PCKindClassifier >> kindClassifier [
+TMClassifier >> kindClassifier [
 	"NB: This cannot work as the JSON files for topic maps and page classifiers are different.
 	We need a new kind of classifier entity specific top topic maps, and that will generate 
 	both kinds and topics."
@@ -62,7 +62,7 @@ PCKindClassifier >> kindClassifier [
 ]
 
 { #category : #examples }
-PCKindClassifier >> page2KindExamples [
+TMClassifier >> page2KindExamples [
 	"Based on CategoryClassifierExperiments>>#cat4DetailedPrompt3,
 	with corrections for renamed pages."
 
@@ -85,7 +85,7 @@ PCKindClassifier >> page2KindExamples [
 ]
 
 { #category : #examples }
-PCKindClassifier >> promptString [
+TMClassifier >> promptString [
 	"Based on CategoryClassifierExperiments>>#cat4DetailedPrompt3."
 
 	<gtExample>

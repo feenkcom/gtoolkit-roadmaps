@@ -44,7 +44,9 @@ TopicMap class >> llmPackage [
 
 { #category : #loading }
 TopicMap class >> loadLlmPackage [
-	"The proper way to load the LLM features, via the baseline."
+	"The proper way to load the LLM features, via the baseline.
+			TopicMap loadLlmPackage.
+	"
 
 	Metacello new
 		repository: 'github://feenkcom/gtoolkit-roadmaps:main/src';

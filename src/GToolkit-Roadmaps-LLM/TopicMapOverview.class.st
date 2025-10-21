@@ -8,7 +8,7 @@ Class {
 		'cachedTopic2pageMap',
 		'cachedCategory2PageMap'
 	],
-	#category : #'GToolkit-Roadmaps-LLM-Experiments'
+	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
 
 { #category : #'as yet unclassified' }

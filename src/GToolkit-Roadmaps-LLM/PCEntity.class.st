@@ -4,7 +4,7 @@ I am a common superclass for Page Classifier entities with JSON representation.
 Class {
 	#name : #PCEntity,
 	#superclass : #Object,
-	#category : #'GToolkit-Roadmaps-LLM-Experiments'
+	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
 
 { #category : #views }

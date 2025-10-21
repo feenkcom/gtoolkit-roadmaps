@@ -105,7 +105,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-18T09:29:54.05422+02:00"
+									"dateAndTimeString" : "2025-10-21T08:43:53.257053+02:00"
 								}
 							},
 							"uid" : {
@@ -115,7 +115,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Rethink the visualizations — may need multiple ways to visualize a given node, depending on the context (especially kind nodes and pages).\nHighlight breadcrumbs in roadmaps\nAdd tests for editing nodes\nAdd methods and tools for editing nodes\nAdd back LLM support for new pages\nCreate Help pages for nodes; move them to the GT book\nStart preparing newcomer guides ...."
+							"string" : "Add back LLM support for new pages\nAdd tests for editing nodes\nAdd methods and tools for editing nodes\n\nRethink the visualizations — may need multiple ways to visualize a given node, depending on the context (especially kind nodes and pages).\nHighlight breadcrumbs in roadmaps\n\nCreate Help pages for nodes; move them to the GT book\nStart preparing newcomer guides ...."
 						},
 						{
 							"__type" : "textSnippet",

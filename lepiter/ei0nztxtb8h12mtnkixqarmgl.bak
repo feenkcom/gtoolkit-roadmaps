@@ -142,7 +142,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T16:45:42.482948+02:00"
+									"dateAndTimeString" : "2025-10-21T07:51:00.237486+02:00"
 								}
 							},
 							"uid" : {
@@ -152,7 +152,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo in the package {{gtPackage:name=GToolkit-Roadmaps-LLM}}.  "
+							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo in the package {{gtPackage:name=GToolkit-Roadmaps-LLM}}. "
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -168,7 +168,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T16:53:28.467109+02:00"
+									"dateAndTimeString" : "2025-10-21T07:50:18.648569+02:00"
 								}
 							},
 							"editEmail" : {
@@ -179,48 +179,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T17:05:01.519591+02:00"
+									"dateAndTimeString" : "2025-10-21T07:50:44.04893+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "Iueu+/n9DQCtT40TDl4bcA=="
+								"uidString" : "fR4Fgwb+DQCic6AJBmLyvg=="
 							},
-							"code" : "Metacello new\n\trepository: 'github://feenkcom/gtoolkit-roadmaps:main/src';\n\tbaseline: 'GtoolkitRoadmapsLLM';\n\tload."
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T07:43:08.384623+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T07:43:15.103876+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "689faQb+DQCh9044BmLyvg=="
-							},
-							"code" : "Metacello new\r\trepository: 'github://feenkcom/gtoolkit-roadmaps:main/src';\r\tbaseline: 'GtoolkitRoadmapsLLM';\r\tyourself"
+							"code" : "TopicMap loadLlmPackage"
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -348,7 +314,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-11T11:53:20.629128+02:00"
+						"dateAndTimeString" : "2025-10-21T08:44:59.528381+02:00"
 					}
 				},
 				"uid" : {
@@ -358,7 +324,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Moving the PageClassifier"
+				"string" : "# Moving the PageClassifier to a new package"
 			},
 			{
 				"__type" : "textSnippet",
@@ -379,7 +345,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-17T09:58:17.172249+02:00"
+									"dateAndTimeString" : "2025-10-21T08:29:30.354245+02:00"
 								}
 							},
 							"editEmail" : {
@@ -390,17 +356,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-17T09:58:21.018561+02:00"
+									"dateAndTimeString" : "2025-10-21T08:29:30.354245+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "0VYXVlz7DQC/SIPyA4bzGw=="
+								"uidString" : "30oxDwf+DQCXCQfrBmLyvg=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We need to adapt the experiment {{gtMethod:name=CategoryClassifierExperiments>>#cat4DetailedPromptCategoryClassifier4}}. \nWe introduce {{gtClass:name=PCKindClassifier}}."
+							"string" : "We need to adapt the experiment {{gtMethod:name=CategoryClassifierExperiments>>#cat4DetailedPromptCategoryClassifier4}}. "
 						},
 						{
 							"__type" : "textSnippet",
@@ -438,6 +404,43 @@
 								"__type" : "textStyle"
 							},
 							"string" : "*Problem:* The {{gtClass:name=PageClassifier}} assumes a different format for the JSON files, that does not match that of the topic maps. We either need to bridge it, or introduce a new, more specific classifier that works with the topicMaps."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-09-17T09:58:17.172249+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T08:45:38.486475+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "0VYXVlz7DQC/SIPyA4bzGw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "We introduce {{gtClass:name=TMClassifier}}. We need to generate a new JSON from the topic map that can be used as in"
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -494,7 +497,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-17T09:18:48.114909+02:00"
+						"dateAndTimeString" : "2025-10-21T08:44:44.609608+02:00"
 					}
 				},
 				"uid" : {
@@ -504,7 +507,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Applying the CategoryClassifier to the existing topic map"
+				"string" : "# Applying the PageClassifier to the existing topic map"
 			}
 		]
 	},
