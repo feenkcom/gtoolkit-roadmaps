@@ -470,7 +470,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T15:09:29.046162+02:00"
+									"dateAndTimeString" : "2025-10-21T15:42:32.543838+02:00"
 								}
 							},
 							"uid" : {
@@ -480,7 +480,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Before we look at updating the topic map, let's get the topic classifier working too. We define {{gtMethod:name=TMClassifier>>#topicClassifier}}.\nNow we see that having default values for topic and kind as `<unknown>` is problematic. How to fix this?"
+							"string" : "Before we look at updating the topic map, let's get the topic classifier working too. We define {{gtMethod:name=TMClassifier>>#topicClassifier}}.\nNow we see that having default values for topic and kind as `<unknown>` is problematic. We fix this so they return empty arrays: {{gtMethod:name=TMPageNode>>#kinds}} and {{gtMethod:name=TopicMap>>#topics4Page:}}."
 						},
 						{
 							"__type" : "textSnippet",
@@ -496,7 +496,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T14:41:22.938425+02:00"
+									"dateAndTimeString" : "2025-10-21T16:16:17.123661+02:00"
 								}
 							},
 							"editEmail" : {
@@ -507,17 +507,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T14:41:22.938425+02:00"
+									"dateAndTimeString" : "2025-10-21T16:16:17.123661+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "V1IgQQz+DQC6Yn3sAb2nig=="
+								"uidString" : "uK2GlA3+DQCDUbfOAXXtvg=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : ""
+							"string" : "Now we need to get back the results and use them to update the topic  map itself."
 						},
 						{
 							"__type" : "textSnippet",
@@ -533,7 +533,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T10:52:30.149275+02:00"
+									"dateAndTimeString" : "2025-10-21T16:16:20.275026+02:00"
 								}
 							},
 							"editEmail" : {
@@ -544,7 +544,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T14:40:46.539653+02:00"
+									"dateAndTimeString" : "2025-10-21T16:16:20.275026+02:00"
 								}
 							},
 							"uid" : {
@@ -554,7 +554,75 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Now we need to get back the results and use them to update the topic  map itself."
+							"string" : ""
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:06:54.35844+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:07:16.612522+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "EpL7cg3+DQC/2IdSAXXtvg=="
+							},
+							"code" : "#json gtSenders & #at: gtSenders & 'kind' gtReferences"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:08:05.748324+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:08:12.678188+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "9+Q8dw3+DQCArilzAXXtvg=="
+							},
+							"code" : "#json gtSenders & #at: gtSenders & 'topics' gtReferences"
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -701,7 +769,193 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:15:59.404249+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:16:28.1609+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "D094kw3+DQCDSS3RAXXtvg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "*Problem:* the existing update methods assume the pages are part of the topicMap, but these are unmapped pages. Can we add them with default values, and *then* update them?\nThe topic can be an empty array, and the kind could be simply undefined."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:16:33.953841+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:18:15.315336+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "U3qHlQ3+DQCDbIzQAXXtvg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "A problem with simply adding them is that this can pose problems for resolving missing pages — we can't add an unmapped page, and then also map a missing page to the same name, giving two entries for the same page."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:21:24.915043+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:23:03.925134+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "jDTfpg3+DQCH+FMgAXXtvg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Another approach would be to represent unmapped pages as a new kind of *draft page* with an explicitly set kind and topic list that can then be pushed to the topic map."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T10:11:40.428618+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:49:37.141293+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "/c6SfAj+DQCHDnudBmLyvg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "We introduce {{gtClass:name=TMDraftPageNode}} and {{gtClass:name=TMDraftPageGroup}} to handle this case and change the unmapped pages to by instances of these classes: {{gtMethod:name=TopicMap>>#unmappedPages}}"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T10:11:40.698142+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T16:57:09.803126+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "QemWfAj+DQCHErpuBmLyvg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "We also override {{gtMethod:name=TMDraftPageNode>>#updateKindTo:}} and {{gtMethod:name=TMDraftPageNode>>#toggleTopic:}} so that we can use the edit views to modify the kind and topics directrly without using the LLM."
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -722,7 +976,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-21T10:11:39.63865+02:00"
+						"dateAndTimeString" : "2025-10-21T16:15:58.202465+02:00"
 					}
 				},
 				"uid" : {
@@ -732,81 +986,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : ""
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-21T10:11:40.428618+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-21T10:11:40.428618+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "/c6SfAj+DQCHDnudBmLyvg=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : ""
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-21T10:11:40.698142+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-21T10:11:40.698142+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "QemWfAj+DQCHErpuBmLyvg=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : ""
+				"string" : "# Moving unmapped pages to the TopicMap"
 			},
 			{
 				"__type" : "textSnippet",

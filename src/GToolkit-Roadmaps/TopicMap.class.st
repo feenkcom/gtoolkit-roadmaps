@@ -154,10 +154,9 @@ TopicMap >> gtMissingPagesFor: aView [
 	Renamed pages will appear in the Unmapped pages view under their new name."
 
 	<gtView>
-	<todo: 'Implement the delete button'>
 	^ aView columnedList
 		title: 'Missing pages';
-		priority: 45;
+		priority: 40;
 		items: [ self missingPages ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
@@ -266,7 +265,7 @@ TopicMap >> gtUnmappedPagesFor: aView [
 	<gtView>
 	^ aView forward
 		title: 'Unmapped pages';
-		priority: 40;
+		priority: 45;
 		object: [ self unmappedPages ];
 		view: #gtTopicTreeFor:;
 		actionButtonIcon: BrGlamorousVectorIcons repair
@@ -456,7 +455,7 @@ TopicMap >> topics [
 
 { #category : #querying }
 TopicMap >> topics4Page: aPage [
-	^ self page2Topics at: aPage ifAbsent: {self defaultValue}
+	^ self page2Topics at: aPage ifAbsent: {}
 ]
 
 { #category : #querying }
@@ -465,7 +464,7 @@ TopicMap >> unmappedPages [
 	NB: the latter will also show up as missing pages."
 
 	^ self
-		pageGroupFor: ((self database pages copyWithoutAll: self pages) sortedAs: #title)
+		draftPageGroupFor: ((self database pages copyWithoutAll: self pages) sortedAs: #title)
 ]
 
 { #category : #updating }

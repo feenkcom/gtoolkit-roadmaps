@@ -158,6 +158,15 @@ TMClassifier >> pageClassiferFor: aResultType withPrompt: aPrompt [
 	^ PageClassifier newFromJson: json
 ]
 
+{ #category : #updating }
+TMClassifier >> storeKindClassifierResults [
+	^ (self kindClassifier jsonObject at: 'chats')
+		collect: [ :d | 
+			(d at: 'results')
+				ifNotEmpty: [ (self unmappedPages pageNodeWithTitle: (d at: 'pageName'))
+						updateKindTo: (d at: 'results') first ] ]
+]
+
 { #category : #factory }
 TMClassifier >> topicClassifier [
 	<gtExample>

@@ -22,7 +22,9 @@ TMPageGroup class >> for: aPageCollection in: aTopicMap [
 TMPageGroup >> children [
 	"Or just return self?"
 
-	^ self pageGroupFor: self pages
+	"^ self pageGroupFor: self pages"
+	
+	^ self
 ]
 
 { #category : #help }

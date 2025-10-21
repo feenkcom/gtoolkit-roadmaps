@@ -31,6 +31,11 @@ TMAbstractEntity >> databaseNode [
 ]
 
 { #category : #utility }
+TMAbstractEntity >> draftPageGroupFor: aPageCollection [
+	^ TMDraftPageGroup for: aPageCollection in: self topicMap
+]
+
+{ #category : #utility }
 TMAbstractEntity >> emptyNodes [
 	^ self nodesFor: {}
 ]
