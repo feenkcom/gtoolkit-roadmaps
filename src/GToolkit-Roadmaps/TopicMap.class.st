@@ -28,7 +28,8 @@ TopicMap class >> ensureLlmLoaded [
 		ifFalse: [ Metacello new
 				repository: 'github://feenkcom/gtoolkit-roadmaps:main/src';
 				baseline: 'GtoolkitRoadmapsLLM';
-				load ].
+				load.
+			#BaselineOfGtoolkitRoadmapsLLM asClass loadLepiterGtbookExamples ].
 	^ true
 ]
 
@@ -268,8 +269,8 @@ TopicMap >> gtUnmappedPagesFor: aView [
 		priority: 40;
 		object: [ self unmappedPages ];
 		view: #gtTopicTreeFor:;
-		actionButtonIcon: BrGlamorousVectorIcons load
-			tooltip: 'Inspect  pages'
+		actionButtonIcon: BrGlamorousVectorIcons repair
+			tooltip: 'Fix unmapped pages using LLM'
 			action: [ :aButton :aTab | 
 				self class ensureLlmLoaded.
 				aButton phlow spawnObject: (#TMClassifier asClass for: self) ]

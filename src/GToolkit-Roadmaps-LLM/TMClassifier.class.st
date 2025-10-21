@@ -9,7 +9,8 @@ Class {
 	#instVars : [
 		'kindClassifier',
 		'topicMap',
-		'pageGroup'
+		'topicClassifier',
+		'unmappedPages'
 	],
 	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
@@ -24,6 +25,7 @@ TMClassifier class >> for: aTopicMap [
 { #category : #examples }
 TMClassifier >> exampleDatabaseName [
 	<gtExample>
+	<noTest>
 	^ PageClassifierExamples new exampleDatabaseName
 ]
 
@@ -32,6 +34,7 @@ TMClassifier >> gtKindClassifierFor: aView [
 	<gtView>
 	^ aView forward
 		title: 'Kind classifier';
+		priority: 20;
 		object: [ self kindClassifier ];
 		view: #gtChatsFor:;
 		actionButtonIcon: BrGlamorousVectorIcons inspect
@@ -42,15 +45,47 @@ TMClassifier >> gtKindClassifierFor: aView [
 			action: [ :aButton | self kindClassifier requestResults ]
 ]
 
+{ #category : #views }
+TMClassifier >> gtPagesFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Unmapped pages';
+		priority: 10;
+		object: [ self unmappedPages ];
+		view: #gtTopicTreeFor:;
+		actionButtonIcon: BrGlamorousVectorIcons repair
+			tooltip: 'Update from classifiers'
+			action: [ :aButton :aTab |  ]
+]
+
+{ #category : #views }
+TMClassifier >> gtTopicClassifierFor: aView [
+	<gtView>
+	^ aView forward
+		title: 'Topic classifier';
+		priority: 30;
+		object: [ self topicClassifier ];
+		view: #gtChatsFor:;
+		actionButtonIcon: BrGlamorousVectorIcons inspect
+			tooltip: 'Inspect Page classifier'
+			action: [ :aButton :aTab | aButton phlow spawnObject: self topicClassifier ];
+		actionButtonIcon: BrGlamorousVectorIcons play
+			tooltip: 'Run  classifier'
+			action: [ :aButton | self topicClassifier requestResults ]
+]
+
 { #category : #factory }
 TMClassifier >> kindClassifier [
 	<gtExample>
+	<noTest>
 	^ kindClassifier
 		ifNil: [ kindClassifier := self pageClassiferFor: 'Kind' withPrompt: self kindPrompt ]
 ]
 
 { #category : #examples }
 TMClassifier >> kindExamples [
+	<gtExample>
+	<noTest>
 	^ {'Glamorous Toolkit' -> 'Introduction'.
 		'Getting started with GT in 7''' -> 'Media'.
 		'Working with a REST API: the GitHub case study' -> 'Case study'.
@@ -67,6 +102,7 @@ TMClassifier >> kindExamples [
 { #category : #examples }
 TMClassifier >> kindPrompt [
 	<gtExample>
+	<noTest>
 	^ PCExampleBasedPrompt new
 		promptString: self kindPromptString;
 		exampleDatabaseNamed: self exampleDatabaseName;
@@ -76,6 +112,10 @@ TMClassifier >> kindPrompt [
 
 { #category : #examples }
 TMClassifier >> kindPromptString [
+	"Adapted from CategoryClassifierExperiments>>#cat4DetailedPrompt3"
+
+	<gtExample>
+	<noTest>
 	^ 'The Glamorous Toolkit Book consists of numerous notebook pages documenting various aspects of Moldable Development and the Glamorous Toolkit (GT) IDE that supports it.
 We are interested in categorizing the pages according to the kind of information they contain.
 
@@ -111,21 +151,19 @@ TMClassifier >> pageClassiferFor: aResultType withPrompt: aPrompt [
 			'bookName' -> self topicMap database databaseName.
 			'prompt' -> aPrompt jsonObject.
 			'chats'
-				-> (self pageGroup
+				-> (self unmappedPages
 						collect: [ :p | 
 							{'pageName' -> p title.
 								'results' -> Array new} asDictionary ]) asArray} asDictionary.
 	^ PageClassifier newFromJson: json
 ]
 
-{ #category : #accessing }
-TMClassifier >> pageGroup [
-	^ pageGroup ifNil: [ pageGroup := self topicMap unmappedPages ]
-]
-
-{ #category : #accessing }
-TMClassifier >> pageGroup: anObject [
-	pageGroup := anObject
+{ #category : #factory }
+TMClassifier >> topicClassifier [
+	<gtExample>
+	<noTest>
+	^ topicClassifier
+		ifNil: [ topicClassifier := self pageClassiferFor: 'Topic' withPrompt: self topicPrompt ]
 ]
 
 { #category : #accessing }
@@ -136,4 +174,59 @@ TMClassifier >> topicMap [
 { #category : #accessing }
 TMClassifier >> topicMap: anObject [
 	topicMap := anObject
+]
+
+{ #category : #examples }
+TMClassifier >> topicPrompt [
+	<gtExample>
+	<noTest>
+	^ self topicPromptString asPrompt
+]
+
+{ #category : #examples }
+TMClassifier >> topicPromptString [
+	"Adapted from TopicClassifierExperiments>>#top4TopicDescriptionPrompt"
+
+	<gtExample>
+	<noTest>
+	| writeStream |
+	writeStream := '' writeStream.
+	writeStream
+		nextPutAll: 'The Glamorous Toolkit (GT) Book consists of over 500 notebook pages documenting various aspects of Moldable Development and the GT IDE that supports it.
+
+A typical newcomer to GT is either:
+(i) someone who has heard of GT, and would like to learn more about it, but has no particular  goal in mind, or
+(ii) someone with a specific problem to solve, whether work-related or a personal hobby project.
+We want to provide newcomers with a roadmap of the pages organized around a set of GT-related topics.
+
+The topic of a page refers to its subject matter, for example, "Using Bloc", or Programming Smalltalk", not the style or format of the page, such as "Tutorial" or "FAQ".
+
+A good topic is high-level enough that we can assign multiple pages to a topic, but specific enough to be useful for finding relevant pages.
+
+Your job is to assign topics from a curated list to a given page, so that pages can be organized into clusters by topic. Each page will cover at least one topic, but possible more, as topics cross-cut multiple dimensions. Please provide only a single topic per page, unless the page clearly covers more than one topic, in which case a maximum of five topics may be listed. You should only assign topics from the curated list, unless there is no topic that fits, in which case you may propose a topic not on the list. In your results, simply list the topics for the page and do not provide any further explanations.
+
+Here is the list of curated topics:';
+		lf;
+		lf;
+		nextPutAll: '```';
+		lf.
+	self topics
+		do: [ :topic | 
+			writeStream
+				nextPutAll: topic;
+				lf ].
+	writeStream nextPutAll: '```'.
+	^ writeStream contents
+]
+
+{ #category : #examples }
+TMClassifier >> topics [
+	<gtExample>
+	<noTest>
+	^ self topicMap topics sorted
+]
+
+{ #category : #accessing }
+TMClassifier >> unmappedPages [
+	^ unmappedPages ifNil: [ unmappedPages := self topicMap unmappedPages ]
 ]

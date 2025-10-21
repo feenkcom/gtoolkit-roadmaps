@@ -798,7 +798,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T09:19:40.8682+02:00"
+									"dateAndTimeString" : "2025-10-21T09:19:46.631141+02:00"
 								}
 							},
 							"uid" : {
@@ -808,7 +808,41 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Interestingly, if we inspect unmapped pages we get a view with unknown topic or "
+							"string" : "Interestingly, if we inspect unmapped pages we get a view with unknown topics or kinds."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T09:19:48.205855+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T09:19:51.739442+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "NhESwwf+DQCx6kEDBmLyvg=="
+							},
+							"code" : "tm := TMClassifier new gtBookTopicMap.\rtm unmappedPages"
 						}
 					]
 				},

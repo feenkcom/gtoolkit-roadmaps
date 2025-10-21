@@ -142,7 +142,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T07:51:00.237486+02:00"
+									"dateAndTimeString" : "2025-10-21T14:35:09.337436+02:00"
 								}
 							},
 							"uid" : {
@@ -152,7 +152,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo in the package {{gtPackage:name=GToolkit-Roadmaps-LLM}}. "
+							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo in the package {{gtPackage:name=GToolkit-Roadmaps-LLM}}.  "
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -399,14 +399,125 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T10:04:55.082699+02:00"
+									"dateAndTimeString" : "2025-10-21T14:31:54.4876+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "tgf/1lv7DQC2vafkA4bzGw=="
 							},
-							"code" : "tm := TMClassifier new gtBookTopicMap.\rresultType := 'Kind'.\rprompt := 'A prompt'.\r\rjson := {'resultType' -> resultType.\r\t\t'bookName' -> tm database databaseName.\r\t\t'prompt' -> prompt.\r\t\t'chats'\r\t\t\t-> (tm unmappedPages\r\t\t\t\t\tcollect: [ :p | \r\t\t\t\t\t\t{'pageName' -> p title.\r\t\t\t\t\t\t\t'results' -> Array new} asDictionary ]) asArray} asDictionary.\rPageClassifier newFromJson: json"
+							"code" : "tm := LeDatabase gtBook topicMap.\rresultType := 'Kind'.\rprompt := 'A prompt'.\r\rjson := {'resultType' -> resultType.\r\t\t'bookName' -> tm database databaseName.\r\t\t'prompt' -> prompt.\r\t\t'chats'\r\t\t\t-> (tm unmappedPages\r\t\t\t\t\tcollect: [ :p | \r\t\t\t\t\t\t{'pageName' -> p title.\r\t\t\t\t\t\t\t'results' -> Array new} asDictionary ]) asArray} asDictionary.\rPageClassifier newFromJson: json"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T14:40:46.533294+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T14:40:46.533294+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "ecz0Pgz+DQC4r1SlAb2nig=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "We use this code to define {{gtMethod:name=TMClassifier>>#pageClassiferFor:withPrompt:}}.\nThis works for simple prompts, but not the example-based ones.\nWe add {{gtMethod:name=TMClassifier>>#kindPrompt}} and use it to instantiate a page classifier for Kinds: {{gtMethod:name=TMClassifier>>#kindClassifier}}, which is working nicely. "
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T14:40:50.452537+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T15:09:13.433091+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "pJwwPwz+DQC4tp78Ab2nig=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Before we look at updating the topic map, let's get the topic classifier working too. We define {{gtMethod:name=TMClassifier>>#topicClassifier}}.\nNow we see that having default values for topic and kind as `<"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T14:41:22.938425+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T14:41:22.938425+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "V1IgQQz+DQC6Yn3sAb2nig=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : ""
 						},
 						{
 							"__type" : "textSnippet",
@@ -433,7 +544,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T10:53:14.911216+02:00"
+									"dateAndTimeString" : "2025-10-21T14:40:46.539653+02:00"
 								}
 							},
 							"uid" : {
@@ -443,84 +554,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We use this code to define {{gtMethod:name=TMClassifier>>#pageClassiferFor:withPrompt:}}.\nThis works for simple prompts, but not the example-based ones.\nWe add {{gtMethod:name=TMClassifier>>#kindPrompt}} and use it to instantiate a page classifier for Kinds: {{gtMethod:name=TMClassifier>>#kindClassifier}}. "
-						},
-						{
-							"__type" : "exampleSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T10:53:32.109159+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T10:53:32.109159+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "gwVIEgn+DQCQ4zXwBmLyvg=="
-							},
-							"exampleSelector" : "kindClassifier",
-							"previewHeight" : 200,
-							"previewShowSelector" : "gtViewsFor:",
-							"exampleBehaviorName" : "TMClassifier",
-							"codeExpanded" : true,
-							"previewExpanded" : false,
-							"noCode" : false
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T10:11:36.234243+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T10:55:01.205907+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "HdFSfAj+DQCHBaYOBmLyvg=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "{{gtExample:name=TMClassifier>>#kindClassifier}}  This is working nicely. Now we need to get back the results and use them to update the topic  map itself."
+							"string" : "Now we need to get back the results and use them to update the topic  map itself."
 						},
 						{
 							"__type" : "pharoSnippet",
