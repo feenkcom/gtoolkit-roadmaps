@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-21T08:43:15.975986+02:00"
+						"dateAndTimeString" : "2025-10-22T14:16:12.538161+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "This database exists to log the development tasks for the GT Roadmap project. The database should not be loaded by default.\nSee also [[* GT Roadmaps Todo List]]."
+				"string" : "This database exists to log the development tasks for the GT Roadmap project. The database should not be loaded by default.\nSee also [[GT Roadmaps Todo List]]."
 			},
 			{
 				"__type" : "textSnippet",
