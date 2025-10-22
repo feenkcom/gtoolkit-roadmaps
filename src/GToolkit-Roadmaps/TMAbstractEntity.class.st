@@ -31,6 +31,11 @@ TMAbstractEntity >> databaseNode [
 ]
 
 { #category : #utility }
+TMAbstractEntity >> draftPageGroupFor: aPageCollection [
+	^ TMDraftPageGroup for: aPageCollection in: self topicMap
+]
+
+{ #category : #utility }
 TMAbstractEntity >> emptyNodes [
 	^ self nodesFor: {}
 ]
@@ -91,6 +96,25 @@ TMAbstractEntity >> gtSpotterForPageTitles: aSearch [
 		itemName: #title;
 		sendCategory: [ :aCategory :aStep :thisSearch | self titleIncludes: aStep searchQuery ];
 		filterBySubstring
+]
+
+{ #category : #views }
+TMAbstractEntity >> gtSummaryFor: aView [
+	<gtView>
+	"self summary ifEmpty: [ ^ aView empty ]."
+	^ aView columnedList
+		title: 'Summary';
+		priority: 20;
+		items: [ self summary ];
+		actionUpdateButtonTooltip: 'Update item list';
+		column: 'Index'
+			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
+			width: 60;
+		column: 'Key'
+			text: #first
+			width: 140;
+		column: 'Value' text: #second;
+		send: #last
 ]
 
 { #category : #help }
@@ -203,6 +227,31 @@ TMAbstractEntity >> pages [
 { #category : #abstract }
 TMAbstractEntity >> roadmap [
 	self subclassResponsibility
+]
+
+{ #category : #utility }
+TMAbstractEntity >> sizeAndFirstIfAlone: aCollection [
+	^ aCollection size printString
+		, (aCollection size = 1 ifTrue: [ ' — ' , aCollection first ] ifFalse: [ '' ])
+]
+
+{ #category : #views }
+TMAbstractEntity >> summary [
+	^ {{'Database'.
+			self database.
+			self databaseNode}.
+		{'#Fields'.
+			self sizeAndFirstIfAlone: self fields.
+			self fieldNodes}.
+		{'#Topics'.
+			self sizeAndFirstIfAlone: self topics.
+			self topicNodes}.
+		{'#Kinds'.
+			self sizeAndFirstIfAlone: self kinds.
+			self kindNodes}.
+		{'#Pages'.
+			self sizeAndFirstIfAlone: (self pages collect: #title).
+			self pageGroup}}
 ]
 
 { #category : #querying }

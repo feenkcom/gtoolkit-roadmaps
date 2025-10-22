@@ -67,6 +67,8 @@ TMGtBookRoadmapExamples >> kind2Pages [
 
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> rustQuery [
+	"NB: fragile query. Results depend on the GT Book content."
+
 	<gtExample>
 	| query databaseNode rustQuery |
 	query := 'Rust'.
@@ -74,7 +76,7 @@ TMGtBookRoadmapExamples >> rustQuery [
 	rustQuery := databaseNode contentIncludes: query.
 	self assert: rustQuery fields size > 2.
 	self assert: rustQuery children isTMNodeGroup.
-	self assert: rustQuery children isTMPageGroup not.
+	self assert: rustQuery children isTMPageGroup.
 	self assert: rustQuery parents isNotEmpty.
 	^ rustQuery
 ]
@@ -90,7 +92,7 @@ TMGtBookRoadmapExamples >> smaccQuery [
 	smaccQuery := databaseNode contentIncludes: query.
 	self assert: smaccQuery fields size equals: 5.
 	self assert: smaccQuery children isTMNodeGroup.
-	self assert: smaccQuery children isTMPageGroup not.
+	self assert: smaccQuery children isTMPageGroup.
 	self assert: smaccQuery parents isNotEmpty.
 	^ smaccQuery
 ]

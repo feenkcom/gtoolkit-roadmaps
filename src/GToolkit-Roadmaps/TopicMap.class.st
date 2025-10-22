@@ -22,6 +22,25 @@ Class {
 	#category : #'GToolkit-Roadmaps-Model'
 }
 
+{ #category : #loading }
+TopicMap class >> ensureLlmLoaded [
+	"To wait for this to complete, just send #wait to the result."
+
+	| semaphore |
+	semaphore := Semaphore new.
+	self llmPackage isLoaded
+		ifTrue: [ semaphore signal ]
+		ifFalse: [ [ UIManager default
+				informUser: 'Loading GtoolkitRoadmapsLLM package'
+				during: [ Metacello new
+						repository: 'github://feenkcom/gtoolkit-roadmaps:main/src';
+						baseline: 'GtoolkitRoadmapsLLM';
+						load.
+					#BaselineOfGtoolkitRoadmapsLLM asClass loadLepiterGtbookExamples ].
+			semaphore signal ] fork ].
+	^ semaphore
+]
+
 { #category : #'instance creation' }
 TopicMap class >> forJson: aFileReference [
 	^ self new
@@ -31,25 +50,31 @@ TopicMap class >> forJson: aFileReference [
 
 { #category : #loading }
 TopicMap class >> llmPackage [
-	"Fast alternative to:
-		TopicMap loadLlmPackage.
-	Send #load to access the LLM features.
-		TopicMap llmPackage load.
-		TopicMap llmPackage unload.
-	"
+	"To test if loaded, or to quickly load or unload."
 
 	^ (IceRepository registry detect: [ :repo | repo name = 'gtoolkit-roadmaps' ])
 		packageNamed: 'GToolkit-Roadmaps-LLM'
 ]
 
-{ #category : #loading }
-TopicMap class >> loadLlmPackage [
-	"The proper way to load the LLM features, via the baseline."
-
-	Metacello new
-		repository: 'github://feenkcom/gtoolkit-roadmaps:main/src';
-		baseline: 'GtoolkitRoadmapsLLM';
-		load
+{ #category : #updating }
+TopicMap >> addDraftPage: aDraftPage [
+	| topicMapPages |
+	self
+		assert: aDraftPage kind isNotNil
+		description: 'Page “', aDraftPage page title , '” is missing a kind.'.
+	self
+		assert: (self kinds includes: aDraftPage kind)
+		description: aDraftPage kind , ' is not a valid page kind for page “' , aDraftPage page title, '”'.
+	self
+		assert: aDraftPage topics isNotEmpty
+		description: 'Page “', aDraftPage page title , '” is missing topics.'.
+	topicMapPages := self json at: 'pages'.
+	self
+		assert: (topicMapPages select: [ :d | (d at: 'page') = aDraftPage page title ]) isEmpty.
+	self json at: 'pages' put: (topicMapPages copyWith: aDraftPage json).
+	self clearCaches.
+	self writeJsonFile.
+	^ self pageNodeWithTitle: aDraftPage page title
 ]
 
 { #category : #utility }
@@ -97,7 +122,7 @@ TopicMap >> defaultValue [
 	^ '<unknown>'
 ]
 
-{ #category : #accessing }
+{ #category : #updating }
 TopicMap >> deleteMissingPageWithTitle: aTitle [
 	| newPages index |
 	index := (self json at: 'pages') detectIndex: [ :d | (d at: 'page') = aTitle ].
@@ -106,6 +131,20 @@ TopicMap >> deleteMissingPageWithTitle: aTitle [
 	self assert: (self jsonDict4PageTitle: aTitle ifNone: [ nil ]) isNil.
 	self clearCaches.
 	self writeJsonFile
+]
+
+{ #category : #querying }
+TopicMap >> emptyKindPages [
+	"This group should always be empty -- only unmapped pages should be missing kinds."
+
+	^ self pageGroupFor: (self pageNodes select: [ :n | n kinds isEmpty ])
+]
+
+{ #category : #querying }
+TopicMap >> emptyTopicPages [
+	"This group should always be empty -- only unmapped pages should be missing topics."
+
+	^ self pageGroupFor: (self pageNodes select: [ :n | n topics isEmpty ])
 ]
 
 { #category : #accessing }
@@ -134,7 +173,10 @@ TopicMap >> gtJsonFor: aView [
 		title: 'JSON';
 		priority: 60;
 		object: [ self json ];
-		view: #gtTreeFor:context:
+		view: #gtTreeFor:context:;
+		actionButtonIcon: BrGlamorousVectorIcons inspect
+			tooltip: 'Inspect  JSON'
+			action: [ :aButton :aTab | aButton phlow spawnObject: self json asGtJson ]
 ]
 
 { #category : #views }
@@ -144,10 +186,9 @@ TopicMap >> gtMissingPagesFor: aView [
 	Renamed pages will appear in the Unmapped pages view under their new name."
 
 	<gtView>
-	<todo: 'Implement the delete button'>
 	^ aView columnedList
 		title: 'Missing pages';
-		priority: 45;
+		priority: 40;
 		items: [ self missingPages ];
 		column: 'Index'
 			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
@@ -211,16 +252,6 @@ TopicMap >> gtRoadmap: aView [
 		view: #gtRoadmap:
 ]
 
-{ #category : #views }
-TopicMap >> gtSummaryFor: aView [
-	<gtView>
-	^ aView forward
-		title: 'Summary';
-		priority: 20;
-		object: [ self databaseNode ];
-		view: #gtSummaryFor:
-]
-
 { #category : #actions }
 TopicMap >> gtTopicMapMenuFor: anAction [
 	<gtAction>
@@ -261,19 +292,45 @@ TopicMap >> gtTreeMapFor: aView [
 
 { #category : #views }
 TopicMap >> gtUnmappedPagesFor: aView [
-	"Pages not listed in the JSON. These will need an assistant to update the JSON."
+	"Pages not listed in the JSON. They may be new or renamed pages.
+	Renamed pages can be fixed in the Missing Pages view.
+	New pages can be added using the LLM PageClassifier.
+	"
 
 	<gtView>
 	^ aView forward
-		title: 'Unmapped pages';
-		priority: 40;
+		title: 'New pages';
+		priority: 45;
 		object: [ self unmappedPages ];
-		view: #gtTopicTreeFor:
+		view: #gtTopicTreeFor:;
+		actionButtonIcon: BrGlamorousVectorIcons repair
+			tooltip: (self class llmPackage isLoaded
+					ifTrue: [ 'Repair' ]
+					ifFalse: [ 'Load LLM package and repair' ]), ' unmapped pages'
+			action: [ :aButton :aTab | 
+				[ self class ensureLlmLoaded wait.
+				aButton phlow spawnObject: (#TMClassifier asClass for: self) ] fork ]
+]
+
+{ #category : #actions }
+TopicMap >> gtWriteJsonActionFor: anAction [
+	<gtAction>
+	^ anAction button
+		tooltip: 'Write JSON';
+		priority: 50;
+		icon: BrGlamorousVectorIcons savetodisk;
+		action: [  "aButton phlow fireToolUpdateWish.":aButton | aButton phlow spawnObject: self writeJsonFile ]
 ]
 
 { #category : #help }
 TopicMap >> helpPageName [
 	^ 'Topic Map'
+]
+
+{ #category : #icons }
+TopicMap >> hotSaveToDisk [
+	^ [ BrGlamorousVectorIcons savetodisk valuable value background: Color lightRed ]
+		asStencil
 ]
 
 { #category : #initialization }
@@ -355,7 +412,8 @@ TopicMap >> kindsStandardOrder [
 
 { #category : #querying }
 TopicMap >> missingPages [
-	"Pages listed in the JSON but not (or no longer) in the database."
+	"Pages listed in the JSON but not (or no longer) in the database.
+	NB: We cannot return a PageGroup because these pages do not exist!"
 
 	^ ((self json at: 'pages')
 		collect: [ :d | d at: 'page' ]
@@ -400,6 +458,19 @@ TopicMap >> roadmap [
 	^ self databaseNode roadmap
 ]
 
+{ #category : #views }
+TopicMap >> summary [
+	"These should always be empty -- only unmapped pages should be missing kinds or topics."
+
+	^ super summary
+		, {{'#Pages without kinds'.
+					self emptyKindPages size.
+					self emptyKindPages}.
+				{'#Pages without topics'.
+					self emptyTopicPages size.
+					self emptyTopicPages}}
+]
+
 { #category : #mapping }
 TopicMap >> topic2Field [
 	^ topic2Field
@@ -437,7 +508,7 @@ TopicMap >> topics [
 
 { #category : #querying }
 TopicMap >> topics4Page: aPage [
-	^ self page2Topics at: aPage ifAbsent: {self defaultValue}
+	^ self page2Topics at: aPage ifAbsent: {}
 ]
 
 { #category : #querying }
@@ -446,7 +517,7 @@ TopicMap >> unmappedPages [
 	NB: the latter will also show up as missing pages."
 
 	^ self
-		pageGroupFor: ((self database pages copyWithoutAll: self pages) sortedAs: #title)
+		draftPageGroupFor: ((self database pages copyWithoutAll: self pages) sortedAs: #title)
 ]
 
 { #category : #updating }
@@ -529,8 +600,8 @@ TopicMap >> writeJsonFile [
 	| tempFile |
 	tempFile := self jsonFile copyWithPath: self jsonFile path , 'temp.json'.
 	tempFile ensureDelete.
-	tempFile writeStreamDo: [ :aStream |
-		STON put: self json asJsonOnStreamPretty: aStream ].
+	tempFile
+		writeStreamDo: [ :aStream | STON put: self json asJsonOnStreamPretty: aStream ].
 	[ tempFile readStreamDo: [ :aStream | STON fromStream: aStream ] ]
 		onErrorDo: [ tempFile ensureDelete.
 			self error: 'Writing JSON failed -- leaving old JSON as is.' ].

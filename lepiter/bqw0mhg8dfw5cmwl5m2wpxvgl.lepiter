@@ -49,7 +49,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Highlight breadcrumbs in roadmaps]] "
+										"string" : "[[Highlight breadcrumbs in roadmaps]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -123,7 +123,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Notes on Mondrian Roadmaps]] "
+										"string" : "[[Notes on Mondrian Roadmaps]]"
 									}
 								]
 							},
@@ -146,7 +146,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-08T17:52:30.244814+02:00"
+									"dateAndTimeString" : "2025-10-22T14:16:12.56415+02:00"
 								}
 							},
 							"uid" : {
@@ -156,7 +156,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[* GT Roadmaps Todo List]] "
+							"string" : "[[GT Roadmaps Todo List]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -188,7 +188,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-20T16:43:09.506473+02:00"
+												"dateAndTimeString" : "2025-10-22T14:06:20.128235+02:00"
 											}
 										},
 										"uid" : {
@@ -198,7 +198,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[*** Add assistant to update unmapped pages]] "
+										"string" : "[[Add assistant to update unmapped pages]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -235,7 +235,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Repair missing pages (done)]] "
+										"string" : "[[Repair missing pages (done)]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -272,7 +272,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Implementing Levenshtein (done)]] "
+										"string" : "[[Implementing Levenshtein (done)]]"
 									}
 								]
 							},
@@ -295,7 +295,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-19T18:20:40.849356+02:00"
+									"dateAndTimeString" : "2025-10-22T14:10:11.530995+02:00"
 								}
 							},
 							"uid" : {
@@ -305,7 +305,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[* Edit fields, topics and kinds (partly done)]] "
+							"string" : "[[*** Edit fields, topics and kinds (partly done)]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -347,7 +347,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Roadmaps with or without Kinds]] "
+										"string" : "[[Roadmaps with or without Kinds]]"
 									}
 								]
 							},
@@ -380,7 +380,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[* Profile Newcomers]] "
+							"string" : "[[* Profile Newcomers]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -422,7 +422,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Add better way to search for a topic]] "
+										"string" : "[[Add better way to search for a topic]]"
 									}
 								]
 							},
@@ -455,7 +455,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Generalize Spotter searches]] "
+							"string" : "[[Generalize Spotter searches]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -497,7 +497,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Implement Topic Treemaps]] "
+										"string" : "[[Implement Topic Treemaps]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -534,7 +534,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Scenery experiment]] "
+										"string" : "[[Scenery experiment]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -608,7 +608,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Introduce Mondrian Roadmaps]] "
+										"string" : "[[Introduce Mondrian Roadmaps]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -645,7 +645,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Simplify design of TopicMap nodes]] "
+										"string" : "[[Simplify design of TopicMap nodes]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -682,7 +682,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[*** Tailor the RoadMap visualizations]] "
+										"string" : "[[*** Tailor the RoadMap visualizations]]"
 									}
 								]
 							},
@@ -757,7 +757,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Storing topic maps in a dedicated slot (not used)]] "
+										"string" : "[[Storing topic maps in a dedicated slot (not used)]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -794,7 +794,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Storing topic maps in the options slot (not used)]] "
+										"string" : "[[Storing topic maps in the options slot (not used)]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -831,7 +831,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Storing topicMaps in a separate JSON]] "
+										"string" : "[[Storing topicMaps in a separate JSON]]"
 									}
 								]
 							},
@@ -864,7 +864,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Storing topics, categories and topic groups]] "
+							"string" : "[[Storing topics, categories and topic groups]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -901,7 +901,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Introducing topic map views for pages and databases]] "
+							"string" : "[[Introducing topic map views for pages and databases]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -943,7 +943,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Mine categories from the GT Book pages]] "
+										"string" : "[[Mine categories from the GT Book pages]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -985,7 +985,7 @@
 													"paragraphStyle" : {
 														"__type" : "textStyle"
 													},
-													"string" : "[[Image freezing bug]] "
+													"string" : "[[Image freezing bug]]"
 												},
 												{
 													"__type" : "textSnippet",
@@ -1059,7 +1059,7 @@
 													"paragraphStyle" : {
 														"__type" : "textStyle"
 													},
-													"string" : "[[Assign topics to pages]] "
+													"string" : "[[Assign topics to pages]]"
 												}
 											]
 										},
@@ -1092,7 +1092,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Mine topics from the GT Book pages]] "
+										"string" : "[[Mine topics from the GT Book pages]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1129,7 +1129,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Prepare a topic map]] "
+										"string" : "[[Prepare a topic map]]"
 									}
 								]
 							},
@@ -1162,7 +1162,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Experiments: Topic and category mining]] "
+							"string" : "[[Experiments: Topic and category mining]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -1204,7 +1204,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Topic mining experiment with gt4llm 2025-07-21]] "
+										"string" : "[[Topic mining experiment with gt4llm 2025-07-21]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1241,7 +1241,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[VH Prompt optimization huddle 2025-07-25]] "
+										"string" : "[[VH Prompt optimization huddle 2025-07-25]]"
 									}
 								]
 							},
@@ -1274,7 +1274,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Prototypes]] "
+							"string" : "[[Prototypes]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -1316,7 +1316,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[PageClassifier — to do tasks]] "
+										"string" : "[[PageClassifier — to do tasks]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1353,7 +1353,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Add Page Classifier Spotter search]] "
+										"string" : "[[Add Page Classifier Spotter search]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1390,7 +1390,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[PageClassifier initial implementation]] "
+										"string" : "[[PageClassifier initial implementation]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1427,7 +1427,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Control the computation]] "
+										"string" : "[[Control the computation]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1501,7 +1501,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Implement JSON export]] "
+										"string" : "[[Implement JSON export]]"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1543,7 +1543,7 @@
 													"paragraphStyle" : {
 														"__type" : "textStyle"
 													},
-													"string" : "[[Auto-import values from JSON files]] "
+													"string" : "[[Auto-import values from JSON files]]"
 												}
 											]
 										},
@@ -1576,7 +1576,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[Implement example-based prompts]] "
+										"string" : "[[Implement example-based prompts]]"
 									}
 								]
 							},
@@ -1609,7 +1609,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[PageClassifier implementation]] "
+							"string" : "[[PageClassifier implementation]]"
 						}
 					]
 				},

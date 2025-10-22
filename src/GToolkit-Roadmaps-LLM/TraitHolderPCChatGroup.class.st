@@ -6,7 +6,7 @@ Class {
 	#superclass : #AbstractPCChatGroup,
 	#traits : 'TGtGroupWithItems',
 	#classTraits : 'TGtGroupWithItems classTrait',
-	#category : #'GToolkit-Roadmaps-LLM-Experiments'
+	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
 
 { #category : #accessing }

@@ -201,7 +201,9 @@ TMPageNode >> kindUpdateElement [
 
 { #category : #navigation }
 TMPageNode >> kinds [
-	^ {self kind}
+	^ self kind = self topicMap defaultValue
+		ifTrue: [ {} ]
+		ifFalse: [ {self kind} ]
 ]
 
 { #category : #accessing }
@@ -338,7 +340,7 @@ TMPageNode >> topicsToggling: aTopicString [
 		ifFalse: [ self topics copyWith: aTopicString ]
 ]
 
-{ #category : #views }
+{ #category : #updating }
 TMPageNode >> updateKindTo: aKindString [
 	self topicMap updateKindForPage: self to: aKindString
 ]

@@ -126,25 +126,6 @@ TMAbstractTreeNode >> gtSpawnTopicMapActionFor: anAction [
 ]
 
 { #category : #views }
-TMAbstractTreeNode >> gtSummaryFor: aView [
-	<gtView>
-	"self summary ifEmpty: [ ^ aView empty ]."
-	^ aView columnedList
-		title: 'Summary';
-		priority: 20;
-		items: [ self summary ];
-		actionUpdateButtonTooltip: 'Update item list';
-		column: 'Index'
-			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
-			width: 45;
-		column: 'Key'
-			text: #first
-			width: 100;
-		column: 'Value' text: #second;
-		send: #last
-]
-
-{ #category : #views }
 TMAbstractTreeNode >> gtTopicTreeFor: aView [
 	<gtView>
 	^ aView columnedTree
@@ -160,19 +141,19 @@ TMAbstractTreeNode >> gtTopicTreeFor: aView [
 			width: 300;
 		column: 'Node type'
 			text: [ :each | each nodeType ]
-			width: 100;
+			width: 80;
 		column: '# Children'
 			text: [ :each | each children size ]
-			width: 100;
+			width: 80;
 		column: '# Topics'
 			text: [ :each | each topics size ]
-			width: 100;
+			width: 80;
 		column: '# Pages'
 			text: [ :each | each pages size ]
-			width: 100;
+			width: 80;
 		column: '# Kinds'
 			text: [ :each | each kinds size ]
-			width: 100;
+			width: 80;
 		column: 'Info'
 			text: [ :each | each relatedInfo ]
 			width: 300;
@@ -403,31 +384,6 @@ TMAbstractTreeNode >> roadmapSimpleNodeElement [
 		border: self roadmapNodeBorder;
 		background: self roadmapNodeColor;
 		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
-]
-
-{ #category : #utility }
-TMAbstractTreeNode >> sizeAndFirstIfAlone: aCollection [
-	^ aCollection size printString
-		, (aCollection size = 1 ifTrue: [ ' — ' , aCollection first ] ifFalse: [ '' ])
-]
-
-{ #category : #views }
-TMAbstractTreeNode >> summary [
-	^ {{'Database'.
-			self database.
-			self databaseNode}.
-		{'#Fields'.
-			self sizeAndFirstIfAlone: self fields.
-			self fieldNodes}.
-		{'#Topics'.
-			self sizeAndFirstIfAlone: self topics.
-			self topicNodes}.
-		{'#Kinds'.
-			self sizeAndFirstIfAlone: self kinds.
-			self kindNodes}.
-		{'#Pages'.
-			self sizeAndFirstIfAlone: (self pages collect: #title).
-			self pageGroup}}
 ]
 
 { #category : #navigation }

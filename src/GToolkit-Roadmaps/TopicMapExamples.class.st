@@ -212,7 +212,7 @@ TopicMapExamples >> pageGroupChildrenOfKindsWithinAboutGt [
 	self assert: pageGroup isTMNodeGroup.
 	self assert: pageGroup isTMPageGroup.
 	self assert: pageGroup children isTMNodeGroup.
-	self assert: pageGroup children isTMPageGroup not.
+	self assert: pageGroup children isTMPageGroup.
 	^ pageGroup
 ]
 
@@ -268,7 +268,7 @@ TopicMapExamples >> smaccQuery [
 	smaccQuery := databaseNode contentIncludes: query.
 	self assert: smaccQuery fields size equals: 5.
 	self assert: smaccQuery children isTMNodeGroup.
-	self assert: smaccQuery children isTMPageGroup not.
+	self assert: smaccQuery children isTMPageGroup.
 	self assert: smaccQuery parents isNotEmpty.
 	^ smaccQuery
 ]

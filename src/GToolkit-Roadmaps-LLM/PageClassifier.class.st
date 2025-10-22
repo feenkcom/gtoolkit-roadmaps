@@ -1,6 +1,16 @@
 "
 I am a page classifier that classifies lepiter pages using a generative AI chat with a given prompt.
 The classification could be into topics (such as EDD orMoldable Development) or it could be into the type of page (exercise, use case, tutorial etc).
+
+I can be instantiated either from a JSON file (using {{gtMethod:name=PageClassifier class>>#fromJsonFilePath:}}), or directly from a JSON (using {{gtMethod:name=PageClassifier class>>#newFromJson:}}). If there is a JSON file, then actions will be available to store the modified JSON, otherwise not.
+
+The JSON should have fields:
+`jsonFile` (optional) — path to JSON file from the `FileLocator gtResource` location
+`resultType` — `'Kind'` or `'Topic'`
+`bookName` — normally `'Glamorous Toolkit Book'`
+`prompt` — the chat prompt containing fields `promptString` and (optionally) `examples`; the latter is an array of `pageName` and `answer`
+`chats` — an array of `pageName` and the `results` array of strings.
+
 "
 Class {
 	#name : #PageClassifier,
@@ -13,7 +23,7 @@ Class {
 		'jsonFile',
 		'definingMethod'
 	],
-	#category : #'GToolkit-Roadmaps-LLM-Experiments'
+	#category : #'GToolkit-Roadmaps-LLM-Model'
 }
 
 { #category : #'instance creation' }
@@ -287,11 +297,15 @@ PageClassifier >> jsonFileBasename [
 
 { #category : #serialization }
 PageClassifier >> jsonFileReference [
-	^ FileLocator gtResource / self jsonFile
+	^ self jsonFile
+		ifNil: [ nil ]
+		ifNotNil: [ FileLocator gtResource / self jsonFile ]
 ]
 
 { #category : #converting }
 PageClassifier >> jsonObject [
+	"Reconstruct the JSON from the attributes."
+
 	| json |
 	json := {'resultType' -> self resultType.
 			'bookName' -> self pages first database databaseName.

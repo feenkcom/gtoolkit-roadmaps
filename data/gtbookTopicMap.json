@@ -469,7 +469,7 @@
 			]
 		},
 		{
-			"page" : "How to give feedback and contribute",
+			"page" : "Engage with the community and contribute",
 			"kind" : "FAQ",
 			"topics" : [
 				"Community & Support",
@@ -4042,7 +4042,7 @@
 			]
 		},
 		{
-			"page" : "Smalltalk Syntax in 7'",
+			"page" : "Smalltalk syntax in 7'",
 			"kind" : "Media",
 			"topics" : [
 				"Programming Smalltalk"
@@ -4667,6 +4667,149 @@
 			"kind" : "Index",
 			"topics" : [
 				"Book Organization and Navigation"
+			]
+		},
+		{
+			"page" : "Analyzing the Python import time output",
+			"kind" : "Examples",
+			"topics" : [
+				"Working with Python"
+			]
+		},
+		{
+			"page" : "Controlling completion in a text editor",
+			"kind" : "Documentation",
+			"topics" : [
+				"Text Editing"
+			]
+		},
+		{
+			"page" : "Creating edges in Mondrian",
+			"kind" : "Examples",
+			"topics" : [
+				"Using Mondrian",
+				"Using Beacon"
+			]
+		},
+		{
+			"page" : "Creating longer text through concatenation or text streams",
+			"kind" : "Examples",
+			"topics" : [
+				"Using Bloc"
+			]
+		},
+		{
+			"page" : "Enhancing text with basic text attributes",
+			"kind" : "Examples",
+			"topics" : [
+				"Using Bloc"
+			]
+		},
+		{
+			"page" : "For LLMs",
+			"kind" : "Definition",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Handling text events",
+			"kind" : "Examples",
+			"topics" : [
+				"Using Bloc"
+			]
+		},
+		{
+			"page" : "How to configure completion delay and Enter key",
+			"kind" : "FAQ",
+			"topics" : [
+				"Using Coder"
+			]
+		},
+		{
+			"page" : "How to configure the code editor",
+			"kind" : "Index",
+			"topics" : [
+				"Using Coder"
+			]
+		},
+		{
+			"page" : "How to control the default folding of the hiding attribute",
+			"kind" : "FAQ",
+			"topics" : [
+				"Text Editing"
+			]
+		},
+		{
+			"page" : "How to control the scrolling speed",
+			"kind" : "FAQ",
+			"topics" : [
+				"Using Bloc"
+			]
+		},
+		{
+			"page" : "LanguageLink, Lifetimes, and Garbage Collection",
+			"kind" : "Documentation",
+			"topics" : [
+				"Distributed and Remote Execution"
+			]
+		},
+		{
+			"page" : "Remote Runner: Using a custom runnner",
+			"kind" : "Documentation",
+			"topics" : [
+				"Distributed and Remote Execution"
+			]
+		},
+		{
+			"page" : "Running GT examples on local machine in parallel",
+			"kind" : "Documentation",
+			"topics" : [
+				"Scripting and Automation"
+			]
+		},
+		{
+			"page" : "Setting up the environment",
+			"kind" : "Index",
+			"topics" : [
+				"Working with LLMs",
+				"Using Coder",
+				"Working with Git and GitHub"
+			]
+		},
+		{
+			"page" : "Text editor basics",
+			"kind" : "Documentation",
+			"topics" : [
+				"Text Editing"
+			]
+		},
+		{
+			"page" : "Transferring Remote Views",
+			"kind" : "Documentation",
+			"topics" : [
+				"Distributed and Remote Execution"
+			]
+		},
+		{
+			"page" : "What to do when GT slows to a crawl?",
+			"kind" : "FAQ",
+			"topics" : [
+				"Performance Analysis and Profiling"
+			]
+		},
+		{
+			"page" : "Working with text adornments",
+			"kind" : "Examples",
+			"topics" : [
+				"Text Editing"
+			]
+		},
+		{
+			"page" : "Working with text editors",
+			"kind" : "Index",
+			"topics" : [
+				"Text Editing"
 			]
 		}
 	],

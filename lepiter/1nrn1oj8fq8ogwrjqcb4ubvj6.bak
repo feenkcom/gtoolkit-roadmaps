@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-20T10:11:38.393337+02:00"
+						"dateAndTimeString" : "2025-10-20T10:45:57.696602+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "The Roadmap visualizations are not ideal. They are often cluttered, and can be confusing for Kinds and Pages, which may map to multiple Topics and Fields.\nWe need a better way to contextualize and tailor the roadmaps, perhaps by making *Breadcrumbs* an explicit domain context to pass along when creating a node.\nLet's consider each case and how it may best be tailored."
+				"string" : "The Roadmap visualizations are not ideal. They are often cluttered, and can be confusing for Kinds and Pages, which may map to multiple Topics and Fields.\nWe need a better way to contextualize and tailor the roadmaps, perhaps by making *Breadcrumbs* an explicit domain context to pass along when creating a node.\nAre there other kinds of contexts that we need to explicitly represent?\nLet's consider each case and how it may best be tailored."
 			},
 			{
 				"__type" : "textSnippet",
@@ -772,6 +772,77 @@
 							"codeExpanded" : true,
 							"previewExpanded" : true,
 							"noCode" : true
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T09:19:13.930383+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T09:19:46.631141+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "rxAHwQf+DQCv68cdBmLyvg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Interestingly, if we inspect unmapped pages we get a view with unknown topics or kinds."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T09:19:48.205855+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-21T15:39:15.501636+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "NhESwwf+DQCx6kEDBmLyvg=="
+							},
+							"code" : "LeDatabase gt unmappedPages"
 						}
 					]
 				},
