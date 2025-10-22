@@ -25,21 +25,20 @@ Class {
 
 { #category : #loading }
 TopicMap class >> ensureLlmLoaded [
-	"To wait for this to complete, just send critical: aBlock to the result."
+	"To wait for this to complete, just send #wait to the result."
 
-	| mutex |
-	mutex := Monitor new.
+	| semaphore |
+	semaphore := Semaphore new.
 	self llmPackage isLoaded
-		ifFalse: [ [ mutex
-				critical: [ UIManager default
-						informUser: 'Loading GtoolkitRoadmapsLLM package'
-						during: [ Metacello new
-								repository: 'github://feenkcom/gtoolkit-roadmaps:main/src';
-								baseline: 'GtoolkitRoadmapsLLM';
-								load.
-							#BaselineOfGtoolkitRoadmapsLLM asClass loadLepiterGtbookExamples ] ] ]
-				fork ].
-	^ mutex
+		ifFalse: [ [ UIManager default
+				informUser: 'Loading GtoolkitRoadmapsLLM package'
+				during: [ Metacello new
+						repository: 'github://feenkcom/gtoolkit-roadmaps:main/src';
+						baseline: 'GtoolkitRoadmapsLLM';
+						load.
+					#BaselineOfGtoolkitRoadmapsLLM asClass loadLepiterGtbookExamples ].
+			semaphore signal ] fork ].
+	^ semaphore
 ]
 
 { #category : #'instance creation' }
@@ -298,8 +297,8 @@ TopicMap >> gtUnmappedPagesFor: aView [
 		actionButtonIcon: BrGlamorousVectorIcons repair
 			tooltip: 'Fix unmapped pages using LLM'
 			action: [ :aButton :aTab | 
-				self class ensureLlmLoaded
-					critical: [ aButton phlow spawnObject: (#TMClassifier asClass for: self) ] ]
+				[ self class ensureLlmLoaded wait: 60 seconds asDuration.
+				aButton phlow spawnObject: (#TMClassifier asClass for: self) ] fork ]
 ]
 
 { #category : #actions }

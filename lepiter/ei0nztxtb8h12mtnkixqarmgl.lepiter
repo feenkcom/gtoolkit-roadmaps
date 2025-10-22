@@ -176,7 +176,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T14:35:09.337436+02:00"
+									"dateAndTimeString" : "2025-10-22T11:27:33.250126+02:00"
 								}
 							},
 							"uid" : {
@@ -186,7 +186,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo in the package {{gtPackage:name=GToolkit-Roadmaps-LLM}}.  "
+							"string" : "We already have the core implementation in the Metabook project. We can move everything to this repo in the package {{gtPackage:name=GToolkit-Roadmaps-LLM}}.   "
 						},
 						{
 							"__type" : "pharoSnippet",
