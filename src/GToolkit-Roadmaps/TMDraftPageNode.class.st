@@ -9,20 +9,7 @@ Class {
 }
 
 { #category : #accessing }
-TMDraftPageNode >> addToTopic [
-	^ self topicMap addDraftPage: self
-]
-
-{ #category : #accessing }
 TMDraftPageNode >> addToTopicMap [
-	"| topicMapPages |
-	topicMapPages := self topicMap json at: 'pages'.
-	self
-		assert: (topicMapPages select: [ :d | (d at: 'page') = self page title ]) isEmpty.
-	self topicMap json at: 'pages' put: (topicMapPages copyWith: self json).
-	self topicMap clearCaches.
-	^ self topicMap pageNodeWithTitle: self page title"
-
 	^ self topicMap addDraftPage: self
 ]
 
@@ -56,6 +43,18 @@ TMDraftPageNode >> kinds [
 TMDraftPageNode >> relatedInfo [
 	self kind ifNil: [ ^ '(draft page)' ].
 	^ super relatedInfo
+]
+
+{ #category : #'as yet unclassified' }
+TMDraftPageNode >> summary [
+	^ super summary
+		copyWithAll: {{'Kind'.
+					self kind}}
+				, (self topics
+						withIndexCollect: [ :each :index | 
+							{'Topic ' , index printString.
+								each.
+								self topicNodeFor: each} ])
 ]
 
 { #category : #updating }

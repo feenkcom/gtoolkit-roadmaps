@@ -141,19 +141,19 @@ TMAbstractTreeNode >> gtTopicTreeFor: aView [
 			width: 300;
 		column: 'Node type'
 			text: [ :each | each nodeType ]
-			width: 100;
+			width: 80;
 		column: '# Children'
 			text: [ :each | each children size ]
-			width: 100;
+			width: 80;
 		column: '# Topics'
 			text: [ :each | each topics size ]
-			width: 100;
+			width: 80;
 		column: '# Pages'
 			text: [ :each | each pages size ]
-			width: 100;
+			width: 80;
 		column: '# Kinds'
 			text: [ :each | each kinds size ]
-			width: 100;
+			width: 80;
 		column: 'Info'
 			text: [ :each | each relatedInfo ]
 			width: 300;

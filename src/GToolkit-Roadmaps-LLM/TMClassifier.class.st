@@ -48,27 +48,58 @@ TMClassifier >> gtKindClassifierFor: aView [
 			action: [ :aButton :aTab | aButton phlow spawnObject: self kindClassifier ];
 		actionButtonIcon: BrGlamorousVectorIcons play
 			tooltip: 'Run  classifier'
-			action: [ :aButton | self kindClassifier requestResults ]
+			action: [ :aButton | self kindClassifier requestResults ];
+		actionButtonIcon: BrGlamorousVectorIcons cancel
+			tooltip: 'Run  classifier'
+			action: [ :aButton | self kindClassifier terminateAllChatProcesses ]
 ]
 
 { #category : #views }
 TMClassifier >> gtPagesFor: aView [
 	<gtView>
-	^ aView forward
-		title: 'Unmapped pages';
+	^ aView columnedTree
+		title: 'Draft pages';
 		priority: 10;
-		object: [ self unmappedPages ];
-		view: #gtTopicTreeFor:;
+		items: [ self unmappedPages ];
+		column: 'Index'
+			text: [ :eachItem :eachIndex | eachIndex asRopedText foreground: Color gray ]
+			width: 40;
+		column: 'Page'
+			text: [ :each | each nodeLabel ]
+			width: 200;
+		column: 'Kind'
+			text: [ :each | each kind ]
+			width: 140;
+		column: '# Topics'
+			text: [ :each | each topics size ]
+			width: 60;
+		column: 'Topic 1'
+			text: [ :each | each topics at: 1 ifAbsent: '' ]
+			width: 140;
+		column: 'Topic 2'
+			text: [ :each | each topics at: 2 ifAbsent: '' ]
+			width: 140;
+		column: 'Topic 3'
+			text: [ :each | each topics at: 3 ifAbsent: '' ]
+			width: 140;
+		send: [ :each | each ];
+		actionButtonIcon: BrGlamorousVectorIcons changes
+			tooltip: 'Inspect  pages'
+			action: [ :aButton :aTab | aButton phlow spawnObject: self unmappedPages children ];
 		actionButtonIcon: BrGlamorousVectorIcons play
 			tooltip: 'Run classifiers'
 			action: [ :aButton :aTab | 
 				self kindClassifier requestResults.
 				self topicClassifier requestResults ];
+		actionButtonIcon: BrGlamorousVectorIcons cancel
+			tooltip: 'Terminate classifiers'
+			action: [ :aButton | self kindClassifier terminateAllChatProcesses ];
 		actionButtonIcon: BrGlamorousVectorIcons save
 			tooltip: 'Save updates to Topic Map'
 			action: [ :aButton :aTab | 
-				self unmappedPages addPagesToTopicMap.
-				aButton phlow spawnObject: self topicMap ];
+				self unmappedPages addPagesToTopicMap
+					ifTrue: [ aButton phlow spawnObject: self topicMap ] ];
+		actionUpdateButton;
 		updateWhen: PCResultsUpdatedAnnouncement in: self announcer
 ]
 
@@ -85,7 +116,10 @@ TMClassifier >> gtTopicClassifierFor: aView [
 			action: [ :aButton :aTab | aButton phlow spawnObject: self topicClassifier ];
 		actionButtonIcon: BrGlamorousVectorIcons play
 			tooltip: 'Run  classifier'
-			action: [ :aButton | self topicClassifier requestResults ]
+			action: [ :aButton | self topicClassifier requestResults ];
+		actionButtonIcon: BrGlamorousVectorIcons cancel
+			tooltip: 'Run  classifier'
+			action: [ :aButton | self kindClassifier terminateAllChatProcesses ]
 ]
 
 { #category : #initialization }

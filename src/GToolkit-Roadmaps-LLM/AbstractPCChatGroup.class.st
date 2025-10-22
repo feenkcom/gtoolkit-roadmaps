@@ -85,7 +85,7 @@ AbstractPCChatGroup >> gtActionMenuFor: anAction [
 						'Browse pending chat request processes'
 							-> [ :e | e phlow spawnObject: self pendingProcesses ].
 						'Terminate pending chat request processes'
-							-> [ :e | self class allInstances do: #terminateRequest ]};
+							-> [ :e | self terminateAllChatProcesses ]};
 				yourself ]
 ]
 
@@ -118,7 +118,7 @@ AbstractPCChatGroup >> gtClearResultsAction: anAction [
 	^ anAction button
 		tooltip: 'Clear the results';
 		priority: 30;
-		icon: BrGlamorousVectorIcons close;
+		label: 'Ø';
 		action: [ :aButton | self chats do: #clearResults ]
 ]
 
@@ -308,6 +308,11 @@ AbstractPCChatGroup >> requestResults [
 { #category : #serialization }
 AbstractPCChatGroup >> saveToJSONfile [
 	self subclassResponsibility
+]
+
+{ #category : #action }
+AbstractPCChatGroup >> terminateAllChatProcesses [
+	^ self class allInstances do: #terminateRequest
 ]
 
 { #category : #action }

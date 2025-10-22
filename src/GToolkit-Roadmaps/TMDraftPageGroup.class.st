@@ -6,10 +6,14 @@ Class {
 
 { #category : #accessing }
 TMDraftPageGroup >> addPagesToTopicMap [
-	^ self nodes
+	self validPages isEmpty
+		ifTrue: [ self inform: 'There were no valid pages (with kind and topics) to add.'.
+			^ false ].
+	self validPages
 		do: [ :n | 
 			n addToTopicMap.
-			self removeDraftPageWithTitle: n page title ]
+			self removeDraftPageWithTitle: n page title ].
+	^ true
 ]
 
 { #category : #views }
@@ -29,4 +33,9 @@ TMDraftPageGroup >> pages: aPageCollection [
 { #category : #updating }
 TMDraftPageGroup >> removeDraftPageWithTitle: aPageTitle [
 	^ self nodes removeAllSuchThat: [ :n | n page title = aPageTitle ]
+]
+
+{ #category : #querying }
+TMDraftPageGroup >> validPages [
+	^ self select: [ :pn | pn kind isNotNil and: [ pn topics isNotEmpty ] ]
 ]

@@ -17,8 +17,7 @@ Class {
 		'page2Kind',
 		'field2Topics',
 		'monitor',
-		'kind2Pages',
-		'isClean'
+		'kind2Pages'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -60,12 +59,21 @@ TopicMap class >> llmPackage [
 { #category : #updating }
 TopicMap >> addDraftPage: aDraftPage [
 	| topicMapPages |
+	self
+		assert: aDraftPage kind isNotNil
+		description: 'Page “', aDraftPage page title , '” is missing a kind.'.
+	self
+		assert: (self kinds includes: aDraftPage kind)
+		description: aDraftPage kind , ' is not a valid page kind for page “' , aDraftPage page title, '”'.
+	self
+		assert: aDraftPage topics isNotEmpty
+		description: 'Page “', aDraftPage page title , '” is missing topics.'.
 	topicMapPages := self json at: 'pages'.
 	self
 		assert: (topicMapPages select: [ :d | (d at: 'page') = aDraftPage page title ]) isEmpty.
 	self json at: 'pages' put: (topicMapPages copyWith: aDraftPage json).
 	self clearCaches.
-	self isClean: false.
+	self writeJsonFile.
 	^ self pageNodeWithTitle: aDraftPage page title
 ]
 
@@ -114,7 +122,7 @@ TopicMap >> defaultValue [
 	^ '<unknown>'
 ]
 
-{ #category : #accessing }
+{ #category : #updating }
 TopicMap >> deleteMissingPageWithTitle: aTitle [
 	| newPages index |
 	index := (self json at: 'pages') detectIndex: [ :d | (d at: 'page') = aTitle ].
@@ -296,7 +304,9 @@ TopicMap >> gtUnmappedPagesFor: aView [
 		object: [ self unmappedPages ];
 		view: #gtTopicTreeFor:;
 		actionButtonIcon: BrGlamorousVectorIcons repair
-			tooltip: 'Fix unmapped pages using LLM'
+			tooltip: (self class llmPackage isLoaded
+					ifTrue: [ 'Repair' ]
+					ifFalse: [ 'Load LLM package and repair' ]), ' unmapped pages'
 			action: [ :aButton :aTab | 
 				[ self class ensureLlmLoaded wait.
 				aButton phlow spawnObject: (#TMClassifier asClass for: self) ] fork ]
@@ -306,13 +316,10 @@ TopicMap >> gtUnmappedPagesFor: aView [
 TopicMap >> gtWriteJsonActionFor: anAction [
 	<gtAction>
 	^ anAction button
-		tooltip: 'Write JSON'
-				, (self isClean ifTrue: [ ' (not needed)' ] ifFalse: [ ' (needed' ]);
+		tooltip: 'Write JSON';
 		priority: 50;
 		icon: BrGlamorousVectorIcons savetodisk;
-		action: [ :aButton | 
-			aButton phlow fireToolUpdateWish.
-			aButton phlow spawnObject: self writeJsonFile ]
+		action: [  "aButton phlow fireToolUpdateWish.":aButton | aButton phlow spawnObject: self writeJsonFile ]
 ]
 
 { #category : #help }
@@ -329,20 +336,7 @@ TopicMap >> hotSaveToDisk [
 { #category : #initialization }
 TopicMap >> initialize [
 	super initialize.
-	isClean := true.
 	monitor := Monitor new
-]
-
-{ #category : #accessing }
-TopicMap >> isClean [
-	"The JSON is in sync with the file on disk."
-
-	^ isClean
-]
-
-{ #category : #accessing }
-TopicMap >> isClean: aBoolean [
-	isClean := aBoolean
 ]
 
 { #category : #accessing }
@@ -606,14 +600,13 @@ TopicMap >> writeJsonFile [
 	| tempFile |
 	tempFile := self jsonFile copyWithPath: self jsonFile path , 'temp.json'.
 	tempFile ensureDelete.
-	tempFile writeStreamDo: [ :aStream |
-		STON put: self json asJsonOnStreamPretty: aStream ].
+	tempFile
+		writeStreamDo: [ :aStream | STON put: self json asJsonOnStreamPretty: aStream ].
 	[ tempFile readStreamDo: [ :aStream | STON fromStream: aStream ] ]
 		onErrorDo: [ tempFile ensureDelete.
 			self error: 'Writing JSON failed -- leaving old JSON as is.' ].
 	monitor
 		critical: [ self jsonFile ensureDelete.
-			tempFile renameTo: self jsonFile basename.
-			self isClean: true ].
+			tempFile renameTo: self jsonFile basename ].
 	^ self jsonFile
 ]
