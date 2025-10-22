@@ -84,7 +84,45 @@
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
-								"items" : [ ]
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-22T14:13:06.469161+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-22T14:13:06.469161+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "opHZ+R/+DQCuFg+zCe8ZiA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Rethink the visualizations — may need multiple ways to visualize a given node, depending on the context (especially kind nodes and pages).\nHighlight breadcrumbs in roadmaps"
+									}
+								]
 							},
 							"createEmail" : {
 								"__type" : "email",
@@ -94,7 +132,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-18T09:29:53.376064+02:00"
+									"dateAndTimeString" : "2025-10-22T14:12:53.811218+02:00"
 								}
 							},
 							"editEmail" : {
@@ -105,17 +143,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-22T14:10:00.537898+02:00"
+									"dateAndTimeString" : "2025-10-22T14:12:53.824651+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "Zxiejcv9DQCjm5mSBe+0fA=="
+								"uidString" : "bf23+B/+DQCt5k82Ce8ZiA=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Add tests for editing nodes\nAdd methods and tools for editing nodes\n\nRethink the visualizations — may need multiple ways to visualize a given node, depending on the context (especially kind nodes and pages).\nHighlight breadcrumbs in roadmaps\n\nCreate Help pages for nodes; move them to the GT book\nStart preparing newcomer guides ...."
+							"string" : "[[*** Tailor the RoadMap visualizations]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -136,7 +174,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-19T09:34:19.090257+02:00"
+												"dateAndTimeString" : "2025-10-22T14:13:21.95603+02:00"
 											}
 										},
 										"editEmail" : {
@@ -147,17 +185,17 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-22T14:10:11.544051+02:00"
+												"dateAndTimeString" : "2025-10-22T14:13:21.95603+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
-											"uidString" : "AZMJJUT5DQCI/XtbC93zJg=="
+											"uidString" : "iOXF+h/+DQCuKoZ7Ce8ZiA=="
 										},
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[*** Edit fields, topics and kinds (partly done)]] "
+										"string" : "Check which editing operations are needed (adding or changing fields, topics and kinds)\nAdd tests for editing nodes\nAdd methods and tools for editing nodes"
 									}
 								]
 							},
@@ -169,7 +207,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-08-27T11:16:40.446019+02:00"
+									"dateAndTimeString" : "2025-09-19T09:34:19.090257+02:00"
 								}
 							},
 							"editEmail" : {
@@ -180,23 +218,61 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-18T09:43:10.456579+02:00"
+									"dateAndTimeString" : "2025-10-22T14:14:00.21364+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "LLXC+7b5DQCHX6r7B75TxA=="
+								"uidString" : "AZMJJUT5DQCI/XtbC93zJg=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Provide a way to find pages missing topics and kinds, and trigger an assistant."
+							"string" : "[[*** Edit fields, topics and kinds (partly done)]]"
 						},
 						{
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
-								"items" : [ ]
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-18T09:29:53.376064+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-22T14:13:21.966614+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "Zxiejcv9DQCjm5mSBe+0fA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Create Help pages for nodes; move them to the GT book\nStart preparing newcomer guides ...."
+									}
+								]
 							},
 							"createEmail" : {
 								"__type" : "email",
@@ -227,7 +303,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[* Finish adding Help pages]] "
+							"string" : "[[* Finish adding Help pages]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -311,7 +387,7 @@
 													"paragraphStyle" : {
 														"__type" : "textStyle"
 													},
-													"string" : "[[* Profile Newcomers]] "
+													"string" : "[[* Profile Newcomers]]"
 												},
 												{
 													"__type" : "textSnippet",
@@ -348,7 +424,7 @@
 													"paragraphStyle" : {
 														"__type" : "textStyle"
 													},
-													"string" : "[[Roadmaps with or without Kinds]] "
+													"string" : "[[Roadmaps with or without Kinds]]"
 												}
 											]
 										},
@@ -564,7 +640,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Add assistant to update unmapped pages]] "
+							"string" : "[[Add assistant to update unmapped pages]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -775,7 +851,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Highlight breadcrumbs in roadmaps]] "
+							"string" : "[[Highlight breadcrumbs in roadmaps]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -812,7 +888,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Add Help pages to nodes]] "
+							"string" : "[[Add Help pages to nodes]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -924,7 +1000,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Repair missing pages (done)]] "
+							"string" : "[[Repair missing pages (done)]]"
 						},
 						{
 							"__type" : "textSnippet",
