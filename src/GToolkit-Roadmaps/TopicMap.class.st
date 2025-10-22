@@ -30,6 +30,7 @@ TopicMap class >> ensureLlmLoaded [
 	| semaphore |
 	semaphore := Semaphore new.
 	self llmPackage isLoaded
+		ifTrue: [ semaphore signal ]
 		ifFalse: [ [ UIManager default
 				informUser: 'Loading GtoolkitRoadmapsLLM package'
 				during: [ Metacello new
@@ -297,7 +298,7 @@ TopicMap >> gtUnmappedPagesFor: aView [
 		actionButtonIcon: BrGlamorousVectorIcons repair
 			tooltip: 'Fix unmapped pages using LLM'
 			action: [ :aButton :aTab | 
-				[ self class ensureLlmLoaded wait: 60 seconds asDuration.
+				[ self class ensureLlmLoaded wait.
 				aButton phlow spawnObject: (#TMClassifier asClass for: self) ] fork ]
 ]
 
