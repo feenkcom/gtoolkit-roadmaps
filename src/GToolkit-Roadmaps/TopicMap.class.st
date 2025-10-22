@@ -25,13 +25,21 @@ Class {
 
 { #category : #loading }
 TopicMap class >> ensureLlmLoaded [
+	"To wait for this to complete, just send critical: aBlock to the result."
+
+	| mutex |
+	mutex := Monitor new.
 	self llmPackage isLoaded
-		ifFalse: [ Metacello new
-				repository: 'github://feenkcom/gtoolkit-roadmaps:main/src';
-				baseline: 'GtoolkitRoadmapsLLM';
-				load.
-			#BaselineOfGtoolkitRoadmapsLLM asClass loadLepiterGtbookExamples ].
-	^ true
+		ifFalse: [ [ mutex
+				critical: [ UIManager default
+						informUser: 'Loading GtoolkitRoadmapsLLM package'
+						during: [ Metacello new
+								repository: 'github://feenkcom/gtoolkit-roadmaps:main/src';
+								baseline: 'GtoolkitRoadmapsLLM';
+								load.
+							#BaselineOfGtoolkitRoadmapsLLM asClass loadLepiterGtbookExamples ] ] ]
+				fork ].
+	^ mutex
 ]
 
 { #category : #'instance creation' }
@@ -276,19 +284,22 @@ TopicMap >> gtTreeMapFor: aView [
 
 { #category : #views }
 TopicMap >> gtUnmappedPagesFor: aView [
-	"Pages not listed in the JSON. These will need an assistant to update the JSON."
+	"Pages not listed in the JSON. They may be new or renamed pages.
+	Renamed pages can be fixed in the Missing Pages view.
+	New pages can be added using the LLM PageClassifier.
+	"
 
 	<gtView>
 	^ aView forward
-		title: 'Unmapped pages';
+		title: 'New pages';
 		priority: 45;
 		object: [ self unmappedPages ];
 		view: #gtTopicTreeFor:;
 		actionButtonIcon: BrGlamorousVectorIcons repair
 			tooltip: 'Fix unmapped pages using LLM'
 			action: [ :aButton :aTab | 
-				self class ensureLlmLoaded.
-				aButton phlow spawnObject: (#TMClassifier asClass for: self) ]
+				self class ensureLlmLoaded
+					critical: [ aButton phlow spawnObject: (#TMClassifier asClass for: self) ] ]
 ]
 
 { #category : #actions }
