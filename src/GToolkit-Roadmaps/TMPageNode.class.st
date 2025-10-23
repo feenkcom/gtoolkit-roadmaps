@@ -238,11 +238,6 @@ TMPageNode >> parents [
 		ifNotNil: [ self nodesFor: {self viaTopic} ]
 ]
 
-{ #category : #navigation }
-TMPageNode >> parentsWithKind [
-	^ self kindNodes
-]
-
 { #category : #accessing }
 TMPageNode >> relatedInfo [
 	^ 'Kind: ' , self kind
@@ -304,6 +299,14 @@ TMPageNode >> roadmapNodesWithAllTopics [
 	roadmapNodes := self databaseNode roadmapNodes , self parents , self kindNodes
 			, {self}.
 	^ roadmapNodes
+]
+
+{ #category : #navigation }
+TMPageNode >> roadmapParents [
+	"In the case of page nodes, for the mondrian roadmap,
+	we want to connect to the kind nodes, not the topic nodes."
+
+	^ self kindNodes
 ]
 
 { #category : #roadmap }

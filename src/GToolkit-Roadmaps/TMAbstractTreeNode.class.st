@@ -289,18 +289,8 @@ TMAbstractTreeNode >> nodeType [
 ]
 
 { #category : #navigation }
-TMAbstractTreeNode >> pages [
-	self subclassResponsibility
-]
-
-{ #category : #navigation }
 TMAbstractTreeNode >> parents [
 	self subclassResponsibility
-]
-
-{ #category : #navigation }
-TMAbstractTreeNode >> parentsWithKind [
-	^ self parents
 ]
 
 { #category : #printing }
@@ -321,14 +311,14 @@ TMAbstractTreeNode >> relatedInfo [
 
 { #category : #roadmap }
 TMAbstractTreeNode >> roadmap [
-	"Amondrian roadmap showing: database > fields > topics > kinds > pages."
+	"A mondrian roadmap showing: database > fields > topics > kinds > pages."
 
 	| mondrian |
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
 		with: self roadmapNodes.
-	mondrian edges connectFromAll: #parentsWithKind.
+	mondrian edges connectFromAll: #roadmapParents.
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new
 				levelDistance: 50;
@@ -373,6 +363,13 @@ TMAbstractTreeNode >> roadmapNodes [
 	"Returns all the nodes for the roadmap for this kind of node as a kind of TMNodeGroup"
 
 	^ self subclassResponsibility
+]
+
+{ #category : #navigation }
+TMAbstractTreeNode >> roadmapParents [
+	"For the mondrian roadmap, same as parents, except for page nodes."
+
+	^ self parents
 ]
 
 { #category : #roadmap }

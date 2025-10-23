@@ -1,7 +1,7 @@
 Class {
 	#name : #TMDraftPageGroup,
 	#superclass : #TMPageGroup,
-	#category : #'GToolkit-Roadmaps'
+	#category : #'GToolkit-Roadmaps-Model'
 }
 
 { #category : #accessing }
