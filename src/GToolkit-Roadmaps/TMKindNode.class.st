@@ -3,7 +3,7 @@ Class {
 	#superclass : #TMAbstractTreeNode,
 	#instVars : [
 		'kind',
-		'context'
+		'pageGroupContext'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -15,7 +15,7 @@ TMKindNode class >> for: aString in: aTopicMap [
 	^ self new
 		kind: aString;
 		topicMap: aTopicMap;
-		context: aTopicMap pageGroup;
+		pageGroupContext: aTopicMap pageGroup;
 		yourself
 ]
 
@@ -26,7 +26,7 @@ TMKindNode class >> for: aString in: aTopicMap within: aPageGroup [
 	^ self new
 		kind: aString;
 		topicMap: aTopicMap;
-		context: aPageGroup;
+		pageGroupContext: aPageGroup;
 		yourself
 ]
 
@@ -34,16 +34,6 @@ TMKindNode class >> for: aString in: aTopicMap within: aPageGroup [
 TMKindNode >> children [
 	^ self pageGroupFor: self pages	"^ self
 		pageGroupFor: (self pages collect: [ :aPage | TMPageNode for: aPage in: self topicMap ])"
-]
-
-{ #category : #accessing }
-TMKindNode >> context [
-	^ context
-]
-
-{ #category : #accessing }
-TMKindNode >> context: aPageGroup [
-	context := aPageGroup
 ]
 
 { #category : #querying }
@@ -81,17 +71,27 @@ TMKindNode >> nodeType [
 	^ 'Kind'
 ]
 
+{ #category : #accessing }
+TMKindNode >> pageGroupContext [
+	^ pageGroupContext
+]
+
+{ #category : #accessing }
+TMKindNode >> pageGroupContext: aPageGroup [
+	pageGroupContext := aPageGroup
+]
+
 { #category : #querying }
 TMKindNode >> pages [
 	"NB: We only want the pages in *this* page group with this kind."
 
-	^ self context pages
+	^ self pageGroupContext pages
 		select: [ :aPage | (self topicMap kind4Page: aPage) = self kind ]
 ]
 
 { #category : #accessing }
 TMKindNode >> parents [
-	^ self nodesFor: (self context flatCollect: #parents) copyWithoutDuplicates
+	^ self nodesFor: (self pageGroupContext flatCollect: #parents) copyWithoutDuplicates
 ]
 
 { #category : #roadmap }
