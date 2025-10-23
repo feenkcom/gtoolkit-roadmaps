@@ -54,7 +54,7 @@ TMPageGroup >> pageGroup [
 
 { #category : #navigation }
 TMPageGroup >> pages [
-	"Each node is a TMPageNode"
+	"Each node is a TMPageNode, so get the actual LePage."
 
 	^ nodes collect: #page
 ]

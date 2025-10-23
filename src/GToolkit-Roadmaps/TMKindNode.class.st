@@ -3,7 +3,7 @@ Class {
 	#superclass : #TMAbstractTreeNode,
 	#instVars : [
 		'kind',
-		'pageGroupContext'
+		'pageContext'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -15,7 +15,7 @@ TMKindNode class >> for: aString in: aTopicMap [
 	^ self new
 		kind: aString;
 		topicMap: aTopicMap;
-		pageGroupContext: aTopicMap pageGroup;
+		pageContext: aTopicMap pageGroup;
 		yourself
 ]
 
@@ -26,7 +26,7 @@ TMKindNode class >> for: aString in: aTopicMap within: aPageGroup [
 	^ self new
 		kind: aString;
 		topicMap: aTopicMap;
-		pageGroupContext: aPageGroup;
+		pageContext: aPageGroup;
 		yourself
 ]
 
@@ -72,26 +72,36 @@ TMKindNode >> nodeType [
 ]
 
 { #category : #accessing }
-TMKindNode >> pageGroupContext [
-	^ pageGroupContext
+TMKindNode >> pageContext [
+	"The page context is the restricted TMPageGroup we consider for this kind node,
+	in case we don't want to have all the pages of the topic map.
+	For example, within a given topic, we are only interested in the pages of that topic."
+
+	^ pageContext
 ]
 
 { #category : #accessing }
-TMKindNode >> pageGroupContext: aPageGroup [
-	pageGroupContext := aPageGroup
+TMKindNode >> pageContext: aPageGroup [
+	pageContext := aPageGroup
 ]
 
 { #category : #querying }
 TMKindNode >> pages [
-	"NB: We only want the pages in *this* page group with this kind."
+	"NB: We only want the pages in *this* page group with this kind.
+	Could we use the breadcrumb instead?
+	"
+	
+	"self halt."
 
-	^ self pageGroupContext pages
+	^ self pageContext pages
 		select: [ :aPage | (self topicMap kind4Page: aPage) = self kind ]
 ]
 
 { #category : #accessing }
 TMKindNode >> parents [
-	^ self nodesFor: (self pageGroupContext flatCollect: #parents) copyWithoutDuplicates
+	"Could we use the breadcrumb instead?"
+
+	^ self nodesFor: (self pageContext flatCollect: #parents) copyWithoutDuplicates
 ]
 
 { #category : #roadmap }
