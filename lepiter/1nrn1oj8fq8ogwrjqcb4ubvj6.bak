@@ -135,6 +135,118 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-23T10:29:58.32265+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-23T10:31:22.053857+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "7Bay+TD+DQCtVbCbAgiZXw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Currently we use two kinds of ad hoc breadcrumbs. \n{{gtClass:name=TMKindNode}} has {{gtMethod:name=TMKindNode>>#pageGroupContext}}\n{{gtClass:name=TMPageNode}} has {{gtMethod:name=TMPageNode>>#viaTopic}}\nThese are both used to tailor the "
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-23T10:17:00.195789+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-23T10:24:08.93972+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "mtJQyzD+DQCg3SK6AgiZXw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "How should we represent it? \n`<db,f,t,k,p>` captures the path to a page\nWe don't really need them for a database, field or topic, as their path is unique anyway, but we could use the prefix: `<db>`, `<db,f>` and `<db,f,t>`\nFor a kind not associated to a page we also need `<db,f,t,k>`\nAlternatively we could keep track of *all* the nodes clicked: `<n1,n2,n3,...>` \nIn a sense this would be redundant with the Miller columns, and of questionable value.\nWe *compose* breadcrumbs `b•n` to get a new `b'`. This may extend or rewrite the old breadcrumb `b`.\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T10:16:54.953243+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T10:16:58.928935+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "stIAyzD+DQCgmPyFAgiZXw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Breadcrumbs"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
 									"dateAndTimeString" : "2025-10-20T10:11:43.095483+02:00"
 								}
 							},
@@ -798,7 +910,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T09:19:46.631141+02:00"
+									"dateAndTimeString" : "2025-10-21T15:39:39.000043+02:00"
 								}
 							},
 							"uid" : {
@@ -808,7 +920,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Interestingly, if we inspect unmapped pages we get a view with unknown topics or kinds."
+							"string" : "NB: if we inspect unmapped pages we get a view with no topics or kinds."
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -835,14 +947,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T15:39:15.501636+02:00"
+									"dateAndTimeString" : "2025-10-21T15:39:20.193453+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "NhESwwf+DQCx6kEDBmLyvg=="
 							},
-							"code" : "LeDatabase gt unmappedPages"
+							"code" : "LeDatabase gtBook topicMap unmappedPages"
 						}
 					]
 				},

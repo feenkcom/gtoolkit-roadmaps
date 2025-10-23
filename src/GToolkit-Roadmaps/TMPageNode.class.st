@@ -353,8 +353,8 @@ TMPageNode >> viaTopic [
 ]
 
 { #category : #accessing }
-TMPageNode >> viaTopic: anObject [
-	viaTopic := anObject
+TMPageNode >> viaTopic: aTopicNode [
+	viaTopic := aTopicNode
 ]
 
 { #category : #accessing }
