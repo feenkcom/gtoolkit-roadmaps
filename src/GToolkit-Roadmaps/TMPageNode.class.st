@@ -2,8 +2,7 @@ Class {
 	#name : #TMPageNode,
 	#superclass : #TMAbstractTreeNode,
 	#instVars : [
-		'page',
-		'viaTopic'
+		'page'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -240,9 +239,11 @@ TMPageNode >> pages [
 
 { #category : #navigation }
 TMPageNode >> parents [
-	^ self viaTopic
+	"NB: parents from perspective of the roadmaps"
+	^ self kindNodes	
+	"^ self viaTopic
 		ifNil: [ self topicNodes ]
-		ifNotNil: [ self nodesFor: {self viaTopic} ]
+		ifNotNil: [ self nodesFor: {self viaTopic} ]"
 ]
 
 { #category : #accessing }
@@ -290,32 +291,6 @@ TMPageNode >> roadmapNodes [
 	^ nodes
 ]
 
-{ #category : #roadmap }
-TMPageNode >> roadmapNodesViaParentTopic [
-	"page in topic (or unique t): db -> fields -> p.t.f.topics -> p.t.pages"
-
-	| roadmapNodes |
-	self assert: self viaTopic isNotNil.
-	roadmapNodes := self viaTopic roadmapNodes.
-	roadmapNodes
-		do: [ :n | 
-			n = self ifTrue: [ n highlightOn ].
-			n = self kindNodes first ifTrue: [ n highlightOn ] ].
-	^ roadmapNodes
-]
-
-{ #category : #roadmap }
-TMPageNode >> roadmapNodesWithAllTopics [
-	"page (multiple topics): db -> fields -> p.topics -> p"
-
-	| roadmapNodes |
-	self assert: self viaTopic isNil.
-	self highlightOn.
-	roadmapNodes := self databaseNode roadmapNodes , self parents , self kindNodes
-			, {self}.
-	^ roadmapNodes
-]
-
 { #category : #navigation }
 TMPageNode >> roadmapParents [
 	"In the case of page nodes, for the mondrian roadmap,
@@ -361,18 +336,6 @@ TMPageNode >> topicsToggling: aTopicString [
 { #category : #updating }
 TMPageNode >> updateKindTo: aKindString [
 	self topicMap updateKindForPage: self to: aKindString
-]
-
-{ #category : #accessing }
-TMPageNode >> viaTopic [
-	"NB: can be nil or a specific topic."
-
-	^ viaTopic
-]
-
-{ #category : #accessing }
-TMPageNode >> viaTopic: aTopicNode [
-	viaTopic := aTopicNode
 ]
 
 { #category : #accessing }

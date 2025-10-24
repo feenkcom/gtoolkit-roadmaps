@@ -122,7 +122,7 @@ TMTopicNode >> roadmapNodes [
 	| pages kinds nodes root |
 	root := self databaseNode.
 	kinds := self kindNodes.
-	pages := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
+	pages := self children sortedByKinds.
 	nodes := root roadmapNodes , {self} , kinds , pages.
 	self highlightBreadcrumbsIn: nodes.
 	^ nodes
@@ -141,17 +141,6 @@ TMTopicNode >> topic: aString [
 { #category : #navigation }
 TMTopicNode >> topics [
 	^ {self topic}
-]
-
-{ #category : #navigation }
-TMTopicNode >> treeChildren [
-	"Set the viaTopic field so pages can appear multiple times, once for each topic."
-
-	^ self children
-		collect: [ :n | 
-			n
-				viaTopic: self;
-				yourself ]
 ]
 
 { #category : #treemaps }

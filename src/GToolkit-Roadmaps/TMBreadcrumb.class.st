@@ -59,6 +59,11 @@ TMBreadcrumb >> initialize [
 	nodes := OrderedCollection new
 ]
 
+{ #category : #testing }
+TMBreadcrumb >> isEmpty [
+	^ self nodes isEmpty
+]
+
 { #category : #accessing }
 TMBreadcrumb >> kindNode [
 	^ self nodes size < 4 ifTrue: [ nil ] ifFalse: [ self nodes fourth ]

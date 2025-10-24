@@ -25,7 +25,7 @@ TMBreadcrumbExamples >> defaultBreadcrumb [
 	| breadcrumb |
 	breadcrumb := self topicMap defaultBreadcrumb.
 	self assert: breadcrumb size equals: 1.
-	self assert: breadcrumb nodes isEmpty not.
+	self assert: breadcrumb isEmpty not.
 	self assert: breadcrumb databaseNode notNil.
 	self assert: breadcrumb fieldNode isNil.
 	^ breadcrumb
@@ -39,7 +39,7 @@ TMBreadcrumbExamples >> emptyBreadcrumb [
 	| breadcrumb |
 	breadcrumb := TMBreadcrumb for: {}.
 	self assert: breadcrumb size equals: 0.
-	self assert: breadcrumb nodes isEmpty.
+	self assert: breadcrumb isEmpty.
 	self assert: breadcrumb databaseNode isNil.
 	self assert: breadcrumb fieldNode isNil.
 	^ breadcrumb
@@ -57,7 +57,7 @@ TMBreadcrumbExamples >> fieldNodeBreadcrumb [
 	| breadcrumb |
 	breadcrumb := self fieldNode breadcrumb.
 	self assert: breadcrumb size equals: 2.
-	self assert: breadcrumb nodes isEmpty not.
+	self assert: breadcrumb isEmpty not.
 	self assert: breadcrumb databaseNode notNil.
 	self assert: breadcrumb fieldNode notNil.
 	self assert: breadcrumb topicNode isNil.
@@ -70,7 +70,7 @@ TMBreadcrumbExamples >> kindNodeWithPathContext [
 	| node |
 	node := self kindNodeWithoutPathContext.
 	node pathContext: self topicNodeBreadcrumb.
-	self assert: node pathContext ~= self emptyBreadcrumb.
+	self assert: node pathContext isEmpty not.
 	^ node
 ]
 
@@ -80,7 +80,7 @@ TMBreadcrumbExamples >> kindNodeWithPathContextBreadcrumb [
 	| breadcrumb |
 	breadcrumb := self kindNodeWithPathContext breadcrumb.
 	self assert: breadcrumb size equals: 4.
-	self assert: breadcrumb nodes isEmpty not.
+	self assert: breadcrumb isEmpty not.
 	self assert: breadcrumb databaseNode notNil.
 	self assert: breadcrumb fieldNode notNil.
 	self assert: breadcrumb topicNode notNil.
@@ -94,7 +94,7 @@ TMBreadcrumbExamples >> kindNodeWithoutPathContext [
 	<gtExample>
 	| node |
 	node := TopicMapExamples new kindNodeIntroductionWithinAboutGtTopic.
-	self assert: node pathContext equals: self emptyBreadcrumb.
+	self assert: node pathContext isEmpty.
 	^ node
 ]
 
@@ -103,7 +103,37 @@ TMBreadcrumbExamples >> kindNodeWithoutPathContextBreadcrumb [
 	<gtExample>
 	| breadcrumb |
 	breadcrumb := self kindNodeWithoutPathContext breadcrumb.
-	self assert: breadcrumb equals: self emptyBreadcrumb.
+	self assert: breadcrumb isEmpty.
+	^ breadcrumb
+]
+
+{ #category : #examples }
+TMBreadcrumbExamples >> nodeGroupNode [
+	<gtExample>
+	^ TopicMapExamples new nodeGroupChildrenOfFieldNodeGtBasics
+]
+
+{ #category : #examples }
+TMBreadcrumbExamples >> nodeGroupNodeBreadcrumb [
+	<gtExample>
+	| breadcrumb |
+	breadcrumb := self nodeGroupNode breadcrumb.
+	self assert: breadcrumb isEmpty.
+	^ breadcrumb
+]
+
+{ #category : #examples }
+TMBreadcrumbExamples >> pageGroupNode [
+	<gtExample>
+	^ TopicMapExamples new smaccQuery
+]
+
+{ #category : #examples }
+TMBreadcrumbExamples >> pageGroupNodeBreadcrumb [
+	<gtExample>
+	| breadcrumb |
+	breadcrumb := self pageGroupNode breadcrumb.
+	self assert: breadcrumb isEmpty.
 	^ breadcrumb
 ]
 
@@ -123,7 +153,7 @@ TMBreadcrumbExamples >> pageNodeWithPathContextBreadcrumb [
 	| breadcrumb |
 	breadcrumb := self pageNodeWithPathContext breadcrumb.
 	self assert: breadcrumb size equals: 5.
-	self assert: breadcrumb nodes isEmpty not.
+	self assert: breadcrumb isEmpty not.
 	self assert: breadcrumb databaseNode notNil.
 	self assert: breadcrumb fieldNode notNil.
 	self assert: breadcrumb topicNode notNil.
@@ -146,7 +176,7 @@ TMBreadcrumbExamples >> pageNodeWithoutPathContextBreadcrumb [
 	<gtExample>
 	| breadcrumb |
 	breadcrumb := self pageNodeWithoutPathContext breadcrumb.
-	self assert: breadcrumb equals: self emptyBreadcrumb.
+	self assert: breadcrumb isEmpty.
 	^ breadcrumb
 ]
 
@@ -168,7 +198,7 @@ TMBreadcrumbExamples >> topicNodeBreadcrumb [
 	| breadcrumb |
 	breadcrumb := self topicNode breadcrumb.
 	self assert: breadcrumb size equals: 3.
-	self assert: breadcrumb nodes isEmpty not.
+	self assert: breadcrumb isEmpty not.
 	self assert: breadcrumb databaseNode notNil.
 	self assert: breadcrumb fieldNode notNil.
 	self assert: breadcrumb topicNode notNil.

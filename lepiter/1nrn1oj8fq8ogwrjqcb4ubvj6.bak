@@ -880,43 +880,6 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T12:06:14.122988+02:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T15:33:19.413191+02:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "/y7Nb0b+DQC84KgDAUlEzA=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "***What happened to the pageContext? Do we still need it?***"
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
 												"dateAndTimeString" : "2025-10-24T15:29:47.064025+02:00"
 											}
 										},
@@ -1013,6 +976,43 @@
 											"__type" : "textStyle"
 										},
 										"string" : "Kind k with BC `<d,f,t,k'>`: \nSame as k with topic t, if k in t.k*, else same as k without topic."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-24T12:06:14.122988+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-24T15:33:19.413191+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "/y7Nb0b+DQC84KgDAUlEzA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "***What happened to the pageContext? Do we still need it?***"
 									}
 								]
 							},
@@ -1072,7 +1072,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-24T15:30:54.718352+02:00"
+									"dateAndTimeString" : "2025-10-24T16:07:16.404378+02:00"
 								}
 							},
 							"uid" : {
@@ -1082,7 +1082,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Page group pg: `d->pg.f*->pg.t*->pg.k*->pg` with no BC but pg highlighted?\n\nPage group pg with BC `<d,f,t,k,p>`:\nAs before with BC highlighted"
+							"string" : "***Page group**\n pg: `d->pg.f*->pg.t*->pg.k*->pg` with no BC but pg highlighted?\n\nPage group pg with BC `<d,f,t,k,p>`:\nAs before with BC highlighted"
 						},
 						{
 							"__type" : "textSnippet",

@@ -19,17 +19,6 @@ TMKindNode class >> for: aString in: aTopicMap [
 		yourself
 ]
 
-{ #category : #'instance creation' }
-TMKindNode class >> for: aString in: aTopicMap within: aPageGroup [
-	"When the context is provided by some parent, eg a specific topic and its pages."
-
-	^ self new
-		kind: aString;
-		topicMap: aTopicMap;
-		pageContext: aPageGroup;
-		yourself
-]
-
 { #category : #breadcrumbs }
 TMKindNode >> breadcrumb [
 	"Only if the topic of the previous roadmap's breadcrumb matches this kind,
@@ -122,7 +111,8 @@ TMKindNode >> pages [
 TMKindNode >> parents [
 	"Could we use the breadcrumb instead?"
 
-	^ self nodesFor: (self pageContext flatCollect: #parents) copyWithoutDuplicates
+	"^ self nodesFor: (self pageContext flatCollect: #parents) copyWithoutDuplicates"
+	^ self topicNodes
 ]
 
 { #category : #roadmap }

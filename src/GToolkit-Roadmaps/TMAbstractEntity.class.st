@@ -159,10 +159,9 @@ TMAbstractEntity >> kindNodes [
 	^ self
 		nodesFor: (self kinds
 				collect: [ :aKind | 
-					TMKindNode
-						for: aKind
-						in: self topicMap
-						within: self pageGroup ])
+					(self kindNodeFor: aKind)
+						pageContext: self pageGroup;
+						yourself ]) copyWithoutDuplicates
 ]
 
 { #category : #treemaps }

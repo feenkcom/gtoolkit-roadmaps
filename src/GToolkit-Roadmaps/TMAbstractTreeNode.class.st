@@ -44,14 +44,6 @@ TMAbstractTreeNode >> allParents [
 	^ allParents copyWithoutDuplicates
 ]
 
-{ #category : #roadmap }
-TMAbstractTreeNode >> allTreeChildren [
-	| allChildren |
-	allChildren := OrderedCollection withAll: self treeChildren.
-	self children do: [ :each | allChildren addAll: each allTreeChildren ].
-	^ allChildren copyWithoutDuplicates
-]
-
 { #category : #breadcrumbs }
 TMAbstractTreeNode >> breadcrumb [
 	self subclassResponsibility
@@ -70,6 +62,8 @@ TMAbstractTreeNode >> database [
 { #category : #navigation }
 TMAbstractTreeNode >> databaseNode [
 	^ self topicMap databaseNode
+		pathContext: self breadcrumb;
+		yourself
 ]
 
 { #category : #breadcrumbs }
@@ -87,6 +81,13 @@ TMAbstractTreeNode >> defaultNodeColor [
 { #category : #breadcrumbs }
 TMAbstractTreeNode >> defaultPathContext [
 	^ self defaultBreadcrumb
+]
+
+{ #category : #utility }
+TMAbstractTreeNode >> fieldNodeFor: aField [
+	^ (super fieldNodeFor: aField)
+		pathContext: self breadcrumb;
+		yourself
 ]
 
 { #category : #actions }
@@ -248,6 +249,13 @@ TMAbstractTreeNode >> isTMTreeNode [
 	^ true
 ]
 
+{ #category : #utility }
+TMAbstractTreeNode >> kindNodeFor: aKind [
+	^ (super kindNodeFor: aKind)
+		pathContext: self breadcrumb;
+		yourself
+]
+
 { #category : #roadmap }
 TMAbstractTreeNode >> mondrianGraph [
 	"Experimental -- show a graph view starting from this node.
@@ -273,7 +281,7 @@ TMAbstractTreeNode >> mondrianTree [
 	NB: slow from the database node."
 
 	| nodes mondrian |
-	nodes := self withAllTreeChildren.
+	nodes := self withAllChildren.
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :node | node roadmapSimpleNodeElement ];
@@ -294,6 +302,13 @@ TMAbstractTreeNode >> nodeLabel [
 { #category : #accessing }
 TMAbstractTreeNode >> nodeType [
 	self subclassResponsibility
+]
+
+{ #category : #utility }
+TMAbstractTreeNode >> pageGroupFor: aPageCollection [
+	^ (super pageGroupFor: aPageCollection)
+		pathContext: self breadcrumb;
+		yourself
 ]
 
 { #category : #navigation }
@@ -433,17 +448,15 @@ TMAbstractTreeNode >> topicMap: anObject [
 	topicMap := anObject
 ]
 
-{ #category : #navigation }
-TMAbstractTreeNode >> topicTreeChildren [
-	^ self children
+{ #category : #utility }
+TMAbstractTreeNode >> topicNodeFor: aTopic [
+	^ (super topicNodeFor: aTopic)
+		pathContext: self breadcrumb;
+		yourself
 ]
 
 { #category : #navigation }
-TMAbstractTreeNode >> treeChildren [
-	"Like children, but when we get to pages, set the viaTopic field
-	so the same page can appear as a leaf for each topic.
-	Used by TMAbstractTreeNode>>#mondrianTree"
-
+TMAbstractTreeNode >> topicTreeChildren [
 	^ self children
 ]
 
@@ -516,9 +529,4 @@ TMAbstractTreeNode >> treeMapRoots [
 { #category : #roadmap }
 TMAbstractTreeNode >> withAllChildren [
 	^ {self} , self allChildren
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> withAllTreeChildren [
-	^ {self} , self allTreeChildren
 ]
