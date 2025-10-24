@@ -60,7 +60,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:16:22.001486+02:00"
+									"dateAndTimeString" : "2025-10-24T17:39:43.597485+02:00"
 								}
 							},
 							"editEmail" : {
@@ -71,17 +71,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:16:33.265013+02:00"
+									"dateAndTimeString" : "2025-10-24T17:40:51.649292+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "vOSDb/T9DQCXzNn5DwULHA=="
+								"uidString" : "PYp1GEv+DQC/E2+cDD4g4g=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "db : db -> fields\nfield : db -> fields -> topics of selected field\ntopic : db -> fields -> selected topic -> pages of selected topic\npage : db -> fields -> topics of page -> page (list each topic -> page)\nquery : db -> fields of query -> topics of query pages -> pages of query (list each topic -> page)"
+							"string" : "— Update all the descriptions below.\n— Check if we can get rid of `pageContext` (replace it by `pathContext`). "
 						}
 					]
 				},
@@ -93,7 +93,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-20T10:16:33.262743+02:00"
+						"dateAndTimeString" : "2025-10-24T17:39:36.410719+02:00"
 					}
 				},
 				"editEmail" : {
@@ -104,17 +104,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-20T10:16:38.415606+02:00"
+						"dateAndTimeString" : "2025-10-24T17:39:42.578165+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "vrovcPT9DQCYD9sZDwULHA=="
+					"uidString" : "t98HGEv+DQC+55R2DD4g4g=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "*Summary: *"
+				"string" : "# Todo"
 			},
 			{
 				"__type" : "textSnippet",
@@ -370,7 +370,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T16:55:19.176475+02:00"
+												"dateAndTimeString" : "2025-10-24T17:39:24.937104+02:00"
 											}
 										},
 										"uid" : {
@@ -380,7 +380,44 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "After adding the usage of breadcrumbs as path contexts, we can get rid of  {{gtMethod:name=TMKindNode>>#pageContext}} and `viaTopic`(removed)\n(Perhaps we still need pageContext ...)"
+										"string" : "After adding the usage of breadcrumbs as path contexts, we can get rid of `viaTopic`(removed).\nPerhaps we still need {{gtMethod:name=TMKindNode>>#pageContext}} ..."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-24T17:30:11.082456+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-24T17:38:40.815079+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "DaZV9kr+DQC5om3cDD4g4g=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "We try to introduce an explicit `pathContext:` in the node creation methods, such as {{gtMethod:name=TMAbstractTreeNode>>#kindNodeFor:}}, but this leads to an infinite recursion!\nTo be fixed ..."
 									},
 									{
 										"__type" : "pharoSnippet",
@@ -407,14 +444,48 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T17:00:13.265898+02:00"
+												"dateAndTimeString" : "2025-10-24T17:34:54.247825+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
 											"uidString" : "BSgti0r+DQCHQvkJCbiZ+g=="
 										},
-										"code" : ""
+										"code" : "'super' gtSubstringMatch & TopicMap package gtPackageMatches"
+									},
+									{
+										"__type" : "pharoSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-24T17:35:11.584972+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-24T17:35:22.16366+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "5PQ+CEv+DQC+FKwsDD4g4g=="
+										},
+										"code" : "#super gtReferences & TopicMap package gtPackageMatches"
 									}
 								]
 							},
@@ -2234,12 +2305,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-10-20T10:08:12.595463+02:00"
+			"dateAndTimeString" : "2025-10-24T17:39:35.063828+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "*** Tailor the RoadMap visualizations"
+		"title" : "* Tailor the RoadMap visualizations"
 	},
 	"uid" : {
 		"__type" : "uuid",

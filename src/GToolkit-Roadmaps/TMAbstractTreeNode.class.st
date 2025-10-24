@@ -62,7 +62,7 @@ TMAbstractTreeNode >> database [
 { #category : #navigation }
 TMAbstractTreeNode >> databaseNode [
 	^ self topicMap databaseNode
-		pathContext: self breadcrumb;
+		"pathContext: self breadcrumb;"
 		yourself
 ]
 
@@ -81,13 +81,6 @@ TMAbstractTreeNode >> defaultNodeColor [
 { #category : #breadcrumbs }
 TMAbstractTreeNode >> defaultPathContext [
 	^ self defaultBreadcrumb
-]
-
-{ #category : #utility }
-TMAbstractTreeNode >> fieldNodeFor: aField [
-	^ (super fieldNodeFor: aField)
-		pathContext: self breadcrumb;
-		yourself
 ]
 
 { #category : #actions }
@@ -249,13 +242,6 @@ TMAbstractTreeNode >> isTMTreeNode [
 	^ true
 ]
 
-{ #category : #utility }
-TMAbstractTreeNode >> kindNodeFor: aKind [
-	^ (super kindNodeFor: aKind)
-		pathContext: self breadcrumb;
-		yourself
-]
-
 { #category : #roadmap }
 TMAbstractTreeNode >> mondrianGraph [
 	"Experimental -- show a graph view starting from this node.
@@ -302,13 +288,6 @@ TMAbstractTreeNode >> nodeLabel [
 { #category : #accessing }
 TMAbstractTreeNode >> nodeType [
 	self subclassResponsibility
-]
-
-{ #category : #utility }
-TMAbstractTreeNode >> pageGroupFor: aPageCollection [
-	^ (super pageGroupFor: aPageCollection)
-		pathContext: self breadcrumb;
-		yourself
 ]
 
 { #category : #navigation }
@@ -446,13 +425,6 @@ TMAbstractTreeNode >> topicMap [
 { #category : #navigation }
 TMAbstractTreeNode >> topicMap: anObject [
 	topicMap := anObject
-]
-
-{ #category : #utility }
-TMAbstractTreeNode >> topicNodeFor: aTopic [
-	^ (super topicNodeFor: aTopic)
-		pathContext: self breadcrumb;
-		yourself
 ]
 
 { #category : #navigation }
