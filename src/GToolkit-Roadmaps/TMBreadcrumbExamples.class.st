@@ -144,6 +144,19 @@ TMBreadcrumbExamples >> pageGroupNodeBreadcrumb [
 ]
 
 { #category : #examples }
+TMBreadcrumbExamples >> pageNodeFromTopicNode [
+	"Simulate clicking on a node of a topic roadmap to pick out a page.
+	This will propagate the breadcrumb."
+
+	<gtExample>
+	| pageNode |
+	pageNode := self topicNode roadmapNodesWithPathContext
+			detect: [ :n | n isTMPageNode and: [ n page title = 'A short history of Glamorous Toolkit' ] ].
+	self assert: pageNode pathContext isEmpty not.
+	^ pageNode
+]
+
+{ #category : #examples }
 TMBreadcrumbExamples >> pageNodeWithPathContext [
 	<gtExample>
 	| node |

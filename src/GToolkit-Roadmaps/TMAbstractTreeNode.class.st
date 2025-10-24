@@ -328,13 +328,11 @@ TMAbstractTreeNode >> relatedInfo [
 TMAbstractTreeNode >> roadmap [
 	"A mondrian roadmap showing: database > fields > topics > kinds > pages."
 
-	| mondrian nodes |
-	nodes := self roadmapNodes.
-	nodes do: [ :n | n pathContext: self breadcrumb ].
+	| mondrian |
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
-		with: nodes.
+		with: self roadmapNodesWithPathContext.
 	mondrian edges connectFromAll: #roadmapParents.
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new
@@ -380,6 +378,20 @@ TMAbstractTreeNode >> roadmapNodes [
 	"Returns all the nodes for the roadmap for this kind of node as a kind of TMNodeGroup"
 
 	^ self subclassResponsibility
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapNodesWithPathContext [
+	"Add the current node's breadcrumb as a path context.
+	Used mainly for building the roadmap, but can also be used by examples
+	to query the nodes and simulate clicking on a node in the roadmap.
+	See senders."
+
+	^ self roadmapNodes
+		collect: [ :n | 
+			n
+				pathContext: self breadcrumb;
+				yourself ]
 ]
 
 { #category : #navigation }
