@@ -328,11 +328,13 @@ TMAbstractTreeNode >> relatedInfo [
 TMAbstractTreeNode >> roadmap [
 	"A mondrian roadmap showing: database > fields > topics > kinds > pages."
 
-	| mondrian |
+	| mondrian nodes |
+	nodes := self roadmapNodes.
+	nodes do: [ :n | n pathContext: self breadcrumb ].
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
-		with: self roadmapNodes.
+		with: nodes.
 	mondrian edges connectFromAll: #roadmapParents.
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new

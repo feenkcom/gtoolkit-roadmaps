@@ -133,10 +133,10 @@ TMKindNode >> roadmapNodeColor [
 
 { #category : #roadmap }
 TMKindNode >> roadmapNodes [
-	| roadmapNodes |
-	roadmapNodes := self pageGroup roadmapNodes.
-	roadmapNodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
-	^ roadmapNodes
+	| nodes |
+	nodes := self pageGroup roadmapNodes.
+	nodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
+	^ nodes
 ]
 
 { #category : #querying }

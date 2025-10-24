@@ -94,7 +94,11 @@ TMDatabaseNode >> roadmapNodeSize [
 TMDatabaseNode >> roadmapNodes [
 	"database -> fields"
 
-	^ self nodesFor: {self} , self children
+	| root nodes |
+	root := self.
+	nodes := {root} , self children.
+	root highlightOn.
+	^ nodes
 ]
 
 { #category : #navigation }

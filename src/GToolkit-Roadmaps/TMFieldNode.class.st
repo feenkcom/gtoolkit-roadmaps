@@ -106,12 +106,12 @@ TMFieldNode >> roadmapNodes [
 	"database -> fields -> f.topics
 	highlight f in fields"
 
-	| root roadmapNodes |
+	| root nodes |
 	root := self databaseNode.
-	roadmapNodes := root roadmapNodes , self children.
+	nodes := root roadmapNodes , self children.
 	root highlightOn.
-	roadmapNodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
-	^ roadmapNodes
+	nodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
+	^ nodes
 ]
 
 { #category : #navigation }

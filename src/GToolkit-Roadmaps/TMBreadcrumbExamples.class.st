@@ -5,10 +5,16 @@ Class {
 }
 
 { #category : #examples }
+TMBreadcrumbExamples >> databaseNode [
+	<gtExample>
+	^ self topicMap databaseNode
+]
+
+{ #category : #examples }
 TMBreadcrumbExamples >> databaseNodeBreadcrumb [
 	<gtExample>
 	| breadcrumb |
-	breadcrumb := self topicMap databaseNode breadcrumb.
+	breadcrumb := self databaseNode breadcrumb.
 	self assert: breadcrumb equals: self defaultBreadcrumb.
 	^ breadcrumb
 ]
@@ -40,10 +46,16 @@ TMBreadcrumbExamples >> emptyBreadcrumb [
 ]
 
 { #category : #examples }
+TMBreadcrumbExamples >> fieldNode [
+	<gtExample>
+	^ TopicMapExamples new fieldNodeGtBasics
+]
+
+{ #category : #examples }
 TMBreadcrumbExamples >> fieldNodeBreadcrumb [
 	<gtExample>
 	| breadcrumb |
-	breadcrumb := TopicMapExamples new fieldNodeGtBasics breadcrumb.
+	breadcrumb := self fieldNode breadcrumb.
 	self assert: breadcrumb size equals: 2.
 	self assert: breadcrumb nodes isEmpty not.
 	self assert: breadcrumb databaseNode notNil.
@@ -145,10 +157,16 @@ TMBreadcrumbExamples >> topicMap [
 ]
 
 { #category : #examples }
+TMBreadcrumbExamples >> topicNode [
+	<gtExample>
+	^ TopicMapExamples new topicNodeAboutGt
+]
+
+{ #category : #examples }
 TMBreadcrumbExamples >> topicNodeBreadcrumb [
 	<gtExample>
 	| breadcrumb |
-	breadcrumb := TopicMapExamples new topicNodeAboutGt breadcrumb.
+	breadcrumb := self topicNode breadcrumb.
 	self assert: breadcrumb size equals: 3.
 	self assert: breadcrumb nodes isEmpty not.
 	self assert: breadcrumb databaseNode notNil.

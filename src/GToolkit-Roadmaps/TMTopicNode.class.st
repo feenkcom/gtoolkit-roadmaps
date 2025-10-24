@@ -120,18 +120,18 @@ TMTopicNode >> roadmapNodes [
 	highlight t, t.field
 	NB: we do not show the topic's peers, to avoid "
 
-	| parent children kinds roadmapNodes root |
+	| parent children kinds nodes root |
 	parent := self fieldNodes first.
-	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].	"kinds := (children flatCollect: #kindNodes) copyWithoutDuplicates."
+	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
 	kinds := self kindNodes.
 	root := parent databaseNode.
-	roadmapNodes := root roadmapNodes , {self} , kinds , children.
+	nodes := root roadmapNodes , {self} , kinds , children.
 	root highlightOn.
-	roadmapNodes
+	nodes
 		do: [ :n | 
 			n = self ifTrue: [ n highlightOn ].
 			n = parent ifTrue: [ n highlightOn ] ].
-	^ roadmapNodes
+	^ nodes
 ]
 
 { #category : #accessing }
