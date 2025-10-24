@@ -123,9 +123,15 @@ TMBreadcrumbExamples >> nodeGroupNodeBreadcrumb [
 ]
 
 { #category : #examples }
-TMBreadcrumbExamples >> pageGroupNode [
+TMBreadcrumbExamples >> pageGroupFromQueryNode [
 	<gtExample>
 	^ TopicMapExamples new smaccQuery
+]
+
+{ #category : #examples }
+TMBreadcrumbExamples >> pageGroupNode [
+	<gtExample>
+	^ TopicMapExamples new pageGroupChildrenOfKindsWithinAboutGt
 ]
 
 { #category : #examples }
@@ -204,4 +210,16 @@ TMBreadcrumbExamples >> topicNodeBreadcrumb [
 	self assert: breadcrumb topicNode notNil.
 	self assert: breadcrumb kindNode isNil.
 	^ breadcrumb
+]
+
+{ #category : #examples }
+TMBreadcrumbExamples >> umappedPagesNode [
+	<gtExample>
+	| nodeGroup |
+	nodeGroup := TopicMapExamples new topicMap unmappedPages.
+	self assert: nodeGroup topicNodes isEmpty.
+	self assert: nodeGroup fieldNodes isEmpty.
+	self assert: nodeGroup kindNodes isEmpty.
+	self assert: nodeGroup roadmapNodes equals: nodeGroup nodes.
+	^ nodeGroup
 ]

@@ -143,7 +143,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-22T14:12:53.824651+02:00"
+									"dateAndTimeString" : "2025-10-24T17:39:35.079185+02:00"
 								}
 							},
 							"uid" : {
@@ -153,7 +153,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[*** Tailor the RoadMap visualizations]]"
+							"string" : "[[* Tailor the RoadMap visualizations]]"
 						},
 						{
 							"__type" : "textSnippet",

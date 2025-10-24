@@ -157,11 +157,11 @@ TMAbstractEntity >> kindNodeNamed: aKind [
 { #category : #navigation }
 TMAbstractEntity >> kindNodes [
 	^ self
-		nodesFor: (self kinds
+		nodesFor: (self sortedKinds
 				collect: [ :aKind | 
 					(self kindNodeFor: aKind)
 						pageContext: self pageGroup;
-						yourself ]) copyWithoutDuplicates
+						yourself ])
 ]
 
 { #category : #treemaps }
@@ -232,6 +232,11 @@ TMAbstractEntity >> roadmap [
 TMAbstractEntity >> sizeAndFirstIfAlone: aCollection [
 	^ aCollection size printString
 		, (aCollection size = 1 ifTrue: [ ' — ' , aCollection first ] ifFalse: [ '' ])
+]
+
+{ #category : #accessing }
+TMAbstractEntity >> sortedKinds [
+	^ self kindsStandardOrder select: [ :k | self kinds includes: k ]
 ]
 
 { #category : #views }

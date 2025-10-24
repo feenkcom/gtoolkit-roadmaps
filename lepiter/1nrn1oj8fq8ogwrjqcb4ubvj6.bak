@@ -60,7 +60,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:16:22.001486+02:00"
+									"dateAndTimeString" : "2025-10-24T17:39:43.597485+02:00"
 								}
 							},
 							"editEmail" : {
@@ -71,17 +71,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:16:33.265013+02:00"
+									"dateAndTimeString" : "2025-10-24T18:47:31.108525+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "vOSDb/T9DQCXzNn5DwULHA=="
+								"uidString" : "PYp1GEv+DQC/E2+cDD4g4g=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "db : db -> fields\nfield : db -> fields -> topics of selected field\ntopic : db -> fields -> selected topic -> pages of selected topic\npage : db -> fields -> topics of page -> page (list each topic -> page)\nquery : db -> fields of query -> topics of query pages -> pages of query (list each topic -> page)"
+							"string" : "— Check if we can get rid of `pageContext` (replace it by `pathContext`). "
 						}
 					]
 				},
@@ -93,7 +93,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-20T10:16:33.262743+02:00"
+						"dateAndTimeString" : "2025-10-24T17:39:36.410719+02:00"
 					}
 				},
 				"editEmail" : {
@@ -104,17 +104,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-20T10:16:38.415606+02:00"
+						"dateAndTimeString" : "2025-10-24T17:39:42.578165+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "vrovcPT9DQCYD9sZDwULHA=="
+					"uidString" : "t98HGEv+DQC+55R2DD4g4g=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "*Summary: *"
+				"string" : "# Todo"
 			},
 			{
 				"__type" : "textSnippet",
@@ -370,7 +370,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T16:55:19.176475+02:00"
+												"dateAndTimeString" : "2025-10-24T17:39:24.937104+02:00"
 											}
 										},
 										"uid" : {
@@ -380,7 +380,44 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "After adding the usage of breadcrumbs as path contexts, we can get rid of  {{gtMethod:name=TMKindNode>>#pageContext}} and `viaTopic`(removed)\n(Perhaps we still need pageContext ...)"
+										"string" : "After adding the usage of breadcrumbs as path contexts, we can get rid of `viaTopic`(removed).\nPerhaps we still need {{gtMethod:name=TMKindNode>>#pageContext}} ..."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-24T17:30:11.082456+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-24T17:38:40.815079+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "DaZV9kr+DQC5om3cDD4g4g=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "We try to introduce an explicit `pathContext:` in the node creation methods, such as {{gtMethod:name=TMAbstractTreeNode>>#kindNodeFor:}}, but this leads to an infinite recursion!\nTo be fixed ..."
 									},
 									{
 										"__type" : "pharoSnippet",
@@ -407,14 +444,48 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T17:00:13.265898+02:00"
+												"dateAndTimeString" : "2025-10-24T17:34:54.247825+02:00"
 											}
 										},
 										"uid" : {
 											"__type" : "uid",
 											"uidString" : "BSgti0r+DQCHQvkJCbiZ+g=="
 										},
-										"code" : ""
+										"code" : "'super' gtSubstringMatch & TopicMap package gtPackageMatches"
+									},
+									{
+										"__type" : "pharoSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-24T17:35:11.584972+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-24T17:35:22.16366+02:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "5PQ+CEv+DQC+FKwsDD4g4g=="
+										},
+										"code" : "#super gtReferences & TopicMap package gtPackageMatches"
 									}
 								]
 							},
@@ -437,7 +508,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-24T10:47:56.630442+02:00"
+									"dateAndTimeString" : "2025-10-24T18:34:07.454401+02:00"
 								}
 							},
 							"uid" : {
@@ -447,7 +518,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "## To clean up:"
+							"string" : "## Cleaning up"
 						}
 					]
 				},
@@ -890,7 +961,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:20:13.274965+02:00"
+									"dateAndTimeString" : "2025-10-24T18:34:57.754466+02:00"
 								}
 							},
 							"uid" : {
@@ -900,7 +971,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Also ok. We show the field, its topics, as well as the peer fields, so we can switch fields.\nThe breadcrumb only shows the selected field.\n(Should  we also highlight the db?)"
+							"string" : "Also ok. We show the field, its topics, as well as the peer fields, so we can switch fields.\nThe breadcrumb only shows the selected field."
 						},
 						{
 							"__type" : "exampleSnippet",
@@ -934,10 +1005,10 @@
 								"__type" : "uid",
 								"uidString" : "NUOxdPT9DQCYLQCpDwULHA=="
 							},
-							"exampleSelector" : "fieldNodeGtBasics",
+							"exampleSelector" : "fieldNode",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
-							"exampleBehaviorName" : "TopicMapExamples",
+							"exampleBehaviorName" : "TMBreadcrumbExamples",
 							"codeExpanded" : true,
 							"previewExpanded" : true,
 							"noCode" : true
@@ -1086,10 +1157,10 @@
 								"__type" : "uid",
 								"uidString" : "Cbm1efT9DQCaVDC0DwULHA=="
 							},
-							"exampleSelector" : "topicNodeAboutGt",
+							"exampleSelector" : "topicNode",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
-							"exampleBehaviorName" : "TopicMapExamples",
+							"exampleBehaviorName" : "TMBreadcrumbExamples",
 							"codeExpanded" : true,
 							"previewExpanded" : true,
 							"noCode" : true
@@ -1284,43 +1355,6 @@
 											"__type" : "textStyle"
 										},
 										"string" : "Kind k with BC `<d,f,t,k'>`: \nSame as k with topic t, if k in t.k*, else same as k without topic."
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T12:06:14.122988+02:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T15:33:19.413191+02:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "/y7Nb0b+DQC84KgDAUlEzA=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "***What happened to the pageContext? Do we still need it?***"
 									}
 								]
 							},
@@ -1343,7 +1377,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-24T12:08:32.130188+02:00"
+									"dateAndTimeString" : "2025-10-24T18:37:21.840545+02:00"
 								}
 							},
 							"uid" : {
@@ -1353,44 +1387,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "***Kinds*** — 3 cases"
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:28:35.526494+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:33:51.39274+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "f5s8m/T9DQCev+pGDwULHA=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "Here it starts to get tricky.\nIf we are following the breadcrumb we should only dive down one level.\nOn the other hand, if we want to see other topics with the same kinds of pages, we need another view.\nCurrently, if we click again on the kind we get a different view, but neither of the current views are ideal ...."
+							"string" : "***Kinds*** — 2 cases"
 						},
 						{
 							"__type" : "exampleSnippet",
@@ -1424,10 +1421,50 @@
 								"__type" : "uid",
 								"uidString" : "a87Bm/T9DQCexCVkDwULHA=="
 							},
-							"exampleSelector" : "kindNodeIntroductionWithinAboutGtTopic",
+							"exampleSelector" : "kindNodeWithPathContext",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
-							"exampleBehaviorName" : "TopicMapExamples",
+							"exampleBehaviorName" : "TMBreadcrumbExamples",
+							"codeExpanded" : true,
+							"previewExpanded" : true,
+							"noCode" : true
+						},
+						{
+							"__type" : "exampleSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-24T18:36:05.833333+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-24T18:36:05.833333+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "j14O4kv+DQCZV7qdBriWRQ=="
+							},
+							"exampleSelector" : "kindNodeWithoutPathContext",
+							"previewHeight" : 400,
+							"previewShowSelector" : "gtRoadmap:",
+							"exampleBehaviorName" : "TMBreadcrumbExamples",
 							"codeExpanded" : true,
 							"previewExpanded" : true,
 							"noCode" : true
@@ -1607,7 +1644,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-24T14:47:09.193167+02:00"
+									"dateAndTimeString" : "2025-10-24T18:37:14.57339+02:00"
 								}
 							},
 							"uid" : {
@@ -1617,7 +1654,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "***Pages*** — 3 cases"
+							"string" : "***Pages*** — 2 cases"
 						},
 						{
 							"__type" : "textSnippet",
@@ -1688,10 +1725,50 @@
 								"__type" : "uid",
 								"uidString" : "FTmFq/T9DQCmRsUqDwULHA=="
 							},
-							"exampleSelector" : "pageNodeWhatIsGt",
+							"exampleSelector" : "pageNodeWithPathContext",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
-							"exampleBehaviorName" : "TopicMapExamples",
+							"exampleBehaviorName" : "TMBreadcrumbExamples",
+							"codeExpanded" : true,
+							"previewExpanded" : true,
+							"noCode" : true
+						},
+						{
+							"__type" : "exampleSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-24T18:37:34.921917+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-24T18:37:34.921917+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "3MBd50v+DQCZmIvABriWRQ=="
+							},
+							"exampleSelector" : "pageNodeWithoutPathContext",
+							"previewHeight" : 400,
+							"previewShowSelector" : "gtRoadmap:",
+							"exampleBehaviorName" : "TMBreadcrumbExamples",
 							"codeExpanded" : true,
 							"previewExpanded" : true,
 							"noCode" : true
@@ -1759,7 +1836,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-24T15:31:13.110765+02:00"
+									"dateAndTimeString" : "2025-10-24T18:39:11.548231+02:00"
 								}
 							},
 							"uid" : {
@@ -1769,44 +1846,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Node group ng: `d->ng.f*->ng.t*` + ng with ng highlighted"
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:43:09.465859+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:44:20.399932+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "fNtTz/T9DQC0PhnODwULHA=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "These can be arbitrary collections of nodes.\nDo we have any useful examples?"
+							"string" : "Node group ng: `d->ng.f*->ng.t*` + ng with ng highlighted\n{{gtMethod:name=TMNodeGroup>>#roadmapNodes}}\nThese can be arbitrary collections of nodes.\n{{gtMethod:name=TMBreadcrumbExamples>>#nodeGroupNode}}"
 						},
 						{
 							"__type" : "exampleSnippet",
@@ -1840,47 +1880,13 @@
 								"__type" : "uid",
 								"uidString" : "YOdX1PT9DQC15TWlDwULHA=="
 							},
-							"exampleSelector" : "nodeGroupChildrenOfFieldNodeGtBasics",
+							"exampleSelector" : "nodeGroupNode",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
-							"exampleBehaviorName" : "TopicMapExamples",
+							"exampleBehaviorName" : "TMBreadcrumbExamples",
 							"codeExpanded" : true,
 							"previewExpanded" : true,
 							"noCode" : true
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:44:26.101118+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-20T10:44:26.101118+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "lznl0/T9DQC15PIoDwULHA=="
-							},
-							"code" : ""
 						},
 						{
 							"__type" : "textSnippet",
@@ -2101,10 +2107,50 @@
 								"__type" : "uid",
 								"uidString" : "Hpe1wPT9DQCwQv+ADwULHA=="
 							},
-							"exampleSelector" : "pageGroupChildrenOfKindsWithinAboutGt",
+							"exampleSelector" : "pageGroupNode",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
-							"exampleBehaviorName" : "TopicMapExamples",
+							"exampleBehaviorName" : "TMBreadcrumbExamples",
+							"codeExpanded" : true,
+							"previewExpanded" : true,
+							"noCode" : true
+						},
+						{
+							"__type" : "exampleSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-24T18:41:19.559509+02:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-24T18:41:19.559509+02:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "jnPB9Ev+DQCaLSPzBriWRQ=="
+							},
+							"exampleSelector" : "pageGroupFromQueryNode",
+							"previewHeight" : 600,
+							"previewShowSelector" : "gtRoadmap:",
+							"exampleBehaviorName" : "TMBreadcrumbExamples",
 							"codeExpanded" : true,
 							"previewExpanded" : true,
 							"noCode" : true
@@ -2134,7 +2180,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T15:39:39.000043+02:00"
+									"dateAndTimeString" : "2025-10-24T18:43:36.131421+02:00"
 								}
 							},
 							"uid" : {
@@ -2144,10 +2190,10 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "NB: if we inspect unmapped pages we get a view with no topics or kinds."
+							"string" : "NB: if we inspect unmapped pages we get a view with no topics or kinds, since these have no topics, fields or kinds."
 						},
 						{
-							"__type" : "pharoSnippet",
+							"__type" : "exampleSnippet",
 							"children" : {
 								"__type" : "snippets",
 								"items" : [ ]
@@ -2160,7 +2206,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T09:19:48.205855+02:00"
+									"dateAndTimeString" : "2025-10-24T18:47:03.566107+02:00"
 								}
 							},
 							"editEmail" : {
@@ -2171,14 +2217,20 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-21T15:39:20.193453+02:00"
+									"dateAndTimeString" : "2025-10-24T18:47:03.566107+02:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "NhESwwf+DQCx6kEDBmLyvg=="
+								"uidString" : "OJNCCUz+DQCcIoGfBriWRQ=="
 							},
-							"code" : "LeDatabase gtBook topicMap unmappedPages"
+							"exampleSelector" : "umappedPagesNode",
+							"previewHeight" : 600,
+							"previewShowSelector" : "gtRoadmap:",
+							"exampleBehaviorName" : "TMBreadcrumbExamples",
+							"codeExpanded" : true,
+							"previewExpanded" : true,
+							"noCode" : true
 						}
 					]
 				},
@@ -2234,12 +2286,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-10-20T10:08:12.595463+02:00"
+			"dateAndTimeString" : "2025-10-24T17:39:35.063828+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "*** Tailor the RoadMap visualizations"
+		"title" : "* Tailor the RoadMap visualizations"
 	},
 	"uid" : {
 		"__type" : "uuid",

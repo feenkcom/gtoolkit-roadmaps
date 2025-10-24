@@ -98,8 +98,8 @@ TMNodeGroup >> nodes [
 ]
 
 { #category : #accessing }
-TMNodeGroup >> nodes: anObject [
-	nodes := anObject
+TMNodeGroup >> nodes: aNodeCollection [
+	nodes := aNodeCollection
 ]
 
 { #category : #accessing }
