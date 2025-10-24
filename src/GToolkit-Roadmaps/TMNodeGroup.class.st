@@ -33,6 +33,11 @@ TMNodeGroup >> = other [
 	^ self nodes asSet = other nodes asSet
 ]
 
+{ #category : #breadcrumbs }
+TMNodeGroup >> breadcrumb [
+	^ self shouldBeImplemented
+]
+
 { #category : #navigation }
 TMNodeGroup >> children [
 	"Or just return self?"

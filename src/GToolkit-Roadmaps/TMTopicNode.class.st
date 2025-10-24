@@ -15,9 +15,12 @@ TMTopicNode class >> for: aTopic in: aTopicMap [
 	yourself 
 ]
 
-{ #category : #roadmap }
+{ #category : #breadcrumbs }
 TMTopicNode >> breadcrumb [
-	^ self parents first breadcrumb , String cr , '-- ', self nodeLabel
+	^ TMBreadcrumb
+		for: {self databaseNode.
+				self fieldNode.
+				self}
 ]
 
 { #category : #views }
@@ -38,6 +41,12 @@ TMTopicNode >> defaultNodeColor [
 { #category : #accessing }
 TMTopicNode >> field [
 	^ self topicMap field4Topic: self topic
+]
+
+{ #category : #accessing }
+TMTopicNode >> fieldNode [
+	self assert: self fieldNodes size equals: 1.
+	^ self fieldNodes first
 ]
 
 { #category : #navigation }

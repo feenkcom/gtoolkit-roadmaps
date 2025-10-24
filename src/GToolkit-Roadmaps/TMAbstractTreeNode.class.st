@@ -8,7 +8,8 @@ Class {
 	#superclass : #TMAbstractEntity,
 	#instVars : [
 		'topicMap',
-		'isHighlighted'
+		'isHighlighted',
+		'pathContext'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -51,18 +52,9 @@ TMAbstractTreeNode >> allTreeChildren [
 	^ allChildren copyWithoutDuplicates
 ]
 
-{ #category : #roadmap }
+{ #category : #breadcrumbs }
 TMAbstractTreeNode >> breadcrumb [
-	^ self nodeLabel
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> breadcrumbTooltip [
-	^ [ BrEditor new
-		aptitude: BrGlamorousRegularEditorAptitude new;
-		padding: (BlInsets all: 2);
-		text: self breadcrumb;
-		yourself ] asStencil
+	self subclassResponsibility
 ]
 
 { #category : #navigation }
@@ -80,11 +72,21 @@ TMAbstractTreeNode >> databaseNode [
 	^ self topicMap databaseNode
 ]
 
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> defaultBreadcrumb [
+	^ self topicMap defaultBreadcrumb
+]
+
 { #category : #treemaps }
 TMAbstractTreeNode >> defaultNodeColor [
 	"Can be used for treemaps, mondrian graphs, sceneries etc."
 
 	^ Color gray
+]
+
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> defaultPathContext [
+	^ self defaultBreadcrumb
 ]
 
 { #category : #actions }
@@ -293,6 +295,19 @@ TMAbstractTreeNode >> parents [
 	self subclassResponsibility
 ]
 
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> pathContext [
+	"The path context is the breadcrumb of the previous roadmap (if any) from which this one is spawned.
+	This information can be used to select the nodes to include in the roadmap, or the new breadcrumb to highlight."
+
+	^ pathContext ifNil: [ pathContext := self defaultPathContext ]
+]
+
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> pathContext: anObject [
+	pathContext := anObject
+]
+
 { #category : #printing }
 TMAbstractTreeNode >> printOn: aStream [
 	super printOn: aStream.
@@ -350,7 +365,7 @@ TMAbstractTreeNode >> roadmapNodeElement [
 		background: self roadmapNodeColor;
 		padding: (BlInsets all: 5);
 		geometry: (BlRoundedRectangleGeometry cornerRadius: 8);
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
 ]
 
 { #category : #roadmap }
@@ -380,7 +395,18 @@ TMAbstractTreeNode >> roadmapSimpleNodeElement [
 		size: self roadmapNodeSize;
 		border: self roadmapNodeBorder;
 		background: self roadmapNodeColor;
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapTooltip [
+	"Previously was a simple form of breadcrumb ..."
+
+	^ [ BrEditor new
+		aptitude: BrGlamorousRegularEditorAptitude new;
+		padding: (BlInsets all: 2);
+		text: self nodeLabel;
+		yourself ] asStencil
 ]
 
 { #category : #navigation }
@@ -426,7 +452,7 @@ TMAbstractTreeNode >> treeMap [
 					when: BlClickEvent
 					do: [ :e | e target phlow spawnObject: pageNode ].
 				anElement
-					aptitude: (BrGlamorousWithExplicitTooltipAptitude content: [ pageNode breadcrumbTooltip ]) ];
+					aptitude: (BrGlamorousWithExplicitTooltipAptitude content: [ pageNode roadmapTooltip ]) ];
 			containerElement: [ :anElement :aNodeContext | 
 				| node |
 				node := aNodeContext model.

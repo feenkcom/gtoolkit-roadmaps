@@ -21,6 +21,11 @@ TMDatabaseNode class >> for: aDatabase in: aTopicMap [
 		yourself
 ]
 
+{ #category : #breadcrumbs }
+TMDatabaseNode >> breadcrumb [
+	^ TMBreadcrumb for: {self}
+]
+
 { #category : #navigation }
 TMDatabaseNode >> children [
 	^ self nodesFor: (self fields collect: [ :aField | self fieldNodeFor: aField ])

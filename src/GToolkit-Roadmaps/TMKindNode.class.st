@@ -30,10 +30,32 @@ TMKindNode class >> for: aString in: aTopicMap within: aPageGroup [
 		yourself
 ]
 
+{ #category : #breadcrumbs }
+TMKindNode >> breadcrumb [
+	"Only if the topic of the previous roadmap's breadcrumb matches this kind,
+	do we have a context for building a new breadcrumb."
+
+	^ (self pathContext topicNode notNil
+		and: [ self topicNodes includes: self pathContext topicNode ])
+		ifTrue: [ TMBreadcrumb
+				for: {self pathContext databaseNode.
+						self pathContext fieldNode.
+						self pathContext topicNode.
+						self} ]
+		ifFalse: [ TMBreadcrumb for: {} ]
+]
+
 { #category : #navigation }
 TMKindNode >> children [
 	^ self pageGroupFor: self pages	"^ self
 		pageGroupFor: (self pages collect: [ :aPage | TMPageNode for: aPage in: self topicMap ])"
+]
+
+{ #category : #breadcrumbs }
+TMKindNode >> defaultPathContext [
+	"If a context is not explicitly provided, we can assume nothing for kind nodes."
+
+	^ TMBreadcrumb for: {}
 ]
 
 { #category : #querying }

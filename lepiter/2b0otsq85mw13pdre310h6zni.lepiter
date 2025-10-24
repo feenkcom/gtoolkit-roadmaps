@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-18T09:43:06.658627+02:00"
+						"dateAndTimeString" : "2025-10-24T08:21:03.092382+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "We have already mined a reaasonable set of topics and page kinds. The following tasks are open:"
+				"string" : "We have already mined a reasonable set of topics and page kinds. The following tasks are open:"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-19T10:48:49.420842+02:00"
+						"dateAndTimeString" : "2025-10-24T09:57:31.817957+02:00"
 					}
 				},
 				"uid" : {

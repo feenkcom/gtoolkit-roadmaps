@@ -35,15 +35,20 @@ TMPageNode >> = other [
 	^ super = other and: [ self viaTopic = other viaTopic ]
 ]
 
-{ #category : #mondrian }
+{ #category : #breadcrumbs }
 TMPageNode >> breadcrumb [
-	"NB: This will show only *one* of the paths!
-	If there are multiple topics, only the last one will be shown."
+	"Only if the topic of the previous roadmap's breadcrumb matches this page,
+	do we have a context for building a new breadcrumb."
 
-	"^ self treeMapPath"
-
-	^ (String cr join: (self parents collect: #breadcrumb)) , String cr
-		, self kindNodes first nodeLabel , String cr , self nodeLabel
+	^ (self pathContext topicNode notNil
+		and: [ self topicNodes includes: self pathContext topicNode ])
+		ifTrue: [ TMBreadcrumb
+				for: {self pathContext databaseNode.
+						self pathContext fieldNode.
+						self pathContext topicNode.
+						self kindNode.
+						self} ]
+		ifFalse: [ TMBreadcrumb for: {} ]
 ]
 
 { #category : #navigation }
@@ -54,6 +59,13 @@ TMPageNode >> children [
 { #category : #mondrian }
 TMPageNode >> defaultNodeColor [
 	^ Color paleOrange
+]
+
+{ #category : #breadcrumbs }
+TMPageNode >> defaultPathContext [
+	"If a context is not explicitly provided, we can assume nothing for page nodes."
+
+	^ TMBreadcrumb for: {}
 ]
 
 { #category : #navigation }
@@ -165,6 +177,12 @@ TMPageNode >> isTMPageNode [
 { #category : #accessing }
 TMPageNode >> kind [
 	^ self topicMap kind4Page: self page
+]
+
+{ #category : #accessing }
+TMPageNode >> kindNode [
+	self assert: self kindNodes size equals: 1.
+	^ self kindNodes first
 ]
 
 { #category : #updating }
