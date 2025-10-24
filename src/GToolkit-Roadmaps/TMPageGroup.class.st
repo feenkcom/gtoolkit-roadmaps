@@ -80,6 +80,8 @@ TMPageGroup >> queryString: aString [
 { #category : #roadmap }
 TMPageGroup >> roadmapNodes [
 	"page group: db -> fields -> pg.topics -> pages"
+	"
+	self highlightBreadcrumbsIn: nodes."
 	^ self allParents , self nodes
 		, (self  flatCollect: #kindNodes) copyWithoutDuplicates
 ]

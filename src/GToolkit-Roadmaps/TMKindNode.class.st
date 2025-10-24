@@ -35,8 +35,7 @@ TMKindNode >> breadcrumb [
 	"Only if the topic of the previous roadmap's breadcrumb matches this kind,
 	do we have a context for building a new breadcrumb."
 
-	^ (self pathContext topicNode notNil
-		and: [ self topicNodes includes: self pathContext topicNode ])
+	^ self topicInContext
 		ifTrue: [ TMBreadcrumb
 				for: {self pathContext databaseNode.
 						self pathContext fieldNode.
@@ -133,9 +132,19 @@ TMKindNode >> roadmapNodeColor [
 
 { #category : #roadmap }
 TMKindNode >> roadmapNodes [
-	| nodes |
-	nodes := self pageGroup roadmapNodes.
-	nodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
+	"Kind k in topic t:  d->d.f*->t.f.t*->t.k*->t[k].p*
+	Kind k, no topic: d->k.p*.f*->k.p*.t*->k"
+
+	| nodes root |
+	"nodes := self pageGroup roadmapNodes."
+	root := self databaseNode.
+	nodes := self topicInContext
+			ifTrue: [ | topicNode |
+				topicNode := self pathContext topicNode.
+				root roadmapNodes , {topicNode} , topicNode kindNodes
+					, (topicNode pageNodes select: [ :n | n kind = self kind ]) ]
+			ifFalse: [ root roadmapNodes , self topicNodes , self kindNodes ].
+	self highlightBreadcrumbsIn: nodes.
 	^ nodes
 ]
 

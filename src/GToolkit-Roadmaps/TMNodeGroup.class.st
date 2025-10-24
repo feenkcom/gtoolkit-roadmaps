@@ -123,6 +123,7 @@ super printOn: aStream.
 TMNodeGroup >> roadmapNodes [
 	"node group: ? db -> fields -> ng.topics"
 
+	self highlightBreadcrumbsIn: self nodes.
 	^ self
 ]
 

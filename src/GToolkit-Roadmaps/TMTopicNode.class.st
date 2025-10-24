@@ -117,20 +117,14 @@ TMTopicNode >> relatedInfo [
 { #category : #mondrian }
 TMTopicNode >> roadmapNodes [
 	"database -> fields -> topic -> t.kinds -> t.pages
-	highlight t, t.field
-	NB: we do not show the topic's peers, to avoid "
+	NB: Don't show peer topics to avoid clutter."
 
-	| parent children kinds nodes root |
-	parent := self fieldNodes first.
-	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
+	| pages kinds nodes root |
+	root := self databaseNode.
 	kinds := self kindNodes.
-	root := parent databaseNode.
-	nodes := root roadmapNodes , {self} , kinds , children.
-	root highlightOn.
-	nodes
-		do: [ :n | 
-			n = self ifTrue: [ n highlightOn ].
-			n = parent ifTrue: [ n highlightOn ] ].
+	pages := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].
+	nodes := root roadmapNodes , {self} , kinds , pages.
+	self highlightBreadcrumbsIn: nodes.
 	^ nodes
 ]
 

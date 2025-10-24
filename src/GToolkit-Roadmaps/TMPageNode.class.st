@@ -30,18 +30,12 @@ TMPageNode class >> for: aPage in: aTopicMap [
 		yourself
 ]
 
-{ #category : #comparing }
-TMPageNode >> = other [
-	^ super = other and: [ self viaTopic = other viaTopic ]
-]
-
 { #category : #breadcrumbs }
 TMPageNode >> breadcrumb [
 	"Only if the topic of the previous roadmap's breadcrumb matches this page,
 	do we have a context for building a new breadcrumb."
 
-	^ (self pathContext topicNode notNil
-		and: [ self topicNodes includes: self pathContext topicNode ])
+	^ self topicInContext
 		ifTrue: [ TMBreadcrumb
 				for: {self pathContext databaseNode.
 						self pathContext fieldNode.
@@ -157,11 +151,6 @@ TMPageNode >> gtSpawnPageActionFor: anAction [
 TMPageNode >> gtTreeMapFor: aView [
 	<gtView>
 	^ aView empty
-]
-
-{ #category : #comparing }
-TMPageNode >> hash [
-	^ super hash bitXor: self viaTopic hash
 ]
 
 { #category : #help }
@@ -284,13 +273,21 @@ TMPageNode >> roadmapNodeElement [
 
 { #category : #roadmap }
 TMPageNode >> roadmapNodes [
-	"page in topic (or unique t): db -> fields -> p.t.f.topics -> p.t.pages
-	page (multiple topics): db -> fields -> p.topics -> p"
+	"page in topic (or unique t): 
+		db -> fields -> t -> t.kinds -> t.pages
+	page (multiple topics): 
+		db -> fields -> p.topics -> p"
 
-	self topicNodes size = 1 ifTrue: [ self viaTopic: self topicNodes first ].
-	^ self viaTopic
-		ifNil: [ self roadmapNodesWithAllTopics ]
-		ifNotNil: [ self roadmapNodesViaParentTopic ]
+	| root nodes topicNode |
+	root := self databaseNode.
+	topicNode := self topicInContext
+			ifTrue: [ self pathContext topicNode ]
+			ifFalse: [ self topicNodes size = 1 ifTrue: [ self topicNodes first ] ifFalse: [ nil ] ].
+	nodes := topicNode notNil
+			ifTrue: [ root roadmapNodes , {topicNode} , topicNode kindNodes , topicNode pageNodes ]
+			ifFalse: [ root roadmapNodes , self topicNodes , self kindNodes , {self} ].
+	self highlightBreadcrumbsIn: nodes.
+	^ nodes
 ]
 
 { #category : #roadmap }

@@ -94,10 +94,9 @@ TMDatabaseNode >> roadmapNodeSize [
 TMDatabaseNode >> roadmapNodes [
 	"database -> fields"
 
-	| root nodes |
-	root := self.
-	nodes := {root} , self children.
-	root highlightOn.
+	| nodes |
+	nodes := {self} , self children.
+	self highlightBreadcrumbsIn: nodes.
 	^ nodes
 ]
 

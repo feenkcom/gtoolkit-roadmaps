@@ -211,6 +211,12 @@ TMAbstractTreeNode >> helpPageNameDefault [
 	^ super helpPageNameDefault
 ]
 
+{ #category : #accessing }
+TMAbstractTreeNode >> highlightBreadcrumbsIn: aNodes [
+	^ aNodes
+		do: [ :n | (self breadcrumb nodes includes: n) ifTrue: [ n highlightOn ] ]
+]
+
 { #category : #initialization }
 TMAbstractTreeNode >> highlightOff [
 	isHighlighted := false
@@ -409,6 +415,12 @@ TMAbstractTreeNode >> roadmapTooltip [
 		padding: (BlInsets all: 2);
 		text: self nodeLabel;
 		yourself ] asStencil
+]
+
+{ #category : #accessing }
+TMAbstractTreeNode >> topicInContext [
+	^ self pathContext topicNode notNil
+		and: [ self topicNodes includes: self pathContext topicNode ]
 ]
 
 { #category : #navigation }

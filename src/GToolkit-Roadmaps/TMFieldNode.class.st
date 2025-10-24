@@ -103,14 +103,12 @@ TMFieldNode >> parents [
 
 { #category : #roadmap }
 TMFieldNode >> roadmapNodes [
-	"database -> fields -> f.topics
-	highlight f in fields"
+	"database -> fields -> f.topics"
 
 	| root nodes |
 	root := self databaseNode.
 	nodes := root roadmapNodes , self children.
-	root highlightOn.
-	nodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
+	self highlightBreadcrumbsIn: nodes.
 	^ nodes
 ]
 
