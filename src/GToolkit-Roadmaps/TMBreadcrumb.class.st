@@ -8,9 +8,9 @@ Class {
 }
 
 { #category : #'instance creation' }
-TMBreadcrumb class >> for: aTopicMap [
+TMBreadcrumb class >> for: aTMNodeCollection [
 	^ self new
-		nodes: {aTopicMap databaseNode} asOrderedCollection;
+		nodes: aTMNodeCollection;
 		yourself
 ]
 
@@ -22,6 +22,16 @@ TMBreadcrumb >> = other [
 { #category : #accessing }
 TMBreadcrumb >> addNode: aNode [
 	^ self nodes addLast: aNode
+]
+
+{ #category : #accessing }
+TMBreadcrumb >> databaseNode [
+	^ self nodes size < 1 ifTrue: [ nil ] ifFalse: [ self nodes first ]
+]
+
+{ #category : #accessing }
+TMBreadcrumb >> fieldNode [
+	^ self nodes size < 2 ifTrue: [ nil ] ifFalse: [ self nodes second ]
 ]
 
 { #category : #views }
@@ -49,6 +59,16 @@ TMBreadcrumb >> initialize [
 	nodes := OrderedCollection new
 ]
 
+{ #category : #testing }
+TMBreadcrumb >> isEmpty [
+	^ self nodes isEmpty
+]
+
+{ #category : #accessing }
+TMBreadcrumb >> kindNode [
+	^ self nodes size < 4 ifTrue: [ nil ] ifFalse: [ self nodes fourth ]
+]
+
 { #category : #accessing }
 TMBreadcrumb >> nodes [
 	^ nodes
@@ -60,6 +80,16 @@ TMBreadcrumb >> nodes: anObject [
 ]
 
 { #category : #accessing }
+TMBreadcrumb >> pageNode [
+	^ self nodes size < 5 ifTrue: [ nil ] ifFalse: [ self nodes fifth ]
+]
+
+{ #category : #accessing }
 TMBreadcrumb >> size [
 	^ nodes size
+]
+
+{ #category : #accessing }
+TMBreadcrumb >> topicNode [
+	^ self nodes size < 3 ifTrue: [ nil ] ifFalse: [ self nodes third ]
 ]

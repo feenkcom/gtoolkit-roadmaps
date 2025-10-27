@@ -21,6 +21,11 @@ TMDatabaseNode class >> for: aDatabase in: aTopicMap [
 		yourself
 ]
 
+{ #category : #breadcrumbs }
+TMDatabaseNode >> breadcrumb [
+	^ TMBreadcrumb for: {self}
+]
+
 { #category : #navigation }
 TMDatabaseNode >> children [
 	^ self nodesFor: (self fields collect: [ :aField | self fieldNodeFor: aField ])
@@ -89,7 +94,10 @@ TMDatabaseNode >> roadmapNodeSize [
 TMDatabaseNode >> roadmapNodes [
 	"database -> fields"
 
-	^ self nodesFor: {self} , self children
+	| nodes |
+	nodes := {self} , self children.
+	self highlightBreadcrumbsIn: nodes.
+	^ nodes
 ]
 
 { #category : #navigation }

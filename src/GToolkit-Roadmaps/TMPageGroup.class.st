@@ -77,13 +77,6 @@ TMPageGroup >> queryString: aString [
 	queryString := ' query: ', aString
 ]
 
-{ #category : #roadmap }
-TMPageGroup >> roadmapNodes [
-	"page group: db -> fields -> pg.topics -> pages"
-	^ self allParents , self nodes
-		, (self  flatCollect: #kindNodes) copyWithoutDuplicates
-]
-
 { #category : #utility }
 TMPageGroup >> sortedByKinds [
 	| sortedPages |

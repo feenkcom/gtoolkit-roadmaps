@@ -33,11 +33,21 @@ TMNodeGroup >> = other [
 	^ self nodes asSet = other nodes asSet
 ]
 
+{ #category : #breadcrumbs }
+TMNodeGroup >> breadcrumb [
+	^ TMBreadcrumb for: {}
+]
+
 { #category : #navigation }
 TMNodeGroup >> children [
 	"Or just return self?"
 	"^ self nodesFor: self nodes"
 	^ self
+]
+
+{ #category : #breadcrumbs }
+TMNodeGroup >> defaultPathContext [
+	^ TMBreadcrumb for: {}
 ]
 
 { #category : #navigation }
@@ -88,8 +98,8 @@ TMNodeGroup >> nodes [
 ]
 
 { #category : #accessing }
-TMNodeGroup >> nodes: anObject [
-	nodes := anObject
+TMNodeGroup >> nodes: aNodeCollection [
+	nodes := aNodeCollection
 ]
 
 { #category : #accessing }
@@ -116,9 +126,15 @@ super printOn: aStream.
 
 { #category : #'as yet unclassified' }
 TMNodeGroup >> roadmapNodes [
-	"node group: ? db -> fields -> ng.topics"
+	"node / page group: nodes + all parents"
 
-	^ self
+	| root roadmapNodes |
+	root := self databaseNode.
+	roadmapNodes := self nodes , self allParents.
+	self breadcrumb isEmpty
+		ifTrue: [ self nodes do: #highlightOn ]
+		ifFalse: [ self highlightBreadcrumbsIn: roadmapNodes ].
+	^ roadmapNodes
 ]
 
 { #category : #navigation }

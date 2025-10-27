@@ -8,7 +8,8 @@ Class {
 	#superclass : #TMAbstractEntity,
 	#instVars : [
 		'topicMap',
-		'isHighlighted'
+		'isHighlighted',
+		'pathContext'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -43,26 +44,9 @@ TMAbstractTreeNode >> allParents [
 	^ allParents copyWithoutDuplicates
 ]
 
-{ #category : #roadmap }
-TMAbstractTreeNode >> allTreeChildren [
-	| allChildren |
-	allChildren := OrderedCollection withAll: self treeChildren.
-	self children do: [ :each | allChildren addAll: each allTreeChildren ].
-	^ allChildren copyWithoutDuplicates
-]
-
-{ #category : #roadmap }
+{ #category : #breadcrumbs }
 TMAbstractTreeNode >> breadcrumb [
-	^ self nodeLabel
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> breadcrumbTooltip [
-	^ [ BrEditor new
-		aptitude: BrGlamorousRegularEditorAptitude new;
-		padding: (BlInsets all: 2);
-		text: self breadcrumb;
-		yourself ] asStencil
+	self subclassResponsibility
 ]
 
 { #category : #navigation }
@@ -78,6 +62,13 @@ TMAbstractTreeNode >> database [
 { #category : #navigation }
 TMAbstractTreeNode >> databaseNode [
 	^ self topicMap databaseNode
+		"pathContext: self breadcrumb;"
+		yourself
+]
+
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> defaultBreadcrumb [
+	^ self topicMap defaultBreadcrumb
 ]
 
 { #category : #treemaps }
@@ -85,6 +76,11 @@ TMAbstractTreeNode >> defaultNodeColor [
 	"Can be used for treemaps, mondrian graphs, sceneries etc."
 
 	^ Color gray
+]
+
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> defaultPathContext [
+	^ self defaultBreadcrumb
 ]
 
 { #category : #actions }
@@ -209,6 +205,12 @@ TMAbstractTreeNode >> helpPageNameDefault [
 	^ super helpPageNameDefault
 ]
 
+{ #category : #accessing }
+TMAbstractTreeNode >> highlightBreadcrumbsIn: aNodes [
+	^ aNodes
+		do: [ :n | (self breadcrumb nodes includes: n) ifTrue: [ n highlightOn ] ]
+]
+
 { #category : #initialization }
 TMAbstractTreeNode >> highlightOff [
 	isHighlighted := false
@@ -265,7 +267,7 @@ TMAbstractTreeNode >> mondrianTree [
 	NB: slow from the database node."
 
 	| nodes mondrian |
-	nodes := self withAllTreeChildren.
+	nodes := self withAllChildren.
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :node | node roadmapSimpleNodeElement ];
@@ -293,6 +295,19 @@ TMAbstractTreeNode >> parents [
 	self subclassResponsibility
 ]
 
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> pathContext [
+	"The path context is the breadcrumb of the previous roadmap (if any) from which this one is spawned.
+	This information can be used to select the nodes to include in the roadmap, or the new breadcrumb to highlight."
+
+	^ pathContext ifNil: [ pathContext := self defaultPathContext ]
+]
+
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> pathContext: anObject [
+	pathContext := anObject
+]
+
 { #category : #printing }
 TMAbstractTreeNode >> printOn: aStream [
 	super printOn: aStream.
@@ -317,7 +332,7 @@ TMAbstractTreeNode >> roadmap [
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
-		with: self roadmapNodes.
+		with: self roadmapNodesWithPathContext.
 	mondrian edges connectFromAll: #roadmapParents.
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new
@@ -350,7 +365,7 @@ TMAbstractTreeNode >> roadmapNodeElement [
 		background: self roadmapNodeColor;
 		padding: (BlInsets all: 5);
 		geometry: (BlRoundedRectangleGeometry cornerRadius: 8);
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
 ]
 
 { #category : #roadmap }
@@ -363,6 +378,20 @@ TMAbstractTreeNode >> roadmapNodes [
 	"Returns all the nodes for the roadmap for this kind of node as a kind of TMNodeGroup"
 
 	^ self subclassResponsibility
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapNodesWithPathContext [
+	"Add the current node's breadcrumb as a path context.
+	Used mainly for building the roadmap, but can also be used by examples
+	to query the nodes and simulate clicking on a node in the roadmap.
+	See senders."
+
+	^ self roadmapNodes
+		collect: [ :n | 
+			n
+				pathContext: self breadcrumb;
+				yourself ]
 ]
 
 { #category : #navigation }
@@ -380,7 +409,24 @@ TMAbstractTreeNode >> roadmapSimpleNodeElement [
 		size: self roadmapNodeSize;
 		border: self roadmapNodeBorder;
 		background: self roadmapNodeColor;
-		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self breadcrumbTooltip)
+		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
+]
+
+{ #category : #roadmap }
+TMAbstractTreeNode >> roadmapTooltip [
+	"Previously was a simple form of breadcrumb ..."
+
+	^ [ BrEditor new
+		aptitude: BrGlamorousRegularEditorAptitude new;
+		padding: (BlInsets all: 2);
+		text: self nodeLabel;
+		yourself ] asStencil
+]
+
+{ #category : #accessing }
+TMAbstractTreeNode >> topicInContext [
+	^ self pathContext topicNode notNil
+		and: [ self topicNodes includes: self pathContext topicNode ]
 ]
 
 { #category : #navigation }
@@ -395,15 +441,6 @@ TMAbstractTreeNode >> topicMap: anObject [
 
 { #category : #navigation }
 TMAbstractTreeNode >> topicTreeChildren [
-	^ self children
-]
-
-{ #category : #navigation }
-TMAbstractTreeNode >> treeChildren [
-	"Like children, but when we get to pages, set the viaTopic field
-	so the same page can appear as a leaf for each topic.
-	Used by TMAbstractTreeNode>>#mondrianTree"
-
 	^ self children
 ]
 
@@ -426,7 +463,7 @@ TMAbstractTreeNode >> treeMap [
 					when: BlClickEvent
 					do: [ :e | e target phlow spawnObject: pageNode ].
 				anElement
-					aptitude: (BrGlamorousWithExplicitTooltipAptitude content: [ pageNode breadcrumbTooltip ]) ];
+					aptitude: (BrGlamorousWithExplicitTooltipAptitude content: [ pageNode roadmapTooltip ]) ];
 			containerElement: [ :anElement :aNodeContext | 
 				| node |
 				node := aNodeContext model.
@@ -476,9 +513,4 @@ TMAbstractTreeNode >> treeMapRoots [
 { #category : #roadmap }
 TMAbstractTreeNode >> withAllChildren [
 	^ {self} , self allChildren
-]
-
-{ #category : #roadmap }
-TMAbstractTreeNode >> withAllTreeChildren [
-	^ {self} , self allTreeChildren
 ]

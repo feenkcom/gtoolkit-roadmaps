@@ -115,6 +115,11 @@ TopicMap >> databaseNode [
 	^ TMDatabaseNode for: self database
 ]
 
+{ #category : #breadcrumbs }
+TopicMap >> defaultBreadcrumb [
+	^ self databaseNode breadcrumb
+]
+
 { #category : #querying }
 TopicMap >> defaultValue [
 	"Default value for lookups that fail (missing kind, topic etc)."

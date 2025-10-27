@@ -15,9 +15,11 @@ TMFieldNode class >> for: aField in: aTopicMap [
 	yourself 
 ]
 
-{ #category : #roadmap }
+{ #category : #breadcrumbs }
 TMFieldNode >> breadcrumb [
-	^ self parents first breadcrumb , String cr , '- ', self nodeLabel
+	^ TMBreadcrumb
+		for: {self databaseNode.
+				self}
 ]
 
 { #category : #accessing }
@@ -101,15 +103,13 @@ TMFieldNode >> parents [
 
 { #category : #roadmap }
 TMFieldNode >> roadmapNodes [
-	"database -> fields -> f.topics
-	highlight f in fields"
+	"database -> fields -> f.topics"
 
-	| root roadmapNodes |
+	| root nodes |
 	root := self databaseNode.
-	roadmapNodes := root roadmapNodes , self children.
-	root highlightOn.
-	roadmapNodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
-	^ roadmapNodes
+	nodes := root roadmapNodes , self children.
+	self highlightBreadcrumbsIn: nodes.
+	^ nodes
 ]
 
 { #category : #navigation }

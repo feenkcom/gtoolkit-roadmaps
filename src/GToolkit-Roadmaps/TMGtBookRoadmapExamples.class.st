@@ -104,7 +104,6 @@ TMGtBookRoadmapExamples >> whatIsGtPageNode [
 	<gtExample>
 	| pageNode |
 	pageNode := self gtBookTopicMap pageNodeWithTitle: 'What is Glamorous Toolkit?'.
-	self assert: pageNode viaTopic isNil.
 	self assert: pageNode title equals: 'What is Glamorous Toolkit?'.
 	^ pageNode
 ]
@@ -116,7 +115,6 @@ TMGtBookRoadmapExamples >> whatIsGtPageNodeWithinAboutGtTopic [
 	parentTopicNode := self aboutGtTopicNode.
 	pageNode := parentTopicNode roadmapNodes
 			detect: [ :n | n isTMPageNode and: [ n title = 'What is Glamorous Toolkit?' ] ].
-	self assert: pageNode viaTopic equals: parentTopicNode.
 	self assert: pageNode title equals: 'What is Glamorous Toolkit?'.
 	^ pageNode
 ]

@@ -15,9 +15,12 @@ TMTopicNode class >> for: aTopic in: aTopicMap [
 	yourself 
 ]
 
-{ #category : #roadmap }
+{ #category : #breadcrumbs }
 TMTopicNode >> breadcrumb [
-	^ self parents first breadcrumb , String cr , '-- ', self nodeLabel
+	^ TMBreadcrumb
+		for: {self databaseNode.
+				self fieldNode.
+				self}
 ]
 
 { #category : #views }
@@ -38,6 +41,12 @@ TMTopicNode >> defaultNodeColor [
 { #category : #accessing }
 TMTopicNode >> field [
 	^ self topicMap field4Topic: self topic
+]
+
+{ #category : #accessing }
+TMTopicNode >> fieldNode [
+	self assert: self fieldNodes size equals: 1.
+	^ self fieldNodes first
 ]
 
 { #category : #navigation }
@@ -108,21 +117,15 @@ TMTopicNode >> relatedInfo [
 { #category : #mondrian }
 TMTopicNode >> roadmapNodes [
 	"database -> fields -> topic -> t.kinds -> t.pages
-	highlight t, t.field
-	NB: we do not show the topic's peers, to avoid "
+	NB: Don't show peer topics to avoid clutter."
 
-	| parent children kinds roadmapNodes root |
-	parent := self fieldNodes first.
-	children := self children sortedByKinds collect: [ :pn | pn viaTopic: self ].	"kinds := (children flatCollect: #kindNodes) copyWithoutDuplicates."
+	| pages kinds nodes root |
+	root := self databaseNode.
 	kinds := self kindNodes.
-	root := parent databaseNode.
-	roadmapNodes := root roadmapNodes , {self} , kinds , children.
-	root highlightOn.
-	roadmapNodes
-		do: [ :n | 
-			n = self ifTrue: [ n highlightOn ].
-			n = parent ifTrue: [ n highlightOn ] ].
-	^ roadmapNodes
+	pages := self children sortedByKinds.
+	nodes := root roadmapNodes , {self} , kinds , pages.
+	self highlightBreadcrumbsIn: nodes.
+	^ nodes
 ]
 
 { #category : #accessing }
@@ -138,17 +141,6 @@ TMTopicNode >> topic: aString [
 { #category : #navigation }
 TMTopicNode >> topics [
 	^ {self topic}
-]
-
-{ #category : #navigation }
-TMTopicNode >> treeChildren [
-	"Set the viaTopic field so pages can appear multiple times, once for each topic."
-
-	^ self children
-		collect: [ :n | 
-			n
-				viaTopic: self;
-				yourself ]
 ]
 
 { #category : #treemaps }

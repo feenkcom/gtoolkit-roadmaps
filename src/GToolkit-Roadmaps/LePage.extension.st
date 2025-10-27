@@ -23,11 +23,22 @@ LePage >> gtTopicMapActionFor: anAction [
 ]
 
 { #category : #'*GToolkit-Roadmaps' }
+LePage >> gtTopicMapFor: anAction [
+	<gtAction>
+	^ anAction button
+		icon: BrGlamorousVectorIcons roadmap;
+		priority: 30;
+		tooltip: 'Inspect page topic map';
+		action: [ :aButton | aButton phlow spawnObject: (TMPageNode for: self) ];
+		primaryModifierAction: [ :aButton | aButton phlow showObject: (TMPageNode for: self) ]
+]
+
+{ #category : #'*GToolkit-Roadmaps' }
 LePage >> gtTopicMapMenuFor: anAction [
 	<gtAction>
 	^ anAction dropdown
-		icon: BrGlamorousVectorIcons roadmap;
-		priority: 20;
+		icon: BrGlamorousVectorIcons hamburger;
+		priority: 32;
 		tooltip: 'Topic Map Menu';
 		content: [ :aButton | 
 			BrGlamorousSimpleContextMenuContent new
@@ -35,9 +46,9 @@ LePage >> gtTopicMapMenuFor: anAction [
 							-> [ aButton phlow spawnObject: self database topicMap ].
 						'Inspect page topic map'
 							-> [ aButton phlow spawnObject: (TMPageNode for: self) ].
-						'Enable topic map actions'
+						'Enable LePage topic map actions'
 							-> [ TMRegistry uniqueInstance enableExtensions ].
-						'Disable topic map actions'
+						'Disable LePage topic map actions'
 							-> [ TMRegistry uniqueInstance disableExtensions ]};
 				yourself ]
 ]

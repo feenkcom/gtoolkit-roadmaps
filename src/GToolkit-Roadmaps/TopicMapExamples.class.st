@@ -241,7 +241,7 @@ TopicMapExamples >> pageNodeWhatIsGt [
 	self assert: pageNodeWhatIsGt pages size equals: 1.
 	self assert: pageNodeWhatIsGt children isTMNodeGroup.
 	self assert: pageNodeWhatIsGt children isTMPageGroup not.
-	self assert: pageNodeWhatIsGt parents equals: pageNodeWhatIsGt topicNodes.
+	self assert: pageNodeWhatIsGt parents equals: pageNodeWhatIsGt kindNodes.
 	^ pageNodeWhatIsGt
 ]
 

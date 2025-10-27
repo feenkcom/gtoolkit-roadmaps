@@ -2,8 +2,7 @@ Class {
 	#name : #TMPageNode,
 	#superclass : #TMAbstractTreeNode,
 	#instVars : [
-		'page',
-		'viaTopic'
+		'page'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -30,20 +29,19 @@ TMPageNode class >> for: aPage in: aTopicMap [
 		yourself
 ]
 
-{ #category : #comparing }
-TMPageNode >> = other [
-	^ super = other and: [ self viaTopic = other viaTopic ]
-]
-
-{ #category : #mondrian }
+{ #category : #breadcrumbs }
 TMPageNode >> breadcrumb [
-	"NB: This will show only *one* of the paths!
-	If there are multiple topics, only the last one will be shown."
+	"Only if the topic of the previous roadmap's breadcrumb matches this page,
+	do we have a context for building a new breadcrumb."
 
-	"^ self treeMapPath"
-
-	^ (String cr join: (self parents collect: #breadcrumb)) , String cr
-		, self kindNodes first nodeLabel , String cr , self nodeLabel
+	^ self topicInContext
+		ifTrue: [ TMBreadcrumb
+				for: {self pathContext databaseNode.
+						self pathContext fieldNode.
+						self pathContext topicNode.
+						self kindNode.
+						self} ]
+		ifFalse: [ TMBreadcrumb for: {} ]
 ]
 
 { #category : #navigation }
@@ -54,6 +52,13 @@ TMPageNode >> children [
 { #category : #mondrian }
 TMPageNode >> defaultNodeColor [
 	^ Color paleOrange
+]
+
+{ #category : #breadcrumbs }
+TMPageNode >> defaultPathContext [
+	"If a context is not explicitly provided, we can assume nothing for page nodes."
+
+	^ TMBreadcrumb for: {}
 ]
 
 { #category : #navigation }
@@ -147,11 +152,6 @@ TMPageNode >> gtTreeMapFor: aView [
 	^ aView empty
 ]
 
-{ #category : #comparing }
-TMPageNode >> hash [
-	^ super hash bitXor: self viaTopic hash
-]
-
 { #category : #help }
 TMPageNode >> helpPageName [
 	^ 'TopicMap Page'
@@ -165,6 +165,12 @@ TMPageNode >> isTMPageNode [
 { #category : #accessing }
 TMPageNode >> kind [
 	^ self topicMap kind4Page: self page
+]
+
+{ #category : #accessing }
+TMPageNode >> kindNode [
+	self assert: self kindNodes size equals: 1.
+	^ self kindNodes first
 ]
 
 { #category : #updating }
@@ -233,9 +239,11 @@ TMPageNode >> pages [
 
 { #category : #navigation }
 TMPageNode >> parents [
-	^ self viaTopic
+	"NB: parents from perspective of the roadmaps"
+	^ self kindNodes	
+	"^ self viaTopic
 		ifNil: [ self topicNodes ]
-		ifNotNil: [ self nodesFor: {self viaTopic} ]
+		ifNotNil: [ self nodesFor: {self viaTopic} ]"
 ]
 
 { #category : #accessing }
@@ -266,39 +274,21 @@ TMPageNode >> roadmapNodeElement [
 
 { #category : #roadmap }
 TMPageNode >> roadmapNodes [
-	"page in topic (or unique t): db -> fields -> p.t.f.topics -> p.t.pages
-	page (multiple topics): db -> fields -> p.topics -> p"
+	"page in topic (or unique t): 
+		db -> fields -> t -> t.kinds -> t.pages
+	page (multiple topics): 
+		db -> fields -> p.topics -> p"
 
-	self topicNodes size = 1 ifTrue: [ self viaTopic: self topicNodes first ].
-	^ self viaTopic
-		ifNil: [ self roadmapNodesWithAllTopics ]
-		ifNotNil: [ self roadmapNodesViaParentTopic ]
-]
-
-{ #category : #roadmap }
-TMPageNode >> roadmapNodesViaParentTopic [
-	"page in topic (or unique t): db -> fields -> p.t.f.topics -> p.t.pages"
-
-	| roadmapNodes |
-	self assert: self viaTopic isNotNil.
-	roadmapNodes := self viaTopic roadmapNodes.
-	roadmapNodes
-		do: [ :n | 
-			n = self ifTrue: [ n highlightOn ].
-			n = self kindNodes first ifTrue: [ n highlightOn ] ].
-	^ roadmapNodes
-]
-
-{ #category : #roadmap }
-TMPageNode >> roadmapNodesWithAllTopics [
-	"page (multiple topics): db -> fields -> p.topics -> p"
-
-	| roadmapNodes |
-	self assert: self viaTopic isNil.
-	self highlightOn.
-	roadmapNodes := self databaseNode roadmapNodes , self parents , self kindNodes
-			, {self}.
-	^ roadmapNodes
+	| root nodes topicNode |
+	root := self databaseNode.
+	topicNode := self topicInContext
+			ifTrue: [ self pathContext topicNode ]
+			ifFalse: [ self topicNodes size = 1 ifTrue: [ self topicNodes first ] ifFalse: [ nil ] ].
+	nodes := topicNode notNil
+			ifTrue: [ root roadmapNodes , {topicNode} , topicNode kindNodes , topicNode pageNodes ]
+			ifFalse: [ root roadmapNodes , self topicNodes , self kindNodes , {self} ].
+	self highlightBreadcrumbsIn: nodes.
+	^ nodes
 ]
 
 { #category : #navigation }
@@ -346,18 +336,6 @@ TMPageNode >> topicsToggling: aTopicString [
 { #category : #updating }
 TMPageNode >> updateKindTo: aKindString [
 	self topicMap updateKindForPage: self to: aKindString
-]
-
-{ #category : #accessing }
-TMPageNode >> viaTopic [
-	"NB: can be nil or a specific topic."
-
-	^ viaTopic
-]
-
-{ #category : #accessing }
-TMPageNode >> viaTopic: aTopicNode [
-	viaTopic := aTopicNode
 ]
 
 { #category : #accessing }

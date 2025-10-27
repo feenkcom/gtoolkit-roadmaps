@@ -19,21 +19,31 @@ TMKindNode class >> for: aString in: aTopicMap [
 		yourself
 ]
 
-{ #category : #'instance creation' }
-TMKindNode class >> for: aString in: aTopicMap within: aPageGroup [
-	"When the context is provided by some parent, eg a specific topic and its pages."
+{ #category : #breadcrumbs }
+TMKindNode >> breadcrumb [
+	"Only if the topic of the previous roadmap's breadcrumb matches this kind,
+	do we have a context for building a new breadcrumb."
 
-	^ self new
-		kind: aString;
-		topicMap: aTopicMap;
-		pageContext: aPageGroup;
-		yourself
+	^ self topicInContext
+		ifTrue: [ TMBreadcrumb
+				for: {self pathContext databaseNode.
+						self pathContext fieldNode.
+						self pathContext topicNode.
+						self} ]
+		ifFalse: [ TMBreadcrumb for: {} ]
 ]
 
 { #category : #navigation }
 TMKindNode >> children [
 	^ self pageGroupFor: self pages	"^ self
 		pageGroupFor: (self pages collect: [ :aPage | TMPageNode for: aPage in: self topicMap ])"
+]
+
+{ #category : #breadcrumbs }
+TMKindNode >> defaultPathContext [
+	"If a context is not explicitly provided, we can assume nothing for kind nodes."
+
+	^ TMBreadcrumb for: {}
 ]
 
 { #category : #querying }
@@ -101,7 +111,8 @@ TMKindNode >> pages [
 TMKindNode >> parents [
 	"Could we use the breadcrumb instead?"
 
-	^ self nodesFor: (self pageContext flatCollect: #parents) copyWithoutDuplicates
+	"^ self nodesFor: (self pageContext flatCollect: #parents) copyWithoutDuplicates"
+	^ self topicNodes
 ]
 
 { #category : #roadmap }
@@ -111,10 +122,20 @@ TMKindNode >> roadmapNodeColor [
 
 { #category : #roadmap }
 TMKindNode >> roadmapNodes [
-	| roadmapNodes |
-	roadmapNodes := self pageGroup roadmapNodes.
-	roadmapNodes do: [ :n | n = self ifTrue: [ n highlightOn ] ].
-	^ roadmapNodes
+	"Kind k in topic t:  d->d.f*->t.f.t*->t.k*->t[k].p*
+	Kind k, no topic: d->k.p*.f*->k.p*.t*->k"
+
+	| nodes root |
+	"nodes := self pageGroup roadmapNodes."
+	root := self databaseNode.
+	nodes := self topicInContext
+			ifTrue: [ | topicNode |
+				topicNode := self pathContext topicNode.
+				root roadmapNodes , {topicNode} , topicNode kindNodes
+					, (topicNode pageNodes select: [ :n | n kind = self kind ]) ]
+			ifFalse: [ root roadmapNodes , self topicNodes , self kindNodes ].
+	self highlightBreadcrumbsIn: nodes.
+	^ nodes
 ]
 
 { #category : #querying }
