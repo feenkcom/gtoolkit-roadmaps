@@ -22,6 +22,11 @@ Class {
 	#category : #'GToolkit-Roadmaps-Model'
 }
 
+{ #category : #'instance creation' }
+TopicMap class >> default [
+	^ self forGtBook
+]
+
 { #category : #loading }
 TopicMap class >> ensureLlmLoaded [
 	"To wait for this to complete, just send #wait to the result."
@@ -39,6 +44,11 @@ TopicMap class >> ensureLlmLoaded [
 					#BaselineOfGtoolkitRoadmapsLLM asClass loadLepiterGtbookExamples ].
 			semaphore signal ] fork ].
 	^ semaphore
+]
+
+{ #category : #'instance creation' }
+TopicMap class >> forGtBook [
+	^ LeDatabase gtBook topicMap
 ]
 
 { #category : #'instance creation' }
