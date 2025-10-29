@@ -4811,6 +4811,70 @@
 			"topics" : [
 				"Text Editing"
 			]
+		},
+		{
+			"page" : "Analyzing memory leaks",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Performance Analysis and Profiling"
+			]
+		},
+		{
+			"page" : "Creating SmaCC parsers by example",
+			"kind" : "Examples",
+			"topics" : [
+				"Using SmaCC",
+				"Parsing and Language Manipulation"
+			]
+		},
+		{
+			"page" : "Examples by example",
+			"kind" : "Introduction",
+			"topics" : [
+				"Moldable Development Practices"
+			]
+		},
+		{
+			"page" : "Exploring memory leaks when mixing weak and strong subscriptions in announcers",
+			"kind" : "Case study",
+			"topics" : [
+				"Announcements and Event Handling"
+			]
+		},
+		{
+			"page" : "GT search filters by example",
+			"kind" : "Documentation",
+			"topics" : [
+				"Querying and Navigating Code"
+			]
+		},
+		{
+			"page" : "Inspector phlow actions by example",
+			"kind" : "Documentation",
+			"topics" : [
+				"Inspector actions"
+			]
+		},
+		{
+			"page" : "Inspector phlow views by example",
+			"kind" : "Examples",
+			"topics" : [
+				"Inspector Views"
+			]
+		},
+		{
+			"page" : "Rewriting Pharo code by example",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Parsing and Language Manipulation"
+			]
+		},
+		{
+			"page" : "SmaCC grammar",
+			"kind" : "Documentation",
+			"topics" : [
+				"Using SmaCC"
+			]
 		}
 	],
 	"database" : "Glamorous Toolkit Book",
