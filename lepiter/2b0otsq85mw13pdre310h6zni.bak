@@ -55,7 +55,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-19T10:48:34.000554+02:00"
+						"dateAndTimeString" : "2025-10-29T13:55:43.477185+01:00"
 					}
 				},
 				"editEmail" : {
@@ -66,20 +66,57 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-24T09:57:31.817957+02:00"
+						"dateAndTimeString" : "2025-10-29T13:55:47.543777+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "aDyXRYX7DQCtr9f9BLhTqw=="
+					"uidString" : "BxgmY63+DQCY1vD6DfL0+g=="
 				},
-				"code" : "LeDatabase gtBook topicMap"
+				"code" : "TopicMap default"
 			},
 			{
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
 					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-30T10:13:37.722954+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-10-30T10:13:57.061876+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "g5e2Zr7+DQCfcIhfAg/RPg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Add a `storeString` method to TopicMap nodes so we can "
+						},
 						{
 							"__type" : "textSnippet",
 							"children" : {
