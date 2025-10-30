@@ -58,6 +58,16 @@ TopicMap class >> forJson: aFileReference [
 		yourself
 ]
 
+{ #category : #views }
+TopicMap class >> gtInstanceButtonFor: anAction [
+	<gtClassAction>
+	^ anAction button
+		tooltip: 'Inspect GT Book Topic Map';
+		priority: 10;
+		icon: BrGlamorousVectorIcons playinspect;
+		action: [ :aButton | aButton phlow spawnObject: self forGtBook]
+]
+
 { #category : #loading }
 TopicMap class >> llmPackage [
 	"To test if loaded, or to quickly load or unload."
