@@ -76,6 +76,14 @@ TopicMap class >> llmPackage [
 		packageNamed: 'GToolkit-Roadmaps-LLM'
 ]
 
+{ #category : #comparing }
+TopicMap >> = anObject [
+	super = anObject ifTrue: [ ^ true ].
+	anObject class = self class ifFalse: [ ^ false ].
+
+	^ self jsonFile = anObject jsonFile
+]
+
 { #category : #updating }
 TopicMap >> addDraftPage: aDraftPage [
 	| topicMapPages |
@@ -277,6 +285,25 @@ TopicMap >> gtRoadmap: aView [
 		view: #gtRoadmap:
 ]
 
+{ #category : #'as yet unclassified' }
+TopicMap >> gtStoreStringFor: aView [
+	<gtView>
+	^ aView explicit
+		title: 'Store on';
+		priority: 70;
+		stencil: [ (GtPharoSnippetCoder new
+				forSource: self storeString;
+				format;
+				subscribeToSystem;
+				asExpandedOnlyElement) vFitContentLimited ];
+		actionButtonIcon: BrGlamorousVectorIcons playinspect
+			tooltip: 'Do it and go'
+			action: [ :button | 
+				button phlow
+					spawnObject: (Smalltalk compiler evaluate: (String streamContents: [ :s | self storeOn: s ])) ];
+		actionUpdateButton
+]
+
 { #category : #actions }
 TopicMap >> gtTopicMapMenuFor: anAction [
 	<gtAction>
@@ -345,6 +372,11 @@ TopicMap >> gtWriteJsonActionFor: anAction [
 		priority: 50;
 		icon: BrGlamorousVectorIcons savetodisk;
 		action: [  "aButton phlow fireToolUpdateWish.":aButton | aButton phlow spawnObject: self writeJsonFile ]
+]
+
+{ #category : #comparing }
+TopicMap >> hash [
+	^ self jsonFile hash
 ]
 
 { #category : #help }
@@ -481,6 +513,15 @@ TopicMap >> pages4Topic: aTopic [
 { #category : #accessing }
 TopicMap >> roadmap [
 	^ self databaseNode roadmap
+]
+
+{ #category : #printing }
+TopicMap >> storeOn: aStream [
+	self jsonFile = TopicMap default jsonFile
+		ifTrue: [ aStream nextPutAll: '(TopicMap default)' ]
+		ifFalse: [ aStream nextPutAll: '(TopicMap forJson: ('.
+			self jsonFile storeOn: aStream.
+			aStream nextPutAll: '))' ]
 ]
 
 { #category : #views }
