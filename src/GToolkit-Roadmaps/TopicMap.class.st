@@ -517,7 +517,7 @@ TopicMap >> roadmap [
 
 { #category : #printing }
 TopicMap >> storeOn: aStream [
-	self jsonFile = TopicMap default jsonFile
+	self = TopicMap default
 		ifTrue: [ aStream nextPutAll: '(TopicMap default)' ]
 		ifFalse: [ aStream nextPutAll: '(TopicMap forJson: ('.
 			self jsonFile storeOn: aStream.
