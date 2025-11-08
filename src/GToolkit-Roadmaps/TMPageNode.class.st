@@ -20,13 +20,21 @@ TMPageNode class >> for: aPage [
 
 { #category : #'instance creation' }
 TMPageNode class >> for: aPage in: aTopicMap [
-	"Use this for testing if the topic map to use is not necessarily
-	the default one, but a special test map."
+	"Use this for testing, particularly if the topic map to use
+	is not necessarily the default one, but a special test map."
 
 	^ self new
 		page: aPage;
 		topicMap: aTopicMap;
 		yourself
+]
+
+{ #category : #'instance creation' }
+TMPageNode class >> forTitle: aPageTitle in: aTopicMap [
+	"Use this for testing, particularly if the topic map to use
+	is not necessarily the default one, but a special test map."
+
+	^ aTopicMap pageNodeWithTitle: aPageTitle
 ]
 
 { #category : #breadcrumbs }

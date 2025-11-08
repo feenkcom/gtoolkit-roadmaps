@@ -1,9 +1,6 @@
 Class {
 	#name : #TMDatabaseNode,
 	#superclass : #TMAbstractTreeNode,
-	#instVars : [
-		'database'
-	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
 
@@ -98,6 +95,13 @@ TMDatabaseNode >> roadmapNodes [
 	nodes := {self} , self children.
 	self highlightBreadcrumbsIn: nodes.
 	^ nodes
+]
+
+{ #category : #printing }
+TMDatabaseNode >> storeOn: aStream [
+	aStream nextPutAll: '(TMDatabaseNode for: '.
+	self topicMap storeOn: aStream.
+	aStream nextPut: $)
 ]
 
 { #category : #navigation }

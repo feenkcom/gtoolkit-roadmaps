@@ -285,25 +285,6 @@ TopicMap >> gtRoadmap: aView [
 		view: #gtRoadmap:
 ]
 
-{ #category : #'as yet unclassified' }
-TopicMap >> gtStoreStringFor: aView [
-	<gtView>
-	^ aView explicit
-		title: 'Store on';
-		priority: 70;
-		stencil: [ (GtPharoSnippetCoder new
-				forSource: self storeString;
-				format;
-				subscribeToSystem;
-				asExpandedOnlyElement) vFitContentLimited ];
-		actionButtonIcon: BrGlamorousVectorIcons playinspect
-			tooltip: 'Do it and go'
-			action: [ :button | 
-				button phlow
-					spawnObject: (Smalltalk compiler evaluate: (String streamContents: [ :s | self storeOn: s ])) ];
-		actionUpdateButton
-]
-
 { #category : #actions }
 TopicMap >> gtTopicMapMenuFor: anAction [
 	<gtAction>
