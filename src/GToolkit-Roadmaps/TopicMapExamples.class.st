@@ -49,8 +49,9 @@ TopicMapExamples >> fieldNodeGtBasics [
 
 	<gtExample>
 	| fieldNodeGtBasics |
-	fieldNodeGtBasics := self databaseNode fieldNodes nodes
-			detect: [ :n | n field = 'Glamorous Toolkit Basics' ].
+	fieldNodeGtBasics := TMFieldNode
+			for: 'Glamorous Toolkit Basics'
+			in: self topicMap.
 	self assert: fieldNodeGtBasics topics size equals: 10.
 	self assert: fieldNodeGtBasics kinds size equals: 11.
 	self
@@ -84,6 +85,22 @@ TopicMapExamples >> kind2Pages [
 ]
 
 { #category : #example }
+TopicMapExamples >> kindNodeIntroduction [
+	<gtExample>
+	| aboutGtKindNode |
+	aboutGtKindNode := TMKindNode for: 'Introduction' in: self topicMap.
+	
+	self assert: aboutGtKindNode fields size equals: 5.
+	self assert: aboutGtKindNode topics size equals: 36.
+	self assert: aboutGtKindNode kinds size equals: 1.
+	self assert: aboutGtKindNode pages size < aboutGtKindNode database pages size.
+	self assert: aboutGtKindNode children isTMNodeGroup.
+	self assert: aboutGtKindNode children isTMPageGroup.
+
+	^ aboutGtKindNode
+]
+
+{ #category : #example }
 TopicMapExamples >> kindNodeIntroductionWithinAboutGtTopic [
 	"NB: Since pages can have multiple topics, a kind within 
 	a topic can branch to multiple other topics and fields,
@@ -91,14 +108,20 @@ TopicMapExamples >> kindNodeIntroductionWithinAboutGtTopic [
 
 	<gtExample>
 	| aboutGtKindNode |
-	aboutGtKindNode := self topicNodeAboutGt kindNodes nodes
-			detect: [ :n | n kind = 'Introduction' ].
+	aboutGtKindNode := (TMKindNode for: 'Introduction' in: self topicMap)
+			pageContext: self topicNodeAboutGt pageGroup;
+			yourself.
+
+	self
+		assert: aboutGtKindNode
+		equals: (self topicNodeAboutGt kindNodes nodes detect: [ :n | n kind = 'Introduction' ]).
 	self assert: aboutGtKindNode fields size equals: 3.
 	self assert: aboutGtKindNode topics size equals: 10.
 	self assert: aboutGtKindNode kinds size equals: 1.
 	self assert: aboutGtKindNode pages size < aboutGtKindNode database pages size.
 	self assert: aboutGtKindNode children isTMNodeGroup.
 	self assert: aboutGtKindNode children isTMPageGroup.
+	
 	^ aboutGtKindNode
 ]
 
@@ -235,6 +258,7 @@ TopicMapExamples >> pageNodeWhatIsGt [
 	| pageNodeWhatIsGt |
 	pageNodeWhatIsGt := self kindNodeIntroductionWithinAboutGtTopic pageGroup
 			pageNodeWithTitle: 'What is Glamorous Toolkit?'.
+
 	self assert: pageNodeWhatIsGt fields size equals: 3.
 	self assert: pageNodeWhatIsGt topics size equals: 5.
 	self assert: pageNodeWhatIsGt kinds size equals: 1.
@@ -324,6 +348,27 @@ TopicMapExamples >> topicMap [
 	self assert: topicMap database equals: LeDatabase gtBook.
 	self assert: topicMap missingPages size > 0.
 	^ topicMap
+]
+
+{ #category : #example }
+TopicMapExamples >> topicMapEntities [
+	"A bit slow at around 5s, so <noTest>."
+
+	<gtExample>
+	<noTest>
+	| exampleGroup thisMethod topicMapEntities  |
+	thisMethod := thisContext stack first method.
+	self assert: thisMethod equals: TopicMapExamples >> #topicMapEntities.
+	
+	exampleGroup := GtExplicitExampleGroup
+			withAll: (self class package gtExamplesAllContained
+					reject: [ :eg | eg method = thisMethod or: [ eg method hasPragmaNamed: 'noTest' ] ]).
+	topicMapEntities := exampleGroup examples
+			collect: #returnValue
+			thenSelect: #isTopicMapEntity.
+	"topicMapEntities
+		do: [ :t | self assert: (Smalltalk compiler evaluate: t storeString) equals: t ]."
+	^ topicMapEntities
 ]
 
 { #category : #example }

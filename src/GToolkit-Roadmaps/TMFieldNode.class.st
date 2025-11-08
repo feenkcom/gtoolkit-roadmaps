@@ -112,6 +112,16 @@ TMFieldNode >> roadmapNodes [
 	^ nodes
 ]
 
+{ #category : #printing }
+TMFieldNode >> storeOn: aStream [
+	aStream
+		nextPutAll: '(TMFieldNode for: ';
+		nextPutAll: self field printString;
+		nextPutAll: ' in: '.
+	self topicMap storeOn: aStream.
+	aStream nextPut: $)
+]
+
 { #category : #navigation }
 TMFieldNode >> topics [
 	^ self topicMap topic4Field: self field
