@@ -252,11 +252,33 @@ TopicMapExamples >> pageGroupFromTopicMap [
 
 { #category : #example }
 TopicMapExamples >> pageNodeWhatIsGt [
-	"NB: Fragile test, #topics, kinds could change. Page title could change."
+	"NB: No breadcrumb."
 
 	<gtExample>
 	| pageNodeWhatIsGt |
-	pageNodeWhatIsGt := self kindNodeIntroductionWithinAboutGtTopic pageGroup
+	pageNodeWhatIsGt := TMPageNode
+			forTitle: 'What is Glamorous Toolkit?'
+			in: self topicMap.
+
+	self assert: pageNodeWhatIsGt fields size equals: 3.
+	self assert: pageNodeWhatIsGt topics size equals: 5.
+	self assert: pageNodeWhatIsGt kinds size equals: 1.
+	self assert: pageNodeWhatIsGt pages size equals: 1.
+	self assert: pageNodeWhatIsGt children isTMNodeGroup.
+	self assert: pageNodeWhatIsGt children isTMPageGroup not.
+	self assert: pageNodeWhatIsGt parents equals: pageNodeWhatIsGt kindNodes.
+	self assert: pageNodeWhatIsGt breadcrumb isEmpty.
+	
+	^ pageNodeWhatIsGt
+]
+
+{ #category : #example }
+TopicMapExamples >> pageNodeWhatIsGtViaTopicAboutGt [
+	"Same as pageNodeWhatIsGt but with breadcrumb."
+
+	<gtExample>
+	| pageNodeWhatIsGt |
+	pageNodeWhatIsGt := self topicNodeAboutGt
 			pageNodeWithTitle: 'What is Glamorous Toolkit?'.
 
 	self assert: pageNodeWhatIsGt fields size equals: 3.
@@ -266,6 +288,8 @@ TopicMapExamples >> pageNodeWhatIsGt [
 	self assert: pageNodeWhatIsGt children isTMNodeGroup.
 	self assert: pageNodeWhatIsGt children isTMPageGroup not.
 	self assert: pageNodeWhatIsGt parents equals: pageNodeWhatIsGt kindNodes.
+	self assert: pageNodeWhatIsGt breadcrumb notEmpty.
+	
 	^ pageNodeWhatIsGt
 ]
 

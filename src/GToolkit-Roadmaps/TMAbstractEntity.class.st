@@ -7,6 +7,14 @@ Class {
 	#category : #'GToolkit-Roadmaps-Model'
 }
 
+{ #category : #testing }
+TMAbstractEntity class >> storeOnIsAbstract [
+	^ self
+		classAndMethodFor: #storeOn:
+		do: [ :c :m | m isSubclassResponsibility ]
+		ifAbsent: [ true ]
+]
+
 { #category : #converting }
 TMAbstractEntity >> asElement [
 	^ self roadmap
@@ -102,7 +110,8 @@ TMAbstractEntity >> gtSpotterForPageTitles: aSearch [
 TMAbstractEntity >> gtStoreStringFor: aView [
 	"Work in progress"
 
-	"<gtView>"
+	<gtView>
+	self storeOnIsAbstract ifTrue: [ ^ aView empty ].
 	^ aView explicit
 		title: 'Store on';
 		priority: 70;
@@ -268,6 +277,11 @@ TMAbstractEntity >> sortedKinds [
 { #category : #printing }
 TMAbstractEntity >> storeOn: aStream [
 	self subclassResponsibility
+]
+
+{ #category : #testing }
+TMAbstractEntity >> storeOnIsAbstract [
+	^ self class storeOnIsAbstract
 ]
 
 { #category : #views }

@@ -32,7 +32,8 @@ TMPageNode class >> for: aPage in: aTopicMap [
 { #category : #'instance creation' }
 TMPageNode class >> forTitle: aPageTitle in: aTopicMap [
 	"Use this for testing, particularly if the topic map to use
-	is not necessarily the default one, but a special test map."
+	is not necessarily the default one, but a special test map.
+	Also used for storeOn: so we can lookup the page using the title."
 
 	^ aTopicMap pageNodeWithTitle: aPageTitle
 ]
@@ -312,6 +313,16 @@ TMPageNode >> roadmapSimpleNodeElement [
 	^ super roadmapSimpleNodeElement
 		geometry: BlCircleGeometry new;
 		yourself
+]
+
+{ #category : #printing }
+TMPageNode >> storeOn: aStream [
+	aStream
+		nextPutAll: '(TMPageNode forTitle: ';
+		nextPutAll: self page title printString;
+		nextPutAll: 'in: '.
+	self topicMap storeOn: aStream.
+	aStream nextPut: $)
 ]
 
 { #category : #accessing }
