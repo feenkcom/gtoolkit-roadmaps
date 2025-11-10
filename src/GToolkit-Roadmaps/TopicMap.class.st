@@ -140,7 +140,7 @@ TopicMap >> database [
 
 { #category : #views }
 TopicMap >> databaseNode [
-	^ TMDatabaseNode for: self database
+	^ TMDatabaseNode for: self database in: self
 ]
 
 { #category : #breadcrumbs }

@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-29T13:55:47.543777+01:00"
+						"dateAndTimeString" : "2025-11-10T16:58:40.726592+01:00"
 					}
 				},
 				"uid" : {
@@ -263,7 +263,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-10T10:21:22.25922+01:00"
+															"dateAndTimeString" : "2025-11-10T16:58:40.807764+01:00"
 														}
 													},
 													"uid" : {
@@ -372,7 +372,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:25:30.263964+01:00"
+															"dateAndTimeString" : "2025-11-10T16:58:40.850852+01:00"
 														}
 													},
 													"uid" : {
@@ -406,7 +406,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:32:09.760168+01:00"
+															"dateAndTimeString" : "2025-11-10T16:58:40.864494+01:00"
 														}
 													},
 													"uid" : {
@@ -440,7 +440,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:31:56.112752+01:00"
+															"dateAndTimeString" : "2025-11-10T16:58:40.879774+01:00"
 														}
 													},
 													"uid" : {
@@ -529,7 +529,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-30T10:13:37.722954+01:00"
+									"dateAndTimeString" : "2025-11-10T16:58:43.932641+01:00"
 								}
 							},
 							"editEmail" : {
@@ -540,7 +540,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-30T10:14:21.360118+01:00"
+									"dateAndTimeString" : "2025-11-10T16:58:43.93536+01:00"
 								}
 							},
 							"uid" : {
@@ -550,7 +550,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Add a `storeString` method to TopicMap nodes so we can easily grab the code to reproduce a map!"
+							"string" : "Add a `storeString` method to TopicMap nodes so we can easily grab the code to reproduce a map!\nPrinciple: all the storeStrings should start from a TopicMap as the generator of node instances."
 						},
 						{
 							"__type" : "textSnippet",

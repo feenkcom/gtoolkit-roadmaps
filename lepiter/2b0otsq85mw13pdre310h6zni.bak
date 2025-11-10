@@ -330,7 +330,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-10T10:26:05.729132+01:00"
+												"dateAndTimeString" : "2025-11-10T10:38:35.006817+01:00"
 											}
 										},
 										"uid" : {
@@ -340,7 +340,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Breadcrumbs will also require additional care. Should we consider them for equality tests? How do we avoid repeating the topic map?\nWe need to add a test case for a page with a breadcrumb."
+										"string" : "Breadcrumbs will also require additional care. Should we consider them for equality tests? How do we avoid repeating the topic map?\nWe need to handle correctly {{gtMethod:name=TopicMapExamples>>#pageNodeWhatIsGtViaTopicAboutGt}} ..."
 									},
 									{
 										"__type" : "textSnippet",

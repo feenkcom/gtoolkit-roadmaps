@@ -99,9 +99,10 @@ TMDatabaseNode >> roadmapNodes [
 
 { #category : #printing }
 TMDatabaseNode >> storeOn: aStream [
-	aStream nextPutAll: '(TMDatabaseNode for: '.
-	self topicMap storeOn: aStream.
-	aStream nextPut: $)
+	aStream
+		nextPut: $(;
+		storeObject: self topicMap;
+		nextPutAll: ' databaseNode)'
 ]
 
 { #category : #navigation }
