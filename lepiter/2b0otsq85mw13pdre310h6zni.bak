@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-29T13:55:47.543777+01:00"
+						"dateAndTimeString" : "2025-11-10T17:11:51.855834+01:00"
 					}
 				},
 				"uid" : {
@@ -147,7 +147,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-10T09:44:03.818163+01:00"
+												"dateAndTimeString" : "2025-11-10T17:06:10.403736+01:00"
 											}
 										},
 										"uid" : {
@@ -157,7 +157,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "We continue with nodes. We implement {{gtMethod:name=TMDatabaseNode>>#storeOn:}} and {{gtMethod:name=TMFieldNode>>#storeOn:}}"
+										"string" : "We continue with nodes. We implement {{gtMethod:name=TMDatabaseNode>>#storeOn:}} and {{gtMethod:name=TMFieldNode>>#storeOn:}}\nSee {{gtMethod:name=TopicMapExamples>>#databaseNode}} and {{gtMethod:name=TopicMapExamples>>#fieldNodeGtBasics}}"
 									},
 									{
 										"__type" : "textSnippet",
@@ -184,7 +184,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-10T10:06:54.156528+01:00"
+												"dateAndTimeString" : "2025-11-10T17:22:08.728483+01:00"
 											}
 										},
 										"uid" : {
@@ -194,7 +194,44 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "PageNodes require some care -- we don't want the full storeString of a LePage, but rather to look it up by title in a database. "
+										"string" : "PageNodes require some care -- we don't want the full storeString of a LePage, but rather to look it up by title in a database. We also need separate cases with and without breadcrumbs (deal with breadcrumbs later ...)\nTwo cases:\n(1)  {{gtMethod:name=TopicMapExamples>>#pageNodeWhatIsGt}} (done)\n(2)  {{gtMethod:name=TopicMapExamples>>#pageNodeWhatIsGtViaTopicAboutGt}} (TO DO)"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:07:26.594018+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:13:05.581398+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "UTridqH/DQCWClbkBdjH4Q=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Topic nodes are straightfoward. \nSee {{gtMethod:name=TopicMapExamples>>#topicNodeAboutGt}}"
 									},
 									{
 										"__type" : "textSnippet",
@@ -221,7 +258,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-08T09:09:05.140915+01:00"
+												"dateAndTimeString" : "2025-11-10T17:22:01.048756+01:00"
 											}
 										},
 										"uid" : {
@@ -231,7 +268,119 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Kind nodes are a bit trickier. We have to extend the = test and we need a storeString for the context (page group) if it is present."
+										"string" : "Kind nodes are a bit trickier. We have to extend the = test and we need a storeString for the context (page group) if it is present.\nTwo cases:\n(1) {{gtMethod:name=TopicMapExamples>>#kindNodeIntroduction}} (done)\n(2) {{gtMethod:name=TopicMapExamples>>#kindNodeIntroductionWithinAboutGtTopic}} (TO DO)\nAlso need to handle case with pathContext? Or is this given by the page with pathContext?"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-10T17:35:37.699656+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-10T17:35:37.699656+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "6HKu26H/DQCk4aMjBdjH4Q=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : ""
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:12:12.688011+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:56:15.089189+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "tKvvh6H/DQCZi6g1BdjH4Q=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "A node group can be created in many ways. Each node in the node group can be of various types.\nSee {{gtMethod:name=TopicMapExamples>>#nodeGroupChildrenOfFieldNodeGtBasics}}\nand {{gtMethod:name=TopicMapExamples>>#nodeGroupWithFieldsAndTopics}}\nWe need a way to query the topic map for each kind of node. Should require some double-dispatch — ask each node for the query to be sent to the topicMap; collect them all and compose them into the storeString. (Perhaps the individual storeOn: methcan use the same query?)"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:12:12.912612+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:12:12.912612+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "ORrzh6H/DQCZj8SlBdjH4Q=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : ""
 									},
 									{
 										"__type" : "textSnippet",
@@ -263,7 +412,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-10T10:21:22.25922+01:00"
+															"dateAndTimeString" : "2025-11-10T17:11:49.653217+01:00"
 														}
 													},
 													"uid" : {
@@ -372,7 +521,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:25:30.263964+01:00"
+															"dateAndTimeString" : "2025-11-10T17:11:49.672221+01:00"
 														}
 													},
 													"uid" : {
@@ -406,7 +555,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:32:09.760168+01:00"
+															"dateAndTimeString" : "2025-11-10T17:11:49.676942+01:00"
 														}
 													},
 													"uid" : {
@@ -440,7 +589,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:31:56.112752+01:00"
+															"dateAndTimeString" : "2025-11-10T17:43:04.296631+01:00"
 														}
 													},
 													"uid" : {
@@ -529,7 +678,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-30T10:13:37.722954+01:00"
+									"dateAndTimeString" : "2025-11-10T16:58:43.932641+01:00"
 								}
 							},
 							"editEmail" : {
@@ -540,7 +689,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-30T10:14:21.360118+01:00"
+									"dateAndTimeString" : "2025-11-10T16:58:43.93536+01:00"
 								}
 							},
 							"uid" : {
@@ -550,7 +699,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Add a `storeString` method to TopicMap nodes so we can easily grab the code to reproduce a map!"
+							"string" : "Add a `storeString` method to TopicMap nodes so we can easily grab the code to reproduce a map!\nPrinciple: all the storeStrings should start from a TopicMap as the generator of node instances."
 						},
 						{
 							"__type" : "textSnippet",
@@ -678,7 +827,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-19T09:34:19.090257+02:00"
+									"dateAndTimeString" : "2025-11-10T17:11:44.16078+01:00"
 								}
 							},
 							"editEmail" : {
@@ -689,7 +838,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-22T14:14:00.21364+02:00"
+									"dateAndTimeString" : "2025-11-10T17:11:44.163991+01:00"
 								}
 							},
 							"uid" : {
@@ -1218,7 +1367,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-17T10:41:49.630121+02:00"
+												"dateAndTimeString" : "2025-11-10T17:11:33.525379+01:00"
 											}
 										},
 										"uid" : {
@@ -1252,7 +1401,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-17T10:42:53.609542+02:00"
+												"dateAndTimeString" : "2025-11-10T17:11:33.599218+01:00"
 											}
 										},
 										"uid" : {

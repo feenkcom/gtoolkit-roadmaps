@@ -23,8 +23,10 @@ TMAbstractTreeNode class >> for: anObject in: aTopicMap [
 
 { #category : #comparing }
 TMAbstractTreeNode >> = other [
+	"NB: each subclass implements #nodeLabel, so we don't normally have to override #="
+
 	self == other ifTrue: [ ^ true ].
-	self class = other class ifFalse: [^ false ].
+	self class = other class ifFalse: [ ^ false ].
 	^ self nodeLabel = other nodeLabel
 ]
 

@@ -91,7 +91,7 @@ TMTopicNode >> kinds [
 
 { #category : #accessing }
 TMTopicNode >> nodeLabel [
-	^ "'Topic: ' ," self topic
+	^ self topic
 ]
 
 { #category : #accessing }
@@ -126,6 +126,16 @@ TMTopicNode >> roadmapNodes [
 	nodes := root roadmapNodes , {self} , kinds , pages.
 	self highlightBreadcrumbsIn: nodes.
 	^ nodes
+]
+
+{ #category : #printing }
+TMTopicNode >> storeOn: aStream [
+	aStream
+		nextPut: $(;
+		storeObject: self topicMap;
+		nextPutAll: ' topicNodeNamed: ';
+		nextPutAll: self topic printString;
+		nextPut: $)
 ]
 
 { #category : #accessing }

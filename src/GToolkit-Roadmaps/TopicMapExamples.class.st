@@ -49,9 +49,7 @@ TopicMapExamples >> fieldNodeGtBasics [
 
 	<gtExample>
 	| fieldNodeGtBasics |
-	fieldNodeGtBasics := TMFieldNode
-			for: 'Glamorous Toolkit Basics'
-			in: self topicMap.
+	fieldNodeGtBasics := self topicMap fieldNodeNamed: 'Glamorous Toolkit Basics'.
 	self assert: fieldNodeGtBasics topics size equals: 10.
 	self assert: fieldNodeGtBasics kinds size equals: 11.
 	self
@@ -88,8 +86,8 @@ TopicMapExamples >> kind2Pages [
 TopicMapExamples >> kindNodeIntroduction [
 	<gtExample>
 	| aboutGtKindNode |
-	aboutGtKindNode := TMKindNode for: 'Introduction' in: self topicMap.
-	
+	aboutGtKindNode := self topicMap kindNodeNamed: 'Introduction'.
+
 	self assert: aboutGtKindNode fields size equals: 5.
 	self assert: aboutGtKindNode topics size equals: 36.
 	self assert: aboutGtKindNode kinds size equals: 1.
@@ -201,6 +199,26 @@ TopicMapExamples >> nodeGroupChildrenOfFieldNodeGtBasics [
 	self assert: nodeGroup isTMPageGroup not.
 	self assert: nodeGroup children isTMNodeGroup.
 	self assert: nodeGroup children isTMPageGroup not.
+	^ nodeGroup
+]
+
+{ #category : #example }
+TopicMapExamples >> nodeGroupWithFieldsAndTopics [
+	"NB: Fragile test, #topics could change in book."
+
+	<gtExample>
+	| nodeGroup |
+	nodeGroup := self fieldNodeGtBasics children
+			addNodeGroup: self databaseNode children;
+			yourself.
+
+	self assert: nodeGroup size equals: 15.
+	self assert: nodeGroup isTMTreeNode.
+	self assert: nodeGroup isTMNodeGroup.
+	self assert: nodeGroup isTMPageGroup not.
+	self assert: nodeGroup children isTMNodeGroup.
+	self assert: nodeGroup children isTMPageGroup not.
+	
 	^ nodeGroup
 ]
 

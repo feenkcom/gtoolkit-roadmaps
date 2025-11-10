@@ -317,12 +317,13 @@ TMPageNode >> roadmapSimpleNodeElement [
 
 { #category : #printing }
 TMPageNode >> storeOn: aStream [
+	<todo: 'Handle case with breadcrumb in pathContext'>
 	aStream
-		nextPutAll: '(TMPageNode forTitle: ';
+		nextPut: $(;
+		storeObject: self topicMap;
+		nextPutAll: ' pageNodeWithTitle: ';
 		nextPutAll: self page title printString;
-		nextPutAll: 'in: '.
-	self topicMap storeOn: aStream.
-	aStream nextPut: $)
+		nextPut: $)
 ]
 
 { #category : #accessing }

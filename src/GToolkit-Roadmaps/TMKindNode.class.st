@@ -138,6 +138,17 @@ TMKindNode >> roadmapNodes [
 	^ nodes
 ]
 
+{ #category : #printing }
+TMKindNode >> storeOn: aStream [
+<todo: 'Handle cases with pathContext and pageContext'>
+	aStream
+		nextPut: $(;
+		storeObject: self topicMap;
+		nextPutAll: ' kindNodeNamed: ';
+		nextPutAll: self kind printString;
+		nextPut: $)
+]
+
 { #category : #querying }
 TMKindNode >> topics [
 	^ (self pageGroup flatCollect: #topics) copyWithoutDuplicates
