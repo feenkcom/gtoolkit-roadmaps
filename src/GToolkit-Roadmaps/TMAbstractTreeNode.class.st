@@ -290,6 +290,15 @@ TMAbstractTreeNode >> nodeType [
 	self subclassResponsibility
 ]
 
+{ #category : #querying }
+TMAbstractTreeNode >> pageNodeWithTitle: aTitle [
+	"Add the current node's breadcrumb as a path context."
+
+	^ (super pageNodeWithTitle: aTitle)
+		pathContext: self breadcrumb;
+		yourself
+]
+
 { #category : #navigation }
 TMAbstractTreeNode >> parents [
 	self subclassResponsibility
