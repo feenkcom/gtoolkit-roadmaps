@@ -84,6 +84,8 @@ TopicMapExamples >> kind2Pages [
 
 { #category : #example }
 TopicMapExamples >> kindNodeIntroduction [
+	"An ex nihilo kind node without any breadcrumb."
+
 	<gtExample>
 	| aboutGtKindNode |
 	aboutGtKindNode := self topicMap kindNodeNamed: 'Introduction'.
@@ -95,12 +97,38 @@ TopicMapExamples >> kindNodeIntroduction [
 	self assert: aboutGtKindNode children isTMNodeGroup.
 	self assert: aboutGtKindNode children isTMPageGroup.
 
+	self assert: aboutGtKindNode breadcrumb isEmpty.
+	self assert: aboutGtKindNode pageContext isNotNil.
+
+	^ aboutGtKindNode
+]
+
+{ #category : #example }
+TopicMapExamples >> kindNodeIntroductionViaTopicAboutGT [
+	"A kind node via a breadcrumb."
+
+	<gtExample>
+	| aboutGtKindNode |
+	aboutGtKindNode := (self topicMap kindNodeNamed: 'Introduction')
+			viaTopicNamed: 'About Glamorous Toolkit'.
+
+	self assert: aboutGtKindNode fields size equals: 5.
+	self assert: aboutGtKindNode topics size equals: 36.
+	self assert: aboutGtKindNode kinds size equals: 1.
+	self assert: aboutGtKindNode pages size < aboutGtKindNode database pages size.
+	self assert: aboutGtKindNode children isTMNodeGroup.
+	self assert: aboutGtKindNode children isTMPageGroup.
+
+	self assert: aboutGtKindNode breadcrumb notEmpty.
+	self assert: aboutGtKindNode pageContext isNotNil.
+
 	^ aboutGtKindNode
 ]
 
 { #category : #example }
 TopicMapExamples >> kindNodeIntroductionWithinAboutGtTopic [
-	"NB: Since pages can have multiple topics, a kind within 
+	"A kind node with no breadcrumb, but restricted to a specific set of pages of interest.
+	NB: Since pages can have multiple topics, a kind within 
 	a topic can branch to multiple other topics and fields,
 	as is the case here."
 
@@ -120,6 +148,9 @@ TopicMapExamples >> kindNodeIntroductionWithinAboutGtTopic [
 	self assert: aboutGtKindNode children isTMNodeGroup.
 	self assert: aboutGtKindNode children isTMPageGroup.
 	
+	self assert: aboutGtKindNode breadcrumb isEmpty.
+	self assert: aboutGtKindNode pageContext isNotNil.
+
 	^ aboutGtKindNode
 ]
 
@@ -308,7 +339,10 @@ TopicMapExamples >> pageNodeWhatIsGt [
 	self assert: pageNodeWhatIsGt children isTMPageGroup not.
 	self assert: pageNodeWhatIsGt parents equals: pageNodeWhatIsGt kindNodes.
 	self assert: pageNodeWhatIsGt breadcrumb isEmpty.
-	
+
+	self
+		assert: pageNodeWhatIsGt === self pageNodeWhatIsGtViaTopicAboutGt withoutViaTopic.
+
 	^ pageNodeWhatIsGt
 ]
 

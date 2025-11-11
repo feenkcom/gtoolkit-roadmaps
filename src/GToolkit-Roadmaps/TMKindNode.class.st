@@ -131,20 +131,37 @@ TMKindNode >> roadmapNodes [
 				topicNode := self breadcrumb topicNode.
 				root roadmapNodes , {topicNode} , topicNode kindNodes
 					, (topicNode pageNodes select: [ :n | n kind = self kind ]) ]
-			ifFalse: [ root roadmapNodes , self topicNodes , self kindNodes ].
+			ifFalse: [ root roadmapNodes , self topicNodes , self kindNodes
+					, (self pageContext nodes select: [ :n | n kind = self kind ]) ].
 	self highlightBreadcrumbsIn: nodes.
 	^ nodes
 ]
 
+{ #category : #initialization }
+TMKindNode >> setPageContextFromTitles: pageTitles [
+	^ self
+		pageContext: (self
+				pageGroupFor: (pageTitles collect: [ :t | self topicMap database pageNamed: t ]))
+]
+
 { #category : #printing }
 TMKindNode >> storeOn: aStream [
-<todo: 'Handle cases with pathContext and pageContext'>
+	<todo: 'Handle cases with pathContext and pageContext'>
 	aStream
-		nextPut: $(;
+		nextPutAll: '((';
 		storeObject: self topicMap;
 		nextPutAll: ' kindNodeNamed: ';
 		nextPutAll: self kind printString;
-		nextPut: $)
+		nextPut: $).
+	self topicInBreadcrumb
+		ifTrue: [ aStream
+				nextPutAll: ' viaTopicNamed: ';
+				nextPutAll: breadcrumb topicNode topic printString;
+				nextPut: $) ]
+		ifFalse: [ aStream
+				nextPutAll: ' setPageContextFromTitles: {';
+				nextPutAll: (' . ' join: (self pageContext nodes collect: [ :n | n page title printString ]));
+				nextPutAll: '})' ]
 ]
 
 { #category : #printing }
@@ -169,4 +186,9 @@ TMKindNode >> treeMapChildren [
 { #category : #treemaps }
 TMKindNode >> treeMapLeaves [
 	^ self pageGroup
+]
+
+{ #category : #accessing }
+TMKindNode >> viaTopicNamed: aTopicName [
+	^ self withContext: (self topicMap topicNodeNamed: aTopicName) breadcrumb
 ]

@@ -322,11 +322,16 @@ TMPageNode >> roadmapSimpleNodeElement [
 TMPageNode >> storeOn: aStream [
 	<todo: 'Handle case with breadcrumb in pathContext'>
 	aStream
-		nextPut: $(;
+		nextPutAll: '((';
 		storeObject: self topicMap;
 		nextPutAll: ' pageNodeWithTitle: ';
 		nextPutAll: self page title printString;
-		nextPut: $)
+		nextPut: $).
+	self topicInBreadcrumb
+		ifTrue: [ aStream
+				nextPutAll: ' viaTopicNamed: ';
+				nextPutAll: breadcrumb topicNode topic printString ].
+	aStream nextPut: $)
 ]
 
 { #category : #printing }
@@ -368,7 +373,14 @@ TMPageNode >> updateKindTo: aKindString [
 	self topicMap updateKindForPage: self to: aKindString
 ]
 
+{ #category : #initialization }
+TMPageNode >> viaTopicNamed: aTopicName [
+	^ self withContext: (self topicMap topicNodeNamed: aTopicName) breadcrumb
+]
+
 { #category : #accessing }
 TMPageNode >> withoutViaTopic [
+	"Remove the breadcrumb."
+
 	^ self class for: self page in: self topicMap
 ]
