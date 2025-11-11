@@ -145,7 +145,7 @@ TopicMap >> databaseNode [
 
 { #category : #breadcrumbs }
 TopicMap >> defaultBreadcrumb [
-	^ self databaseNode breadcrumb
+	^ TMBreadcrumb for: {self databaseNode}
 ]
 
 { #category : #querying }

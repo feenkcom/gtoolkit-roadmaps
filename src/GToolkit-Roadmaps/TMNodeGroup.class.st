@@ -75,16 +75,6 @@ TMNodeGroup >> addTopicNodeNamed: aTopic [
 	self nodes add: (self topicMap topicNodeNamed: aTopic)
 ]
 
-{ #category : #breadcrumbs }
-TMNodeGroup >> breadcrumb [
-	^ TMBreadcrumb for: {}
-]
-
-{ #category : #breadcrumbs }
-TMNodeGroup >> breadcrumbForContext: aBreadcrumb [
-	^ TMBreadcrumb for: {}
-]
-
 { #category : #navigation }
 TMNodeGroup >> children [
 	"Or just return self?"
@@ -93,7 +83,7 @@ TMNodeGroup >> children [
 ]
 
 { #category : #breadcrumbs }
-TMNodeGroup >> defaultPathContext [
+TMNodeGroup >> defaultBreadcrumb [
 	^ TMBreadcrumb for: {}
 ]
 
@@ -177,7 +167,7 @@ TMNodeGroup >> roadmapNodes [
 
 	| root roadmapNodes |
 	root := self databaseNode.
-	roadmapNodes := (self nodes , self allParents) copyWithoutDuplicates.
+	roadmapNodes := (self nodes , self allParents) copyWithoutDuplicates asOrderedCollection.
 	self breadcrumb isEmpty
 		ifTrue: [ self nodes do: #highlightOn ]
 		ifFalse: [ self highlightBreadcrumbsIn: roadmapNodes ].

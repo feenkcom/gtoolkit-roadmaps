@@ -39,33 +39,18 @@ TMPageNode class >> forTitle: aPageTitle in: aTopicMap [
 ]
 
 { #category : #breadcrumbs }
-TMPageNode >> breadcrumb [
-	"Only if the topic of the previous roadmap's breadcrumb matches this page,
-	do we have a context for building a new breadcrumb."
-
-	^ self topicInContext
-		ifTrue: [ TMBreadcrumb
-				for: {self pathContext databaseNode.
-						self pathContext fieldNode.
-						self pathContext topicNode.
-						self kindNode.
-						self} ]
-		ifFalse: [ TMBreadcrumb for: {} ]
-]
-
-{ #category : #breadcrumbs }
 TMPageNode >> breadcrumbForContext: aBreadcrumb [
 	"Only if the topic of the previous roadmap's breadcrumb matches this page,
 	do we have a context for building a new breadcrumb."
 
-	^ self topicInContext
+	^ (self topicInContext: aBreadcrumb)
 		ifTrue: [ TMBreadcrumb
-				for: {self pathContext databaseNode.
-						self pathContext fieldNode.
-						self pathContext topicNode.
+				for: {aBreadcrumb databaseNode.
+						aBreadcrumb fieldNode.
+						aBreadcrumb topicNode.
 						self kindNode.
 						self} ]
-		ifFalse: [ TMBreadcrumb for: {} ]
+		ifFalse: [ self defaultBreadcrumb ]
 ]
 
 { #category : #navigation }
@@ -73,16 +58,14 @@ TMPageNode >> children [
 	^ self emptyNodes
 ]
 
+{ #category : #breadcrumbs }
+TMPageNode >> defaultBreadcrumb [
+	^ TMBreadcrumb for: {}
+]
+
 { #category : #mondrian }
 TMPageNode >> defaultNodeColor [
 	^ Color paleOrange
-]
-
-{ #category : #breadcrumbs }
-TMPageNode >> defaultPathContext [
-	"If a context is not explicitly provided, we can assume nothing for page nodes."
-
-	^ TMBreadcrumb for: {}
 ]
 
 { #category : #navigation }
@@ -305,8 +288,8 @@ TMPageNode >> roadmapNodes [
 
 	| root nodes topicNode |
 	root := self databaseNode.
-	topicNode := self topicInContext
-			ifTrue: [ self pathContext topicNode ]
+	topicNode := self topicInBreadcrumb
+			ifTrue: [ self breadcrumb topicNode ]
 			ifFalse: [ self topicNodes size = 1 ifTrue: [ self topicNodes first ] ifFalse: [ nil ] ].
 	nodes := topicNode notNil
 			ifTrue: [ root roadmapNodes , {topicNode} , topicNode kindNodes , topicNode pageNodes ]

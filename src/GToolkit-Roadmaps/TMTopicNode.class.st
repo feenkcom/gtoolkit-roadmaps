@@ -15,22 +15,6 @@ TMTopicNode class >> for: aTopic in: aTopicMap [
 	yourself 
 ]
 
-{ #category : #breadcrumbs }
-TMTopicNode >> breadcrumb [
-	^ TMBreadcrumb
-		for: {self databaseNode.
-				self fieldNode.
-				self}
-]
-
-{ #category : #breadcrumbs }
-TMTopicNode >> breadcrumbForContext: aBreadcrumb [
-	^ TMBreadcrumb
-		for: {self databaseNode.
-				self fieldNode.
-				self}
-]
-
 { #category : #views }
 TMTopicNode >> changeFieldTo: aField [
 	self topicMap updateFieldForTopic: self to: aField
@@ -39,6 +23,14 @@ TMTopicNode >> changeFieldTo: aField [
 { #category : #navigation }
 TMTopicNode >> children [
 	^ self pageGroup
+]
+
+{ #category : #breadcrumbs }
+TMTopicNode >> defaultBreadcrumb [
+	^ TMBreadcrumb
+		for: {self databaseNode.
+				self fieldNode.
+				self}
 ]
 
 { #category : #mondrian }

@@ -20,29 +20,15 @@ TMKindNode class >> for: aString in: aTopicMap [
 ]
 
 { #category : #breadcrumbs }
-TMKindNode >> breadcrumb [
-	"Only if the topic of the previous roadmap's breadcrumb matches this kind,
-	do we have a context for building a new breadcrumb."
-
-	^ self topicInContext
-		ifTrue: [ TMBreadcrumb
-				for: {self pathContext databaseNode.
-						self pathContext fieldNode.
-						self pathContext topicNode.
-						self} ]
-		ifFalse: [ TMBreadcrumb for: {} ]
-]
-
-{ #category : #breadcrumbs }
 TMKindNode >> breadcrumbForContext: aBreadcrumb [
 	"Only if the topic of the previous roadmap's breadcrumb matches this kind,
 	do we have a context for building a new breadcrumb."
 
-	^ self topicInContext
+	^ (self topicInContext: aBreadcrumb)
 		ifTrue: [ TMBreadcrumb
-				for: {self pathContext databaseNode.
-						self pathContext fieldNode.
-						self pathContext topicNode.
+				for: {aBreadcrumb databaseNode.
+						aBreadcrumb fieldNode.
+						aBreadcrumb topicNode.
 						self} ]
 		ifFalse: [ TMBreadcrumb for: {} ]
 ]
@@ -54,9 +40,7 @@ TMKindNode >> children [
 ]
 
 { #category : #breadcrumbs }
-TMKindNode >> defaultPathContext [
-	"If a context is not explicitly provided, we can assume nothing for kind nodes."
-
+TMKindNode >> defaultBreadcrumb [
 	^ TMBreadcrumb for: {}
 ]
 
@@ -142,9 +126,9 @@ TMKindNode >> roadmapNodes [
 	| nodes root |
 	"nodes := self pageGroup roadmapNodes."
 	root := self databaseNode.
-	nodes := self topicInContext
+	nodes := self topicInBreadcrumb
 			ifTrue: [ | topicNode |
-				topicNode := self pathContext topicNode.
+				topicNode := self breadcrumb topicNode.
 				root roadmapNodes , {topicNode} , topicNode kindNodes
 					, (topicNode pageNodes select: [ :n | n kind = self kind ]) ]
 			ifFalse: [ root roadmapNodes , self topicNodes , self kindNodes ].
