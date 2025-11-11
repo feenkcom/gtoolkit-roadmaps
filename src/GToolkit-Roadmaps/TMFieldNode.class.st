@@ -22,6 +22,15 @@ TMFieldNode >> breadcrumb [
 				self}
 ]
 
+{ #category : #breadcrumbs }
+TMFieldNode >> breadcrumbForContext: aBreadcrumb [
+	"Ignore the context."
+
+	^ TMBreadcrumb
+		for: {self databaseNode.
+				self}
+]
+
 { #category : #accessing }
 TMFieldNode >> children [
 	^ self nodesFor: (self topics collect: [ :aTopic | self topicNodeFor: aTopic ])

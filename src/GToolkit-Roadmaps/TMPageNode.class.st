@@ -53,6 +53,21 @@ TMPageNode >> breadcrumb [
 		ifFalse: [ TMBreadcrumb for: {} ]
 ]
 
+{ #category : #breadcrumbs }
+TMPageNode >> breadcrumbForContext: aBreadcrumb [
+	"Only if the topic of the previous roadmap's breadcrumb matches this page,
+	do we have a context for building a new breadcrumb."
+
+	^ self topicInContext
+		ifTrue: [ TMBreadcrumb
+				for: {self pathContext databaseNode.
+						self pathContext fieldNode.
+						self pathContext topicNode.
+						self kindNode.
+						self} ]
+		ifFalse: [ TMBreadcrumb for: {} ]
+]
+
 { #category : #navigation }
 TMPageNode >> children [
 	^ self emptyNodes

@@ -23,6 +23,13 @@ TMDatabaseNode >> breadcrumb [
 	^ TMBreadcrumb for: {self}
 ]
 
+{ #category : #breadcrumbs }
+TMDatabaseNode >> breadcrumbForContext: aBreadcrumb [
+	"Ignore the context."
+
+	^ TMBreadcrumb for: {self}
+]
+
 { #category : #navigation }
 TMDatabaseNode >> children [
 	^ self nodesFor: (self fields collect: [ :aField | self fieldNodeFor: aField ])

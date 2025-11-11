@@ -51,6 +51,13 @@ TMAbstractTreeNode >> breadcrumb [
 	self subclassResponsibility
 ]
 
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> breadcrumbForContext: aBreadcrumb [
+	"Compute the breadcrumb for this node, given the breadcrumb of the previous node reached,if any."
+
+	self subclassResponsibility
+]
+
 { #category : #navigation }
 TMAbstractTreeNode >> children [
 	self subclassResponsibility
@@ -315,8 +322,8 @@ TMAbstractTreeNode >> pathContext [
 ]
 
 { #category : #breadcrumbs }
-TMAbstractTreeNode >> pathContext: anObject [
-	pathContext := anObject
+TMAbstractTreeNode >> pathContext: aBreadcrumb [
+	pathContext := aBreadcrumb
 ]
 
 { #category : #printing }
@@ -444,6 +451,14 @@ TMAbstractTreeNode >> storeOnNodeGroup: aStream [
 { #category : #accessing }
 TMAbstractTreeNode >> topicInContext [
 	^ self pathContext topicNode notNil
+		and: [ self topicNodes includes: self pathContext topicNode ]
+]
+
+{ #category : #accessing }
+TMAbstractTreeNode >> topicInContext: aBreadcrumb [
+	"Is my topic in the context of the previous breadcrumb?"
+
+	^ aBreadcrumb topicNode notNil
 		and: [ self topicNodes includes: self pathContext topicNode ]
 ]
 

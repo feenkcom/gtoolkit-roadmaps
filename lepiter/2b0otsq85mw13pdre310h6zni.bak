@@ -466,40 +466,6 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-11T08:47:05.001195+01:00"
-														}
-													},
-													"editEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"editTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-11T08:49:18.31271+01:00"
-														}
-													},
-													"uid" : {
-														"__type" : "uid",
-														"uidString" : "QHNMl67/DQCGADHJBhgLug=="
-													},
-													"code" : "errors := OrderedCollection new.\rtopicMapEntities\r\tdo: [ :t | \r\t\t[ Smalltalk compiler evaluate: t storeString ]\r\t\t\tonErrorDo: [ :e | errors add: t -> e ] ].\rerrors"
-												},
-												{
-													"__type" : "pharoSnippet",
-													"children" : {
-														"__type" : "snippets",
-														"items" : [ ]
-													},
-													"createEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"createTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
 															"dateAndTimeString" : "2025-11-08T08:17:57.707019+01:00"
 														}
 													},
@@ -519,6 +485,43 @@
 														"uidString" : "d7ug1XH/DQCrgImXCJiLvQ=="
 													},
 													"code" : "topicMapEntities\r\tdo: [ :t | self assert: (Smalltalk compiler evaluate: t storeString) equals: t ]"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-07T14:52:44.82103+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T09:14:27.751755+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "uwimO2P/DQC1XfvmCrXgwQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "We get an error with  {{gtMethod:name=TopicMapExamples>>#smaccQuery}}.\nIt fails because the query returns two unmapped pages, which cannot be found in the topic map.\nWe fix this in {{gtMethod:name=TMNodeGroup>>#addPageNodeWithTitle:}}"
 												}
 											]
 										},
@@ -552,43 +555,6 @@
 											"__type" : "textStyle"
 										},
 										"string" : "We can test that all examples have storeStrings that return themselves."
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-07T14:52:44.82103+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-11T08:51:21.974938+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "uwimO2P/DQC1XfvmCrXgwQ=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "We get an error with  {{gtMethod:name=TopicMapExamples>>#smaccQuery}}.\nIt fails because the query returns two unmapped pages, wh"
 									},
 									{
 										"__type" : "textSnippet",
@@ -668,7 +634,82 @@
 										"__type" : "textSnippet",
 										"children" : {
 											"__type" : "snippets",
-											"items" : [ ]
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T09:21:24.376188+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T09:24:07.353609+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "5AMMEq//DQCp4keWCo8ctQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "There is an issue with the `pathContext` — since it is the breadcrumb of the previous node, the same roadmap can be arrived at in different ways with different contexts. For example, you can reach a page with the same breadcrumb from its topic, its kind, another page in the same topic,  or from itself. These all have different contexts. Perhaps instead of storing the context, we should just compute and save directly the breadcrumb, which provide the context for the next node reached."
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T09:32:45.125536+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T09:33:57.644826+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "umyfOq//DQC0MQePCo8ctQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "We introduce {{gtMethod:name=TMAbstractTreeNode>>#breadcrumbForContext:}} and {{gtMethod:name=TMAbstractTreeNode>>#topicInContext:}}.\nTo do: replace the `pathContext` slot by a `breadcrumb` slot; replace `br"
+												}
+											]
 										},
 										"createEmail" : {
 											"__type" : "email",

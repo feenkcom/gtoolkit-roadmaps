@@ -23,6 +23,14 @@ TMTopicNode >> breadcrumb [
 				self}
 ]
 
+{ #category : #breadcrumbs }
+TMTopicNode >> breadcrumbForContext: aBreadcrumb [
+	^ TMBreadcrumb
+		for: {self databaseNode.
+				self fieldNode.
+				self}
+]
+
 { #category : #views }
 TMTopicNode >> changeFieldTo: aField [
 	self topicMap updateFieldForTopic: self to: aField

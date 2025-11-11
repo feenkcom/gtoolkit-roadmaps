@@ -63,7 +63,11 @@ TMNodeGroup >> addNodeGroup: aNodeGroup [
 
 { #category : #updating }
 TMNodeGroup >> addPageNodeWithTitle: aTitle [
-	self nodes add: (self topicMap pageNodeWithTitle: aTitle)
+	"NB: Here we ask the databaseNode instead of the topic map for matching pages,
+	because the pages in question might be unmapped.
+	See TopicMapExamples>>#smaccQuery"
+
+	self nodes add: (self topicMap databaseNode pageNodeWithTitle: aTitle)
 ]
 
 { #category : #updating }
@@ -73,6 +77,11 @@ TMNodeGroup >> addTopicNodeNamed: aTopic [
 
 { #category : #breadcrumbs }
 TMNodeGroup >> breadcrumb [
+	^ TMBreadcrumb for: {}
+]
+
+{ #category : #breadcrumbs }
+TMNodeGroup >> breadcrumbForContext: aBreadcrumb [
 	^ TMBreadcrumb for: {}
 ]
 
