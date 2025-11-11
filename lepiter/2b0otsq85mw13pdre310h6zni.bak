@@ -105,7 +105,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-11T17:30:49.28025+01:00"
+									"dateAndTimeString" : "2025-11-11T17:30:57.098258+01:00"
 								}
 							},
 							"uid" : {
@@ -115,7 +115,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Check if TopicMap default works on Windows! — may need to adapt {{gtMethod:name=TMRegistry>>#defaultRegistry}}\nWe rewrite {{gtMethod:name=TMRegistry>>#jsonFileFor:}} to no lo"
+							"string" : "Check if TopicMap default works on Windows! — may need to adapt {{gtMethod:name=TMRegistry>>#defaultRegistry}}\nWe rewrite {{gtMethod:name=TMRegistry>>#jsonFileFor:}} to no longer depend on the Unix file path"
 						},
 						{
 							"__type" : "textSnippet",
