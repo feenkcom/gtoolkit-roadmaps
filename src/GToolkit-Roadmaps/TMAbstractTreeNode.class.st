@@ -30,6 +30,14 @@ TMAbstractTreeNode >> = other [
 	^ self nodeLabel = other nodeLabel
 ]
 
+{ #category : #comparing }
+TMAbstractTreeNode >> === other [
+	"We also compare breadcrumbs -- useful for ensuring that the storeString
+	yields an identical node with the same roadmap and breadcrumb."
+
+	^ self = other and: [ self breadcrumb = other breadcrumb ]
+]
+
 { #category : #roadmap }
 TMAbstractTreeNode >> allChildren [
 	| allChildren |

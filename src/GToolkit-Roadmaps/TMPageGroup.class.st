@@ -37,6 +37,11 @@ TMPageGroup >> isTMPageGroup [
 	^ true
 ]
 
+{ #category : #printing }
+TMPageGroup >> newNodeGroupSelector [
+	^ #newPageGroup
+]
+
 { #category : #accessing }
 TMPageGroup >> nodeLabel [
 	^ 'Page group', self queryString
@@ -84,20 +89,6 @@ TMPageGroup >> sortedByKinds [
 	self kindsStandardOrder
 		do: [ :aKind | sortedPages addAll: (self nodes select: [ :n | n kind = aKind ]) ].
 	^ sortedPages
-]
-
-{ #category : #printing }
-TMPageGroup >> storeOn: aStream [
-	<todo: 'Handle case with breadcrumb in pathContext'>
-	aStream
-		nextPutAll: '((';
-		storeObject: self topicMap;
-		nextPutAll: ' newPageGroup) yourself '.
-	self nodes
-		do: [ :n | 
-			aStream nextPutAll: '; '.
-			n storeOnNodeGroup: aStream ].
-	aStream nextPutAll: ') yourself'
 ]
 
 { #category : #treemaps }

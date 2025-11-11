@@ -416,23 +416,30 @@ TopicMapExamples >> topicMap [
 
 { #category : #example }
 TopicMapExamples >> topicMapEntities [
+	<gtExample>
+	<noTest>
+	| topicMapEntities |
+	topicMapEntities := self topicMapEntityExamples collect: #returnValue.	"topicMapEntities
+		do: [ :t | self assert: (Smalltalk compiler evaluate: t storeString) equals: t ]."
+	^ topicMapEntities
+]
+
+{ #category : #example }
+TopicMapExamples >> topicMapEntityExamples [
 	"A bit slow at around 5s, so <noTest>."
 
 	<gtExample>
 	<noTest>
-	| exampleGroup thisMethod topicMapEntities  |
+	| exampleGroup thisMethod topicMapEntityExamples |
 	thisMethod := thisContext stack first method.
-	self assert: thisMethod equals: TopicMapExamples >> #topicMapEntities.
-	
+	self assert: thisMethod equals: TopicMapExamples >> #topicMapEntityExamples.
+
 	exampleGroup := GtExplicitExampleGroup
 			withAll: (self class package gtExamplesAllContained
 					reject: [ :eg | eg method = thisMethod or: [ eg method hasPragmaNamed: 'noTest' ] ]).
-	topicMapEntities := exampleGroup examples
-			collect: #returnValue
-			thenSelect: #isTopicMapEntity.
-	"topicMapEntities
-		do: [ :t | self assert: (Smalltalk compiler evaluate: t storeString) equals: t ]."
-	^ topicMapEntities
+	topicMapEntityExamples := exampleGroup examples
+			select: [ :eg | eg returnValue isTopicMapEntity ].
+	^ topicMapEntityExamples
 ]
 
 { #category : #example }

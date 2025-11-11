@@ -1307,7 +1307,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T15:30:17.070935+02:00"
+												"dateAndTimeString" : "2025-11-11T10:25:20.983433+01:00"
 											}
 										},
 										"uid" : {
@@ -1317,7 +1317,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Kind k, no topic: Could be cluttered. `d->k.p*.f*->k.p*.t*->k` with no BC\n{{gtMethod:name=TMBreadcrumbExamples>>#kindNodeWithoutPathContext}}"
+										"string" : "Kind k, no topic: Could be cluttered. `d->k.p*.f*->k.p*.t*->k` with no BC\n{{gtMethod:name=TMBreadcrumbExamples>>#kindNodeWithoutContext}}"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1461,7 +1461,7 @@
 								"__type" : "uid",
 								"uidString" : "j14O4kv+DQCZV7qdBriWRQ=="
 							},
-							"exampleSelector" : "kindNodeWithoutPathContext",
+							"exampleSelector" : "kindNodeWithoutContext",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
 							"exampleBehaviorName" : "TMBreadcrumbExamples",

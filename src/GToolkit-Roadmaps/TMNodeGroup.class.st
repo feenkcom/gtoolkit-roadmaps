@@ -47,6 +47,11 @@ TMNodeGroup >> addDatabaseNode [
 ]
 
 { #category : #updating }
+TMNodeGroup >> addDraftPageNodeWithTitle: aTitle [
+	self nodes add: (self topicMap databaseNode pageNodeWithTitle: aTitle) asDraftPageNode
+]
+
+{ #category : #updating }
 TMNodeGroup >> addFieldNodeNamed: aField [
 	self nodes add: (self topicMap fieldNodeNamed: aField)
 ]
@@ -119,6 +124,11 @@ TMNodeGroup >> kinds [
 	^ (self children flatCollect: #kinds) copyWithoutDuplicates
 ]
 
+{ #category : #printing }
+TMNodeGroup >> newNodeGroupSelector [
+	^ #newNodeGroup
+]
+
 { #category : #accessing }
 TMNodeGroup >> nodeLabel [
 	^ 'Node collection'
@@ -180,7 +190,9 @@ TMNodeGroup >> storeOn: aStream [
 	aStream
 		nextPutAll: '((';
 		storeObject: self topicMap;
-		nextPutAll: ' newNodeGroup) yourself '.
+		nextPut: Character space;
+		nextPutAll: self newNodeGroupSelector asString;
+		nextPutAll: ') yourself '.
 	self nodes
 		do: [ :n | 
 			aStream nextPutAll: '; '.

@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-11T08:00:09.518035+01:00"
+						"dateAndTimeString" : "2025-11-11T11:07:37.154707+01:00"
 					}
 				},
 				"uid" : {
@@ -337,7 +337,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-11T08:00:09.621644+01:00"
+															"dateAndTimeString" : "2025-11-11T10:43:10.842801+01:00"
 														}
 													},
 													"uid" : {
@@ -409,14 +409,14 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-11T08:46:33.248605+01:00"
+															"dateAndTimeString" : "2025-11-11T11:00:25.258932+01:00"
 														}
 													},
 													"uid" : {
 														"__type" : "uid",
 														"uidString" : "opzgO2P/DQC1YHsMCrXgwQ=="
 													},
-													"code" : "topicMapEntities := TopicMapExamples new topicMapEntities"
+													"code" : "topicMapEntityExamples := TopicMapExamples new topicMapEntityExamples.\rtopicMapEntities := topicMapEntityExamples collect: #returnValue"
 												},
 												{
 													"__type" : "pharoSnippet",
@@ -432,7 +432,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:32:04.066266+01:00"
+															"dateAndTimeString" : "2025-11-11T10:43:28.83072+01:00"
 														}
 													},
 													"editEmail" : {
@@ -443,14 +443,14 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-11T08:46:33.176136+01:00"
+															"dateAndTimeString" : "2025-11-11T11:31:14.233954+01:00"
 														}
 													},
 													"uid" : {
 														"__type" : "uid",
-														"uidString" : "48am3nL/DQCb8w29AtxeJg=="
+														"uidString" : "SzuRN7D/DQCj3wOGCq002A=="
 													},
-													"code" : "[topicMapEntities := TopicMapExamples new topicMapEntities] timeToRun"
+													"code" : "\"Ignore breadcrumbs\"\rtopicMapEntityExamples\r\treject: [ :eg | \r\t\t| tme |\r\t\ttme := eg returnValue.\r\t\ttme storeStringValue = tme ]"
 												},
 												{
 													"__type" : "pharoSnippet",
@@ -466,7 +466,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T08:17:57.707019+01:00"
+															"dateAndTimeString" : "2025-11-11T11:23:34.376899+01:00"
 														}
 													},
 													"editEmail" : {
@@ -477,14 +477,14 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-11T08:40:11.485643+01:00"
+															"dateAndTimeString" : "2025-11-11T11:31:27.272786+01:00"
 														}
 													},
 													"uid" : {
 														"__type" : "uid",
-														"uidString" : "d7ug1XH/DQCrgImXCJiLvQ=="
+														"uidString" : "V/PyxrD/DQCKMWZpCmJqqw=="
 													},
-													"code" : "topicMapEntities\r\tdo: [ :t | self assert: (Smalltalk compiler evaluate: t storeString) equals: t ]"
+													"code" : "\"Also check breadcrumbs\"\rtopicMapEntityExamples\r\treject: [ :eg | \r\t\t| tme |\r\t\ttme := eg returnValue.\r\t\ttme storeStringValue === tme ]"
 												},
 												{
 													"__type" : "textSnippet",
@@ -560,80 +560,6 @@
 										"__type" : "textSnippet",
 										"children" : {
 											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-11T08:46:21.867487+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-11T08:46:21.867487+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "REa6lK7/DQCFQbSSBhgLug=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : ""
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-11T08:46:22.094322+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-11T08:46:22.094322+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "S769lK7/DQCFRd84BhgLug=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : ""
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
 											"items" : [
 												{
 													"__type" : "textSnippet",
@@ -697,7 +623,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-11T09:34:23.440286+01:00"
+															"dateAndTimeString" : "2025-11-11T10:31:55.246039+01:00"
 														}
 													},
 													"uid" : {
@@ -707,7 +633,81 @@
 													"paragraphStyle" : {
 														"__type" : "textStyle"
 													},
-													"string" : "We introduce {{gtMethod:name=TMAbstractTreeNode>>#breadcrumbForContext:}} and {{gtMethod:name=TMAbstractTreeNode>>#topicInContext:}}.\nTo do: replace the `pathContext` slot by a `breadcrumb` slot; replace `breadcrumb` and `topicInContext` by `breadCrumbForContext:` and `topicInContext:`\n"
+													"string" : "We introduce {{gtMethod:name=TMAbstractTreeNode>>#breadcrumbForContext:}} and {{gtMethod:name=TMAbstractTreeNode>>#topicInContext:}}.\nWe replace the `pathContext` slot by a `breadcrumb` slot; replace `breadcrumb` and `topicInContext` by `breadCrumbForContext:` and `topicInContext:`"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T11:48:57.349366+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T11:48:59.454733+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "WKm5IbH/DQCkYxD8CmJqqw=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "We add a new equality test {{gtMethod:name=TMAbstractTreeNode>>#===}} for nodes to also compare the breadcrumbs."
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T10:31:57.245434+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T11:49:06.249675+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "3HVYDrD/DQCf1HYgCq002A=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "***TO DO***\nNow we need to serialize breadcrumbs and explicitly set them if they are not the default ones.\nThis can only be the case for Kind and Page nodes (and draft page nodes).\n"
 												}
 											]
 										},
@@ -741,6 +741,43 @@
 											"__type" : "textStyle"
 										},
 										"string" : "Breadcrumbs will also require additional care. Should we consider them for equality tests? How do we avoid repeating the topic map?\nWe need to handle correctly {{gtMethod:name=TopicMapExamples>>#pageNodeWhatIsGtViaTopicAboutGt}} ..."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-11T11:47:57.119589+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-11T11:47:57.119589+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "KrlxjrD/DQCGK7obCmJqqw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : ""
 									}
 								]
 							},
@@ -1441,7 +1478,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-11T08:46:32.885493+01:00"
+												"dateAndTimeString" : "2025-11-11T10:53:20.214598+01:00"
 											}
 										},
 										"uid" : {
@@ -1475,7 +1512,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-10T17:11:33.599218+01:00"
+												"dateAndTimeString" : "2025-11-11T10:53:20.287725+01:00"
 											}
 										},
 										"uid" : {
@@ -1509,7 +1546,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-17T10:41:41.487241+02:00"
+												"dateAndTimeString" : "2025-11-11T10:53:20.332358+01:00"
 											}
 										},
 										"uid" : {
@@ -1543,7 +1580,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-17T10:38:25.144642+02:00"
+												"dateAndTimeString" : "2025-11-11T10:53:20.467329+01:00"
 											}
 										},
 										"uid" : {

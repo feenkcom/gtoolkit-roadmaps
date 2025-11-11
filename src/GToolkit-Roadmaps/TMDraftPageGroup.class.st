@@ -22,6 +22,11 @@ TMDraftPageGroup >> gtTreeMapFor: aView [
 	^ aView empty
 ]
 
+{ #category : #printing }
+TMDraftPageGroup >> newNodeGroupSelector [
+	^ #newDraftPageGroup
+]
+
 { #category : #initialization }
 TMDraftPageGroup >> pages: aPageCollection [
 	"Wrap the pages as nodes."

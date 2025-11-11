@@ -76,6 +76,13 @@ TMBreadcrumb >> kindNode [
 ]
 
 { #category : #accessing }
+TMBreadcrumb >> nodeLabels [
+	"We use this as a proxy for comparing breadcrumbs, to avoid infinire recursion when comparing nodes."
+
+	^ self nodes collect: #nodeLabel
+]
+
+{ #category : #accessing }
 TMBreadcrumb >> nodes [
 	^ nodes
 ]

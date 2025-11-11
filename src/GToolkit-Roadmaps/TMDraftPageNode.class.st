@@ -48,7 +48,14 @@ TMDraftPageNode >> relatedInfo [
 	^ super relatedInfo
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #printing }
+TMDraftPageNode >> storeOnNodeGroup: aStream [
+	aStream
+		nextPutAll: ' addDraftPageNodeWithTitle: ';
+		nextPutAll: self page title printString
+]
+
+{ #category : #printing }
 TMDraftPageNode >> summary [
 	^ super summary
 		copyWithAll: {{'Kind'.

@@ -38,6 +38,11 @@ TMPageNode class >> forTitle: aPageTitle in: aTopicMap [
 	^ aTopicMap pageNodeWithTitle: aPageTitle
 ]
 
+{ #category : #converting }
+TMPageNode >> asDraftPageNode [
+	^ TMDraftPageNode for: self page in: self topicMap
+]
+
 { #category : #breadcrumbs }
 TMPageNode >> breadcrumbForContext: aBreadcrumb [
 	"Only if the topic of the previous roadmap's breadcrumb matches this page,
@@ -324,7 +329,7 @@ TMPageNode >> storeOn: aStream [
 		nextPut: $)
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #printing }
 TMPageNode >> storeOnNodeGroup: aStream [
 	aStream
 		nextPutAll: ' addPageNodeWithTitle: ';

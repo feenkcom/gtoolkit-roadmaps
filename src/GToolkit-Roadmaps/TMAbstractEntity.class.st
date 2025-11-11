@@ -15,6 +15,13 @@ TMAbstractEntity class >> storeOnIsAbstract [
 		ifAbsent: [ true ]
 ]
 
+{ #category : #'as yet unclassified' }
+TMAbstractEntity >> === other [
+	"We want === to also work for topic maps"
+
+	^ self = other
+]
+
 { #category : #converting }
 TMAbstractEntity >> asElement [
 	^ self roadmap
@@ -225,6 +232,11 @@ TMAbstractEntity >> kindsStandardOrder [
 ]
 
 { #category : #factory }
+TMAbstractEntity >> newDraftPageGroup [
+	^ TMDraftPageGroup for: {} in: self topicMap
+]
+
+{ #category : #factory }
 TMAbstractEntity >> newNodeGroup [
 	^ TMNodeGroup for: {} in: self topicMap
 ]
@@ -292,6 +304,11 @@ TMAbstractEntity >> storeOn: aStream [
 { #category : #testing }
 TMAbstractEntity >> storeOnIsAbstract [
 	^ self class storeOnIsAbstract
+]
+
+{ #category : #converting }
+TMAbstractEntity >> storeStringValue [
+	^ Smalltalk compiler evaluate: self storeString
 ]
 
 { #category : #views }

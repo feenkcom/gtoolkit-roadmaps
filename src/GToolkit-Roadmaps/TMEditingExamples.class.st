@@ -16,12 +16,13 @@ Class {
 { #category : #examples }
 TMEditingExamples >> changeFieldOfLiveDocumentationTopicNode [
 	<gtExample>
-	| topicNode newField topic |
+	| topicNode newField topic oldField |
 	topic := 'Live Documentation'.
 	topicNode := self topicMap topicNodeNamed: topic.
+	oldField := topicNode field.
 	newField := 'Moldable Development topics'.
 
-	self assert: topicNode field equals: 'Glamorous Toolkit Basics'.
+	self assert: oldField equals: 'Glamorous Toolkit Basics'.
 
 	topicNode changeFieldTo: newField.
 
@@ -29,6 +30,13 @@ TMEditingExamples >> changeFieldOfLiveDocumentationTopicNode [
 	self
 		assert: (self updatedTopicMap topicNodeNamed: topic) field
 		equals: newField.
+		
+	topicNode changeFieldTo: oldField.
+
+	self assert: topicNode field equals: oldField.
+	self
+		assert: (self updatedTopicMap topicNodeNamed: topic) field
+		equals: oldField.
 
 	^ topicNode
 ]
