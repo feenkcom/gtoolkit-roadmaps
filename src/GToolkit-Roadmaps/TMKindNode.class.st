@@ -149,6 +149,13 @@ TMKindNode >> storeOn: aStream [
 		nextPut: $)
 ]
 
+{ #category : #printing }
+TMKindNode >> storeOnNodeGroup: aStream [
+	aStream
+		nextPutAll: ' addKindNodeNamed: ';
+		nextPutAll: self kind printString
+]
+
 { #category : #querying }
 TMKindNode >> topics [
 	^ (self pageGroup flatCollect: #topics) copyWithoutDuplicates

@@ -326,6 +326,13 @@ TMPageNode >> storeOn: aStream [
 		nextPut: $)
 ]
 
+{ #category : #'as yet unclassified' }
+TMPageNode >> storeOnNodeGroup: aStream [
+	aStream
+		nextPutAll: ' addPageNodeWithTitle: ';
+		nextPutAll: self page title printString
+]
+
 { #category : #accessing }
 TMPageNode >> title [
 	^ self page title

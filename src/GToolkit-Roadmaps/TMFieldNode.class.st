@@ -122,6 +122,13 @@ TMFieldNode >> storeOn: aStream [
 		nextPut: $)
 ]
 
+{ #category : #printing }
+TMFieldNode >> storeOnNodeGroup: aStream [
+	aStream
+		nextPutAll: ' addFieldNodeNamed: ';
+		nextPutAll: self field printString
+]
+
 { #category : #navigation }
 TMFieldNode >> topics [
 	^ self topicMap topic4Field: self field

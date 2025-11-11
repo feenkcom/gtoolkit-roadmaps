@@ -114,7 +114,7 @@ TMTopicNode >> relatedInfo [
 	^ 'Field: ' , self field
 ]
 
-{ #category : #mondrian }
+{ #category : #roadmap }
 TMTopicNode >> roadmapNodes [
 	"database -> fields -> topic -> t.kinds -> t.pages
 	NB: Don't show peer topics to avoid clutter."
@@ -136,6 +136,13 @@ TMTopicNode >> storeOn: aStream [
 		nextPutAll: ' topicNodeNamed: ';
 		nextPutAll: self topic printString;
 		nextPut: $)
+]
+
+{ #category : #printing }
+TMTopicNode >> storeOnNodeGroup: aStream [
+	aStream
+		nextPutAll: ' addTopicNodeNamed: ';
+		nextPutAll: self topic printString
 ]
 
 { #category : #accessing }

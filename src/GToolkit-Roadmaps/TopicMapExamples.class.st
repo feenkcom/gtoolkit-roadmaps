@@ -203,6 +203,28 @@ TopicMapExamples >> nodeGroupChildrenOfFieldNodeGtBasics [
 ]
 
 { #category : #example }
+TopicMapExamples >> nodeGroupWithAllNodeTypes [
+	<gtExample>
+	| nodeGroup |
+	nodeGroup := self topicMap newNodeGroup.
+	nodeGroup
+		addDatabaseNode;
+		addFieldNodeNamed: 'Glamorous Toolkit Basics';
+		addTopicNodeNamed: 'About Glamorous Toolkit';
+		addKindNodeNamed: 'Introduction';
+		addPageNodeWithTitle: 'Glamorous Toolkit'.
+
+	self assert: nodeGroup size equals: 5.
+	self assert: nodeGroup isTMTreeNode.
+	self assert: nodeGroup isTMNodeGroup.
+	self assert: nodeGroup isTMPageGroup not.
+	self assert: nodeGroup children isTMNodeGroup.
+	self assert: nodeGroup children isTMPageGroup not.
+
+	^ nodeGroup
+]
+
+{ #category : #example }
 TopicMapExamples >> nodeGroupWithFieldsAndTopics [
 	"NB: Fragile test, #topics could change in book."
 

@@ -434,6 +434,13 @@ TMAbstractTreeNode >> roadmapTooltip [
 		yourself ] asStencil
 ]
 
+{ #category : #printing }
+TMAbstractTreeNode >> storeOnNodeGroup: aStream [
+	"Generate the messages to send to a node group to recreate myself."
+
+	self subclassResponsibility
+]
+
 { #category : #accessing }
 TMAbstractTreeNode >> topicInContext [
 	^ self pathContext topicNode notNil

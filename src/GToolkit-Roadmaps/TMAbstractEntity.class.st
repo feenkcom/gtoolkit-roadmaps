@@ -38,17 +38,17 @@ TMAbstractEntity >> databaseNode [
 	self subclassResponsibility
 ]
 
-{ #category : #utility }
+{ #category : #factory }
 TMAbstractEntity >> draftPageGroupFor: aPageCollection [
 	^ TMDraftPageGroup for: aPageCollection in: self topicMap
 ]
 
-{ #category : #utility }
+{ #category : #factory }
 TMAbstractEntity >> emptyNodes [
 	^ self nodesFor: {}
 ]
 
-{ #category : #utility }
+{ #category : #factory }
 TMAbstractEntity >> fieldNodeFor: aField [
 	^ TMFieldNode for: aField in: self topicMap
 ]
@@ -179,7 +179,7 @@ TMAbstractEntity >> isTopicMapEntity [
 	^ true
 ]
 
-{ #category : #utility }
+{ #category : #factory }
 TMAbstractEntity >> kindNodeFor: aKind [
 	^ TMKindNode for: aKind in: self topicMap
 ]
@@ -224,7 +224,17 @@ TMAbstractEntity >> kindsStandardOrder [
 	^ self topicMap kindsStandardOrder
 ]
 
-{ #category : #utility }
+{ #category : #factory }
+TMAbstractEntity >> newNodeGroup [
+	^ TMNodeGroup for: {} in: self topicMap
+]
+
+{ #category : #factory }
+TMAbstractEntity >> newPageGroup [
+	^ TMPageGroup for: {} in: self topicMap
+]
+
+{ #category : #factory }
 TMAbstractEntity >> nodesFor: aNodeCollection [
 	^ TMNodeGroup for: aNodeCollection in: self topicMap
 ]
@@ -234,7 +244,7 @@ TMAbstractEntity >> pageGroup [
 	^ self pageGroupFor: self pages
 ]
 
-{ #category : #utility }
+{ #category : #factory }
 TMAbstractEntity >> pageGroupFor: aPageCollection [
 	^ TMPageGroup for: aPageCollection in: self topicMap
 ]
@@ -263,7 +273,7 @@ TMAbstractEntity >> roadmap [
 	self subclassResponsibility
 ]
 
-{ #category : #utility }
+{ #category : #printing }
 TMAbstractEntity >> sizeAndFirstIfAlone: aCollection [
 	^ aCollection size printString
 		, (aCollection size = 1 ifTrue: [ ' — ' , aCollection first ] ifFalse: [ '' ])
@@ -316,7 +326,7 @@ TMAbstractEntity >> topicMap [
 	self subclassResponsibility
 ]
 
-{ #category : #utility }
+{ #category : #factory }
 TMAbstractEntity >> topicNodeFor: aTopic [
 	^ TMTopicNode for: aTopic in: self topicMap
 ]

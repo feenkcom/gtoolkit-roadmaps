@@ -105,6 +105,11 @@ TMDatabaseNode >> storeOn: aStream [
 		nextPutAll: ' databaseNode)'
 ]
 
+{ #category : #'as yet unclassified' }
+TMDatabaseNode >> storeOnNodeGroup: aStream [
+	aStream nextPutAll: ' addDatabaseNode'
+]
+
 { #category : #navigation }
 TMDatabaseNode >> topics [
 	^ self topicMap topics sorted

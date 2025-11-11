@@ -42,8 +42,33 @@ TMNodeGroup >> addAll: aNodesCollection [
 ]
 
 { #category : #updating }
+TMNodeGroup >> addDatabaseNode [
+	self nodes add: self topicMap databaseNode
+]
+
+{ #category : #updating }
+TMNodeGroup >> addFieldNodeNamed: aField [
+	self nodes add: (self topicMap fieldNodeNamed: aField)
+]
+
+{ #category : #updating }
+TMNodeGroup >> addKindNodeNamed: aKind [
+	self nodes add: (self topicMap kindNodeNamed: aKind)
+]
+
+{ #category : #updating }
 TMNodeGroup >> addNodeGroup: aNodeGroup [
 	self addAll: aNodeGroup nodes
+]
+
+{ #category : #updating }
+TMNodeGroup >> addPageNodeWithTitle: aTitle [
+	self nodes add: (self topicMap pageNodeWithTitle: aTitle)
+]
+
+{ #category : #updating }
+TMNodeGroup >> addTopicNodeNamed: aTopic [
+	self nodes add: (self topicMap topicNodeNamed: aTopic)
 ]
 
 { #category : #breadcrumbs }
@@ -137,7 +162,7 @@ super printOn: aStream.
 		nextPut: $)
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #roadmap }
 TMNodeGroup >> roadmapNodes [
 	"node / page group: nodes + all parents"
 
@@ -148,6 +173,25 @@ TMNodeGroup >> roadmapNodes [
 		ifTrue: [ self nodes do: #highlightOn ]
 		ifFalse: [ self highlightBreadcrumbsIn: roadmapNodes ].
 	^ roadmapNodes
+]
+
+{ #category : #printing }
+TMNodeGroup >> storeOn: aStream [
+	<todo: 'Handle case with breadcrumb in pathContext'>
+	aStream
+		nextPutAll: '((';
+		storeObject: self topicMap;
+		nextPutAll: ' newNodeGroup) yourself '.
+	self nodes
+		do: [ :n | 
+			aStream nextPutAll: '; '.
+			n storeOnNodeGroup: aStream ].
+	aStream nextPutAll: ') yourself'
+]
+
+{ #category : #printing }
+TMNodeGroup >> storeOnNodeGroup: aStream [
+	self shouldNotImplement
 ]
 
 { #category : #navigation }
