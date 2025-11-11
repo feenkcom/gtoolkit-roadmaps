@@ -37,6 +37,11 @@ TMPageGroup >> isTMPageGroup [
 	^ true
 ]
 
+{ #category : #printing }
+TMPageGroup >> newNodeGroupSelector [
+	^ #newPageGroup
+]
+
 { #category : #accessing }
 TMPageGroup >> nodeLabel [
 	^ 'Page group', self queryString

@@ -65,20 +65,20 @@ TMBreadcrumbExamples >> fieldNodeBreadcrumb [
 ]
 
 { #category : #examples }
-TMBreadcrumbExamples >> kindNodeWithPathContext [
+TMBreadcrumbExamples >> kindNodeWithContext [
 	<gtExample>
 	| node |
-	node := self kindNodeWithoutPathContext.
-	node pathContext: self topicNodeBreadcrumb.
-	self assert: node pathContext isEmpty not.
+	node := self kindNodeWithoutContext.
+	node withContext: self topicNodeBreadcrumb.
+	self assert: node breadcrumb isEmpty not.
 	^ node
 ]
 
 { #category : #examples }
-TMBreadcrumbExamples >> kindNodeWithPathContextBreadcrumb [
+TMBreadcrumbExamples >> kindNodeWithContextBreadcrumb [
 	<gtExample>
 	| breadcrumb |
-	breadcrumb := self kindNodeWithPathContext breadcrumb.
+	breadcrumb := self kindNodeWithContext breadcrumb.
 	self assert: breadcrumb size equals: 4.
 	self assert: breadcrumb isEmpty not.
 	self assert: breadcrumb databaseNode notNil.
@@ -90,19 +90,19 @@ TMBreadcrumbExamples >> kindNodeWithPathContextBreadcrumb [
 ]
 
 { #category : #examples }
-TMBreadcrumbExamples >> kindNodeWithoutPathContext [
+TMBreadcrumbExamples >> kindNodeWithoutContext [
 	<gtExample>
 	| node |
 	node := TopicMapExamples new kindNodeIntroductionWithinAboutGtTopic.
-	self assert: node pathContext isEmpty.
+	self assert: node breadcrumb isEmpty.
 	^ node
 ]
 
 { #category : #examples }
-TMBreadcrumbExamples >> kindNodeWithoutPathContextBreadcrumb [
+TMBreadcrumbExamples >> kindNodeWithoutContextBreadcrumb [
 	<gtExample>
 	| breadcrumb |
-	breadcrumb := self kindNodeWithoutPathContext breadcrumb.
+	breadcrumb := self kindNodeWithoutContext breadcrumb.
 	self assert: breadcrumb isEmpty.
 	^ breadcrumb
 ]
@@ -150,27 +150,27 @@ TMBreadcrumbExamples >> pageNodeFromTopicNode [
 
 	<gtExample>
 	| pageNode |
-	pageNode := self topicNode roadmapNodesWithPathContext
+	pageNode := self topicNode roadmapNodesWithContext
 			detect: [ :n | n isTMPageNode and: [ n page title = 'A short history of Glamorous Toolkit' ] ].
-	self assert: pageNode pathContext isEmpty not.
+	self assert: pageNode breadcrumb isEmpty not.
 	^ pageNode
 ]
 
 { #category : #examples }
-TMBreadcrumbExamples >> pageNodeWithPathContext [
+TMBreadcrumbExamples >> pageNodeWithContext [
 	<gtExample>
 	| node |
-	node := self pageNodeWithoutPathContext.
-	node pathContext: self topicNodeBreadcrumb.
-	self assert: node pathContext ~= self emptyBreadcrumb.
+	node := self pageNodeWithoutContext.
+	node withContext: self topicNodeBreadcrumb.
+	self assert: node breadcrumb ~= self emptyBreadcrumb.
 	^ node
 ]
 
 { #category : #examples }
-TMBreadcrumbExamples >> pageNodeWithPathContextBreadcrumb [
+TMBreadcrumbExamples >> pageNodeWithContextBreadcrumb [
 	<gtExample>
 	| breadcrumb |
-	breadcrumb := self pageNodeWithPathContext breadcrumb.
+	breadcrumb := self pageNodeWithContext breadcrumb.
 	self assert: breadcrumb size equals: 5.
 	self assert: breadcrumb isEmpty not.
 	self assert: breadcrumb databaseNode notNil.
@@ -182,19 +182,19 @@ TMBreadcrumbExamples >> pageNodeWithPathContextBreadcrumb [
 ]
 
 { #category : #examples }
-TMBreadcrumbExamples >> pageNodeWithoutPathContext [
+TMBreadcrumbExamples >> pageNodeWithoutContext [
 	<gtExample>
 	| node |
 	node := TopicMapExamples new pageNodeWhatIsGt.
-	self assert: node pathContext equals: self emptyBreadcrumb.
+	self assert: node breadcrumb equals: self emptyBreadcrumb.
 	^ node
 ]
 
 { #category : #examples }
-TMBreadcrumbExamples >> pageNodeWithoutPathContextBreadcrumb [
+TMBreadcrumbExamples >> pageNodeWithoutContextBreadcrumb [
 	<gtExample>
 	| breadcrumb |
-	breadcrumb := self pageNodeWithoutPathContext breadcrumb.
+	breadcrumb := self pageNodeWithoutContext breadcrumb.
 	self assert: breadcrumb isEmpty.
 	^ breadcrumb
 ]
@@ -233,6 +233,6 @@ TMBreadcrumbExamples >> umappedPagesNode [
 	self assert: nodeGroup topicNodes isEmpty.
 	self assert: nodeGroup fieldNodes isEmpty.
 	self assert: nodeGroup kindNodes isEmpty.
-	self assert: nodeGroup roadmapNodes equals: nodeGroup nodes.
+	self assert: nodeGroup roadmapNodes asSet equals: nodeGroup nodes asSet.
 	^ nodeGroup
 ]

@@ -257,7 +257,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-24T11:28:02.466706+02:00"
+									"dateAndTimeString" : "2025-11-11T10:25:13.995994+01:00"
 								}
 							},
 							"uid" : {
@@ -267,7 +267,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We now need to add a `pathContext` to propagate breadcrumbs.\nWe add {{gtMethod:name=TMAbstractTreeNode>>#pathContext}} and {{gtMethod:name=TMAbstractTreeNode>>#defaultPathContext}}.\nNow we can configure {{gtMethod:name=TMKindNode>>#breadcrumb}} to use this information.\nThe example: {{gtMethod:name=TMBreadcrumbExamples>>#kindNodeWithPathContextBreadcrumb}}.\nWe do the same for {{gtMethod:name=TMPageNode>>#breadcrumb}}."
+							"string" : "We now need to add a `pathContext` to propagate breadcrumbs.\nWe add {{gtMethod:name=TMAbstractTreeNode>>#pathContext}} and {{gtMethod:name=TMAbstractTreeNode>>#defaultPathContext}}.\nNow we can configure {{gtMethod:name=TMKindNode>>#breadcrumb}} to use this information.\nThe example: {{gtMethod:name=TMBreadcrumbExamples>>#kindNodeWithContextBreadcrumb}}.\nWe do the same for {{gtMethod:name=TMPageNode>>#breadcrumb}}."
 						},
 						{
 							"__type" : "textSnippet",
@@ -1270,7 +1270,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T15:29:47.066558+02:00"
+												"dateAndTimeString" : "2025-11-11T10:23:56.153372+01:00"
 											}
 										},
 										"uid" : {
@@ -1280,7 +1280,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Kind k in topic t: Easy, but need the topic — `d->d.f*->t.f.t*->t.k*->t[k].p*` with BC `<d,t.f,t,k>`\n{{gtMethod:name=TMBreadcrumbExamples>>#kindNodeWithPathContext}}"
+										"string" : "Kind k in topic t: Easy, but need the topic — `d->d.f*->t.f.t*->t.k*->t[k].p*` with BC `<d,t.f,t,k>`\n{{gtMethod:name=TMBreadcrumbExamples>>#kindNodeWithContext}}"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1307,7 +1307,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T15:30:17.070935+02:00"
+												"dateAndTimeString" : "2025-11-11T10:25:20.983433+01:00"
 											}
 										},
 										"uid" : {
@@ -1317,7 +1317,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Kind k, no topic: Could be cluttered. `d->k.p*.f*->k.p*.t*->k` with no BC\n{{gtMethod:name=TMBreadcrumbExamples>>#kindNodeWithoutPathContext}}"
+										"string" : "Kind k, no topic: Could be cluttered. `d->k.p*.f*->k.p*.t*->k` with no BC\n{{gtMethod:name=TMBreadcrumbExamples>>#kindNodeWithoutContext}}"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1421,7 +1421,7 @@
 								"__type" : "uid",
 								"uidString" : "a87Bm/T9DQCexCVkDwULHA=="
 							},
-							"exampleSelector" : "kindNodeWithPathContext",
+							"exampleSelector" : "kindNodeWithContext",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
 							"exampleBehaviorName" : "TMBreadcrumbExamples",
@@ -1461,7 +1461,7 @@
 								"__type" : "uid",
 								"uidString" : "j14O4kv+DQCZV7qdBriWRQ=="
 							},
-							"exampleSelector" : "kindNodeWithoutPathContext",
+							"exampleSelector" : "kindNodeWithoutContext",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
 							"exampleBehaviorName" : "TMBreadcrumbExamples",
@@ -1574,7 +1574,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T15:28:23.57767+02:00"
+												"dateAndTimeString" : "2025-11-11T10:24:05.591196+01:00"
 											}
 										},
 										"uid" : {
@@ -1584,7 +1584,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Page p in topic t:  `d->d.f*->t->t.k*->t.p*\t with BC `<d,t.f,t,p.k,p>`\n{{gtMethod:name=TMBreadcrumbExamples>>#pageNodeWithPathContext}}"
+										"string" : "Page p in topic t:  `d->d.f*->t->t.k*->t.p*\t with BC `<d,t.f,t,p.k,p>`\n{{gtMethod:name=TMBreadcrumbExamples>>#pageNodeWithContext}}"
 									},
 									{
 										"__type" : "textSnippet",
@@ -1611,7 +1611,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-24T15:28:52.939711+02:00"
+												"dateAndTimeString" : "2025-11-11T10:24:39.258844+01:00"
 											}
 										},
 										"uid" : {
@@ -1621,7 +1621,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Page p, no topic: `d->p.f*->p.t*->p.k*->p` with no BC\n{{gtMethod:name=TMBreadcrumbExamples>>#pageNodeWithoutPathContext}}"
+										"string" : "Page p, no topic: `d->p.f*->p.t*->p.k*->p` with no BC\n{{gtMethod:name=TMBreadcrumbExamples>>#pageNodeWithoutContext}}"
 									}
 								]
 							},
@@ -1725,7 +1725,7 @@
 								"__type" : "uid",
 								"uidString" : "FTmFq/T9DQCmRsUqDwULHA=="
 							},
-							"exampleSelector" : "pageNodeWithPathContext",
+							"exampleSelector" : "pageNodeWithContext",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
 							"exampleBehaviorName" : "TMBreadcrumbExamples",
@@ -1765,7 +1765,7 @@
 								"__type" : "uid",
 								"uidString" : "3MBd50v+DQCZmIvABriWRQ=="
 							},
-							"exampleSelector" : "pageNodeWithoutPathContext",
+							"exampleSelector" : "pageNodeWithoutContext",
 							"previewHeight" : 400,
 							"previewShowSelector" : "gtRoadmap:",
 							"exampleBehaviorName" : "TMBreadcrumbExamples",

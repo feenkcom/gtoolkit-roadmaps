@@ -9,7 +9,7 @@ Class {
 	#instVars : [
 		'topicMap',
 		'isHighlighted',
-		'pathContext'
+		'breadcrumb'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
@@ -23,9 +23,19 @@ TMAbstractTreeNode class >> for: anObject in: aTopicMap [
 
 { #category : #comparing }
 TMAbstractTreeNode >> = other [
+	"NB: each subclass implements #nodeLabel, so we don't normally have to override #="
+
 	self == other ifTrue: [ ^ true ].
-	self class = other class ifFalse: [^ false ].
+	self class = other class ifFalse: [ ^ false ].
 	^ self nodeLabel = other nodeLabel
+]
+
+{ #category : #comparing }
+TMAbstractTreeNode >> === other [
+	"We also compare breadcrumbs -- useful for ensuring that the storeString
+	yields an identical node with the same roadmap and breadcrumb."
+
+	^ self = other and: [ self breadcrumb = other breadcrumb ]
 ]
 
 { #category : #roadmap }
@@ -46,7 +56,14 @@ TMAbstractTreeNode >> allParents [
 
 { #category : #breadcrumbs }
 TMAbstractTreeNode >> breadcrumb [
-	self subclassResponsibility
+	^ breadcrumb ifNil: [ breadcrumb := self defaultBreadcrumb ]
+]
+
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> breadcrumbForContext: aBreadcrumb [
+	"Compute the breadcrumb for this node, given the breadcrumb of the previous node reached,if any."
+
+	^ self defaultBreadcrumb
 ]
 
 { #category : #navigation }
@@ -76,11 +93,6 @@ TMAbstractTreeNode >> defaultNodeColor [
 	"Can be used for treemaps, mondrian graphs, sceneries etc."
 
 	^ Color gray
-]
-
-{ #category : #breadcrumbs }
-TMAbstractTreeNode >> defaultPathContext [
-	^ self defaultBreadcrumb
 ]
 
 { #category : #actions }
@@ -295,26 +307,13 @@ TMAbstractTreeNode >> pageNodeWithTitle: aTitle [
 	"Add the current node's breadcrumb as a path context."
 
 	^ (super pageNodeWithTitle: aTitle)
-		pathContext: self breadcrumb;
+		withContext: self breadcrumb;
 		yourself
 ]
 
 { #category : #navigation }
 TMAbstractTreeNode >> parents [
 	self subclassResponsibility
-]
-
-{ #category : #breadcrumbs }
-TMAbstractTreeNode >> pathContext [
-	"The path context is the breadcrumb of the previous roadmap (if any) from which this one is spawned.
-	This information can be used to select the nodes to include in the roadmap, or the new breadcrumb to highlight."
-
-	^ pathContext ifNil: [ pathContext := self defaultPathContext ]
-]
-
-{ #category : #breadcrumbs }
-TMAbstractTreeNode >> pathContext: anObject [
-	pathContext := anObject
 ]
 
 { #category : #printing }
@@ -341,7 +340,7 @@ TMAbstractTreeNode >> roadmap [
 	mondrian := GtMondrian new.
 	mondrian nodes
 		shape: [ :aTmNode | aTmNode roadmapNodeElement ];
-		with: self roadmapNodesWithPathContext.
+		with: self roadmapNodesWithContext.
 	mondrian edges connectFromAll: #roadmapParents.
 	mondrian layout
 		custom: (GtGradHorizontalTreeLayout new
@@ -390,8 +389,8 @@ TMAbstractTreeNode >> roadmapNodes [
 ]
 
 { #category : #roadmap }
-TMAbstractTreeNode >> roadmapNodesWithPathContext [
-	"Add the current node's breadcrumb as a path context.
+TMAbstractTreeNode >> roadmapNodesWithContext [
+	"Add the current node's breadcrumb as a context.
 	Used mainly for building the roadmap, but can also be used by examples
 	to query the nodes and simulate clicking on a node in the roadmap.
 	See senders."
@@ -399,7 +398,7 @@ TMAbstractTreeNode >> roadmapNodesWithPathContext [
 	^ self roadmapNodes
 		collect: [ :n | 
 			n
-				pathContext: self breadcrumb;
+				withContext: self breadcrumb;
 				yourself ]
 ]
 
@@ -432,10 +431,24 @@ TMAbstractTreeNode >> roadmapTooltip [
 		yourself ] asStencil
 ]
 
+{ #category : #printing }
+TMAbstractTreeNode >> storeOnNodeGroup: aStream [
+	"Generate the messages to send to a node group to recreate myself."
+
+	self subclassResponsibility
+]
+
 { #category : #accessing }
-TMAbstractTreeNode >> topicInContext [
-	^ self pathContext topicNode notNil
-		and: [ self topicNodes includes: self pathContext topicNode ]
+TMAbstractTreeNode >> topicInBreadcrumb [
+	^ self topicInContext: self breadcrumb
+]
+
+{ #category : #accessing }
+TMAbstractTreeNode >> topicInContext: aBreadcrumb [
+	"Is my topic in the context of the previous breadcrumb?"
+
+	^ aBreadcrumb topicNode notNil
+		and: [ self topicNodes includes: aBreadcrumb topicNode ]
 ]
 
 { #category : #navigation }
@@ -522,4 +535,12 @@ TMAbstractTreeNode >> treeMapRoots [
 { #category : #roadmap }
 TMAbstractTreeNode >> withAllChildren [
 	^ {self} , self allChildren
+]
+
+{ #category : #breadcrumbs }
+TMAbstractTreeNode >> withContext: aBreadcrumb [
+	"The argument is the breadcrumb for the previous node reached, if any.
+	We use it to compute the new breadcrumb for this node."
+
+	breadcrumb := self breadcrumbForContext: aBreadcrumb
 ]

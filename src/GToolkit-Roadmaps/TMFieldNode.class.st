@@ -15,16 +15,16 @@ TMFieldNode class >> for: aField in: aTopicMap [
 	yourself 
 ]
 
-{ #category : #breadcrumbs }
-TMFieldNode >> breadcrumb [
-	^ TMBreadcrumb
-		for: {self databaseNode.
-				self}
-]
-
 { #category : #accessing }
 TMFieldNode >> children [
 	^ self nodesFor: (self topics collect: [ :aTopic | self topicNodeFor: aTopic ])
+]
+
+{ #category : #breadcrumbs }
+TMFieldNode >> defaultBreadcrumb [
+	^ TMBreadcrumb
+		for: {self databaseNode.
+				self}
 ]
 
 { #category : #mondrian }
@@ -115,11 +115,18 @@ TMFieldNode >> roadmapNodes [
 { #category : #printing }
 TMFieldNode >> storeOn: aStream [
 	aStream
-		nextPutAll: '(TMFieldNode for: ';
+		nextPut: $(;
+		storeObject: self topicMap;
+		nextPutAll: ' fieldNodeNamed: ';
 		nextPutAll: self field printString;
-		nextPutAll: ' in: '.
-	self topicMap storeOn: aStream.
-	aStream nextPut: $)
+		nextPut: $)
+]
+
+{ #category : #printing }
+TMFieldNode >> storeOnNodeGroup: aStream [
+	aStream
+		nextPutAll: ' addFieldNodeNamed: ';
+		nextPutAll: self field printString
 ]
 
 { #category : #navigation }

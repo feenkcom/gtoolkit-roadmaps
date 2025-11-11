@@ -59,7 +59,9 @@ TMRegistry >> initialize [
 
 { #category : #accessing }
 TMRegistry >> jsonFileFor: aDatabaseName [
-	^ FileLocator gtResource / (self jsonFilePathFor: aDatabaseName)
+	^ ($/ split: (self jsonFilePathFor: aDatabaseName))
+		inject: FileLocator gtResource
+		into: [ :location :dirName | location / dirName ]
 ]
 
 { #category : #accessing }

@@ -20,15 +20,15 @@ TMKindNode class >> for: aString in: aTopicMap [
 ]
 
 { #category : #breadcrumbs }
-TMKindNode >> breadcrumb [
+TMKindNode >> breadcrumbForContext: aBreadcrumb [
 	"Only if the topic of the previous roadmap's breadcrumb matches this kind,
 	do we have a context for building a new breadcrumb."
 
-	^ self topicInContext
+	^ (self topicInContext: aBreadcrumb)
 		ifTrue: [ TMBreadcrumb
-				for: {self pathContext databaseNode.
-						self pathContext fieldNode.
-						self pathContext topicNode.
+				for: {aBreadcrumb databaseNode.
+						aBreadcrumb fieldNode.
+						aBreadcrumb topicNode.
 						self} ]
 		ifFalse: [ TMBreadcrumb for: {} ]
 ]
@@ -40,9 +40,7 @@ TMKindNode >> children [
 ]
 
 { #category : #breadcrumbs }
-TMKindNode >> defaultPathContext [
-	"If a context is not explicitly provided, we can assume nothing for kind nodes."
-
+TMKindNode >> defaultBreadcrumb [
 	^ TMBreadcrumb for: {}
 ]
 
@@ -128,14 +126,49 @@ TMKindNode >> roadmapNodes [
 	| nodes root |
 	"nodes := self pageGroup roadmapNodes."
 	root := self databaseNode.
-	nodes := self topicInContext
+	nodes := self topicInBreadcrumb
 			ifTrue: [ | topicNode |
-				topicNode := self pathContext topicNode.
+				topicNode := self breadcrumb topicNode.
 				root roadmapNodes , {topicNode} , topicNode kindNodes
 					, (topicNode pageNodes select: [ :n | n kind = self kind ]) ]
-			ifFalse: [ root roadmapNodes , self topicNodes , self kindNodes ].
+			ifFalse: [ root roadmapNodes , self topicNodes , self kindNodes
+					, (self pageContext nodes select: [ :n | n kind = self kind ]) ].
 	self highlightBreadcrumbsIn: nodes.
 	^ nodes
+]
+
+{ #category : #initialization }
+TMKindNode >> setPageContextFromTitles: pageTitles [
+	^ self
+		pageContext: (self
+				pageGroupFor: (pageTitles collect: [ :t | self topicMap database pageNamed: t ]))
+]
+
+{ #category : #printing }
+TMKindNode >> storeOn: aStream [
+	<todo: 'Handle cases with pathContext and pageContext'>
+	aStream
+		nextPutAll: '((';
+		storeObject: self topicMap;
+		nextPutAll: ' kindNodeNamed: ';
+		nextPutAll: self kind printString;
+		nextPut: $).
+	self topicInBreadcrumb
+		ifTrue: [ aStream
+				nextPutAll: ' viaTopicNamed: ';
+				nextPutAll: breadcrumb topicNode topic printString;
+				nextPut: $) ]
+		ifFalse: [ aStream
+				nextPutAll: ' setPageContextFromTitles: {';
+				nextPutAll: (' . ' join: (self pageContext nodes collect: [ :n | n page title printString ]));
+				nextPutAll: '})' ]
+]
+
+{ #category : #printing }
+TMKindNode >> storeOnNodeGroup: aStream [
+	aStream
+		nextPutAll: ' addKindNodeNamed: ';
+		nextPutAll: self kind printString
 ]
 
 { #category : #querying }
@@ -153,4 +186,9 @@ TMKindNode >> treeMapChildren [
 { #category : #treemaps }
 TMKindNode >> treeMapLeaves [
 	^ self pageGroup
+]
+
+{ #category : #accessing }
+TMKindNode >> viaTopicNamed: aTopicName [
+	^ self withContext: (self topicMap topicNodeNamed: aTopicName) breadcrumb
 ]

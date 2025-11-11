@@ -38,19 +38,24 @@ TMPageNode class >> forTitle: aPageTitle in: aTopicMap [
 	^ aTopicMap pageNodeWithTitle: aPageTitle
 ]
 
+{ #category : #converting }
+TMPageNode >> asDraftPageNode [
+	^ TMDraftPageNode for: self page in: self topicMap
+]
+
 { #category : #breadcrumbs }
-TMPageNode >> breadcrumb [
+TMPageNode >> breadcrumbForContext: aBreadcrumb [
 	"Only if the topic of the previous roadmap's breadcrumb matches this page,
 	do we have a context for building a new breadcrumb."
 
-	^ self topicInContext
+	^ (self topicInContext: aBreadcrumb)
 		ifTrue: [ TMBreadcrumb
-				for: {self pathContext databaseNode.
-						self pathContext fieldNode.
-						self pathContext topicNode.
+				for: {aBreadcrumb databaseNode.
+						aBreadcrumb fieldNode.
+						aBreadcrumb topicNode.
 						self kindNode.
 						self} ]
-		ifFalse: [ TMBreadcrumb for: {} ]
+		ifFalse: [ self defaultBreadcrumb ]
 ]
 
 { #category : #navigation }
@@ -58,16 +63,14 @@ TMPageNode >> children [
 	^ self emptyNodes
 ]
 
+{ #category : #breadcrumbs }
+TMPageNode >> defaultBreadcrumb [
+	^ TMBreadcrumb for: {}
+]
+
 { #category : #mondrian }
 TMPageNode >> defaultNodeColor [
 	^ Color paleOrange
-]
-
-{ #category : #breadcrumbs }
-TMPageNode >> defaultPathContext [
-	"If a context is not explicitly provided, we can assume nothing for page nodes."
-
-	^ TMBreadcrumb for: {}
 ]
 
 { #category : #navigation }
@@ -290,8 +293,8 @@ TMPageNode >> roadmapNodes [
 
 	| root nodes topicNode |
 	root := self databaseNode.
-	topicNode := self topicInContext
-			ifTrue: [ self pathContext topicNode ]
+	topicNode := self topicInBreadcrumb
+			ifTrue: [ self breadcrumb topicNode ]
 			ifFalse: [ self topicNodes size = 1 ifTrue: [ self topicNodes first ] ifFalse: [ nil ] ].
 	nodes := topicNode notNil
 			ifTrue: [ root roadmapNodes , {topicNode} , topicNode kindNodes , topicNode pageNodes ]
@@ -317,12 +320,25 @@ TMPageNode >> roadmapSimpleNodeElement [
 
 { #category : #printing }
 TMPageNode >> storeOn: aStream [
+	<todo: 'Handle case with breadcrumb in pathContext'>
 	aStream
-		nextPutAll: '(TMPageNode forTitle: ';
+		nextPutAll: '((';
+		storeObject: self topicMap;
+		nextPutAll: ' pageNodeWithTitle: ';
 		nextPutAll: self page title printString;
-		nextPutAll: 'in: '.
-	self topicMap storeOn: aStream.
+		nextPut: $).
+	self topicInBreadcrumb
+		ifTrue: [ aStream
+				nextPutAll: ' viaTopicNamed: ';
+				nextPutAll: breadcrumb topicNode topic printString ].
 	aStream nextPut: $)
+]
+
+{ #category : #printing }
+TMPageNode >> storeOnNodeGroup: aStream [
+	aStream
+		nextPutAll: ' addPageNodeWithTitle: ';
+		nextPutAll: self page title printString
 ]
 
 { #category : #accessing }
@@ -357,7 +373,14 @@ TMPageNode >> updateKindTo: aKindString [
 	self topicMap updateKindForPage: self to: aKindString
 ]
 
+{ #category : #initialization }
+TMPageNode >> viaTopicNamed: aTopicName [
+	^ self withContext: (self topicMap topicNodeNamed: aTopicName) breadcrumb
+]
+
 { #category : #accessing }
 TMPageNode >> withoutViaTopic [
+	"Remove the breadcrumb."
+
 	^ self class for: self page in: self topicMap
 ]

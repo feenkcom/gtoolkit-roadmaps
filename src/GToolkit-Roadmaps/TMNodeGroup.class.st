@@ -33,9 +33,51 @@ TMNodeGroup >> = other [
 	^ self nodes asSet = other nodes asSet
 ]
 
-{ #category : #breadcrumbs }
-TMNodeGroup >> breadcrumb [
-	^ TMBreadcrumb for: {}
+{ #category : #updating }
+TMNodeGroup >> addAll: aNodesCollection [
+	self
+		nodes: (self nodes
+				addAll: aNodesCollection;
+				yourself) copyWithoutDuplicates
+]
+
+{ #category : #updating }
+TMNodeGroup >> addDatabaseNode [
+	self nodes add: self topicMap databaseNode
+]
+
+{ #category : #updating }
+TMNodeGroup >> addDraftPageNodeWithTitle: aTitle [
+	self nodes add: (self topicMap databaseNode pageNodeWithTitle: aTitle) asDraftPageNode
+]
+
+{ #category : #updating }
+TMNodeGroup >> addFieldNodeNamed: aField [
+	self nodes add: (self topicMap fieldNodeNamed: aField)
+]
+
+{ #category : #updating }
+TMNodeGroup >> addKindNodeNamed: aKind [
+	self nodes add: (self topicMap kindNodeNamed: aKind)
+]
+
+{ #category : #updating }
+TMNodeGroup >> addNodeGroup: aNodeGroup [
+	self addAll: aNodeGroup nodes
+]
+
+{ #category : #updating }
+TMNodeGroup >> addPageNodeWithTitle: aTitle [
+	"NB: Here we ask the databaseNode instead of the topic map for matching pages,
+	because the pages in question might be unmapped.
+	See TopicMapExamples>>#smaccQuery"
+
+	self nodes add: (self topicMap databaseNode pageNodeWithTitle: aTitle)
+]
+
+{ #category : #updating }
+TMNodeGroup >> addTopicNodeNamed: aTopic [
+	self nodes add: (self topicMap topicNodeNamed: aTopic)
 ]
 
 { #category : #navigation }
@@ -46,7 +88,7 @@ TMNodeGroup >> children [
 ]
 
 { #category : #breadcrumbs }
-TMNodeGroup >> defaultPathContext [
+TMNodeGroup >> defaultBreadcrumb [
 	^ TMBreadcrumb for: {}
 ]
 
@@ -82,6 +124,11 @@ TMNodeGroup >> kinds [
 	^ (self children flatCollect: #kinds) copyWithoutDuplicates
 ]
 
+{ #category : #printing }
+TMNodeGroup >> newNodeGroupSelector [
+	^ #newNodeGroup
+]
+
 { #category : #accessing }
 TMNodeGroup >> nodeLabel [
 	^ 'Node collection'
@@ -99,7 +146,7 @@ TMNodeGroup >> nodes [
 
 { #category : #accessing }
 TMNodeGroup >> nodes: aNodeCollection [
-	nodes := aNodeCollection
+	nodes := aNodeCollection asOrderedCollection
 ]
 
 { #category : #accessing }
@@ -124,17 +171,38 @@ super printOn: aStream.
 		nextPut: $)
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #roadmap }
 TMNodeGroup >> roadmapNodes [
 	"node / page group: nodes + all parents"
 
 	| root roadmapNodes |
 	root := self databaseNode.
-	roadmapNodes := self nodes , self allParents.
+	roadmapNodes := (self nodes , self allParents) copyWithoutDuplicates asOrderedCollection.
 	self breadcrumb isEmpty
 		ifTrue: [ self nodes do: #highlightOn ]
 		ifFalse: [ self highlightBreadcrumbsIn: roadmapNodes ].
 	^ roadmapNodes
+]
+
+{ #category : #printing }
+TMNodeGroup >> storeOn: aStream [
+	<todo: 'Handle case with breadcrumb in pathContext'>
+	aStream
+		nextPutAll: '((';
+		storeObject: self topicMap;
+		nextPut: Character space;
+		nextPutAll: self newNodeGroupSelector asString;
+		nextPutAll: ') yourself '.
+	self nodes
+		do: [ :n | 
+			aStream nextPutAll: '; '.
+			n storeOnNodeGroup: aStream ].
+	aStream nextPutAll: ') yourself'
+]
+
+{ #category : #printing }
+TMNodeGroup >> storeOnNodeGroup: aStream [
+	self shouldNotImplement
 ]
 
 { #category : #navigation }

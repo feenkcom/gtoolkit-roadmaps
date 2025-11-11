@@ -15,14 +15,6 @@ TMTopicNode class >> for: aTopic in: aTopicMap [
 	yourself 
 ]
 
-{ #category : #breadcrumbs }
-TMTopicNode >> breadcrumb [
-	^ TMBreadcrumb
-		for: {self databaseNode.
-				self fieldNode.
-				self}
-]
-
 { #category : #views }
 TMTopicNode >> changeFieldTo: aField [
 	self topicMap updateFieldForTopic: self to: aField
@@ -31,6 +23,14 @@ TMTopicNode >> changeFieldTo: aField [
 { #category : #navigation }
 TMTopicNode >> children [
 	^ self pageGroup
+]
+
+{ #category : #breadcrumbs }
+TMTopicNode >> defaultBreadcrumb [
+	^ TMBreadcrumb
+		for: {self databaseNode.
+				self fieldNode.
+				self}
 ]
 
 { #category : #mondrian }
@@ -91,7 +91,7 @@ TMTopicNode >> kinds [
 
 { #category : #accessing }
 TMTopicNode >> nodeLabel [
-	^ "'Topic: ' ," self topic
+	^ self topic
 ]
 
 { #category : #accessing }
@@ -114,7 +114,7 @@ TMTopicNode >> relatedInfo [
 	^ 'Field: ' , self field
 ]
 
-{ #category : #mondrian }
+{ #category : #roadmap }
 TMTopicNode >> roadmapNodes [
 	"database -> fields -> topic -> t.kinds -> t.pages
 	NB: Don't show peer topics to avoid clutter."
@@ -126,6 +126,23 @@ TMTopicNode >> roadmapNodes [
 	nodes := root roadmapNodes , {self} , kinds , pages.
 	self highlightBreadcrumbsIn: nodes.
 	^ nodes
+]
+
+{ #category : #printing }
+TMTopicNode >> storeOn: aStream [
+	aStream
+		nextPut: $(;
+		storeObject: self topicMap;
+		nextPutAll: ' topicNodeNamed: ';
+		nextPutAll: self topic printString;
+		nextPut: $)
+]
+
+{ #category : #printing }
+TMTopicNode >> storeOnNodeGroup: aStream [
+	aStream
+		nextPutAll: ' addTopicNodeNamed: ';
+		nextPutAll: self topic printString
 ]
 
 { #category : #accessing }

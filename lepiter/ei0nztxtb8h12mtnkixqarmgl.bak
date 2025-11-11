@@ -947,7 +947,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-22T14:08:58.556185+02:00"
+									"dateAndTimeString" : "2025-10-22T14:09:07.22509+02:00"
 								}
 							},
 							"uid" : {
@@ -957,7 +957,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We update the pages view for {{gtClass:name=TMClassifier}} and the repair actions.\nFrom a classifier we can run and cancel the chats, inspect th"
+							"string" : "We update the pages view for {{gtClass:name=TMClassifier}} and the repair actions.\nFrom a classifier we can run and cancel the chats, inspect the draft pages, and commit them to the TopicMap."
 						}
 					]
 				},

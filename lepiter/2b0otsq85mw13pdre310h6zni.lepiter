@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-29T13:55:47.543777+01:00"
+						"dateAndTimeString" : "2025-11-11T17:37:57.65401+01:00"
 					}
 				},
 				"uid" : {
@@ -84,478 +84,6 @@
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
-								"items" : [
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-07T14:29:04.430128+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-10T09:43:24.304256+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "fZL85mL/DQCt5HrRCrXgwQ=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "Let start with the examples from {{gtClass:name=TopicMapExamples}}\nWe define {{gtMethod:name=TMAbstractEntity>>#storeOn:}} as abstract so subclasses have to implement it instead of inheriting the broken version from Object.\nWe define {{gtMethod:name=TopicMap>>#storeOn:}} and {{gtMethod:name=TopicMap>>#gtStoreStringFor:}} (latter copied from {{gtMethod:name=LeContent>>#gtStoreStringFor:}} — maybe should be a trait)"
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-08T09:19:44.822372+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-10T09:44:03.818163+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "LtCWsnL/DQCP4dN2AtxeJg=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "We continue with nodes. We implement {{gtMethod:name=TMDatabaseNode>>#storeOn:}} and {{gtMethod:name=TMFieldNode>>#storeOn:}}"
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-07T14:29:00.155422+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-10T10:06:54.156528+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "ZVi75mL/DQCt2C+YCrXgwQ=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "PageNodes require some care -- we don't want the full storeString of a LePage, but rather to look it up by title in a database. "
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-08T09:08:23.493181+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-08T09:09:05.140915+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "s4/6iXL/DQCHlXH/AtxeJg=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "Kind nodes are a bit trickier. We have to extend the = test and we need a storeString for the context (page group) if it is present."
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [
-												{
-													"__type" : "pharoSnippet",
-													"children" : {
-														"__type" : "snippets",
-														"items" : [ ]
-													},
-													"createEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"createTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-10T10:21:09.666208+01:00"
-														}
-													},
-													"editEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"editTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-10T10:21:22.25922+01:00"
-														}
-													},
-													"uid" : {
-														"__type" : "uid",
-														"uidString" : "5NPnyZv/DQC0ucxSCV++zw=="
-													},
-													"code" : "TMAbstractEntity withAllSubclasses\r\tselect: #storeOnIsAbstract"
-												}
-											]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-10T10:13:08.81175+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-10T10:13:38.965241+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "BZQ+rZv/DQCyDvseCV++zw=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "Which classes do not (yet) implement `#store:On:`?"
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-07T14:52:44.595834+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-10T10:38:35.006817+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "rZeiO2P/DQC1WUN9CrXgwQ=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "Breadcrumbs will also require additional care. Should we consider them for equality tests? How do we avoid repeating the topic map?\nWe need to handle correctly {{gtMethod:name=TopicMapExamples>>#pageNodeWhatIsGtViaTopicAboutGt}} ..."
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [
-												{
-													"__type" : "pharoSnippet",
-													"children" : {
-														"__type" : "snippets",
-														"items" : [ ]
-													},
-													"createEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"createTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-07T14:52:48.659589+01:00"
-														}
-													},
-													"editEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"editTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:25:30.263964+01:00"
-														}
-													},
-													"uid" : {
-														"__type" : "uid",
-														"uidString" : "opzgO2P/DQC1YHsMCrXgwQ=="
-													},
-													"code" : "topicMapEntities := TopicMapExamples new topicMapEntities"
-												},
-												{
-													"__type" : "pharoSnippet",
-													"children" : {
-														"__type" : "snippets",
-														"items" : [ ]
-													},
-													"createEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"createTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:32:04.066266+01:00"
-														}
-													},
-													"editEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"editTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:32:09.760168+01:00"
-														}
-													},
-													"uid" : {
-														"__type" : "uid",
-														"uidString" : "48am3nL/DQCb8w29AtxeJg=="
-													},
-													"code" : "[topicMapEntities := TopicMapExamples new topicMapEntities] timeToRun"
-												},
-												{
-													"__type" : "pharoSnippet",
-													"children" : {
-														"__type" : "snippets",
-														"items" : [ ]
-													},
-													"createEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"createTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T08:17:57.707019+01:00"
-														}
-													},
-													"editEmail" : {
-														"__type" : "email",
-														"emailString" : "<unknown>"
-													},
-													"editTime" : {
-														"__type" : "time",
-														"time" : {
-															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-08T09:31:56.112752+01:00"
-														}
-													},
-													"uid" : {
-														"__type" : "uid",
-														"uidString" : "d7ug1XH/DQCrgImXCJiLvQ=="
-													},
-													"code" : "topicMapEntities\r\tdo: [ :t | self assert: (Smalltalk compiler evaluate: t storeString) equals: t ]"
-												}
-											]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-08T08:38:34.442922+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-08T08:39:10.868009+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "2tFXH3L/DQCyUQ+sCJiLvQ=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "We can test that all examples have storeStrings that return themselves."
-									},
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-07T14:52:44.82103+01:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-07T14:52:44.82103+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "uwimO2P/DQC1XfvmCrXgwQ=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : ""
-									}
-								]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-30T10:13:37.722954+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-30T10:14:21.360118+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "g5e2Zr7+DQCfcIhfAg/RPg=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "Add a `storeString` method to TopicMap nodes so we can easily grab the code to reproduce a map!"
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
 								"items" : [ ]
 							},
 							"createEmail" : {
@@ -566,7 +94,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-07T14:29:00.383012+01:00"
+									"dateAndTimeString" : "2025-11-11T17:38:13.291899+01:00"
 								}
 							},
 							"editEmail" : {
@@ -577,54 +105,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-07T14:29:00.383012+01:00"
+									"dateAndTimeString" : "2025-11-11T17:38:13.814206+01:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "q9W+5mL/DQCt3D2ACrXgwQ=="
+								"uidString" : "w/nLArb/DQCEhxxvA/mnZg=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : ""
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-07T14:29:00.630354+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-07T14:47:59.498284+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "MpfC5mL/DQCt4FNwCrXgwQ=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "Check if TopicMap default works on Windows! — may need to adapt {{gtMethod:name=TMRegistry>>#defaultRegistry}}"
+							"string" : "\nGenerate topic maps for pages with bookmarks.\n\nCan the prompts be generated from the existing topic map and pages?\n\nAdd views for new pages.\nCheck how new pages appear in topic maps.\nCheck latest new pages.\nAdd a check for proximity to missing pages\n\nEditing topic maps\nAdd view to select field of a topic, and to rename a topic or a field.\nKinds — change kind of page; rename a kind; add or delete a kind\nDitto for topics and fields. \n\nOne thing that's missing: links between pages (and thus topics)!\nCan we generate page group for a page (highlighted) and its outgoing linked pages? Ditto for incoming links. This should be easy to generate from existing functionality.\nAdd these to the LePage hamburger, or better to a TMPageNode hamburger.\n\nAdd context menu to Roadmap nodes, as well as to the Mondrian background? Or just hamburger action menus?\n\nExperiment with updating Mondrian roadmap in-place.\n"
 						},
 						{
 							"__type" : "textSnippet",
@@ -678,7 +169,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-19T09:34:19.090257+02:00"
+									"dateAndTimeString" : "2025-11-10T17:11:44.16078+01:00"
 								}
 							},
 							"editEmail" : {
@@ -689,7 +180,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-22T14:14:00.21364+02:00"
+									"dateAndTimeString" : "2025-11-10T17:11:44.163991+01:00"
 								}
 							},
 							"uid" : {
@@ -1059,7 +550,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-09T11:37:08.281586+02:00"
+						"dateAndTimeString" : "2025-11-11T17:38:12.869169+01:00"
 					}
 				},
 				"uid" : {
@@ -1218,7 +709,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-17T10:41:49.630121+02:00"
+												"dateAndTimeString" : "2025-11-11T17:37:57.7106+01:00"
 											}
 										},
 										"uid" : {
@@ -1252,7 +743,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-17T10:42:53.609542+02:00"
+												"dateAndTimeString" : "2025-11-11T17:37:57.730035+01:00"
 											}
 										},
 										"uid" : {
@@ -1286,7 +777,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-17T10:41:41.487241+02:00"
+												"dateAndTimeString" : "2025-11-11T17:37:57.74316+01:00"
 											}
 										},
 										"uid" : {
@@ -1320,7 +811,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-17T10:38:25.144642+02:00"
+												"dateAndTimeString" : "2025-11-11T17:37:57.764074+01:00"
 											}
 										},
 										"uid" : {
@@ -1578,7 +1069,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T16:43:07.805443+02:00"
+												"dateAndTimeString" : "2025-11-11T17:37:57.8234+01:00"
 											}
 										},
 										"uid" : {
@@ -1612,7 +1103,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T16:58:49.681806+02:00"
+												"dateAndTimeString" : "2025-11-11T17:37:57.837955+01:00"
 											}
 										},
 										"uid" : {
@@ -1646,7 +1137,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T16:58:40.822268+02:00"
+												"dateAndTimeString" : "2025-11-11T17:37:57.854542+01:00"
 											}
 										},
 										"uid" : {
@@ -1680,7 +1171,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T17:02:00.721384+02:00"
+												"dateAndTimeString" : "2025-11-11T17:37:57.867412+01:00"
 											}
 										},
 										"uid" : {
@@ -1714,7 +1205,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T17:05:29.656772+02:00"
+												"dateAndTimeString" : "2025-11-11T17:37:57.876487+01:00"
 											}
 										},
 										"uid" : {
@@ -1748,7 +1239,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-09-09T17:05:11.425286+02:00"
+												"dateAndTimeString" : "2025-11-11T17:37:57.893327+01:00"
 											}
 										},
 										"uid" : {
@@ -1789,6 +1280,775 @@
 								"__type" : "textStyle"
 							},
 							"string" : "Rename “style” to “kind”"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-07T14:29:04.430128+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T09:43:24.304256+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "fZL85mL/DQCt5HrRCrXgwQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Let start with the examples from {{gtClass:name=TopicMapExamples}}\nWe define {{gtMethod:name=TMAbstractEntity>>#storeOn:}} as abstract so subclasses have to implement it instead of inheriting the broken version from Object.\nWe define {{gtMethod:name=TopicMap>>#storeOn:}} and {{gtMethod:name=TopicMap>>#gtStoreStringFor:}} (latter copied from {{gtMethod:name=LeContent>>#gtStoreStringFor:}} — maybe should be a trait)"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-08T09:19:44.822372+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:06:10.403736+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "LtCWsnL/DQCP4dN2AtxeJg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "We continue with nodes. We implement {{gtMethod:name=TMDatabaseNode>>#storeOn:}} and {{gtMethod:name=TMFieldNode>>#storeOn:}}\nSee {{gtMethod:name=TopicMapExamples>>#databaseNode}} and {{gtMethod:name=TopicMapExamples>>#fieldNodeGtBasics}}"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-07T14:29:00.155422+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:22:08.728483+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "ZVi75mL/DQCt2C+YCrXgwQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "PageNodes require some care -- we don't want the full storeString of a LePage, but rather to look it up by title in a database. We also need separate cases with and without breadcrumbs (deal with breadcrumbs later ...)\nTwo cases:\n(1)  {{gtMethod:name=TopicMapExamples>>#pageNodeWhatIsGt}} (done)\n(2)  {{gtMethod:name=TopicMapExamples>>#pageNodeWhatIsGtViaTopicAboutGt}} (TO DO)"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:07:26.594018+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:13:05.581398+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "UTridqH/DQCWClbkBdjH4Q=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Topic nodes are straightfoward. \nSee {{gtMethod:name=TopicMapExamples>>#topicNodeAboutGt}}"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-08T09:08:23.493181+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:22:01.048756+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "s4/6iXL/DQCHlXH/AtxeJg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Kind nodes are a bit trickier. We have to extend the = test and we need a storeString for the context (page group) if it is present.\nTwo cases:\n(1) {{gtMethod:name=TopicMapExamples>>#kindNodeIntroduction}} (done)\n(2) {{gtMethod:name=TopicMapExamples>>#kindNodeIntroductionWithinAboutGtTopic}} (TO DO)\nAlso need to handle case with pathContext? Or is this given by the page with pathContext?"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T17:12:12.688011+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-11T08:40:05.081776+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "tKvvh6H/DQCZi6g1BdjH4Q=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "A node group can be created in many ways. Each node in the node group can be of various types. Approach: we create a new node group form the topic map, and then send factory messages to *that* node. Each type of node knows what message it needs to send.\nWe handle several cases:\n(1) just fields: {{gtMethod:name=TopicMapExamples>>#nodeGroupChildrenOfFieldNodeGtBasics}}\n(2) fields and topics: {{gtMethod:name=TopicMapExamples>>#nodeGroupWithFieldsAndTopics}}\n(3) all kinds of nodes: {{gtMethod:name=TopicMapExamples>>#nodeGroupWithAllNodeTypes}}\n(4) just pages (a page group): {{gtMethod:name=TopicMapExamples>>#pageGroupChildrenOfKindsWithinAboutGt}}"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-10T10:21:09.666208+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T17:19:52.519772+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "5NPnyZv/DQC0ucxSCV++zw=="
+													},
+													"code" : "TMAbstractEntity withAllSubclasses\r\tselect: #storeOnIsAbstract"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T10:13:08.81175+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-11T08:44:14.634669+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "BZQ+rZv/DQCyDvseCV++zw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Now all concrete node classses implement `#store:On:`"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-07T14:52:48.659589+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T17:19:52.600313+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "opzgO2P/DQC1YHsMCrXgwQ=="
+													},
+													"code" : "topicMapEntityExamples := TopicMapExamples new topicMapEntityExamples.\rtopicMapEntities := topicMapEntityExamples collect: #returnValue"
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T10:43:28.83072+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T17:19:52.672153+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "SzuRN7D/DQCj3wOGCq002A=="
+													},
+													"code" : "\"Ignore breadcrumbs\"\rtopicMapEntityExamples\r\treject: [ :eg | \r\t\t| tme |\r\t\ttme := eg returnValue.\r\t\ttme storeStringValue = tme ]"
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T11:23:34.376899+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T17:19:53.42985+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "V/PyxrD/DQCKMWZpCmJqqw=="
+													},
+													"code" : "\"Also check breadcrumbs\"\rtopicMapEntityExamples\r\treject: [ :eg | \r\t\t| tme |\r\t\ttme := eg returnValue.\r\t\ttme storeStringValue === tme ]"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-07T14:52:44.82103+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T09:14:27.751755+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "uwimO2P/DQC1XfvmCrXgwQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "We get an error with  {{gtMethod:name=TopicMapExamples>>#smaccQuery}}.\nIt fails because the query returns two unmapped pages, which cannot be found in the topic map.\nWe fix this in {{gtMethod:name=TMNodeGroup>>#addPageNodeWithTitle:}}"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-08T08:38:34.442922+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-08T08:39:10.868009+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "2tFXH3L/DQCyUQ+sCJiLvQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "We can test that all examples have storeStrings that return themselves."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T09:21:24.376188+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T09:24:07.353609+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "5AMMEq//DQCp4keWCo8ctQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "There is an issue with the `pathContext` — since it is the breadcrumb of the previous node, the same roadmap can be arrived at in different ways with different contexts. For example, you can reach a page with the same breadcrumb from its topic, its kind, another page in the same topic,  or from itself. These all have different contexts. Perhaps instead of storing the context, we should just compute and save directly the breadcrumb, which provide the context for the next node reached."
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T09:32:45.125536+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T10:31:55.246039+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "umyfOq//DQC0MQePCo8ctQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "We introduce {{gtMethod:name=TMAbstractTreeNode>>#breadcrumbForContext:}} and {{gtMethod:name=TMAbstractTreeNode>>#topicInContext:}}.\nWe replace the `pathContext` slot by a `breadcrumb` slot; replace `breadcrumb` and `topicInContext` by `breadCrumbForContext:` and `topicInContext:`"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T11:48:57.349366+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T11:48:59.454733+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "WKm5IbH/DQCkYxD8CmJqqw=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "We add a new equality test {{gtMethod:name=TMAbstractTreeNode>>#===}} for nodes to also compare the breadcrumbs."
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T10:31:57.245434+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T16:39:19.663932+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "3HVYDrD/DQCf1HYgCq002A=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "Now we need to serialize breadcrumbs and explicitly set them if they are not the default ones.\nThis can only be the case for Kind and Page nodes (and draft page nodes).\nWe add {{gtMethod:name=TMPageNode>>#viaTopicNamed:}} and use it in {{gtMethod:name=TMPageNode>>#storeOn:}}.\n\n{{gtMethod:name=TopicMapExamples>>#pageNodeWhatIsGtViaTopicAboutGt}}"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T11:47:57.119589+01:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2025-11-11T17:17:57.771842+01:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "KrlxjrD/DQCGK7obCmJqqw=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "We also need to take care of kind nodes with breadcrumbs.\nseveral cases:\n(1) {{gtMethod:name=TopicMapExamples>>#kindNodeIntroduction}} — no breadcrumb\n(2) {{gtMethod:name=TopicMapExamples>>#kindNodeIntroductionViaTopicAboutGT}} — with breadcrumb\n(3) {{gtMethod:name=TopicMapExamples>>#kindNodeIntroductionWithinAboutGtTopic}} — without breadcrumb but restricted page context"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-07T14:52:44.595834+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-10T10:38:35.006817+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "rZeiO2P/DQC1WUN9CrXgwQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Breadcrumbs will also require additional care. Should we consider them for equality tests? How do we avoid repeating the topic map?\nWe need to handle correctly {{gtMethod:name=TopicMapExamples>>#pageNodeWhatIsGtViaTopicAboutGt}} ..."
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-10T16:58:43.932641+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-10T16:58:43.93536+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "g5e2Zr7+DQCfcIhfAg/RPg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Add a `storeString` method to TopicMap nodes so we can easily grab the code to reproduce a map!\nPrinciple: all the storeStrings should start from a TopicMap as the generator of node instances."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-07T14:29:00.630354+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-11T17:30:57.098258+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "MpfC5mL/DQCt4FNwCrXgwQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Check if TopicMap default works on Windows! — may need to adapt {{gtMethod:name=TMRegistry>>#defaultRegistry}}\nWe rewrite {{gtMethod:name=TMRegistry>>#jsonFileFor:}} to no longer depend on the Unix file path"
 						}
 					]
 				},

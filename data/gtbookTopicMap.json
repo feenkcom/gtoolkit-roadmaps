@@ -4875,6 +4875,35 @@
 			"topics" : [
 				"Using SmaCC"
 			]
+		},
+		{
+			"page" : "A Moldable Development Curriculum",
+			"kind" : "Introduction",
+			"topics" : [
+				"Getting Started with GT",
+				"Moldable Development Practices"
+			]
+		},
+		{
+			"page" : "How to control the cursor blinking",
+			"kind" : "FAQ",
+			"topics" : [
+				"Text Editing"
+			]
+		},
+		{
+			"page" : "How to control the delay of tooltips showing and hiding",
+			"kind" : "FAQ",
+			"topics" : [
+				"Using Bloc"
+			]
+		},
+		{
+			"page" : "How to find the available fonts",
+			"kind" : "FAQ",
+			"topics" : [
+				"Using Bloc"
+			]
 		}
 	],
 	"database" : "Glamorous Toolkit Book",

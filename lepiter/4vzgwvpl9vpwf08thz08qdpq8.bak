@@ -153,45 +153,7 @@
 								"__type" : "textStyle"
 							},
 							"string" : "NB: whenever we are in a topic, all the reachable page nodes must have the topic set; the page must propagate that topic"
-						}
-					]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-24T13:41:57.699974+02:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-24T13:42:01.896376+02:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "T/HnRuz7DQCSi3bMA+vavQ=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "# Breadcrumbs"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [
+						},
 						{
 							"__type" : "textSnippet",
 							"children" : {
@@ -239,7 +201,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-22T15:35:04.732026+02:00"
+						"dateAndTimeString" : "2025-09-24T13:41:57.699974+02:00"
 					}
 				},
 				"editEmail" : {
@@ -250,17 +212,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-09-24T13:42:15.937705+02:00"
+						"dateAndTimeString" : "2025-09-24T13:42:01.896376+02:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "lx3Dn8X7DQCv/23hBYKSUg=="
+					"uidString" : "T/HnRuz7DQCSi3bMA+vavQ=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# To do"
+				"string" : "# Breadcrumbs"
 			},
 			{
 				"__type" : "textSnippet",
@@ -1089,12 +1051,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-22T15:37:49.049145+02:00"
+			"dateAndTimeString" : "2025-09-29T11:12:52.490386+02:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "* Highlight breadcrumbs in roadmaps"
+		"title" : "Highlight breadcrumbs in roadmaps"
 	},
 	"uid" : {
 		"__type" : "uuid",
