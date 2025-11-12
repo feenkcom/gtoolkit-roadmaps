@@ -327,9 +327,8 @@ TopicMapExamples >> pageNodeWhatIsGt [
 
 	<gtExample>
 	| pageNodeWhatIsGt |
-	pageNodeWhatIsGt := TMPageNode
-			forTitle: 'What is Glamorous Toolkit?'
-			in: self topicMap.
+	pageNodeWhatIsGt := self topicMap
+			pageNodeWithTitle: 'What is Glamorous Toolkit?'.
 
 	self assert: pageNodeWhatIsGt fields size equals: 3.
 	self assert: pageNodeWhatIsGt topics size equals: 5.
@@ -352,8 +351,9 @@ TopicMapExamples >> pageNodeWhatIsGtViaTopicAboutGt [
 
 	<gtExample>
 	| pageNodeWhatIsGt |
-	pageNodeWhatIsGt := self topicNodeAboutGt
-			pageNodeWithTitle: 'What is Glamorous Toolkit?'.
+	pageNodeWhatIsGt := (self topicMap
+			pageNodeWithTitle: 'What is Glamorous Toolkit?')
+			viaTopicNamed: 'About Glamorous Toolkit'.
 
 	self assert: pageNodeWhatIsGt fields size equals: 3.
 	self assert: pageNodeWhatIsGt topics size equals: 5.
@@ -363,7 +363,7 @@ TopicMapExamples >> pageNodeWhatIsGtViaTopicAboutGt [
 	self assert: pageNodeWhatIsGt children isTMPageGroup not.
 	self assert: pageNodeWhatIsGt parents equals: pageNodeWhatIsGt kindNodes.
 	self assert: pageNodeWhatIsGt breadcrumb notEmpty.
-	
+
 	^ pageNodeWhatIsGt
 ]
 
