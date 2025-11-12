@@ -1409,12 +1409,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-10-22T14:10:11.51112+02:00"
+			"dateAndTimeString" : "2025-11-12T11:32:41.067616+01:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "*** Edit fields, topics and kinds (partly done)"
+		"title" : "* Edit fields, topics and kinds (mostly done)"
 	},
 	"uid" : {
 		"__type" : "uuid",

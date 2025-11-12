@@ -254,6 +254,11 @@ TMAbstractTreeNode >> isTMTreeNode [
 	^ true
 ]
 
+{ #category : #accessing }
+TMAbstractTreeNode >> linkedPageGroup [
+	^ self pageGroupFor: (self pages flatCollect: #linkedPages)
+]
+
 { #category : #roadmap }
 TMAbstractTreeNode >> mondrianGraph [
 	"Experimental -- show a graph view starting from this node.

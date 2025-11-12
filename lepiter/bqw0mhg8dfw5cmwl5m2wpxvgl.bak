@@ -672,7 +672,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-20T10:08:12.604207+02:00"
+												"dateAndTimeString" : "2025-10-24T17:39:35.074844+02:00"
 											}
 										},
 										"uid" : {
@@ -682,7 +682,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[[*** Tailor the RoadMap visualizations]]"
+										"string" : "[[* Tailor the RoadMap visualizations]]"
 									}
 								]
 							},
