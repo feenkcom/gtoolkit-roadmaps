@@ -136,6 +136,18 @@ TMPageNode >> gtEditTopicsFor: aView [
 		actionUpdateButton
 ]
 
+{ #category : #actions }
+TMPageNode >> gtLinkedPageGroupActionFor: anAction [
+	<gtAction>
+	^ anAction button
+		tooltip: 'Inspect linked pages';
+		priority: 32;
+		icon: BrGlamorousVectorIcons right;
+		action: [ :aButton | aButton phlow spawnObject: self linkedPageGroup ];
+		primaryModifierAction: [ :aButton | aButton phlow showObject: self linkedPageGroup ]
+			mouseCursor: BlCopyCursor new
+]
+
 { #category : #views }
 TMPageNode >> gtLivePageFor: aView [
 	<gtView>

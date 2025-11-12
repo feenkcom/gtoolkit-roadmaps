@@ -8,7 +8,7 @@ LePage >> asPageNode [
 { #category : #'*GToolkit-Roadmaps' }
 LePage >> gtDisableTopicMapLePageExtensionsActionFor: anAction [
 	"Appears as a LePage inspector gtAction menu item."
-	<gtAction>
+	"<gtAction>"
 	^ anAction button
 		tooltip: 'Disable LePage topic map actions';
 		priority: 16;
@@ -21,7 +21,7 @@ LePage >> gtDisableTopicMapLePageExtensionsActionFor: anAction [
 { #category : #'*GToolkit-Roadmaps' }
 LePage >> gtEnableTopicMapLePageExtensionsActionFor: anAction [
 	"Appears as a LePage inspector gtAction menu item."
-	<gtAction>
+	"<gtAction>"
 	^ anAction button
 		tooltip: 'Enable LePage topic map actions';
 		priority: 15;
@@ -61,10 +61,27 @@ LePage >> gtInspectPageTopicMapActionFor: anAction [
 ]
 
 { #category : #'*GToolkit-Roadmaps' }
+LePage >> gtLePageGitMenuActionFor: anAction [
+	<gtAction>
+	(self database monitor isLocalStore not or: [ self icebergRepo isNil ])
+		ifTrue: [ ^ anAction empty ].
+	^ anAction button
+		tooltip: 'Go to repository';
+		priority: 72;
+		target: LePageActionTarget;
+		menuItemGroup: BrMenuItemGroupConfiguration editing;
+		icon: BrGlamorousVectorIcons branching;
+		action: [ :aButton | 
+			aButton phlow
+				spawnTool: (GtGitPhlowTool new
+						repository: (GtGitRepository fromIcebergRepository: self icebergRepo)) ]
+]
+
+{ #category : #'*GToolkit-Roadmaps' }
 LePage >> gtTopicMapActionFor: anAction [
 	"Appears as a lePageAction menu item."
+
 	<gtAction>
-	TMRegistry uniqueInstance extensionsEnabled ifFalse: [ ^ anAction empty ].
 	self hasTopicMap ifFalse: [ ^ anAction empty ].
 	^ anAction button
 		tooltip: 'Inspect topic map for this page';
