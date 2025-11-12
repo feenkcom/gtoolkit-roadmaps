@@ -51,9 +51,17 @@ TMGtBookRoadmapExamples >> gtBookDatabaseNode [
 TMGtBookRoadmapExamples >> gtBookTopicMap [
 	<gtExample>
 	| topicMap |
-	topicMap := LeDatabase gtBook topicMap.
+	topicMap := TopicMap  default.
 	self assert: topicMap database databaseName equals: 'Glamorous Toolkit Book'.
 	^ topicMap
+]
+
+{ #category : #'as yet unclassified' }
+TMGtBookRoadmapExamples >> jsonFile [
+	<gtExample>
+	| jsonFile |
+	jsonFile := self gtBookTopicMap jsonFile.
+	^ jsonFile
 ]
 
 { #category : #accessing }
