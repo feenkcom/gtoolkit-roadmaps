@@ -16,6 +16,7 @@ Class {
 { #category : #examples }
 TMEditingExamples >> changeFieldOfLiveDocumentationTopicNode [
 	<gtExample>
+	<return: #TMTopicNode>
 	| topicNode newField topic oldField |
 	topic := 'Live Documentation'.
 	topicNode := self topicMap topicNodeNamed: topic.
@@ -30,7 +31,7 @@ TMEditingExamples >> changeFieldOfLiveDocumentationTopicNode [
 	self
 		assert: (self updatedTopicMap topicNodeNamed: topic) field
 		equals: newField.
-		
+
 	topicNode changeFieldTo: oldField.
 
 	self assert: topicNode field equals: oldField.
@@ -47,6 +48,7 @@ TMEditingExamples >> clonedTestJsonFile [
 	After each edit, we can check if the json file has been updated."
 
 	<gtExample>
+	<return: #FileLocator>
 	| sourceJsonFile testJsonFile |
 	sourceJsonFile := self sourceJsonFile.
 	testJsonFile := self testJsonFile.
@@ -59,6 +61,7 @@ TMEditingExamples >> clonedTestJsonFile [
 { #category : #examples }
 TMEditingExamples >> deleteMissingPage [
 	<gtExample>
+	<return: #TopicMap>
 	| missingPageTitle topicMap missingPageCount updatedTopicMap |
 	topicMap := self topicMap.
 	missingPageTitle := self missingPage.
@@ -80,6 +83,7 @@ TMEditingExamples >> deleteMissingPage [
 { #category : #examples }
 TMEditingExamples >> deletedTestJsonFile [
 	<gtExample>
+	<return: #FileLocator>
 	| testJsonFile |
 	testJsonFile := self testJsonFile.
 	testJsonFile ensureDelete.
@@ -90,6 +94,7 @@ TMEditingExamples >> deletedTestJsonFile [
 { #category : #examples }
 TMEditingExamples >> feenkPageNode [
 	<gtExample>
+	<return: #TMPageNode>
 	| pageNode |
 	pageNode := self topicMap pageNodeWithTitle: 'feenk'.
 	self assert: pageNode title equals: 'feenk'.
@@ -101,6 +106,7 @@ TMEditingExamples >> feenkPageNode [
 { #category : #examples }
 TMEditingExamples >> missingPage [
 	<gtExample>
+	<return: #ByteString>
 	| missingPageTitle |
 	missingPageTitle := self topicMap missingPages first.
 	self assert: missingPageTitle equals: 'Adding custom tools to assistants'.
@@ -121,6 +127,7 @@ TMEditingExamples >> testJsonFile [
 	After each edit, we can check if the json file has been updated."
 
 	<gtExample>
+	<return: #FileLocator>
 	| testJsonFile |
 	testJsonFile := FileLocator imageDirectory / 'test.json'.
 	^ testJsonFile
@@ -129,6 +136,7 @@ TMEditingExamples >> testJsonFile [
 { #category : #examples }
 TMEditingExamples >> toggleTopicsOfFeenkPageNode [
 	<gtExample>
+	<return: #TMPageNode>
 	| pageNode topicToAdd topicToDelete updatedTopicMap topic2ToAdd |
 	pageNode := self feenkPageNode.
 	topicToAdd := 'Code Analysis'.
@@ -163,6 +171,7 @@ TMEditingExamples >> toggleTopicsOfFeenkPageNode [
 { #category : #examples }
 TMEditingExamples >> topicMap [
 	<gtExample>
+	<return: #TopicMap>
 	| topicMap |
 	topicMap := TopicMap forJson: self clonedTestJsonFile.
 	self assert: topicMap database equals: LeDatabase gtBook.
@@ -172,6 +181,7 @@ TMEditingExamples >> topicMap [
 { #category : #examples }
 TMEditingExamples >> updateKindOfFeenkPageNode [
 	<gtExample>
+	<return: #TMPageNode>
 	| pageNode |
 	pageNode := self feenkPageNode.
 	self assert: pageNode kind equals: 'Introduction'.
@@ -189,6 +199,7 @@ TMEditingExamples >> updateKindOfFeenkPageNode [
 { #category : #examples }
 TMEditingExamples >> updateMissingPage [
 	<gtExample>
+	<return: #TopicMap>
 	| missingPageTitle topicMap newPage newTitle missingPageCount updatedTopicMap |
 	topicMap := self topicMap.
 	missingPageTitle := self missingPage.
@@ -218,5 +229,6 @@ TMEditingExamples >> updatedTopicMap [
 	"Returns the topic map for a possibly updated version of the test json file."
 
 	<gtExample>
+	<return: #TopicMap>
 	^ TopicMap forJson: self testJsonFile
 ]
