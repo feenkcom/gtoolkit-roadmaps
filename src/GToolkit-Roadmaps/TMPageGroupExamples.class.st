@@ -9,6 +9,7 @@ TMPageGroupExamples >> gtBookTestPageGroup [
 	"PageGroup for all pages from the test file."
 
 	<gtExample>
+	<return: #TMPageGroup>
 	| pageGroup topicMap |
 	topicMap := self gtBookTestTopicMap.
 	pageGroup := topicMap pageGroup.
@@ -21,12 +22,14 @@ TMPageGroupExamples >> gtBookTestTopicMap [
 	"TopicMap for all pages from the test file."
 
 	<gtExample>
+	<return: #TopicMap>
 	^ TopicMapExamples new topicMap
 ]
 
 { #category : #examples }
 TMPageGroupExamples >> pageGroup [
 	<gtExample>
+	<return: #TMPageGroup>
 	| pageNodes |
 	pageNodes := self gtBookTestPageGroup pageGroup.
 	self assert: pageNodes size equals: self gtBookTestPageGroup pages size.
@@ -36,8 +39,9 @@ TMPageGroupExamples >> pageGroup [
 { #category : #examples }
 TMPageGroupExamples >> projectDiaryPageNode [
 	<gtExample>
+	<return: #TMPageNode>
 	| projectDiaryPageNode |
-	projectDiaryPageNode := self pageGroup pageNodeWithTitle: 'Project Diary' .
+	projectDiaryPageNode := self pageGroup pageNodeWithTitle: 'Project Diary'.
 	self assert: projectDiaryPageNode page title equals: 'Project Diary'.
 	self assert: projectDiaryPageNode kind equals: 'Pattern'.
 	self

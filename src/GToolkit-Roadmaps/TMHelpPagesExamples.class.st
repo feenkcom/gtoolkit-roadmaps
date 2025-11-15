@@ -7,6 +7,7 @@ Class {
 { #category : #'as yet unclassified' }
 TMHelpPagesExamples >> helpDatabase [
 	<gtExample>
+	<return: #LeDatabase>
 	^ LeDatabase gtBook topicMap helpDatabase
 ]
 
@@ -15,6 +16,7 @@ TMHelpPagesExamples >> invalidHelpPageNameMethods [
 	"This should never fail, but should be empty. If not, the methods returned need to be fixed."
 
 	<gtExample>
+	<return: #Array>
 	| helpPageNameMethods |
 	helpPageNameMethods := (#helpPageName gtImplementors
 			& TopicMap package gtPackageMatches) contents.
@@ -28,6 +30,7 @@ TMHelpPagesExamples >> invalidHelpPageNameMethods [
 { #category : #'as yet unclassified' }
 TMHelpPagesExamples >> noInvalidHelpPageNameMethods [
 	<gtExample>
+	<return: #TMHelpPagesExamples>
 	| invalidMethods |
 	invalidMethods := self invalidHelpPageNameMethods.
 	self

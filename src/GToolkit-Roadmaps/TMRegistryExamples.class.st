@@ -7,6 +7,7 @@ Class {
 { #category : #examples }
 TMRegistryExamples >> gtBookJsonFile [
 	<gtExample>
+	<return: #FileLocator>
 	| fileReference |
 	fileReference := self tmRegistrySingelton jsonFileFor: LeDatabase gtBookName.
 	self assert: fileReference exists.
@@ -16,6 +17,7 @@ TMRegistryExamples >> gtBookJsonFile [
 { #category : #examples }
 TMRegistryExamples >> gtBookJsonFilePath [
 	<gtExample>
+	<return: #ByteString>
 	| filePath |
 	filePath := self tmRegistrySingelton jsonFilePathFor: LeDatabase gtBookName.
 	self assert: (filePath endsWith: '.json').
@@ -27,6 +29,7 @@ TMRegistryExamples >> gtBookTopicMap [
 	"TopicMap for all pages from the test file."
 
 	<gtExample>
+	<return: #TopicMap>
 	| gtBookTopicMap |
 	gtBookTopicMap := self tmRegistrySingelton topicMapFor: LeDatabase gtBookName.
 	^ gtBookTopicMap
@@ -35,6 +38,7 @@ TMRegistryExamples >> gtBookTopicMap [
 { #category : #examples }
 TMRegistryExamples >> tmRegistrySingelton [
 	<gtExample>
+	<return: #TMRegistry>
 	| tmRegistry |
 	tmRegistry := TMRegistry uniqueInstance.
 	self assert: tmRegistry registry size equals: 1.

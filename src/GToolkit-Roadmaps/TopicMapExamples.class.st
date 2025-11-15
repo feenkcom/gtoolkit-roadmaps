@@ -13,17 +13,17 @@ Class {
 { #category : #example }
 TopicMapExamples >> database [
 	<gtExample>
+	<return: #LeDatabase>
 	| database |
 	database := self topicMap database.
-	self
-		assert: database 
-		equals: LeDatabase gtBook.
+	self assert: database equals: LeDatabase gtBook.
 	^ database
 ]
 
 { #category : #example }
 TopicMapExamples >> databaseNode [
 	<gtExample>
+	<return: #TMDatabaseNode>
 	| databaseNode |
 	databaseNode := self topicMap databaseNode.
 	self assert: databaseNode fields size equals: 5.
@@ -36,6 +36,7 @@ TopicMapExamples >> databaseNode [
 { #category : #example }
 TopicMapExamples >> field2Topics [
 	<gtExample>
+	<return: #Dictionary>
 	| fields2Topics topicMap |
 	topicMap := self topicMap.
 	fields2Topics := topicMap field2Topics.
@@ -48,6 +49,7 @@ TopicMapExamples >> fieldNodeGtBasics [
 	"NB: Fragile test, #topics could change in book."
 
 	<gtExample>
+	<return: #TMFieldNode>
 	| fieldNodeGtBasics |
 	fieldNodeGtBasics := self topicMap fieldNodeNamed: 'Glamorous Toolkit Basics'.
 	self assert: fieldNodeGtBasics topics size equals: 10.
@@ -66,6 +68,7 @@ TopicMapExamples >> json [
 	"Verify that this is the commented test topicFile."
 
 	<gtExample>
+	<return: #Dictionary>
 	| json |
 	json := self topicMap json.
 	self assert: (json includesKey: 'comment').
@@ -75,6 +78,7 @@ TopicMapExamples >> json [
 { #category : #example }
 TopicMapExamples >> kind2Pages [
 	<gtExample>
+	<return: #Dictionary>
 	| category2Page topicMap |
 	topicMap := self topicMap.
 	category2Page := topicMap kind2Pages.
@@ -87,6 +91,7 @@ TopicMapExamples >> kindNodeIntroduction [
 	"An ex nihilo kind node without any breadcrumb."
 
 	<gtExample>
+	<return: #TMKindNode>
 	| aboutGtKindNode |
 	aboutGtKindNode := self topicMap kindNodeNamed: 'Introduction'.
 
@@ -108,6 +113,7 @@ TopicMapExamples >> kindNodeIntroductionViaTopicAboutGT [
 	"A kind node via a breadcrumb."
 
 	<gtExample>
+	<return: #TMKindNode>
 	| aboutGtKindNode |
 	aboutGtKindNode := (self topicMap kindNodeNamed: 'Introduction')
 			viaTopicNamed: 'About Glamorous Toolkit'.
@@ -133,6 +139,7 @@ TopicMapExamples >> kindNodeIntroductionWithinAboutGtTopic [
 	as is the case here."
 
 	<gtExample>
+	<return: #TMKindNode>
 	| aboutGtKindNode |
 	aboutGtKindNode := (TMKindNode for: 'Introduction' in: self topicMap)
 			pageContext: self topicNodeAboutGt pageGroup;
@@ -147,7 +154,7 @@ TopicMapExamples >> kindNodeIntroductionWithinAboutGtTopic [
 	self assert: aboutGtKindNode pages size < aboutGtKindNode database pages size.
 	self assert: aboutGtKindNode children isTMNodeGroup.
 	self assert: aboutGtKindNode children isTMPageGroup.
-	
+
 	self assert: aboutGtKindNode breadcrumb isEmpty.
 	self assert: aboutGtKindNode pageContext isNotNil.
 
@@ -157,6 +164,7 @@ TopicMapExamples >> kindNodeIntroductionWithinAboutGtTopic [
 { #category : #example }
 TopicMapExamples >> kinds [
 	<gtExample>
+	<return: #Array>
 	| categories |
 	categories := self topicMap kinds.
 	self assert: categories size equals: 11.
@@ -166,10 +174,13 @@ TopicMapExamples >> kinds [
 { #category : #example }
 TopicMapExamples >> missingPages [
 	<gtExample>
+	<return: #Array>
 	| missingPages topicMap |
 	topicMap := self topicMap.
 	missingPages := topicMap missingPages.
-	self assert: missingPages size + topicMap pages size equals: (topicMap json at: 'pages') size.
+	self
+		assert: missingPages size + topicMap pages size
+		equals: (topicMap json at: 'pages') size.
 	^ missingPages
 ]
 
@@ -222,6 +233,7 @@ TopicMapExamples >> nodeGroupChildrenOfFieldNodeGtBasics [
 	"NB: Fragile test, #topics could change in book."
 
 	<gtExample>
+	<return: #TMNodeGroup>
 	| nodeGroup |
 	nodeGroup := self fieldNodeGtBasics children.
 	self assert: nodeGroup size equals: 10.
@@ -236,6 +248,7 @@ TopicMapExamples >> nodeGroupChildrenOfFieldNodeGtBasics [
 { #category : #example }
 TopicMapExamples >> nodeGroupWithAllNodeTypes [
 	<gtExample>
+	<return: #TMNodeGroup>
 	| nodeGroup |
 	nodeGroup := self topicMap newNodeGroup.
 	nodeGroup
@@ -260,6 +273,7 @@ TopicMapExamples >> nodeGroupWithFieldsAndTopics [
 	"NB: Fragile test, #topics could change in book."
 
 	<gtExample>
+	<return: #TMNodeGroup>
 	| nodeGroup |
 	nodeGroup := self fieldNodeGtBasics children
 			addNodeGroup: self databaseNode children;
@@ -271,13 +285,14 @@ TopicMapExamples >> nodeGroupWithFieldsAndTopics [
 	self assert: nodeGroup isTMPageGroup not.
 	self assert: nodeGroup children isTMNodeGroup.
 	self assert: nodeGroup children isTMPageGroup not.
-	
+
 	^ nodeGroup
 ]
 
 { #category : #example }
 TopicMapExamples >> page2Kind [
 	<gtExample>
+	<return: #Dictionary>
 	| page2Kind |
 	page2Kind := self topicMap page2Kind.
 	self assert: page2Kind size equals: self page2Topics size.
@@ -287,6 +302,7 @@ TopicMapExamples >> page2Kind [
 { #category : #example }
 TopicMapExamples >> page2Topics [
 	<gtExample>
+	<return: #Dictionary>
 	| page2Topics topicMap |
 	topicMap := self topicMap.
 	page2Topics := topicMap page2Topics.
@@ -299,6 +315,7 @@ TopicMapExamples >> page2Topics [
 { #category : #example }
 TopicMapExamples >> pageGroupChildrenOfKindsWithinAboutGt [
 	<gtExample>
+	<return: #TMPageGroup>
 	| pageGroup |
 	pageGroup := self kindNodeIntroductionWithinAboutGtTopic children.
 	self assert: pageGroup size equals: 6.
@@ -315,6 +332,7 @@ TopicMapExamples >> pageGroupFromTopicMap [
 	"Not a useful page group as it is too cluttered."
 
 	<gtExample>
+	<return: #TMPageGroup>
 	| pageGroup |
 	pageGroup := self topicMap pageGroup.
 	self assert: pageGroup isTMPageGroup.
@@ -326,6 +344,7 @@ TopicMapExamples >> pageNodeWhatIsGt [
 	"NB: No breadcrumb."
 
 	<gtExample>
+	<return: #TMPageNode>
 	| pageNodeWhatIsGt |
 	pageNodeWhatIsGt := self topicMap
 			pageNodeWithTitle: 'What is Glamorous Toolkit?'.
@@ -350,6 +369,7 @@ TopicMapExamples >> pageNodeWhatIsGtViaTopicAboutGt [
 	"Same as pageNodeWhatIsGt but with breadcrumb."
 
 	<gtExample>
+	<return: #TMPageNode>
 	| pageNodeWhatIsGt |
 	pageNodeWhatIsGt := (self topicMap
 			pageNodeWithTitle: 'What is Glamorous Toolkit?')
@@ -372,6 +392,7 @@ TopicMapExamples >> pages [
 	"NB: missing pages are filtered out."
 
 	<gtExample>
+	<return: #SortedCollection>
 	| pages |
 	pages := self topicMap pages.
 	self assert: pages size equals: self page2Topics size.
@@ -384,6 +405,7 @@ TopicMapExamples >> smaccQuery [
 	"NB: fragile query. Results depend on the GT Book content."
 
 	<gtExample>
+	<return: #TMPageGroup>
 	| query databaseNode smaccQuery |
 	query := 'SmaCC'.
 	databaseNode := self topicMap databaseNode.
@@ -428,6 +450,7 @@ TopicMapExamples >> tempTopicMapTestFile [
 { #category : #example }
 TopicMapExamples >> topic2Pages [
 	<gtExample>
+	<return: #Dictionary>
 	| topicMap topic2Pages |
 	topicMap := self topicMap.
 	topic2Pages := self topicMap topic2Pages.
@@ -441,6 +464,7 @@ TopicMapExamples >> topic2Pages [
 { #category : #example }
 TopicMapExamples >> topicMap [
 	<gtExample>
+	<return: #TopicMap>
 	| topicMap |
 	topicMap := TopicMap forJson: self topicMapTestFile.
 	self assert: topicMap database equals: LeDatabase gtBook.
@@ -483,7 +507,9 @@ TopicMapExamples >> topicMapTestFile [
 	In fact, some tests depend on mismatches existing between the pages in the book and version of the topic map."
 
 	<gtExample>
-	^ FileLocator gtResource / 'feenkcom/gtoolkit-roadmaps/data/topicMapTestExample.json'
+	<return: #FileLocator>
+	^ FileLocator gtResource
+		/ 'feenkcom/gtoolkit-roadmaps/data/topicMapTestExample.json'
 ]
 
 { #category : #example }
@@ -491,6 +517,7 @@ TopicMapExamples >> topicNodeAboutGt [
 	"NB: Fragile test, #kinds could change in book."
 
 	<gtExample>
+	<return: #TMTopicNode>
 	| topicNodeaAboutGt |
 	topicNodeaAboutGt := self fieldNodeGtBasics
 			topicNodeNamed: 'About Glamorous Toolkit'.

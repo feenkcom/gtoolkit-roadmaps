@@ -11,6 +11,7 @@ Class {
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> aboutGtTopicNode [
 	<gtExample>
+	<return: #TMTopicNode>
 	| topicNode |
 	topicNode := self gtBasicsFieldNode topicNodes first.
 	self assert: topicNode topic equals: 'About Glamorous Toolkit'.
@@ -23,6 +24,7 @@ TMGtBookRoadmapExamples >> explainableSystemsTopicNode [
 	NB: assertion is fragile -- might change."
 
 	<gtExample>
+	<return: #TMTopicNode>
 	| topicNode |
 	topicNode := self gtBookTopicMap topicNodeNamed: 'Explainable Systems'.
 	self assert: topicNode kindNodes size >= 9.
@@ -32,6 +34,7 @@ TMGtBookRoadmapExamples >> explainableSystemsTopicNode [
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> gtBasicsFieldNode [
 	<gtExample>
+	<return: #TMFieldNode>
 	| fieldNode |
 	fieldNode := self gtBookDatabaseNode fieldNodes first.
 	self assert: fieldNode field equals: 'Glamorous Toolkit Basics'.
@@ -41,17 +44,21 @@ TMGtBookRoadmapExamples >> gtBasicsFieldNode [
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> gtBookDatabaseNode [
 	<gtExample>
+	<return: #TMDatabaseNode>
 	| databaseNode |
 	databaseNode := self gtBookTopicMap databaseNode.
-	self assert: databaseNode database databaseName equals: 'Glamorous Toolkit Book'.
+	self
+		assert: databaseNode database databaseName
+		equals: 'Glamorous Toolkit Book'.
 	^ databaseNode
 ]
 
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> gtBookTopicMap [
 	<gtExample>
+	<return: #TopicMap>
 	| topicMap |
-	topicMap := TopicMap  default.
+	topicMap := TopicMap default.
 	self assert: topicMap database databaseName equals: 'Glamorous Toolkit Book'.
 	^ topicMap
 ]
@@ -59,6 +66,7 @@ TMGtBookRoadmapExamples >> gtBookTopicMap [
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> jsonFile [
 	<gtExample>
+	<return: #FileLocator>
 	| jsonFile |
 	jsonFile := self gtBookTopicMap jsonFile.
 	^ jsonFile
@@ -67,6 +75,7 @@ TMGtBookRoadmapExamples >> jsonFile [
 { #category : #accessing }
 TMGtBookRoadmapExamples >> kind2Pages [
 	<gtExample>
+	<return: #Dictionary>
 	| kind2Pages |
 	kind2Pages := self gtBookTopicMap kind2Pages.
 	self assert: kind2Pages keys asSet equals: self gtBookTopicMap kinds asSet.
@@ -78,6 +87,7 @@ TMGtBookRoadmapExamples >> rustQuery [
 	"NB: fragile query. Results depend on the GT Book content."
 
 	<gtExample>
+	<return: #TMPageGroup>
 	| query databaseNode rustQuery |
 	query := 'Rust'.
 	databaseNode := self gtBookDatabaseNode.
@@ -94,6 +104,7 @@ TMGtBookRoadmapExamples >> smaccQuery [
 	"NB: fragile query. Results depend on the GT Book content."
 
 	<gtExample>
+	<return: #TMPageGroup>
 	| query databaseNode smaccQuery |
 	query := 'SmaCC'.
 	databaseNode := self gtBookDatabaseNode.
@@ -110,6 +121,7 @@ TMGtBookRoadmapExamples >> whatIsGtPageNode [
 	"We search globally for the pageNode, without traversing a specific topic."
 
 	<gtExample>
+	<return: #TMPageNode>
 	| pageNode |
 	pageNode := self gtBookTopicMap pageNodeWithTitle: 'What is Glamorous Toolkit?'.
 	self assert: pageNode title equals: 'What is Glamorous Toolkit?'.
@@ -119,6 +131,7 @@ TMGtBookRoadmapExamples >> whatIsGtPageNode [
 { #category : #'as yet unclassified' }
 TMGtBookRoadmapExamples >> whatIsGtPageNodeWithinAboutGtTopic [
 	<gtExample>
+	<return: #TMPageNode>
 	| pageNode parentTopicNode |
 	parentTopicNode := self aboutGtTopicNode.
 	pageNode := parentTopicNode roadmapNodes
