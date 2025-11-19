@@ -2441,7 +2441,7 @@
 		},
 		{
 			"page" : "How to get started with Moldable Development",
-			"kind" : "FAQ",
+			"kind" : "Introduction",
 			"topics" : [
 				"Moldable Development Practices",
 				"Explainable Systems",
@@ -4583,7 +4583,7 @@
 		},
 		{
 			"page" : "Explaining the squarified treemap algorithm",
-			"kind" : "Documentation",
+			"kind" : "Case study",
 			"topics" : [
 				"Algorithm Explanations",
 				"Explainable Systems",
@@ -4903,6 +4903,20 @@
 			"kind" : "FAQ",
 			"topics" : [
 				"Using Bloc"
+			]
+		},
+		{
+			"page" : "How to set the editor tab size",
+			"kind" : "FAQ",
+			"topics" : [
+				"Using Bloc"
+			]
+		},
+		{
+			"page" : "Topic Map",
+			"kind" : "Documentation",
+			"topics" : [
+				"Book Organization and Navigation"
 			]
 		}
 	],

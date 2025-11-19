@@ -27,7 +27,7 @@ TMGtBookRoadmapExamples >> explainableSystemsTopicNode [
 	<return: #TMTopicNode>
 	| topicNode |
 	topicNode := self gtBookTopicMap topicNodeNamed: 'Explainable Systems'.
-	self assert: topicNode kindNodes size >= 9.
+	self assert: topicNode kindNodes size >= 7.
 	^ topicNode
 ]
 
