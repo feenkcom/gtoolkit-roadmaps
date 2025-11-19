@@ -2441,7 +2441,7 @@
 		},
 		{
 			"page" : "How to get started with Moldable Development",
-			"kind" : "FAQ",
+			"kind" : "Introduction",
 			"topics" : [
 				"Moldable Development Practices",
 				"Explainable Systems",
