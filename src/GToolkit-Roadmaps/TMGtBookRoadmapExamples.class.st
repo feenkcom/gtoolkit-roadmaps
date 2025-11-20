@@ -1,6 +1,7 @@
 "
 Examples to be used in documentation.
-NB: These examples depend on the current state of the GT Book topic map, in contrast to `TopicMapExamples`, which use a frozen topic map test file.
+
+NB: These examples depend on the current state of the GT Book topic map, in contrast to `TopicMapExamples`, which use a frozen topic map test file, so they are all declared `<noTest>` to avoid issues with the build.
 "
 Class {
 	#name : #TMGtBookRoadmapExamples,
@@ -8,9 +9,10 @@ Class {
 	#category : #'GToolkit-Roadmaps-Examples'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> aboutGtTopicNode [
 	<gtExample>
+	<noTest>
 	<return: #TMTopicNode>
 	| topicNode |
 	topicNode := self gtBasicsFieldNode topicNodes first.
@@ -18,12 +20,13 @@ TMGtBookRoadmapExamples >> aboutGtTopicNode [
 	^ topicNode
 ]
 
-{ #category : #accessing }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> explainableSystemsTopicNode [
 	"A small example with many dkinds of pages.
 	NB: assertion is fragile -- might change."
 
 	<gtExample>
+	<noTest>
 	<return: #TMTopicNode>
 	| topicNode |
 	topicNode := self gtBookTopicMap topicNodeNamed: 'Explainable Systems'.
@@ -31,9 +34,10 @@ TMGtBookRoadmapExamples >> explainableSystemsTopicNode [
 	^ topicNode
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> gtBasicsFieldNode [
 	<gtExample>
+	<noTest>
 	<return: #TMFieldNode>
 	| fieldNode |
 	fieldNode := self gtBookDatabaseNode fieldNodes first.
@@ -41,9 +45,10 @@ TMGtBookRoadmapExamples >> gtBasicsFieldNode [
 	^ fieldNode
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> gtBookDatabaseNode [
 	<gtExample>
+	<noTest>
 	<return: #TMDatabaseNode>
 	| databaseNode |
 	databaseNode := self gtBookTopicMap databaseNode.
@@ -53,9 +58,10 @@ TMGtBookRoadmapExamples >> gtBookDatabaseNode [
 	^ databaseNode
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> gtBookTopicMap [
 	<gtExample>
+	<noTest>
 	<return: #TopicMap>
 	| topicMap |
 	topicMap := TopicMap default.
@@ -63,18 +69,20 @@ TMGtBookRoadmapExamples >> gtBookTopicMap [
 	^ topicMap
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> jsonFile [
 	<gtExample>
+	<noTest>
 	<return: #FileLocator>
 	| jsonFile |
 	jsonFile := self gtBookTopicMap jsonFile.
 	^ jsonFile
 ]
 
-{ #category : #accessing }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> kind2Pages [
 	<gtExample>
+	<noTest>
 	<return: #Dictionary>
 	| kind2Pages |
 	kind2Pages := self gtBookTopicMap kind2Pages.
@@ -82,11 +90,12 @@ TMGtBookRoadmapExamples >> kind2Pages [
 	^ kind2Pages
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> rustQuery [
 	"NB: fragile query. Results depend on the GT Book content."
 
 	<gtExample>
+	<noTest>
 	<return: #TMPageGroup>
 	| query databaseNode rustQuery |
 	query := 'Rust'.
@@ -99,11 +108,12 @@ TMGtBookRoadmapExamples >> rustQuery [
 	^ rustQuery
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> smaccQuery [
 	"NB: fragile query. Results depend on the GT Book content."
 
 	<gtExample>
+	<noTest>
 	<return: #TMPageGroup>
 	| query databaseNode smaccQuery |
 	query := 'SmaCC'.
@@ -116,11 +126,12 @@ TMGtBookRoadmapExamples >> smaccQuery [
 	^ smaccQuery
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> whatIsGtPageNode [
 	"We search globally for the pageNode, without traversing a specific topic."
 
 	<gtExample>
+	<noTest>
 	<return: #TMPageNode>
 	| pageNode |
 	pageNode := self gtBookTopicMap pageNodeWithTitle: 'What is Glamorous Toolkit?'.
@@ -128,9 +139,10 @@ TMGtBookRoadmapExamples >> whatIsGtPageNode [
 	^ pageNode
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 TMGtBookRoadmapExamples >> whatIsGtPageNodeWithinAboutGtTopic [
 	<gtExample>
+	<noTest>
 	<return: #TMPageNode>
 	| pageNode parentTopicNode |
 	parentTopicNode := self aboutGtTopicNode.
