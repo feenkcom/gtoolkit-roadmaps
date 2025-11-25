@@ -1,20 +1,30 @@
 Extension { #name : #LeDatabase }
 
 { #category : #'*GToolkit-Roadmaps' }
-LeDatabase >> gtTopicMapMenuFor: anAction [
+LeDatabase >> gtInspectTopicMapActionFor: anAction [
 	<gtAction>
-	^ anAction dropdown
+	self hasTopicMap ifFalse: [ ^ anAction empty ].
+	^ anAction button
+		tooltip: 'Inspect Topic Map';
+		priority: 10;
 		icon: BrGlamorousVectorIcons roadmap;
-		priority: 20;
-		tooltip: 'Topic Map Menu';
-		content: [ :aButton | 
-			BrGlamorousSimpleContextMenuContent new
-				items: {'Inspect topic map' -> [ aButton phlow spawnObject: self topicMap ].
-						'Enable topic map actions'
-							-> [ TMRegistry uniqueInstance enableExtensions ].
-						'Disable topic map actions'
-							-> [ TMRegistry uniqueInstance disableExtensions ]};
-				yourself ]
+		action: [ :aButton :aModel :anEvent | aButton phlow spawnObject: self topicMap ];
+		primaryModifierAction: [ :aButton :aModel :anEvent | aButton phlow showObject: self topicMap ]
+]
+
+{ #category : #'*GToolkit-Roadmaps' }
+LeDatabase >> gtInspectTopicMapNavigationActionFor: anAction [
+	"Appears as a LeDatabase navigation gtAction menu item."
+
+	<gtAction>
+	self hasTopicMap ifFalse: [ ^ anAction empty ].
+	^ anAction button
+		tooltip: 'Inspect Topic Map';
+		priority: 10;
+		target: LeDatabaseActionTarget;
+		icon: BrGlamorousVectorIcons roadmap;
+		menuItemGroup: BrMenuItemGroupConfiguration navigation;
+		action: [ :aButton :aModel :anEvent | aButton phlow spawnObject: self topicMap ]
 ]
 
 { #category : #'*GToolkit-Roadmaps' }
