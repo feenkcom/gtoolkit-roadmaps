@@ -63,7 +63,8 @@ LePage >> gtInspectPageTopicMapActionFor: anAction [
 { #category : #'*GToolkit-Roadmaps' }
 LePage >> gtLePageGitMenuActionFor: anAction [
 	<gtAction>
-	(self database monitor isLocalStore not or: [ self icebergRepo isNil ])
+		self database monitor ifNil: [ ^ anAction noAction ].
+(self database monitor isLocalStore not or: [ self icebergRepo isNil ])
 		ifTrue: [ ^ anAction empty ].
 	^ anAction button
 		tooltip: 'Go to repository';
