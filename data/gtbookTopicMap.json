@@ -4918,6 +4918,27 @@
 			"topics" : [
 				"Book Organization and Navigation"
 			]
+		},
+		{
+			"page" : "How to detect the encoding of a text file",
+			"kind" : "FAQ",
+			"topics" : [
+				"Working with the File System"
+			]
+		},
+		{
+			"page" : "How to explore the content of the finalization registry",
+			"kind" : "FAQ",
+			"topics" : [
+				"Utilities and Extensions"
+			]
+		},
+		{
+			"page" : "How to programatically analyse Epicea changes files",
+			"kind" : "FAQ",
+			"topics" : [
+				"Code Analysis"
+			]
 		}
 	],
 	"database" : "Glamorous Toolkit Book",
