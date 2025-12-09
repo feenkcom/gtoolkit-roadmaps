@@ -527,7 +527,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2025-11-12T13:49:07.823831+01:00"
+															"dateAndTimeString" : "2025-11-12T13:49:20.968446+01:00"
 														}
 													},
 													"uid" : {
@@ -537,7 +537,7 @@
 													"paragraphStyle" : {
 														"__type" : "textStyle"
 													},
-													"string" : "We should add the descriptions of the kinds to the JSON file.\nRight now we have the same information in {{gtMethod:name=TMClassifier>>#kindPromptString}} as well as in "
+													"string" : "We should add the descriptions of the kinds to the JSON file.\nRight now we have the same information in {{gtMethod:name=TMClassifier>>#kindPromptString}} as well as in the page describing Topic Maps and kinds."
 												}
 											]
 										},
