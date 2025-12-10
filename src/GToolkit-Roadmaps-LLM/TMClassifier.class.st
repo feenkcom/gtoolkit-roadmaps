@@ -142,6 +142,15 @@ TMClassifier >> kindClassifier [
 ]
 
 { #category : #examples }
+TMClassifier >> kindDescriptions [
+	<gtExample>
+	<noTest>
+	^ String cr
+		join: ((self topicMap json at: 'kinds')
+				collect: [ :k | '- ' , (k at: 'kind') , ': ' , (k at: 'description') ])
+]
+
+{ #category : #examples }
 TMClassifier >> kindExamples [
 	<gtExample>
 	<noTest>
@@ -180,17 +189,8 @@ We are interested in categorizing the pages according to the kind of information
 
 Here is a description of each of the categories:
 
-- Introduction: a page that introduces a topic, usually with little or no code.
-- Media: a page pointing the reader to a slideshow or an on-line video for a given topic.
-- Case study: a page describing an existing case study that illustrates a topic, with detailed code examples.
-- Examples: a page listing one or more examples of a tool or technique, but not a proper case study.
-- Tutorial: a page containing a step-by-step series of explanations and exercises with code to teach the reader about a topic. Whereas a case study focuses on a specific application, a tutorial focuses on how to acquire a specific skill. A tutorial often takes the form of an exercise to be performed by the reader.
-- Pattern: a pattern describes a recurring design problem and its solution. A pattern must include sections describing the Context, the Problem, Forces, and Solution, and may also have sections Steps and Examples.
-- FAQ: a page containing a "how to" question related to a topic, with a detailed answer to just that question. The title will often start with "How to".
-- Index: a structuring page that serves only to point to or list other pages.
-- Definition: a page whose title is a term and whose contents consists of a concise definition of that term.
-- Tag: a page whose title consist of a single word identifying a topic, and little or no contents, to be used as a tag in other pages on that topic. A tag never has a title of more than two words.
-- Documentation: a page containing a technical description, a set of metrics, release notes, or other details of some component or API.
+' , self kindDescriptions
+		, '
 
 Your task is to assign a category to a page provided as input. A single answer is preferred, but in case of doubt, please propose two, or at most three alternatives.
 
@@ -266,8 +266,8 @@ TMClassifier >> topicMap [
 ]
 
 { #category : #accessing }
-TMClassifier >> topicMap: anObject [
-	topicMap := anObject
+TMClassifier >> topicMap: aTopicMap [
+	topicMap := aTopicMap
 ]
 
 { #category : #examples }

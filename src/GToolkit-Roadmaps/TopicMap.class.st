@@ -445,7 +445,7 @@ TopicMap >> kindsStandardOrder [
 	"Can be used by nodes to sort kinds and pages into a standard order.
 	Access: self topicMap kindsStandardOrder"
 
-	^ self json at: 'kinds'
+	^ (self json at: 'kinds') collect: [ :d | d at: 'kind' ]
 ]
 
 { #category : #querying }
