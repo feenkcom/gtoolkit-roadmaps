@@ -84,7 +84,45 @@
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
-								"items" : [ ]
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-10-22T14:13:21.95603+02:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-12T11:31:11.652238+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "iOXF+h/+DQCuKoZ7Ce8ZiA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Check which editing operations are needed (adding or changing fields, topics and kinds)\nAdd tests for editing nodes\nAdd methods and tools for editing nodes\n\nEditing topic maps\nAdd view to select field of a topic, and to rename a topic or a field.\nKinds — change kind of page; rename a kind; add or delete a kind\nDitto for topics and fields. "
+									}
+								]
 							},
 							"createEmail" : {
 								"__type" : "email",
@@ -94,7 +132,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-09T15:55:30.583022+01:00"
+									"dateAndTimeString" : "2025-11-10T17:11:44.16078+01:00"
 								}
 							},
 							"editEmail" : {
@@ -105,17 +143,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-09T15:55:30.583022+01:00"
+									"dateAndTimeString" : "2025-11-12T11:32:41.108137+01:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "AUMhcrs5QomL1LxNUELGAQ=="
+								"uidString" : "AZMJJUT5DQCI/XtbC93zJg=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : ""
+							"string" : "[[* Edit fields, topics and kinds (mostly done)]]"
 						},
 						{
 							"__type" : "textSnippet",
@@ -191,81 +229,6 @@
 								"__type" : "textStyle"
 							},
 							"string" : "[[* Finish adding Help pages]]"
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [
-									{
-										"__type" : "textSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-10-22T14:13:21.95603+02:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-11-12T11:31:11.652238+01:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "iOXF+h/+DQCuKoZ7Ce8ZiA=="
-										},
-										"paragraphStyle" : {
-											"__type" : "textStyle"
-										},
-										"string" : "Check which editing operations are needed (adding or changing fields, topics and kinds)\nAdd tests for editing nodes\nAdd methods and tools for editing nodes\n\nEditing topic maps\nAdd view to select field of a topic, and to rename a topic or a field.\nKinds — change kind of page; rename a kind; add or delete a kind\nDitto for topics and fields. "
-									}
-								]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-10T17:11:44.16078+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-12T11:32:41.108137+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "AZMJJUT5DQCI/XtbC93zJg=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "[[* Edit fields, topics and kinds (mostly done)]]"
 						},
 						{
 							"__type" : "textSnippet",

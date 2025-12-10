@@ -4765,16 +4765,49 @@
 	],
 	"comment" : "This file is a frozen snapshot of the GT book topic map, for testing purposes. It should normally not be  updated to be consistent with the current version of the book, to avoid breaking test examples.",
 	"kinds" : [
-		"Introduction",
-		"Media",
-		"Tutorial",
-		"Case study",
-		"Documentation",
-		"Pattern",
-		"Examples",
-		"FAQ",
-		"Definition",
-		"Index",
-		"Tag"
+		{
+			"kind" : "Introduction",
+			"description" : "A page that introduces a topic, usually with little or no code."
+		},
+		{
+			"kind" : "Media",
+			"description" : "A page pointing the reader to a slideshow or an on-line video for a given topic."
+		},
+		{
+			"kind" : "Case study",
+			"description" : "A page describing an existing case study that illustrates a topic, with detailed code examples."
+		},
+		{
+			"kind" : "Examples",
+			"description" : "A page listing one or more examples of a tool or technique, but not a proper case study."
+		},
+		{
+			"kind" : "Tutorial",
+			"description" : "A page containing a step-by-step series of explanations and exercises with code to teach the reader about a topic. Whereas a case study focuses on a specific application, a tutorial focuses on how to acquire a specific skill. A tutorial often takes the form of an exercise to be performed by the reader."
+		},
+		{
+			"kind" : "Pattern",
+			"description" : "A pattern describes a recurring design problem and its solution. A pattern must include sections describing the Context, the Problem, Forces, and Solution, and may also have sections Steps and Examples."
+		},
+		{
+			"kind" : "Documentation",
+			"description" : "A page containing a technical description, a set of metrics, release notes, or other details of some component or API."
+		},
+		{
+			"kind" : "FAQ",
+			"description" : "A page containing a \"how to\" question related to a topic, with a detailed answer to just that question. The title will often start with \"How to\"."
+		},
+		{
+			"kind" : "Index",
+			"description" : "A structuring page that serves only to point to or list other pages."
+		},
+		{
+			"kind" : "Definition",
+			"description" : "A page whose title is a term and whose contents consists of a concise definition of that term."
+		},
+		{
+			"kind" : "Tag",
+			"description" : "A page whose title consist of a single word identifying a topic, and little or no contents, to be used as a tag in other pages on that topic. A tag never has a title of more than two words."
+		}
 	]
 }
