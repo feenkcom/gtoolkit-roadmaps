@@ -71,6 +71,25 @@ TMAbstractTreeNode >> children [
 	self subclassResponsibility
 ]
 
+{ #category : #menu }
+TMAbstractTreeNode >> contextAdditionalMenuItemsForElement: anElement [
+	"Hook method for subclasses to provide more specific context menu items to be composed into the parent menu."
+
+	^ BrMenuItems new
+]
+
+{ #category : #menu }
+TMAbstractTreeNode >> contextMenuForElement: anElement [
+	^ BrMenuItems new
+		id: #'topicMap-treeNode-menu';
+		addItemLabel: 'Inspect topicMap'
+			action: [ :elt | self spawnObject: self topicMap fromElement: anElement ];
+		addItemLabel: 'Inspect node'
+			action: [ :elt | self spawnObject: self fromElement: anElement ];
+		addItems: (self contextAdditionalMenuItemsForElement: anElement) items;
+		yourself
+]
+
 { #category : #navigation }
 TMAbstractTreeNode >> database [
 	^ self topicMap database
@@ -372,13 +391,19 @@ TMAbstractTreeNode >> roadmapNodeColor [
 TMAbstractTreeNode >> roadmapNodeElement [
 	"A mindmap-like element containing the node's name."
 
-	^ BlTextElement new
-		text: self nodeLabel asRopedText;
-		border: self roadmapNodeBorder;
-		background: self roadmapNodeColor;
-		padding: (BlInsets all: 5);
-		geometry: (BlRoundedRectangleGeometry cornerRadius: 8);
+	| elt |
+	elt := BlTextElement new
+			text: self nodeLabel asRopedText;
+			border: self roadmapNodeBorder;
+			background: self roadmapNodeColor;
+			padding: (BlInsets all: 5);
+			geometry: (BlRoundedRectangleGeometry cornerRadius: 8).
+	elt
 		aptitude: (BrGlamorousWithExplicitTooltipAptitude content: self roadmapTooltip)
+				+ (BrGlamorousWithExplicitContextMenuAptitude
+						menu: [ self contextMenuForElement: elt ]).
+
+	^ elt
 ]
 
 { #category : #roadmap }
@@ -434,6 +459,12 @@ TMAbstractTreeNode >> roadmapTooltip [
 		padding: (BlInsets all: 2);
 		text: self nodeLabel;
 		yourself ] asStencil
+]
+
+{ #category : #menu }
+TMAbstractTreeNode >> spawnObject: anObject fromElement: anElement [
+
+anElement fireEvent: (GtPhlowObjectToSpawn new object: anObject)
 ]
 
 { #category : #printing }

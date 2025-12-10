@@ -82,7 +82,7 @@ TopicMapExamples >> kind2Pages [
 	| category2Page topicMap |
 	topicMap := self topicMap.
 	category2Page := topicMap kind2Pages.
-	self assert: category2Page size equals: topicMap kinds size.
+	self assert: category2Page size <= topicMap kinds size.
 	^ category2Page
 ]
 
@@ -167,7 +167,7 @@ TopicMapExamples >> kinds [
 	<return: #Array>
 	| categories |
 	categories := self topicMap kinds.
-	self assert: categories size equals: 11.
+	self assert: categories size equals: 13.
 	^ categories
 ]
 

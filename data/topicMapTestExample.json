@@ -4786,6 +4786,10 @@
 			"description" : "A page containing a step-by-step series of explanations and exercises with code to teach the reader about a topic. Whereas a case study focuses on a specific application, a tutorial focuses on how to acquire a specific skill. A tutorial often takes the form of an exercise to be performed by the reader."
 		},
 		{
+			"kind" : "Exercise",
+			"description" : "A page describing a Glamorous Toolkit exercise to be performed. It is similar to a tutorial  in that it should reinforce specific learning material, but whereas a tutorial contains step-by-step instructions to follow, an exercise is more open-ended, giving only broad outlines of the tasks to be performed."
+		},
+		{
 			"kind" : "Pattern",
 			"description" : "A pattern describes a recurring design problem and its solution. A pattern must include sections describing the Context, the Problem, Forces, and Solution, and may also have sections Steps and Examples."
 		},
@@ -4796,6 +4800,10 @@
 		{
 			"kind" : "FAQ",
 			"description" : "A page containing a \"how to\" question related to a topic, with a detailed answer to just that question. The title will often start with \"How to\"."
+		},
+		{
+			"kind" : "Quiz",
+			"description" : "A page containing a bunch of questions to allow the reader to self-assess their grasp of certain learning material. A quiz may contain pointers to possible correct answers."
 		},
 		{
 			"kind" : "Index",

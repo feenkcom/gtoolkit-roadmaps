@@ -295,7 +295,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-10-22T14:10:11.530995+02:00"
+									"dateAndTimeString" : "2025-11-12T11:32:41.098403+01:00"
 								}
 							},
 							"uid" : {
@@ -305,7 +305,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[*** Edit fields, topics and kinds (partly done)]]"
+							"string" : "[[* Edit fields, topics and kinds (mostly done)]]"
 						},
 						{
 							"__type" : "textSnippet",
