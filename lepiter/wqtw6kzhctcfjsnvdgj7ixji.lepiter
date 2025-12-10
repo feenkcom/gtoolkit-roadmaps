@@ -176,14 +176,14 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T09:57:35.832233+01:00"
+									"dateAndTimeString" : "2025-12-10T15:25:33.944528+01:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
 								"uidString" : "7xIruPJSRj+L7TSsR1dutQ=="
 							},
-							"code" : "map kinds copyWith: 'Exercise'"
+							"code" : "kinds := map json at: 'kinds'.\rexercise := {'kind' -> 'Exercise'.\r\t\t'description'\r\t\t\t-> 'A page describing a Glamorous Toolkit exercise to be performed. It is similar to a tutorial  in that it should reinforce specific learning material, but whereas a tutorial contains step-by-step instructions to follow, an exercise is more open-ended, giving only broad outlines of the tasks to be performed.'}\r\t\tasDictionary.\rquiz := {'kind' -> 'Quiz'.\r\t\t'description'\r\t\t\t-> 'A page containing a bunch of questions to allow the reader to self-assess their grasp of certain learning material. A quiz may contain pointers to possible correct answers.'}\r\t\tasDictionary.\r\rkinds := kinds\r\t\tcopyReplaceFrom: 6\r\t\tto: 5\r\t\twith: {exercise}.\rkinds := kinds\r\t\tcopyReplaceFrom: 10\r\t\tto:9\r\t\twith: {quiz}.\rkinds"
 						},
 						{
 							"__type" : "pharoSnippet",
@@ -199,7 +199,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-09T15:58:13.863659+01:00"
+									"dateAndTimeString" : "2025-12-10T15:16:32.510404+01:00"
 								}
 							},
 							"editEmail" : {
@@ -210,14 +210,48 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T09:56:19.541507+01:00"
+									"dateAndTimeString" : "2025-12-10T15:26:09.235659+01:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "NsySsL04Q7u4swNKxsx95Q=="
+								"uidString" : "22LYpnxYQKOPufeXitNJRw=="
 							},
-							"code" : "#(\n'Introduction'\n'Media'\n'Case study'\n'Tutorial'\n'Exercise'\n'Quiz'\n\r'Documentation'\n'Pattern'\n'Examples'\n'FAQ'\n'Definition'\n'Index'\n'Tag'\n)"
+							"code" : "map json at: 'kinds' put: kinds"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T15:27:10.20539+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T15:27:47.758168+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "HJUJ2EwrRsqsAlsZoHsRAw=="
+							},
+							"code" : "egmap := TopicMapExamples new topicMap.\regmap json at: 'kinds' put: kinds.\regmap"
 						}
 					]
 				},
@@ -240,7 +274,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-09T16:00:33.888921+01:00"
+						"dateAndTimeString" : "2025-12-10T15:28:12.585773+01:00"
 					}
 				},
 				"uid" : {
@@ -250,7 +284,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# *** Edit Kinds— DOING"
+				"string" : "# *** Edit Kinds (done)"
 			},
 			{
 				"__type" : "textSnippet",
