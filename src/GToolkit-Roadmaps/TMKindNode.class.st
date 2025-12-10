@@ -39,6 +39,23 @@ TMKindNode >> children [
 		pageGroupFor: (self pages collect: [ :aPage | TMPageNode for: aPage in: self topicMap ])"
 ]
 
+{ #category : #menu }
+TMKindNode >> contextAdditionalMenuItemsForElement: anElement [
+	| menuItems |
+	menuItems := super contextAdditionalMenuItemsForElement: anElement.
+	menuItems
+		addItemLabel: 'Inspect global kind'
+		action: [ :elt | self spawnObject: self copyWithFullContext fromElement: anElement ].
+	^ menuItems
+]
+
+{ #category : #factory }
+TMKindNode >> copyWithFullContext [
+	"Don't restrict to a particular breadcrumb or page group."
+
+	^ self class for: self kind in: self topicMap
+]
+
 { #category : #breadcrumbs }
 TMKindNode >> defaultBreadcrumb [
 	^ TMBreadcrumb for: {}
@@ -85,7 +102,7 @@ TMKindNode >> pageContext [
 	in case we don't want to have all the pages of the topic map.
 	For example, within a given topic, we are only interested in the pages of that topic."
 
-	^ pageContext
+	^ pageContext ifNil: [ pageContext := topicMap pageGroup ]
 ]
 
 { #category : #accessing }
