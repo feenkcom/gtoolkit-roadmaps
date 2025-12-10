@@ -84,217 +84,6 @@
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-09T15:57:11.315539+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T09:57:19.818931+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "0k97AnBAR7qGU5SJVN5m+Q=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "Add or rename a Kind.\nExample: we want a new “Exercise” and “Quiz” kinds.\nWe could just add it to the end of the list of kinds, but we map also want to adjust the order.\nWe also need to adjust the *prompt* to classify pages into kinds.\nThis suggests that part of the prompt (short descriptions) should perhaps be stored in the JSON."
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T09:57:31.450282+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T09:58:13.599704+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "1tJ7aUAcTWe5jdZyQen77Q=="
-							},
-							"code" : "map := TopicMap default."
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T09:48:34.817997+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T15:25:33.944528+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "7xIruPJSRj+L7TSsR1dutQ=="
-							},
-							"code" : "kinds := map json at: 'kinds'.\rexercise := {'kind' -> 'Exercise'.\r\t\t'description'\r\t\t\t-> 'A page describing a Glamorous Toolkit exercise to be performed. It is similar to a tutorial  in that it should reinforce specific learning material, but whereas a tutorial contains step-by-step instructions to follow, an exercise is more open-ended, giving only broad outlines of the tasks to be performed.'}\r\t\tasDictionary.\rquiz := {'kind' -> 'Quiz'.\r\t\t'description'\r\t\t\t-> 'A page containing a bunch of questions to allow the reader to self-assess their grasp of certain learning material. A quiz may contain pointers to possible correct answers.'}\r\t\tasDictionary.\r\rkinds := kinds\r\t\tcopyReplaceFrom: 6\r\t\tto: 5\r\t\twith: {exercise}.\rkinds := kinds\r\t\tcopyReplaceFrom: 10\r\t\tto:9\r\t\twith: {quiz}.\rkinds"
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T15:16:32.510404+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T15:26:09.235659+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "22LYpnxYQKOPufeXitNJRw=="
-							},
-							"code" : "map json at: 'kinds' put: kinds"
-						},
-						{
-							"__type" : "pharoSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T15:27:10.20539+01:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-12-10T15:27:47.758168+01:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "HJUJ2EwrRsqsAlsZoHsRAw=="
-							},
-							"code" : "egmap := TopicMapExamples new topicMap.\regmap json at: 'kinds' put: kinds.\regmap"
-						}
-					]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-09T15:57:06.848332+01:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-10T15:28:12.585773+01:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "mULKO3iVSmCWH6xmP1hbmw=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "# *** Edit Kinds (done)"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
 								"items" : [
 									{
 										"__type" : "textSnippet",
@@ -673,6 +462,217 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-09T15:57:11.315539+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T09:57:19.818931+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "0k97AnBAR7qGU5SJVN5m+Q=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Add or rename a Kind.\nExample: we want a new “Exercise” and “Quiz” kinds.\nWe could just add it to the end of the list of kinds, but we map also want to adjust the order.\nWe also need to adjust the *prompt* to classify pages into kinds.\nThis suggests that part of the prompt (short descriptions) should perhaps be stored in the JSON."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T09:57:31.450282+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T09:58:13.599704+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "1tJ7aUAcTWe5jdZyQen77Q=="
+							},
+							"code" : "map := TopicMap default."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T09:48:34.817997+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T15:25:33.944528+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "7xIruPJSRj+L7TSsR1dutQ=="
+							},
+							"code" : "kinds := map json at: 'kinds'.\rexercise := {'kind' -> 'Exercise'.\r\t\t'description'\r\t\t\t-> 'A page describing a Glamorous Toolkit exercise to be performed. It is similar to a tutorial  in that it should reinforce specific learning material, but whereas a tutorial contains step-by-step instructions to follow, an exercise is more open-ended, giving only broad outlines of the tasks to be performed.'}\r\t\tasDictionary.\rquiz := {'kind' -> 'Quiz'.\r\t\t'description'\r\t\t\t-> 'A page containing a bunch of questions to allow the reader to self-assess their grasp of certain learning material. A quiz may contain pointers to possible correct answers.'}\r\t\tasDictionary.\r\rkinds := kinds\r\t\tcopyReplaceFrom: 6\r\t\tto: 5\r\t\twith: {exercise}.\rkinds := kinds\r\t\tcopyReplaceFrom: 10\r\t\tto:9\r\t\twith: {quiz}.\rkinds"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T15:16:32.510404+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T15:26:09.235659+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "22LYpnxYQKOPufeXitNJRw=="
+							},
+							"code" : "map json at: 'kinds' put: kinds"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T15:27:10.20539+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-12-10T15:27:47.758168+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "HJUJ2EwrRsqsAlsZoHsRAw=="
+							},
+							"code" : "egmap := TopicMapExamples new topicMap.\regmap json at: 'kinds' put: kinds.\regmap"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-09T15:57:06.848332+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-10T15:36:11.385563+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "mULKO3iVSmCWH6xmP1hbmw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Edit Kinds (done)"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
 									"dateAndTimeString" : "2025-12-10T10:59:12.732551+01:00"
 								}
 							},
@@ -893,7 +893,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-10T11:26:13.503805+01:00"
+						"dateAndTimeString" : "2025-12-10T15:36:36.14745+01:00"
 					}
 				},
 				"uid" : {
@@ -903,7 +903,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Adding descriptions to kinds (done)"
+				"string" : "# Adding descriptions to kinds (done) "
 			},
 			{
 				"__type" : "textSnippet",
