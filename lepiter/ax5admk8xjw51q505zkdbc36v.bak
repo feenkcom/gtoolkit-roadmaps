@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-15T12:22:31.754329+01:00"
+						"dateAndTimeString" : "2025-08-05T09:52:21.850328+02:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "We discover that the image freezes every time we request a chat result for the page {{gtPage:How to guard against infinite loops?|db=2j9m7db2i4oz116bexd7wbdxo}}. Is the the exporter that causes the problem?"
+				"string" : "We discover that the image freezes every time we request a chat result for the page {{gtPage:How to guard against inifinte loops?|db=2j9m7db2i4oz116bexd7wbdxo}}. Is the the exporter that causes the problem?"
 			},
 			{
 				"__type" : "pharoSnippet",

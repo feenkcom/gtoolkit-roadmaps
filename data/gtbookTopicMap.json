@@ -4095,7 +4095,7 @@
 			]
 		},
 		{
-			"page" : "How to guard against inifinte loops?",
+			"page" : "How to guard against infinite loops?",
 			"kind" : "FAQ",
 			"topics" : [
 				"Moldable Exceptions"
