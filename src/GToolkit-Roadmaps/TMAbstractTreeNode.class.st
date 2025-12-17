@@ -463,8 +463,7 @@ TMAbstractTreeNode >> roadmapTooltip [
 
 { #category : #menu }
 TMAbstractTreeNode >> spawnObject: anObject fromElement: anElement [
-
-anElement fireEvent: (GtPhlowObjectToSpawn new object: anObject)
+	anElement fireEvent: (GtPhlowObjectToSpawn new object: anObject)
 ]
 
 { #category : #printing }

@@ -350,11 +350,12 @@ TopicMap >> gtUnmappedPagesFor: aView [
 { #category : #actions }
 TopicMap >> gtWriteJsonActionFor: anAction [
 	<gtAction>
+	self isRoadmapsRepoLoaded ifFalse: [ ^ anAction empty ].
 	^ anAction button
 		tooltip: 'Write JSON';
 		priority: 50;
 		icon: BrGlamorousVectorIcons savetodisk;
-		action: [  "aButton phlow fireToolUpdateWish.":aButton | aButton phlow spawnObject: self writeJsonFile ]
+		action: [ :aButton "aButton phlow fireToolUpdateWish." | aButton phlow spawnObject: self writeJsonFile ]
 ]
 
 { #category : #comparing }

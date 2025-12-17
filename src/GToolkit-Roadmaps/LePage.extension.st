@@ -2,7 +2,7 @@ Extension { #name : #LePage }
 
 { #category : #'*GToolkit-Roadmaps' }
 LePage >> asPageNode [
-	^ TMPageNode for: self
+	^ (TMPageNode for: self) viaFirstTopic
 ]
 
 { #category : #'*GToolkit-Roadmaps' }

@@ -63,6 +63,18 @@ TMPageNode >> children [
 	^ self emptyNodes
 ]
 
+{ #category : #menu }
+TMPageNode >> contextAdditionalMenuItemsForElement: anElement [
+	"TO FIX -- instead of spawning the page, it spawns a composite tool wrapping the page."
+
+	| menuItems |
+	menuItems := super contextAdditionalMenuItemsForElement: anElement.
+	menuItems
+		addItemLabel: 'Spawn page'
+		action: [ :elt | self spawnObject: self page gtDefaultInspectorTool fromElement: anElement ].
+	^ menuItems
+]
+
 { #category : #breadcrumbs }
 TMPageNode >> defaultBreadcrumb [
 	^ TMBreadcrumb for: {}
@@ -291,7 +303,10 @@ TMPageNode >> roadmapNodeElement [
 
 	| elt |
 	elt := super roadmapNodeElement.
-	elt aptitude: (self page hoverPage: self page forNodeElement: elt).
+	elt
+		aptitude: (self page hoverPage: self page forNodeElement: elt)
+				+ (BrGlamorousWithExplicitContextMenuAptitude
+						menu: [ self contextMenuForElement: elt ]).
 	elt geometry: (BlRoundedRectangleGeometry cornerRadius: 0).
 	^ elt
 ]
@@ -383,6 +398,12 @@ TMPageNode >> topicsToggling: aTopicString [
 { #category : #updating }
 TMPageNode >> updateKindTo: aKindString [
 	self topicMap updateKindForPage: self to: aKindString
+]
+
+{ #category : #initialization }
+TMPageNode >> viaFirstTopic [
+	^ self
+		withContext: (self topicMap topicNodeNamed: self topics first) breadcrumb
 ]
 
 { #category : #initialization }

@@ -4939,6 +4939,17 @@
 			"topics" : [
 				"Code Analysis"
 			]
+		},
+		{
+			"page" : "1. Learn the basics of Glamorous Toolkit",
+			"kind" : "Introduction",
+			"topics" : [
+				"Getting Started with GT",
+				"Moldable Development Practices",
+				"Using Lepiter",
+				"Live Documentation",
+				"Book Organization and Navigation"
+			]
 		}
 	],
 	"database" : "Glamorous Toolkit Book",
