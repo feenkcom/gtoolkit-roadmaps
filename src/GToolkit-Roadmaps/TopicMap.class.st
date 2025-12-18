@@ -219,6 +219,7 @@ TopicMap >> gtMissingPagesFor: aView [
 	Renamed pages will appear in the Unmapped pages view under their new name."
 
 	<gtView>
+	self isRoadmapsRepoLoaded ifFalse: [ ^ aView empty ].
 	^ aView columnedList
 		title: 'Missing pages';
 		priority: 40;
@@ -331,6 +332,7 @@ TopicMap >> gtUnmappedPagesFor: aView [
 	"
 
 	<gtView>
+	self isRoadmapsRepoLoaded ifFalse: [ ^ aView empty ].
 	^ aView forward
 		title: 'New pages';
 		priority: 45;
@@ -348,11 +350,12 @@ TopicMap >> gtUnmappedPagesFor: aView [
 { #category : #actions }
 TopicMap >> gtWriteJsonActionFor: anAction [
 	<gtAction>
+	self isRoadmapsRepoLoaded ifFalse: [ ^ anAction empty ].
 	^ anAction button
 		tooltip: 'Write JSON';
 		priority: 50;
 		icon: BrGlamorousVectorIcons savetodisk;
-		action: [  "aButton phlow fireToolUpdateWish.":aButton | aButton phlow spawnObject: self writeJsonFile ]
+		action: [ :aButton "aButton phlow fireToolUpdateWish." | aButton phlow spawnObject: self writeJsonFile ]
 ]
 
 { #category : #comparing }
@@ -375,6 +378,12 @@ TopicMap >> hotSaveToDisk [
 TopicMap >> initialize [
 	super initialize.
 	monitor := Monitor new
+]
+
+{ #category : #testing }
+TopicMap >> isRoadmapsRepoLoaded [
+	^ (IceRepository registry select: [ :repo | repo name = 'gtoolkit-roadmaps' ])
+		isNotEmpty
 ]
 
 { #category : #accessing }

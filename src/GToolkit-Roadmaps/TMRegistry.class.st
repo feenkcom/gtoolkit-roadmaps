@@ -14,22 +14,21 @@ TMRegistry uniqueInstance enableActions
 Class {
 	#name : #TMRegistry,
 	#superclass : #Object,
-	#traits : 'TGtEnableExtensions',
-	#classTraits : 'TGtEnableExtensions classTrait',
+	#traits : 'TGtUniqueInstance',
+	#classTraits : 'TGtUniqueInstance classTrait',
 	#instVars : [
 		'registry',
 		'extensionsEnabled'
-	],
-	#classInstVars : [
-		'uniqueInstance'
 	],
 	#category : #'GToolkit-Roadmaps-Model'
 }
 
 { #category : #initialization }
 TMRegistry >> defaultRegistry [
-	^ {'Glamorous Toolkit Book' -> 'feenkcom/gtoolkit-roadmaps/data/gtbookTopicMap.json'}
-		asDictionary
+	"NB: TMRegistry>>#jsonFileFor: will rewrite the path to work for Windows."
+
+	^ {'Glamorous Toolkit Book'
+			-> 'feenkcom/gtoolkit-roadmaps/data/gtbookTopicMap.json'} asDictionary
 ]
 
 { #category : #views }
@@ -54,11 +53,12 @@ TMRegistry >> hasTopicMapFor: aDatabaseName [
 TMRegistry >> initialize [
 	super initialize.
 	registry := self defaultRegistry.
-	self disableExtensions
 ]
 
 { #category : #accessing }
 TMRegistry >> jsonFileFor: aDatabaseName [
+	"NB: Rewrite the path to work for Windows."
+
 	^ ($/ split: (self jsonFilePathFor: aDatabaseName))
 		inject: FileLocator gtResource
 		into: [ :location :dirName | location / dirName ]
