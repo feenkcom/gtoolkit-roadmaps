@@ -70,7 +70,7 @@ LePage >> gtLePageGitMenuActionFor: anAction [
 		tooltip: 'Go to repository';
 		priority: 72;
 		target: LePageActionTarget;
-		menuItemGroup: BrMenuItemGroupConfiguration editing;
+		menuItemGroup: BrMenuItemGroupConfiguration default;
 		icon: BrGlamorousVectorIcons branching;
 		action: [ :aButton | 
 			aButton phlow
