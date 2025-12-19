@@ -5,11 +5,32 @@ Class {
 }
 
 { #category : #examples }
+TMRegistryExamples >> fileWithStoreOnView [
+	"Used in: GT Inspector  views for files"
+
+	<gtExample>
+	| scripter file |
+	file := self gtBookJsonFile.
+	scripter := BlScripter new.
+	scripter element: (GtInspector createOn: file) maximized.
+	scripter inspectorStep
+		label: 'Select the Store on view';
+		clickOnTabWithName: 'Store on';
+		play.
+	(scripter inspectorStep
+		label: 'Open the source view';
+		clickOnTabWithName: 'Store on')
+		modifiers: BlKeyModifiers alt;
+		play.
+	^ scripter elementWithoutParent
+]
+
+{ #category : #examples }
 TMRegistryExamples >> gtBookJsonFile [
 	<gtExample>
 	<return: #FileLocator>
 	| fileReference |
-	fileReference := self tmRegistrySingelton jsonFileFor: LeDatabase gtBookName.
+	fileReference := self tmRegistrySingleton jsonFileFor: LeDatabase gtBookName.
 	self assert: fileReference exists.
 	^ fileReference
 ]
@@ -19,7 +40,7 @@ TMRegistryExamples >> gtBookJsonFilePath [
 	<gtExample>
 	<return: #ByteString>
 	| filePath |
-	filePath := self tmRegistrySingelton jsonFilePathFor: LeDatabase gtBookName.
+	filePath := self tmRegistrySingleton jsonFilePathFor: LeDatabase gtBookName.
 	self assert: (filePath endsWith: '.json').
 	^ filePath
 ]
@@ -31,12 +52,12 @@ TMRegistryExamples >> gtBookTopicMap [
 	<gtExample>
 	<return: #TopicMap>
 	| gtBookTopicMap |
-	gtBookTopicMap := self tmRegistrySingelton topicMapFor: LeDatabase gtBookName.
+	gtBookTopicMap := self tmRegistrySingleton topicMapFor: LeDatabase gtBookName.
 	^ gtBookTopicMap
 ]
 
 { #category : #examples }
-TMRegistryExamples >> tmRegistrySingelton [
+TMRegistryExamples >> tmRegistrySingleton [
 	<gtExample>
 	<return: #TMRegistry>
 	| tmRegistry |
