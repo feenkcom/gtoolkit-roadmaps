@@ -71,6 +71,7 @@ LePage >> gtLePageGitMenuActionFor: anAction [
 		priority: 72;
 		target: LePageActionTarget;
 		menuItemGroup: BrMenuItemGroupConfiguration default;
+		menuItemPreview: [ self icebergRepo ifNotNil: #name ];
 		icon: BrGlamorousVectorIcons branching;
 		action: [ :aButton | 
 			aButton phlow
