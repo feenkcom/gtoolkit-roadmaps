@@ -5,7 +5,7 @@
 		"__type" : "snippets",
 		"items" : [
 			{
-				"__type" : "textSnippet",
+				"__type" : "pharoSnippet",
 				"children" : {
 					"__type" : "snippets",
 					"items" : [ ]
@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-10T15:39:33.74521+01:00"
+						"dateAndTimeString" : "2025-10-17T10:33:19.836399+02:00"
 					}
 				},
 				"editEmail" : {
@@ -29,17 +29,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-19T15:03:31.487966+01:00"
+						"dateAndTimeString" : "2025-11-11T17:37:57.7106+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "GF/MZvDyQZKILcXfxeimXQ=="
+					"uidString" : "CbWoUrj9DQCoz4BhD2BwsQ=="
 				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "Added contextual menus.\nHave a way to navigate to a Kind without a page context — see all pages of that Kind. \nJust override {{gtMethod:name=TMAbstractTreeNode>>#contextAdditionalMenuItemsForElement:}} to add emnu items."
+				"code" : "aField := 'Glamorous Toolkit Basics'.\raKind := 'Introduction'.\rLeDatabase gtBook topicMap kindNodeNamed: aKind inFieldNamed: aField"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -55,7 +52,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-10T16:42:14.021668+01:00"
+						"dateAndTimeString" : "2025-10-17T10:42:09.305086+02:00"
 					}
 				},
 				"editEmail" : {
@@ -66,14 +63,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-19T15:02:28.637322+01:00"
+						"dateAndTimeString" : "2025-11-11T17:37:57.730035+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "ZRsb9KhaQxeI9kx20mv0cA=="
+					"uidString" : "r8A3crj9DQCtA9w0D2BwsQ=="
 				},
-				"code" : "TopicMap default kindNodeNamed: 'Media'"
+				"code" : "#(LeDatabase gtBook topicMap kindNodeNamed:inFieldNamed:)"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -89,7 +86,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-19T15:02:50.897249+01:00"
+						"dateAndTimeString" : "2025-10-17T10:41:36.336173+02:00"
 					}
 				},
 				"editEmail" : {
@@ -100,14 +97,48 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-19T15:02:51.248987+01:00"
+						"dateAndTimeString" : "2025-11-11T17:37:57.74316+01:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "L2MeFWlWQ0+1bXbX41PkXQ=="
+					"uidString" : "QK9AcLj9DQCs6/t9D2BwsQ=="
 				},
-				"code" : "TopicMap default pageNodeWithTitle: 'A tour of the environment'"
+				"code" : "aField := 'Glamorous Toolkit Basics'.\raKind := 'Introduction'.\r(LeDatabase gtBook topicMap fieldNodeNamed: aField) kindNodeNamed: aKind"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-17T10:34:58.287437+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-11T17:37:57.764074+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "cO6GWLj9DQCqN8GyD2BwsQ=="
+				},
+				"code" : "tm := LeDatabase gtBook topicMap.\rtm fieldNodes flatCollect: #kindNodes"
 			}
 		]
 	},
@@ -119,7 +150,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-12-10T15:39:33.628331+01:00"
+			"dateAndTimeString" : "2025-12-19T15:06:40.390433+01:00"
 		}
 	},
 	"editEmail" : {
@@ -130,15 +161,15 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-12-19T15:02:59.960825+01:00"
+			"dateAndTimeString" : "2025-12-19T15:06:40.390433+01:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Add contextual menus for nodes"
+		"title" : "Provide a way to navigate to a particular field and kind"
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "1b3d27ad-d532-47e6-83c5-7543067491f5"
+		"uuid" : "52f230e5-c6f0-4899-bfc5-9b3ec557c188"
 	}
 }
