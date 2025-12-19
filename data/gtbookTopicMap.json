@@ -4755,7 +4755,7 @@
 			]
 		},
 		{
-			"page" : "Remote Runner: Using a custom runnner",
+			"page" : "Remote Runner: Using a custom runner",
 			"kind" : "Documentation",
 			"topics" : [
 				"Distributed and Remote Execution"
@@ -4948,6 +4948,20 @@
 				"Moldable Development Practices",
 				"Using Lepiter",
 				"Live Documentation",
+				"Book Organization and Navigation"
+			]
+		},
+		{
+			"page" : "GT Inspector  views for files",
+			"kind" : "Documentation",
+			"topics" : [
+				"Inspector Views"
+			]
+		},
+		{
+			"page" : "Pages to be written",
+			"kind" : "Index",
+			"topics" : [
 				"Book Organization and Navigation"
 			]
 		}

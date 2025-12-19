@@ -259,43 +259,6 @@
 					"__type" : "snippets",
 					"items" : [
 						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-29T11:17:16.881228+02:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-09-29T11:17:16.881228+02:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "r0lfqOv7DQCoyZMcA+vavQ=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : ""
-						},
-						{
 							"__type" : "pharoSnippet",
 							"children" : {
 								"__type" : "snippets",
@@ -529,12 +492,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-09-29T13:52:37.39636+02:00"
+			"dateAndTimeString" : "2025-12-19T15:09:44.107448+01:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "* Finish adding Help pages"
+		"title" : "Finish adding Help pages (done)"
 	},
 	"uid" : {
 		"__type" : "uuid",

@@ -257,7 +257,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-11-11T10:25:13.995994+01:00"
+									"dateAndTimeString" : "2025-11-12T11:33:17.244085+01:00"
 								}
 							},
 							"uid" : {
@@ -267,7 +267,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "We now need to add a `pathContext` to propagate breadcrumbs.\nWe add {{gtMethod:name=TMAbstractTreeNode>>#pathContext}} and {{gtMethod:name=TMAbstractTreeNode>>#defaultPathContext}}.\nNow we can configure {{gtMethod:name=TMKindNode>>#breadcrumb}} to use this information.\nThe example: {{gtMethod:name=TMBreadcrumbExamples>>#kindNodeWithContextBreadcrumb}}.\nWe do the same for {{gtMethod:name=TMPageNode>>#breadcrumb}}."
+							"string" : "We now need to add a `pathContext` to propagate breadcrumbs.\nWe add {{gtMethod:name=TMAbstractTreeNode>>#breadcrumb}} and {{gtMethod:name=TMAbstractTreeNode>>#defaultBreadcrumb}}.\nNow we can configure {{gtMethod:name=TMKindNode>>#breadcrumb}} to use this information.\nThe example: {{gtMethod:name=TMBreadcrumbExamples>>#kindNodeWithContextBreadcrumb}}.\nWe do the same for {{gtMethod:name=TMPageNode>>#breadcrumb}}."
 						},
 						{
 							"__type" : "textSnippet",

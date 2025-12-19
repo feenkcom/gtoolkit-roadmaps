@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-10T15:39:36.667124+01:00"
+						"dateAndTimeString" : "2025-12-19T15:03:00.811472+01:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,75 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Add contextual menus.\nNeed a way to navigate to a Kind without a page context — see all pages of that Kind. Could be a Roadmap or even just a list of pages."
+				"string" : "Added contextual menus.\nHave a way to navigate to a Kind without a page context — see all pages of that Kind. \n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-10T16:42:14.021668+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-19T15:02:28.637322+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ZRsb9KhaQxeI9kx20mv0cA=="
+				},
+				"code" : "TopicMap default kindNodeNamed: 'Media'"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-19T15:02:50.897249+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-19T15:02:51.248987+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "L2MeFWlWQ0+1bXbX41PkXQ=="
+				},
+				"code" : "TopicMap default pageNodeWithTitle: 'A tour of the environment'"
 			}
 		]
 	},
@@ -62,12 +130,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-12-10T15:39:33.628331+01:00"
+			"dateAndTimeString" : "2025-12-19T15:02:59.960825+01:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "* Add contextual menus for nodes"
+		"title" : "Add contextual menus for nodes"
 	},
 	"uid" : {
 		"__type" : "uuid",
