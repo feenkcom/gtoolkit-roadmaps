@@ -208,15 +208,17 @@ TMAbstractEntity >> kindNodes [
 
 { #category : #treemaps }
 TMAbstractEntity >> kindPalette [
+	"Use in the TopicMap treemap view: TMAbstractTreeNode>>#gtTreeMapFor:.
+	These colors probably need some adjustment ..."
 	^ {'Introduction' -> Color red muchLighter.
 		'Media' -> Color green lighter.
 		'Tutorial' -> Color blue muchLighter.
-		'Exercise' -> Color blue lighter.
-		'Quiz' -> Color blue lighter.
 		'Case study' -> Color purple muchLighter.
 		'Pattern' -> Color orange.
 		'FAQ' -> Color paleYellow.
 		'Examples' -> Color lightRed.
+		'Exercise' -> Color magenta lighter.
+		'Quiz' -> Color magenta muchLighter.
 		'Documentation' -> Color paleBlue.
 		'Definition' -> Color veryVeryLightGray.
 		'Index' -> Color veryLightGray.
