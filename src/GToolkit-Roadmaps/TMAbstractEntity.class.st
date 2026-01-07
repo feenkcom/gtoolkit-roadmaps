@@ -211,6 +211,8 @@ TMAbstractEntity >> kindPalette [
 	^ {'Introduction' -> Color red muchLighter.
 		'Media' -> Color green lighter.
 		'Tutorial' -> Color blue muchLighter.
+		'Exercise' -> Color blue lighter.
+		'Quiz' -> Color blue lighter.
 		'Case study' -> Color purple muchLighter.
 		'Pattern' -> Color orange.
 		'FAQ' -> Color paleYellow.
