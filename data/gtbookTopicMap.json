@@ -657,13 +657,6 @@
 			]
 		},
 		{
-			"page" : "Chatting with an LLM in Ollama, Anthropic, Gemini, or OpenAI",
-			"kind" : "Documentation",
-			"topics" : [
-				"Working with LLMs"
-			]
-		},
-		{
 			"page" : "Exploring Undeclared Variables",
 			"kind" : "Documentation",
 			"topics" : [
@@ -1956,13 +1949,6 @@
 			"kind" : "Media",
 			"topics" : [
 				"Querying and Navigating Code"
-			]
-		},
-		{
-			"page" : "OpenAI assistants",
-			"kind" : "Definition",
-			"topics" : [
-				"Working with LLMs"
 			]
 		},
 		{
@@ -3443,7 +3429,7 @@
 			]
 		},
 		{
-			"page" : "gt4openai: working with OpenAI",
+			"page" : "Working with OpenAI",
 			"kind" : "Introduction",
 			"topics" : [
 				"Working with LLMs"
@@ -3824,7 +3810,7 @@
 			]
 		},
 		{
-			"page" : "OpenAI providers",
+			"page" : "OpenAI provider",
 			"kind" : "Documentation",
 			"topics" : [
 				"Working with LLMs"
@@ -3902,13 +3888,6 @@
 				"Working with GemStone",
 				"Collections and Data Structures",
 				"Programming Smalltalk"
-			]
-		},
-		{
-			"page" : "How to setup an LLM provider",
-			"kind" : "Index",
-			"topics" : [
-				"Working with LLMs"
 			]
 		},
 		{
@@ -4237,7 +4216,7 @@
 			]
 		},
 		{
-			"page" : "Handling custom instructions using assistants",
+			"page" : "Handling chat instructions",
 			"kind" : "Tutorial",
 			"topics" : [
 				"Working with LLMs"
@@ -4842,7 +4821,7 @@
 			]
 		},
 		{
-			"page" : "GT search filters by example",
+			"page" : "Querying with GT search filters by example",
 			"kind" : "Documentation",
 			"topics" : [
 				"Querying and Navigating Code"
@@ -4963,6 +4942,56 @@
 			"kind" : "Index",
 			"topics" : [
 				"Book Organization and Navigation"
+			]
+		},
+		{
+			"page" : "A quick tour of GT",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Getting Started with GT"
+			]
+		},
+		{
+			"page" : "Basic chatting",
+			"kind" : "Documentation",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "LLM tools by example",
+			"kind" : "Documentation",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Playing with LLMs",
+			"kind" : "Examples",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Quiz: GT Basics",
+			"kind" : "Quiz",
+			"topics" : [
+				"Getting Started with GT"
+			]
+		},
+		{
+			"page" : "Remote Runner: Debugging and performance",
+			"kind" : "Documentation",
+			"topics" : [
+				"Distributed and Remote Execution",
+				"Debugging in Glamorous Toolkit"
+			]
+		},
+		{
+			"page" : "Remote Runner: Pre- and Post- task actions",
+			"kind" : "Documentation",
+			"topics" : [
+				"Distributed and Remote Execution"
 			]
 		}
 	],

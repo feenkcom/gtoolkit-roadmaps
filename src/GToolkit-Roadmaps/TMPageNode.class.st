@@ -402,6 +402,7 @@ TMPageNode >> updateKindTo: aKindString [
 
 { #category : #initialization }
 TMPageNode >> viaFirstTopic [
+	self topics ifEmpty: [ ^ self ].
 	^ self
 		withContext: (self topicMap topicNodeNamed: self topics first) breadcrumb
 ]
