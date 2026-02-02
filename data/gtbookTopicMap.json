@@ -4993,6 +4993,62 @@
 			"topics" : [
 				"Distributed and Remote Execution"
 			]
+		},
+		{
+			"page" : "1. Molding CSV data — preparing the data",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Working with External Data"
+			]
+		},
+		{
+			"page" : "2. Molding CSV data — modeling domain objects",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Domain Modeling",
+				"Moldable Development Practices",
+				"Inspector Views"
+			]
+		},
+		{
+			"page" : "3. Molding CSV data — modeling other entities",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Domain Modeling",
+				"Moldable Development Practices"
+			]
+		},
+		{
+			"page" : "4. Molding CSV data — actions, queries and visualizations",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Inspector actions",
+				"Using Mondrian",
+				"Querying and Navigating Code"
+			]
+		},
+		{
+			"page" : "5. Molding CSV data — continuing  the exploration",
+			"kind" : "Exercise",
+			"topics" : [
+				"Domain Modeling",
+				"Working with External Data"
+			]
+		},
+		{
+			"page" : "How to file out changes",
+			"kind" : "FAQ",
+			"topics" : [
+				"Code Configuration and Package Management"
+			]
+		},
+		{
+			"page" : "Tutorial: molding CSV data into an explainable system",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Explainable Systems",
+				"Moldable Development Practices"
+			]
 		}
 	],
 	"database" : "Glamorous Toolkit Book",
