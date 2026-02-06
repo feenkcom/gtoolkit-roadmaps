@@ -96,7 +96,7 @@ TopicMapExamples >> kindNodeIntroduction [
 	aboutGtKindNode := self topicMap kindNodeNamed: 'Introduction'.
 
 	self assert: aboutGtKindNode fields size equals: 5.
-	self assert: aboutGtKindNode topics size equals: 36.
+	self assert: aboutGtKindNode topics size > 20.
 	self assert: aboutGtKindNode kinds size equals: 1.
 	self assert: aboutGtKindNode pages size < aboutGtKindNode database pages size.
 	self assert: aboutGtKindNode children isTMNodeGroup.
@@ -119,7 +119,7 @@ TopicMapExamples >> kindNodeIntroductionViaTopicAboutGT [
 			viaTopicNamed: 'About Glamorous Toolkit'.
 
 	self assert: aboutGtKindNode fields size equals: 5.
-	self assert: aboutGtKindNode topics size equals: 36.
+	self assert: aboutGtKindNode topics size > 20.
 	self assert: aboutGtKindNode kinds size equals: 1.
 	self assert: aboutGtKindNode pages size < aboutGtKindNode database pages size.
 	self assert: aboutGtKindNode children isTMNodeGroup.

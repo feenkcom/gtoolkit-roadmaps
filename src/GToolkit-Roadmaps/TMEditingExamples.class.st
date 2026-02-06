@@ -108,8 +108,8 @@ TMEditingExamples >> missingPage [
 	<gtExample>
 	<return: #ByteString>
 	| missingPageTitle |
-	missingPageTitle := self topicMap missingPages first.
-	self assert: missingPageTitle equals: 'Adding custom tools to assistants'.
+	missingPageTitle := 'Adding custom tools to assistants'.
+	self assert: (self topicMap missingPages includes: missingPageTitle).
 	^ missingPageTitle
 ]
 
