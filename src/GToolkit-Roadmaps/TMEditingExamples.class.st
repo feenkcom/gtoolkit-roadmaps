@@ -204,7 +204,7 @@ TMEditingExamples >> updateMissingPage [
 	topicMap := self topicMap.
 	missingPageTitle := self missingPage.
 	newPage := topicMap closestUnmappedPageFor: missingPageTitle.
-	newTitle := 'Adding tools to assistants'.
+	newTitle := 'Adding tools to chats'.
 	missingPageCount := topicMap missingPages size.
 
 	self assert: (topicMap missingPages includes: missingPageTitle).
