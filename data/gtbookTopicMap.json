@@ -2183,7 +2183,7 @@
 			]
 		},
 		{
-			"page" : "Working with images and LLMs",
+			"page" : "Sending images to LLMs",
 			"kind" : "Tutorial",
 			"topics" : [
 				"Working with LLMs",
@@ -2336,7 +2336,7 @@
 			]
 		},
 		{
-			"page" : "gt4anthropic: Working with Anthropic",
+			"page" : "Working with Anthropic",
 			"kind" : "Definition",
 			"topics" : [
 				"Working with LLMs",
@@ -2689,7 +2689,7 @@
 			]
 		},
 		{
-			"page" : "A single starting point for scripting, linking and documenting",
+			"page" : "Lepiter: a single starting point for scripting, linking and documenting",
 			"kind" : "Introduction",
 			"topics" : [
 				"Using Lepiter",
@@ -4188,7 +4188,7 @@
 			]
 		},
 		{
-			"page" : "How to implement a new snippet class ",
+			"page" : "How to implement a new snippet class",
 			"kind" : "Tutorial",
 			"topics" : [
 				"Using Lepiter",
@@ -4920,7 +4920,7 @@
 			]
 		},
 		{
-			"page" : "1. Learn the basics of Glamorous Toolkit",
+			"page" : "Learn the basics of Glamorous Toolkit",
 			"kind" : "Introduction",
 			"topics" : [
 				"Getting Started with GT",
@@ -4995,14 +4995,14 @@
 			]
 		},
 		{
-			"page" : "1. Molding CSV data — preparing the data",
+			"page" : "Molding CSV data — preparing the data",
 			"kind" : "Tutorial",
 			"topics" : [
 				"Working with External Data"
 			]
 		},
 		{
-			"page" : "2. Molding CSV data — modeling domain objects",
+			"page" : "Molding CSV data — modeling domain objects",
 			"kind" : "Tutorial",
 			"topics" : [
 				"Domain Modeling",
@@ -5011,7 +5011,7 @@
 			]
 		},
 		{
-			"page" : "3. Molding CSV data — modeling other entities",
+			"page" : "Molding CSV data — modeling other entities",
 			"kind" : "Tutorial",
 			"topics" : [
 				"Domain Modeling",
@@ -5019,7 +5019,7 @@
 			]
 		},
 		{
-			"page" : "4. Molding CSV data — actions, queries and visualizations",
+			"page" : "Molding CSV data — actions, queries and visualizations",
 			"kind" : "Tutorial",
 			"topics" : [
 				"Inspector actions",
@@ -5028,7 +5028,7 @@
 			]
 		},
 		{
-			"page" : "5. Molding CSV data — continuing  the exploration",
+			"page" : "Molding CSV data — continuing the exploration",
 			"kind" : "Exercise",
 			"topics" : [
 				"Domain Modeling",
