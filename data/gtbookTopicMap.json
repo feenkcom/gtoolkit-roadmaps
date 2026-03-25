@@ -173,14 +173,6 @@
 			]
 		},
 		{
-			"page" : "How to enable the GenAI / LLM integration in Coder",
-			"kind" : "FAQ",
-			"topics" : [
-				"Using Coder",
-				"Working with LLMs"
-			]
-		},
-		{
 			"page" : "A tour of the environment",
 			"kind" : "Media",
 			"topics" : [
@@ -541,15 +533,6 @@
 			]
 		},
 		{
-			"page" : "Building an LLM assistant for editing blog posts",
-			"kind" : "Tutorial",
-			"topics" : [
-				"Working with LLMs",
-				"Building Custom Tools",
-				"Working with External APIs"
-			]
-		},
-		{
 			"page" : "How to parse sources in different languages",
 			"kind" : "FAQ",
 			"topics" : [
@@ -846,13 +829,6 @@
 			"kind" : "Index",
 			"topics" : [
 				"Working with GemStone"
-			]
-		},
-		{
-			"page" : "Adding tools to assistants",
-			"kind" : "Tutorial",
-			"topics" : [
-				"Working with LLMs"
 			]
 		},
 		{
@@ -1502,13 +1478,6 @@
 			]
 		},
 		{
-			"page" : "File search in the response provider",
-			"kind" : "Tutorial",
-			"topics" : [
-				"Working with LLMs"
-			]
-		},
-		{
 			"page" : "JavaScript",
 			"kind" : "Tag",
 			"topics" : [
@@ -1718,14 +1687,6 @@
 				"Working with External Tools",
 				"Deployment and Persistence",
 				"Working with Git and GitHub"
-			]
-		},
-		{
-			"page" : "Visualizing tokenization",
-			"kind" : "Tutorial",
-			"topics" : [
-				"Working with LLMs",
-				"Working with Python"
 			]
 		},
 		{
@@ -2493,16 +2454,6 @@
 				"Building Custom Tools",
 				"Moldable Development Practices",
 				"Pragmas and Annotations"
-			]
-		},
-		{
-			"page" : "Adding the GT book to a LLM to answer questions about GT",
-			"kind" : "Tutorial",
-			"topics" : [
-				"Working with LLMs",
-				"Using Lepiter",
-				"Working with External APIs",
-				"Scripting and Automation"
 			]
 		},
 		{
@@ -4420,13 +4371,6 @@
 			]
 		},
 		{
-			"page" : "LLM utilities",
-			"kind" : "Definition",
-			"topics" : [
-				"Working with LLMs"
-			]
-		},
-		{
 			"page" : "OpenGL",
 			"kind" : "Tag",
 			"topics" : [
@@ -5047,6 +4991,149 @@
 			"kind" : "Tutorial",
 			"topics" : [
 				"Explainable Systems",
+				"Moldable Development Practices"
+			]
+		},
+		{
+			"page" : "Adding tools to chats",
+			"kind" : "Documentation",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Building Rust FFI bindings by example",
+			"kind" : "Documentation",
+			"topics" : [
+				"Working with Rust"
+			]
+		},
+		{
+			"page" : "File search through vector store",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "GemStone & Seaside",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Working with GemStone"
+			]
+		},
+		{
+			"page" : "GtRrRunnerLogTimingAnalyzer Developer Guide",
+			"kind" : "Documentation",
+			"topics" : [
+				"Using Beacon"
+			]
+		},
+		{
+			"page" : "Moldable Chat",
+			"kind" : "Definition",
+			"topics" : [
+				"Moldable Development Practices"
+			]
+		},
+		{
+			"page" : "Moldable Chat tutorial",
+			"kind" : "Introduction",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Changing Lepiter pages",
+			"kind" : "Documentation",
+			"topics" : [
+				"Using Lepiter",
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Creating chats and shaping their output",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Generating LLM tools",
+			"kind" : "Introduction",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Generating code",
+			"kind" : "Tutorial",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Guiding chats through explanations",
+			"kind" : "Examples",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Keeping track of multiple chats",
+			"kind" : "Documentation",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Multimodal inputs",
+			"kind" : "Documentation",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Raising the chat conversation level through specialized tools",
+			"kind" : "Documentation",
+			"topics" : [
+				"Using SmaCC",
+				"Working with LLMs",
+				"Building Custom Tools"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Searching code",
+			"kind" : "Examples",
+			"topics" : [
+				"Querying and Navigating Code"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Tool-augmented interaction",
+			"kind" : "Documentation",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Moldable Chat: Working with objects",
+			"kind" : "Documentation",
+			"topics" : [
+				"Working with LLMs"
+			]
+		},
+		{
+			"page" : "Remote Runner: Runner Log Statistics",
+			"kind" : "Documentation",
+			"topics" : [
+				"Performance Analysis and Profiling"
+			]
+		},
+		{
+			"page" : "Rules for Moldable Development for Glamorous Toolkit",
+			"kind" : "Documentation",
+			"topics" : [
 				"Moldable Development Practices"
 			]
 		}
