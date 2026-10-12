@@ -103,7 +103,7 @@ LePage >> hasTopicMap [
 
 { #category : #'*GToolkit-Roadmaps' }
 LePage >> pageString [
-	^ GtLlmLepiterContentExporter new
+	^ GtLLepiterContentExporter new
 		page: self;
 		export
 ]
