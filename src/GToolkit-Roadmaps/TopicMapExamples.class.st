@@ -494,7 +494,7 @@ TopicMapExamples >> topicMapEntityExamples [
 
 	exampleGroup := GtExplicitExampleGroup
 			withAll: (self class package gtExamplesAllContained
-					reject: [ :eg | eg method = thisMethod or: [ eg method hasPragmaNamed: 'noTest' ] ]).
+					reject: [ :eg | eg method = thisMethod or: [ eg method hasPragmaNamed: #noTest ] ]).
 	topicMapEntityExamples := exampleGroup examples
 			select: [ :eg | eg returnValue isTopicMapEntity ].
 	^ topicMapEntityExamples
