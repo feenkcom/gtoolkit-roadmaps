@@ -63,15 +63,15 @@ LePage >> gtInspectPageTopicMapActionFor: anAction [
 { #category : #'*GToolkit-Roadmaps' }
 LePage >> gtLePageGitMenuActionFor: anAction [
 	<gtAction>
-		self database monitor ifNil: [ ^ anAction noAction ].
-(self database monitor isLocalStore not or: [ self icebergRepo isNil ])
+	self database monitor ifNil: [ ^ anAction noAction ].
+	(self database monitor isLocalStore not or: [ self icebergRepo isNil ])
 		ifTrue: [ ^ anAction empty ].
 	^ anAction button
 		tooltip: 'Go to repository';
 		priority: 72;
 		target: LePageActionTarget;
 		menuItemGroup: BrMenuItemGroupConfiguration default;
-		menuItemPreview: [ self icebergRepo ifNotNil: #name ];
+		menuItemPreview: [ self icebergRepo ifNotNil: [ :v | v name ] ];
 		icon: BrGlamorousVectorIcons branching;
 		action: [ :aButton | 
 			aButton phlow
