@@ -10,6 +10,9 @@ Use cases:
 Class {
 	#name : #TMEditingExamples,
 	#superclass : #Object,
+	#instVars : [
+		'testJsonFile'
+	],
 	#category : #'GToolkit-Roadmaps-Examples'
 }
 
@@ -128,9 +131,19 @@ TMEditingExamples >> testJsonFile [
 
 	<gtExample>
 	<return: #FileLocator>
-	| testJsonFile |
-	testJsonFile := FileLocator imageDirectory / 'test.json'.
 	^ testJsonFile
+		ifNil: [ testJsonFile := FileLocator temp
+					/ ('gt-topic-map-' , UUID new asString , '.json') ]
+]
+
+{ #category : #examples }
+TMEditingExamples >> testJsonFilesAreUniquePerExample [
+	<gtExample>
+	| another |
+	another := self class new.
+	self assert: self testJsonFile equals: self testJsonFile.
+	self assert: self testJsonFile ~= another testJsonFile.
+	^ self testJsonFile
 ]
 
 { #category : #examples }
